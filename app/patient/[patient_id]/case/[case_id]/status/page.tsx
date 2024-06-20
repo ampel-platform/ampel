@@ -1,5 +1,6 @@
 import {Metadata} from "next";
 import {faker} from "@faker-js/faker";
+import AlertCard from "@/app/patient/[patient_id]/case/[case_id]/status/_components/alert-card";
 
 type Props = {
     params: { patient_id: string, case_id: string }
@@ -80,50 +81,26 @@ export default function PatientCaseStatus({params}: Props) {
     let redStatus = rulesets.filter(rs => rs.ampelStatus === "red")
         .map((rs) => {
             return (
-                <div key={rs.ruleset}
-                     className="rounded-md flex flex-col border border-solid border-rose-400 relative overflow-visible
-                                hover:cursor-pointer">
-                    <div className="absolute -right-1.5 -top-1.5">
-                        <span className="relative flex h-4 w-4">
-                            <span
-                                className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-300"></span>
-                            <span className="relative inline-flex rounded-full h-4 w-4 bg-rose-400"></span>
-                        </span>
-                    </div>
-                    <div className="flex flex-col gap-y-2 w-full p-2">
-                        <span className="font-semibold text-lg">{rs.ruleset}</span>
-                        <p className="line-clamp-3">{rs.message}</p>
-                        <div className="flex flex-row gap-x-2 text-gray-400 text-xs justify-end ">
-                            <span>festgestellt am:</span>
-                            <span className="font-mono">{rs.resultFrom.toLocaleString()}</span>
-                        </div>
-                    </div>
-                </div>
+                <AlertCard
+                    key={rs.ruleset}
+                    title={rs.ruleset}
+                    message={rs.message}
+                    creationTime={rs.resultFrom}
+                    color="red"
+                />
             );
         });
 
     let yellowStatus = rulesets.filter(rs => rs.ampelStatus === "yellow")
         .map((rs) => {
             return (
-                <div key={rs.ruleset}
-                     className="rounded-md flex flex-col border border-solid border-amber-400 relative overflow-visible
-                                hover:cursor-pointer">
-                    <div className="absolute -right-1.5 -top-1.5">
-                        <span className="relative flex h-4 w-4">
-                            <span
-                                className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300"></span>
-                            <span className="relative inline-flex rounded-full h-4 w-4 bg-amber-400"></span>
-                        </span>
-                    </div>
-                    <div className="flex flex-col gap-y-2 w-full p-2">
-                        <span className="font-semibold text-lg">{rs.ruleset}</span>
-                        <p className="line-clamp-3">{rs.message}</p>
-                        <div className="flex flex-row gap-x-2 text-gray-400 text-xs justify-end">
-                            <span>festgestellt am:</span>
-                            <span className="font-mono">{rs.resultFrom.toLocaleString()}</span>
-                        </div>
-                    </div>
-                </div>
+                <AlertCard
+                    key={rs.ruleset}
+                    title={rs.ruleset}
+                    message={rs.message}
+                    creationTime={rs.resultFrom}
+                    color="yellow"
+                />
             );
         });
 
@@ -151,7 +128,7 @@ export default function PatientCaseStatus({params}: Props) {
                                 className="rounded-md px-3 bg-rose-100 text-rose-800 text-base">{redStatus.length}</span>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="w-full grid grid-cols-2 gap-3">
                             {redStatus}
                         </div>
                     </div>
@@ -162,7 +139,7 @@ export default function PatientCaseStatus({params}: Props) {
                                 className="rounded-md px-3 bg-amber-100 text-amber-800 text-base">{yellowStatus.length}</span>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="w-full grid grid-cols-2 gap-3">
                             {yellowStatus}
                         </div>
                     </div>
