@@ -12,11 +12,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": {
-      "@/*": ["./*"]
-    },
     "types": ["@remix-run/node", "vite/client"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/**/.ts", "**/**/.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
   "exclude": ["node_modules"]
 }
