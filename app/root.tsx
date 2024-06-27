@@ -1,21 +1,30 @@
+import {Links, Meta, Outlet, Scripts, ScrollRestoration,} from "@remix-run/react";
+import {LinksFunction} from "@remix-run/node";
+import styles from "./tailwind.css?url";
 import React from "react";
-import Image from "next/image";
-import NavItem from "@/app/_components/nav-item";
+import NavItem from "./components/nav/nav-item";
+import logo from "../assets/ampel-logo.svg";
 
-export default function StatusLayout({
-                                         children,
-                                     }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export const links: LinksFunction = () => [
+    {rel: "stylesheet", href: styles},
+];
+
+export default function App() {
     return (
+        <html lang="en">
+        <head>
+            <title>AMPEL-CDSS</title>
+            <Links/>
+            <meta charSet="utf-8"/>
+            <Meta/>
+        </head>
+        <body>
         <div className="w-screen h-screen flex flex-row gap-x-20">
             <div className="w-80 flex flex-col items-center pt-4 gap-y-10 shrink-0">
-                <Image
-                    src="/ampel-logo.svg"
-                    alt="Ampel Logo"
-                    width={100}
-                    height={100}
+                <img
+                    src={logo}
                     className="w-48 h-auto aspect-video"
+                    alt="Ampel Logo"
                 />
 
                 <div className="w-full px-8 flex flex-col gap-y-2">
@@ -56,9 +65,12 @@ export default function StatusLayout({
                 </div>
             </div>
             <div className="w-full h-full pt-4 px-6">
-                {children}
+                <Outlet/>
+                <ScrollRestoration/>
             </div>
         </div>
-    )
-        ;
+        <Scripts/>
+        </body>
+        </html>
+    );
 }

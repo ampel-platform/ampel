@@ -4,10 +4,11 @@ type Props = {
     title: string,
     message: string | null,
     creationTime: Date,
-    color: "red" | "yellow"
+    color: "red" | "yellow",
+    onClick: () => any
 }
 
-export default function AlertCard({title, message, creationTime, color}: Props) {
+export default function AlertCard({title, message, creationTime, color, onClick}: Props) {
     let pingColor = color === "red" ? "bg-rose-300" : "bg-amber-200";
     let bgColor = color === "red" ? "bg-rose-300" : "bg-amber-200";
     let borderColor = color === "red" ? "border-gray-200" : "border-gray-200";
@@ -15,7 +16,7 @@ export default function AlertCard({title, message, creationTime, color}: Props) 
     return (
         <div className={`rounded-md flex flex-col border border-solid ${borderColor} relative overflow-visible
                         hover:cursor-pointer`}
-             onClick={() => console.log("click registered")}
+             onClick={onClick}
         >
             <div className="absolute -right-2 -top-2">
                 <span className="relative flex h-4 w-4">
