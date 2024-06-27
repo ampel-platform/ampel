@@ -4,13 +4,11 @@ import path from "path";
 
 export default defineConfig({
     plugins: [remix({
-        // routes(defineRoutes) {
-        //     return defineRoutes((route) => {
-        //         route("patients", "patients/layout.tsx", () => {
-        //             route()
-        //         })
-        //     });
-        // },
+        routes(defineRoutes) {
+            return defineRoutes((route) => {
+                route("alerts/patients/:patient_id/cases/:case_id", "alerts/patient-alerts.tsx")
+            });
+        },
     })],
     resolve: {
         alias: {
