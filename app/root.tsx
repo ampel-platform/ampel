@@ -18,7 +18,7 @@ export default function App() {
             <meta charSet="utf-8"/>
             <Meta/>
         </head>
-        <body>
+        <body className="w-screen overflow-x-hidden">
         <div className="w-screen h-screen flex flex-row gap-x-20">
             <div className="w-80 flex flex-col items-center pt-4 gap-y-10 shrink-0">
                 <img
@@ -64,7 +64,7 @@ export default function App() {
                     />
                 </div>
             </div>
-            <div className="w-full h-full pt-4 px-6">
+            <div className="w-full h-full pt-4">
                 <Outlet/>
                 <ScrollRestoration/>
             </div>
