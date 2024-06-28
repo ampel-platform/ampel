@@ -1,122 +1,236 @@
 import {faker} from "@faker-js/faker";
 import AlertCard from "./components/alert-card";
 import {useParams} from "react-router";
-import {useEffect, useState} from "react";
-import {PatientMetaData, Ruleset} from "./types";
+import {ReactNode, useEffect, useState} from "react";
+import {AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory} from "./types";
 import PatientMetaDataHeader from "./components/patient-data-header";
+import AlertDetailOverlay from "./components/alert-detail-overlay";
+
+const generateFakeHistoryData = (): RulesetHistory => {
+    return {
+        data: [
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+            {
+                date: faker.date.recent({days: 5}),
+                analyteValue: faker.number.int({min: 0, max: 50}),
+                ampelStatus: faker.number.int({min: 1, max: 3})
+            },
+        ]
+    }
+}
 
 export default function PatientAlerts() {
     const params = useParams();
+    const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
+    const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState("left-full")
 
     const [patientMetaData, setPatientMetaData] = useState(null as unknown as PatientMetaData);
-    const [rulesets, setRulesets] = useState([] as Ruleset[]);
+    const [rulesetsByStatus, setRulesetsByStatus] = useState(new Map<AmpelStatus, ReactNode[]>([
+        [AmpelStatus.RED, []],
+        [AmpelStatus.YELLOW, []],
+        [AmpelStatus.GREEN, []]
+    ]));
+
+    const displayDetailOverlay = (details: AlertDetails) => {
+        setDetailOverlayData(details);
+        setDetailOverlayVisibilityClasses("left-0");
+    }
+
+    const hideDetailOverlay = () => {
+        setDetailOverlayVisibilityClasses("left-full");
+    }
 
     useEffect(() => {
-        if (params.patient_id !== undefined && params.case_id !== undefined) {
-            setPatientMetaData({
-                name: "Max Mustermann",
-                patientId: params.patient_id,
-                caseId: params.case_id,
-                sex: "männlich",
-                birthdate: faker.date.birthdate()
-            });
-        }
+        setPatientMetaData({
+            name: "Max Mustermann",
+            patientId: params.patient_id || "",
+            caseId: params.case_id || "",
+            sex: "männlich",
+            birthdate: faker.date.birthdate()
+        });
 
-        setRulesets([
+        const rulesets: Ruleset[] = [
             {
                 ruleset: "AKI",
-                ampelStatus: "yellow",
+                ampelStatus: AmpelStatus.YELLOW,
                 message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData(),
+                links: [{
+                    displayText: "Deximed",
+                    href: "#"
+                }, {
+                    displayText: "Labor",
+                    href: "#"
+                }]
             },
             {
                 ruleset: "Anämie",
-                ampelStatus: "red",
+                ampelStatus: AmpelStatus.RED,
                 message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData(),
+                links: [{
+                    displayText: "Deximed",
+                    href: "#"
+                }, {
+                    displayText: "Labor",
+                    href: "#"
+                }]
             },
             {
                 ruleset: "A fsdkfsfsdfsd",
-                ampelStatus: "red",
+                ampelStatus: AmpelStatus.RED,
                 message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData(),
+                links: [{
+                    displayText: "Deximed",
+                    href: "#"
+                }, {
+                    displayText: "Labor",
+                    href: "#"
+                }]
             },
             {
                 ruleset: "B",
-                ampelStatus: "red",
+                ampelStatus: AmpelStatus.RED,
                 message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData(),
+                links: [{
+                    displayText: "Deximed",
+                    href: "#"
+                }, {
+                    displayText: "Labor",
+                    href: "#"
+                }]
             },
             {
                 ruleset: "C",
-                ampelStatus: "green",
+                ampelStatus: AmpelStatus.GREEN,
                 message: null,
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
             },
             {
                 ruleset: "D",
-                ampelStatus: "green",
+                ampelStatus: AmpelStatus.GREEN,
                 message: null,
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
             },
             {
                 ruleset: "E",
-                ampelStatus: "green",
+                ampelStatus: AmpelStatus.GREEN,
                 message: null,
-                resultTime: faker.date.recent()
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
             }
-        ])
-    }, [params]);
+        ];
 
-
-    let greenStatus = rulesets.filter(rs => rs.ampelStatus === "green")
-        .map((rs) => {
-            return (
-                <div key={rs.ruleset}
-                     className="w-full py-2 px-4 flex flex-row justify-between hover:rounded-md hover:bg-gray-50
+        let rulesetsByStatus: Map<AmpelStatus, ReactNode[]> = new Map([
+            [AmpelStatus.RED, []],
+            [AmpelStatus.YELLOW, []],
+            [AmpelStatus.GREEN, []]
+        ]);
+        rulesets.forEach((rs) => {
+            switch (rs.ampelStatus) {
+                case AmpelStatus.RED:
+                    rulesetsByStatus.get(AmpelStatus.RED)?.push(
+                        <AlertCard
+                            key={rs.ruleset}
+                            type={AlertType.Critical}
+                            title={rs.ruleset}
+                            message={rs.message}
+                            creationTime={rs.resultTime}
+                            onClick={() => displayDetailOverlay({
+                                ruleset: rs.ruleset,
+                                ampelStatus: AlertType.Critical,
+                                message: rs.message,
+                                resultTime: rs.resultTime,
+                                rulesetHistory: rs.history,
+                                links: rs.links || []
+                            })}
+                        />
+                    );
+                    break;
+                case AmpelStatus.YELLOW:
+                    rulesetsByStatus.get(AmpelStatus.YELLOW)?.push(
+                        <AlertCard
+                            key={rs.ruleset}
+                            type={AlertType.Warning}
+                            title={rs.ruleset}
+                            message={rs.message}
+                            creationTime={rs.resultTime}
+                            onClick={() => displayDetailOverlay({
+                                ruleset: rs.ruleset,
+                                ampelStatus: AlertType.Warning,
+                                message: rs.message,
+                                resultTime: rs.resultTime,
+                                rulesetHistory: rs.history,
+                                links: rs.links || []
+                            })}
+                        />
+                    )
+                    break;
+                case AmpelStatus.GREEN:
+                    rulesetsByStatus.get(AmpelStatus.GREEN)?.push(
+                        <div key={rs.ruleset}
+                             className="w-full py-2 px-4 flex flex-row justify-between hover:rounded-md hover:bg-gray-50
                                 items-baseline hover:text-violet-800">
-                    <span className="w-3/5">{rs.ruleset}</span>
-                    <div className="flex flex-row gap-x-2 text-gray-500 text-xs w-2/5 justify-end">
-                        <span>festgestellt am:</span>
-                        <span className="font-mono text-gray-400">{rs.resultTime.toLocaleString()}</span>
-                    </div>
-                </div>
-            );
+                            <span className="w-3/5">{rs.ruleset}</span>
+                            <div className="flex flex-row gap-x-2 text-gray-500 text-xs w-2/5 justify-end">
+                                <span>festgestellt am:</span>
+                                <span className="font-mono text-gray-400">{rs.resultTime.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    )
+                    break;
+            }
         });
 
-    let redStatus = rulesets.filter(rs => rs.ampelStatus === "red")
-        .map((rs) => {
-            return (
-                <AlertCard
-                    key={rs.ruleset}
-                    title={rs.ruleset}
-                    message={rs.message}
-                    creationTime={rs.resultTime}
-                    color="red"
-                    onClick={() => console.log(`registered click on ${rs.ruleset}`)}
-                />
-            );
-        });
-
-    let yellowStatus = rulesets.filter(rs => rs.ampelStatus === "yellow")
-        .map((rs) => {
-            return (
-                <AlertCard
-                    key={rs.ruleset}
-                    title={rs.ruleset}
-                    message={rs.message}
-                    creationTime={rs.resultTime}
-                    color="yellow"
-                    onClick={() => console.log(`registered click on ${rs.ruleset}`)}
-                />
-            );
-        });
-
+        setRulesetsByStatus(rulesetsByStatus);
+    }, []);
 
     return (
-        patientMetaData &&
+        patientMetaData && rulesetsByStatus &&
         <div className="w-full h-full">
-            <div className="h-full flex flex-col gap-y-20">
+            <div className="w-full h-full flex flex-col gap-y-10">
                 <PatientMetaDataHeader
                     name={patientMetaData.name}
                     patientId={patientMetaData.patientId}
@@ -125,36 +239,46 @@ export default function PatientAlerts() {
                     birthdate={patientMetaData.birthdate}
                 />
 
-                <div className="h-full flex flex-col gap-y-20 relative">
-                    <div className="flex flex-row gap-x-12">
-                        <div className="w-full flex flex-col items-start gap-y-4">
-                            <div className="flex flex-row gap-x-4 items-baseline">
-                                <span className="text-lg text-gray-600">Kritische Zustände</span>
-                                <span
-                                    className="rounded-md px-3 bg-rose-100 text-rose-800 text-base">{redStatus.length}</span>
-                            </div>
-
-                            <div className="w-full grid grid-cols-2 gap-3">
-                                {redStatus}
-                            </div>
-                        </div>
-                        <div className="w-full flex flex-col items-start gap-y-4">
-                            <div className="flex flex-row gap-x-4 items-baseline">
-                                <span className="text-lg text-gray-600">Warnende Zustände</span>
-                                <span
-                                    className="rounded-md px-3 bg-amber-100 text-amber-800 text-base">{yellowStatus.length}</span>
-                            </div>
-
-                            <div className="w-full grid grid-cols-2 gap-3">
-                                {yellowStatus}
-                            </div>
-                        </div>
+                <div className="w-full h-full flex flex-col relative">
+                    <div className={`w-full h-full absolute transition-all ease-in-out duration-500 z-50 
+                                     ${detailOverlayVisibilityClasses}`}>
+                        <AlertDetailOverlay
+                            data={detailOverlayData}
+                            onClose={hideDetailOverlay}
+                        />
                     </div>
 
-                    <div className="flex flex-col gap-y-4">
-                        <span className="text-lg text-gray-600">Unauffällige Zustände</span>
-                        <div className="flex flex-col gap-y-5 mb-4">
-                            {greenStatus}
+                    <div className="w-full h-full flex flex-col gap-y-20">
+                        <div className="flex flex-row gap-x-12">
+                            <div className="w-full flex flex-col items-start gap-y-4">
+                                <div className="flex flex-row gap-x-4 items-baseline">
+                                    <span className="text-lg text-gray-600">Kritische Zustände</span>
+                                    <span
+                                        className="rounded-md px-3 bg-rose-100 text-rose-800 text-base">{rulesetsByStatus.get(AmpelStatus.RED)?.length}</span>
+                                </div>
+
+                                <div className="w-full grid grid-cols-2 gap-3">
+                                    {rulesetsByStatus.get(AmpelStatus.RED)}
+                                </div>
+                            </div>
+                            <div className="w-full flex flex-col items-start gap-y-4">
+                                <div className="flex flex-row gap-x-4 items-baseline">
+                                    <span className="text-lg text-gray-600">Warnende Zustände</span>
+                                    <span
+                                        className="rounded-md px-3 bg-amber-100 text-amber-800 text-base">{rulesetsByStatus.get(AmpelStatus.YELLOW)?.length}</span>
+                                </div>
+
+                                <div className="w-full grid grid-cols-2 gap-3">
+                                    {rulesetsByStatus.get(AmpelStatus.YELLOW)}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-y-4">
+                            <span className="text-lg text-gray-600">Unauffällige Zustände</span>
+                            <div className="flex flex-col gap-y-5 mb-4">
+                                {rulesetsByStatus.get(AmpelStatus.GREEN)}
+                            </div>
                         </div>
                     </div>
                 </div>

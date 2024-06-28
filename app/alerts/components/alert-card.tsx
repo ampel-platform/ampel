@@ -1,29 +1,24 @@
 'use client';
 
+import {AlertType} from "../types";
+import AlertPing from "./alert-ping";
+
 type Props = {
     title: string,
     message: string | null,
     creationTime: Date,
-    color: "red" | "yellow",
+    type: AlertType,
     onClick: () => any
 }
 
-export default function AlertCard({title, message, creationTime, color, onClick}: Props) {
-    let pingColor = color === "red" ? "bg-rose-300" : "bg-amber-200";
-    let bgColor = color === "red" ? "bg-rose-300" : "bg-amber-200";
-    let borderColor = color === "red" ? "border-gray-200" : "border-gray-200";
-
+export default function AlertCard({title, message, creationTime, type, onClick}: Props) {
     return (
-        <div className={`rounded-md flex flex-col border border-solid ${borderColor} relative overflow-visible
-                        hover:cursor-pointer`}
+        <div className="rounded-md flex flex-col border border-solid border-gray-200 relative overflow-visible
+                        hover:cursor-pointer"
              onClick={onClick}
         >
             <div className="absolute -right-2 -top-2">
-                <span className="relative flex h-4 w-4">
-                    <span
-                        className={`animate-ping absolute inline-flex h-full w-full rounded-full ${pingColor}`}></span>
-                    <span className={`relative inline-flex rounded-full h-4 w-4 ${bgColor}`}></span>
-                </span>
+                <AlertPing type={type}/>
             </div>
             <div className="flex flex-col gap-y-2 w-full py-3 px-4">
                 <span className="font-medium text-lg text-violet-800">{title}</span>
