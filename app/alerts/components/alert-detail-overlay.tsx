@@ -47,7 +47,7 @@ function AlertLinks({links}: { links: Link[] }) {
     let additionalLinks = links.map(l => {
         return (
             <a className="px-4 py-3 rounded-md border border-solid border-gray-200 text-violet-800 hover:bg-violet-100"
-               href={l.href}>
+               href={l.href} target="_blank">
                 <div className="flex flex-row gap-x-2 items-center">
                     <span>{l.displayText}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
