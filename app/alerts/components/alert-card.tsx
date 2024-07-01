@@ -5,7 +5,7 @@ import AlertPing from "./alert-ping";
 
 type Props = {
     title: string,
-    message: string | null,
+    message?: string,
     creationTime: Date,
     type: AlertType,
     onClick: () => any
@@ -21,8 +21,12 @@ export default function AlertCard({title, message, creationTime, type, onClick}:
                 <AlertPing type={type}/>
             </div>
             <div className="flex flex-col gap-y-2 w-full py-3 px-4">
-                <span className="font-medium text-lg text-violet-800">{title}</span>
-                <p className="line-clamp-3 text-gray-700">{message}</p>
+                <span className="font-medium text-lg text-violet-800 line-clamp-1">{title}</span>
+                {message &&
+                    <span className="line-clamp-3 text-gray-700">
+                        <div dangerouslySetInnerHTML={{__html: message}}/>
+                    </span>
+                }
                 <div className="flex flex-row gap-x-2 text-gray-400 text-xs justify-end ">
                     <span>festgestellt am:</span>
                     <span className="font-mono">{creationTime.toLocaleString()}</span>
