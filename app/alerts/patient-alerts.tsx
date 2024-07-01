@@ -85,14 +85,14 @@ export default function PatientAlerts() {
 
         const rulesets: Ruleset[] = [
             {
-                ruleset: "AKI",
-                ampelStatus: AmpelStatus.YELLOW,
-                message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                ruleset: "Akute Nierenschädigung [AKIN 1, Vancomycin]",
+                ampelStatus: AmpelStatus.RED,
+                message: "Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData(),
                 links: [{
                     displayText: "Deximed",
-                    href: "#"
+                    href: "https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese"
                 }, {
                     displayText: "Labor",
                     href: "#"
@@ -100,41 +100,44 @@ export default function PatientAlerts() {
             },
             {
                 ruleset: "Anämie",
-                ampelStatus: AmpelStatus.RED,
-                message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                ampelStatus: AmpelStatus.YELLOW,
+                message: "<p>Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb < 4,3 mmol/l dringend zu erwägen.</p><br>Bitte reflektieren Sie patientenspezifisch:<br><p style='margin-left: 10px'>- <b>allg. Risikofaktoren,</b><br>- <b>Klinik</b><br>- <b>Ischämietypische EKG</b>-Veränderungen<br>- <b>Labor</b> und betreiben Sie ggf. <b>weitere Diagnostik.</b></p><br>Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden.\"",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData(),
                 links: [{
                     displayText: "Deximed",
-                    href: "#"
+                    href: "https://deximed.de/home/klinische-themen/blut/symptome/anaemie-bei-erwachsenen"
                 }, {
                     displayText: "Labor",
                     href: "#"
                 }]
             },
             {
-                ruleset: "A fsdkfsfsdfsd",
+                ruleset: "Refeeding Syndrom",
                 ampelStatus: AmpelStatus.RED,
-                message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                message: "Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData(),
                 links: [{
                     displayText: "Deximed",
-                    href: "#"
+                    href: "https://deximed.de/home/klinische-themen/geriatrie/krankheiten/stoffwechsel-ernaehrung/mangelernaehrung#verlauf-komplikationen-und-prognose-komplikationen"
+                }, {
+                    displayText: "roXtra",
+                    href: "http://roxtra.medizin.uni-leipzig.de/Roxtra/index.aspx?FileID=82421"
                 }, {
                     displayText: "Labor",
                     href: "#"
                 }]
             },
             {
-                ruleset: "B",
+                ruleset: "Hyperkalzämie",
                 ampelStatus: AmpelStatus.RED,
-                message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                message: "Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData(),
                 links: [{
                     displayText: "Deximed",
-                    href: "#"
+                    href: "https://deximed.de/home/klinische-themen/endokrinologie-stoffwechsel/symptome/hyperkalzaemie#diagnostik-diagnostische-uberlegungen"
                 }, {
                     displayText: "Labor",
                     href: "#"
