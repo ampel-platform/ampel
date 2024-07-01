@@ -25,7 +25,7 @@ export type Link = {
 export type Ruleset = {
     ruleset: string,
     ampelStatus: AmpelStatus,
-    message: string | null,
+    message?: string,
     resultTime: Date,
     history: RulesetHistory
     links?: Link[]
@@ -42,7 +42,7 @@ export type RulesetHistory = {
 export type AlertDetails = {
     ruleset: string,
     ampelStatus: AlertType,
-    message: string | null,
+    message?: string,
     resultTime: Date,
     rulesetHistory: RulesetHistory,
     links: Link[]

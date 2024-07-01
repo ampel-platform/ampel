@@ -143,21 +143,18 @@ export default function PatientAlerts() {
             {
                 ruleset: "C",
                 ampelStatus: AmpelStatus.GREEN,
-                message: null,
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             },
             {
                 ruleset: "D",
                 ampelStatus: AmpelStatus.GREEN,
-                message: null,
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             },
             {
                 ruleset: "E",
                 ampelStatus: AmpelStatus.GREEN,
-                message: null,
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             }

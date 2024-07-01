@@ -33,12 +33,16 @@ function AlertHeader({name, type}: { name: string, type: AlertType }) {
     );
 }
 
-function HintMessage({message}: { message: string | null }) {
+function HintMessage({message}: { message?: string }) {
     return (
         message &&
         <div className="flex flex-col gap-y-4">
             <span className="font-medium text-gray-600">Hinweis</span>
-            <span className="text-gray-600">{message}</span>
+            {message &&
+                <span className="text-gray-600">
+                    <div dangerouslySetInnerHTML={{__html: message}}/>
+                </span>
+            }
         </div>
     );
 }
