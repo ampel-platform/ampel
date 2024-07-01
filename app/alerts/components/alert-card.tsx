@@ -21,7 +21,7 @@ export default function AlertCard({title, message, creationTime, type, onClick}:
                 <AlertPing type={type}/>
             </div>
             <div className="flex flex-col gap-y-2 w-full py-3 px-4">
-                <span className="font-medium text-lg text-violet-800">{title}</span>
+                <span className="font-medium text-lg text-violet-800 line-clamp-1">{title}</span>
                 {message &&
                     <span className="line-clamp-3 text-gray-700">
                         <div dangerouslySetInnerHTML={{__html: message}}/>
