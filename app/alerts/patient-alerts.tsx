@@ -275,7 +275,13 @@ export default function PatientAlerts() {
                         </div>
 
                         <div className="flex flex-col gap-y-4">
-                            <span className="text-lg text-gray-600">Unauffällige Zustände</span>
+                            <div className="flex flex-row gap-x-4 items-baseline">
+                                <span className="text-lg text-gray-600">Unauffällige Zustände</span>
+                                <span
+                                    className="rounded-md px-3 bg-green-100 text-green-800 text-base">{rulesetsByStatus.get(AmpelStatus.GREEN)?.length}</span>
+                            </div>
+
+                            <span className="text-lg text-gray-600"></span>
                             <div className="flex flex-col gap-y-5 mb-4">
                                 {rulesetsByStatus.get(AmpelStatus.GREEN)}
                             </div>
