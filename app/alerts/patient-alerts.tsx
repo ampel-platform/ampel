@@ -5,6 +5,7 @@ import {ReactNode, useEffect, useState} from "react";
 import {AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory} from "./types";
 import PatientMetaDataHeader from "./components/patient-data-header";
 import AlertDetailOverlay from "./components/alert-detail-overlay";
+import InconspicuousStateCard from "./components/inconspicuous-state-card";
 
 const generateFakeHistoryData = (): RulesetHistory => {
     return {
@@ -56,7 +57,8 @@ const generateFakeHistoryData = (): RulesetHistory => {
 export default function PatientAlerts() {
     const params = useParams();
     const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
-    const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState("left-full")
+    const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState("left-full");
+    const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
 
     const [patientMetaData, setPatientMetaData] = useState(null as unknown as PatientMetaData);
     const [rulesetsByStatus, setRulesetsByStatus] = useState(new Map<AmpelStatus, ReactNode[]>([
@@ -144,20 +146,65 @@ export default function PatientAlerts() {
                 }]
             },
             {
-                ruleset: "C",
+                ruleset: "Sepsis",
                 ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion einer potentiellen Sepsiskonstellation",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             },
             {
-                ruleset: "D",
+                ruleset: "Hypokaliämie",
                 ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             },
             {
-                ruleset: "E",
+                ruleset: "Hypocalcämie",
                 ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Hyponatriämie",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Laktatämie",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Diabetes",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion von bisher nicht kodiertem Diabetes mellitus",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Fibrinogenmangel",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion von unbekanntem Fibrinogenmangel",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Hyperglykämie",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)",
+                resultTime: faker.date.recent(),
+                history: generateFakeHistoryData()
+            },
+            {
+                ruleset: "Procalcitonin-Monitoring",
+                ampelStatus: AmpelStatus.GREEN,
+                message: "Detektion eines nicht adäquaten Procalcitoninabfalls",
                 resultTime: faker.date.recent(),
                 history: generateFakeHistoryData()
             }
@@ -210,15 +257,12 @@ export default function PatientAlerts() {
                     break;
                 case AmpelStatus.GREEN:
                     rulesetsByStatus.get(AmpelStatus.GREEN)?.push(
-                        <div key={rs.ruleset}
-                             className="w-full py-2 px-4 flex flex-row justify-between hover:rounded-md hover:bg-gray-50
-                                items-baseline hover:text-violet-800">
-                            <span className="w-3/5">{rs.ruleset}</span>
-                            <div className="flex flex-row gap-x-2 text-gray-500 text-xs w-2/5 justify-end">
-                                <span>festgestellt am:</span>
-                                <span className="font-mono text-gray-400">{rs.resultTime.toLocaleString()}</span>
-                            </div>
-                        </div>
+                        <InconspicuousStateCard
+                            key={rs.ruleset}
+                            title={rs.ruleset}
+                            description={rs.message || ""}
+                            creationTime={rs.resultTime}
+                        />
                     )
                     break;
             }
@@ -274,15 +318,33 @@ export default function PatientAlerts() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-y-4">
-                            <div className="flex flex-row gap-x-4 items-baseline">
-                                <span className="text-lg text-gray-600">Unauffällige Zustände</span>
-                                <span
-                                    className="rounded-md px-3 bg-green-100 text-green-800 text-base">{rulesetsByStatus.get(AmpelStatus.GREEN)?.length}</span>
-                            </div>
+                        <div className="w-full h-full flex flex-col gap-y-4">
+                            <a className="flex flex-row gap-x-4 text-gray-600 items-center hover:cursor-pointer"
+                               onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}>
+                                <span className="text-lg">Unauffällige Zustände</span>
+                                <span className="rounded-md px-3 bg-gray-100 text-gray-800 text-base">
+                                    {rulesetsByStatus.get(AmpelStatus.GREEN)?.length}
+                                </span>
+                                {!inconspicuousStatesVisible &&
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                         className="size-4">
+                                        <path fillRule="evenodd"
+                                              d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                                              clipRule="evenodd"/>
+                                    </svg>
+                                }
+                                {inconspicuousStatesVisible &&
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                         className="size-4">
+                                        <path fillRule="evenodd"
+                                              d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                                              clipRule="evenodd"/>
+                                    </svg>
+                                }
+                            </a>
 
-                            <span className="text-lg text-gray-600"></span>
-                            <div className="flex flex-col gap-y-5 mb-4">
+                            <div
+                                className={`grid grid-cols-3 gap-3 overflow-hidden ${inconspicuousStatesVisible ? "inline-grid" : "hidden"}`}>
                                 {rulesetsByStatus.get(AmpelStatus.GREEN)}
                             </div>
                         </div>
