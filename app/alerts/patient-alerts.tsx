@@ -122,7 +122,7 @@ export default function PatientAlerts() {
                     displayText: "Deximed",
                     href: "https://deximed.de/home/klinische-themen/geriatrie/krankheiten/stoffwechsel-ernaehrung/mangelernaehrung#verlauf-komplikationen-und-prognose-komplikationen"
                 }, {
-                    displayText: "roXtra",
+                    displayText: "SOP",
                     href: "http://roxtra.medizin.uni-leipzig.de/Roxtra/index.aspx?FileID=82421"
                 }, {
                     displayText: "Labor",
