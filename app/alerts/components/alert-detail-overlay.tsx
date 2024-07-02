@@ -1,6 +1,17 @@
-import {AlertDetails, AlertType, Link, RulesetHistory} from "../types";
+import {AlertDetails, AlertType, AmpelStatus, Link, RulesetHistory} from "../types";
 import AlertPing from "./alert-ping";
-import {Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {
+    Bar,
+    CartesianGrid,
+    Cell,
+    ComposedChart,
+    Legend,
+    Line,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis
+} from "recharts";
 
 type OverlayProps = {
     data: AlertDetails
@@ -77,6 +88,17 @@ function AlertLinks({links}: { links: Link[] }) {
 
 function AlertHistory({history}: { history: RulesetHistory }) {
 
+    const convertAmpelStatusToFillColor = (status: AmpelStatus): string => {
+        switch (status) {
+            case AmpelStatus.RED:
+                return "rgba(251, 207, 232, 0.7)"
+            case AmpelStatus.YELLOW:
+                return "rgba(254, 243, 199, 0.7)"
+            case AmpelStatus.GREEN:
+                return "rgba(243, 244, 246, 0.7)"
+        }
+    }
+
     const transformedData = history.data
         .sort((a, b) => {
             if (a.date.getTime() === b.date.getTime()) {
@@ -91,7 +113,8 @@ function AlertHistory({history}: { history: RulesetHistory }) {
             return {
                 date: h.date.toLocaleString(),
                 analyteValue: h.analyteValue,
-                ampelStatus: h.ampelStatus
+                ampelStatus: h.ampelStatus,
+                ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus)
             }
         });
 
@@ -105,13 +128,19 @@ function AlertHistory({history}: { history: RulesetHistory }) {
                     data={transformedData}
                 >
                     <CartesianGrid stroke="#f5f5f5"/>
-                    <XAxis dataKey="date"/>
-                    <YAxis yAxisId="left" dataKey="ampelStatus"/>
-                    <YAxis yAxisId="right" dataKey="analyteValue" orientation="right"/>
                     <Tooltip/>
                     <Legend/>
-                    <Bar name="Ampelstatus" yAxisId="left" dataKey="ampelStatus" fill="rgba(91, 33, 182, 0.4)"/>
-                    <Line name="Leitanalyt" yAxisId="right" dataKey="analyteValue" stroke="rgba(157, 23, 77, 1)"/>
+                    <Bar name="Ampelstatus" yAxisId="status" dataKey="ampelStatus">
+                        {
+                            transformedData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.ampelStatusFillColor}/>
+                            ))
+                        }
+                    </Bar>
+                    <Line name="Leitanalyt" yAxisId="value" dataKey="analyteValue" stroke="rgba(91, 33, 182, 0.7)"/>
+                    <XAxis dataKey="date"/>
+                    <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true}/>
+                    <YAxis yAxisId="value" dataKey="analyteValue"/>
                 </ComposedChart>
             </ResponsiveContainer>
         </div>
