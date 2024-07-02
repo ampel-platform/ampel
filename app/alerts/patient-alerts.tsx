@@ -273,7 +273,7 @@ export default function PatientAlerts() {
 
     return (
         patientMetaData && rulesetsByStatus &&
-        <div className="w-full h-full">
+        <div className="w-full h-full px-4">
             <div className="w-full h-full flex flex-col gap-y-10">
                 <PatientMetaDataHeader
                     name={patientMetaData.name}
