@@ -1,7 +1,7 @@
 export enum AmpelStatus {
-    RED,
+    GREEN = 1,
     YELLOW,
-    GREEN
+    RED
 }
 
 export enum AlertType {
