@@ -150,7 +150,7 @@ function AlertHistory({history}: { history: RulesetHistory }) {
 export default function AlertDetailOverlay({data, onClose}: OverlayProps) {
     return (
         data &&
-        <div className="flex flex-col gap-y-4 bg-white">
+        <div className="h-full flex flex-col gap-y-4 bg-white">
             <OverlayBackNavigation onClick={onClose}/>
             <div className="px-6">
                 <div className="flex flex-col gap-y-8">
