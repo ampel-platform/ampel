@@ -1,8 +1,8 @@
-import {faker} from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import AlertCard from "./components/alert-card";
-import {useParams} from "react-router";
-import {ReactNode, useEffect, useState} from "react";
-import {AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory} from "./types";
+import { useParams } from "react-router";
+import { ReactNode, useEffect, useState } from "react";
+import { AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory } from "./types";
 import PatientMetaDataHeader from "./components/patient-data-header";
 import AlertDetailOverlay from "./components/alert-detail-overlay";
 import InconspicuousStateCard from "./components/inconspicuous-state-card";
@@ -11,44 +11,44 @@ const generateFakeHistoryData = (): RulesetHistory => {
     return {
         data: [
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
             {
-                date: faker.date.recent({days: 5}),
-                analyteValue: faker.number.int({min: 0, max: 50}),
-                ampelStatus: faker.number.int({min: 1, max: 3})
+                date: faker.date.recent({ days: 5 }),
+                analyteValue: faker.number.int({ min: 0, max: 50 }),
+                ampelStatus: faker.number.int({ min: 1, max: 3 })
             },
         ]
     }
@@ -271,6 +271,7 @@ export default function PatientAlerts() {
         setRulesetsByStatus(rulesetsByStatus);
     }, []);
 
+
     return (
         patientMetaData && rulesetsByStatus &&
         <div className="w-full h-full px-4">
@@ -320,25 +321,25 @@ export default function PatientAlerts() {
 
                         <div className="w-full h-full flex flex-col gap-y-4">
                             <a className="flex flex-row gap-x-4 text-gray-600 items-center hover:cursor-pointer"
-                               onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}>
+                                onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}>
                                 <span className="text-lg">Unauffällige Zustände</span>
                                 <span className="rounded-md px-3 bg-gray-100 text-gray-800 text-base">
                                     {rulesetsByStatus.get(AmpelStatus.GREEN)?.length}
                                 </span>
                                 {!inconspicuousStatesVisible &&
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                         className="size-4">
+                                        className="size-4">
                                         <path fillRule="evenodd"
-                                              d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
-                                              clipRule="evenodd"/>
+                                            d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                                            clipRule="evenodd" />
                                     </svg>
                                 }
                                 {inconspicuousStatesVisible &&
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                         className="size-4">
+                                        className="size-4">
                                         <path fillRule="evenodd"
-                                              d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                                              clipRule="evenodd"/>
+                                            d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                                            clipRule="evenodd" />
                                     </svg>
                                 }
                             </a>
