@@ -1,4 +1,4 @@
-import {AlertDetails, AlertType, AmpelStatus, Link, RulesetHistory} from "../types";
+import { AlertDetails, AlertType, AmpelStatus, Link, RulesetHistory } from "../types";
 import AlertPing from "./alert-ping";
 import {
     Bar,
@@ -18,16 +18,16 @@ type OverlayProps = {
     onClose: () => any
 }
 
-function OverlayBackNavigation({onClick}: { onClick: () => any }) {
+function OverlayBackNavigation({ onClick }: { onClick: () => any }) {
     return (
         <div className="flex flex-row">
             <a href="#"
-               className="flex flex-row gap-x-2 items-center text-gray-600 hover:text-violet-800"
-               onClick={onClick}>
+                className="flex flex-row gap-x-2 items-center text-gray-600 hover:text-violet-800"
+                onClick={onClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
                     <path fillRule="evenodd"
-                          d="M12.5 9.75A2.75 2.75 0 0 0 9.75 7H4.56l2.22 2.22a.75.75 0 1 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.5a.75.75 0 0 1 1.06 1.06L4.56 5.5h5.19a4.25 4.25 0 0 1 0 8.5h-1a.75.75 0 0 1 0-1.5h1a2.75 2.75 0 0 0 2.75-2.75Z"
-                          clipRule="evenodd"/>
+                        d="M12.5 9.75A2.75 2.75 0 0 0 9.75 7H4.56l2.22 2.22a.75.75 0 1 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.5a.75.75 0 0 1 1.06 1.06L4.56 5.5h5.19a4.25 4.25 0 0 1 0 8.5h-1a.75.75 0 0 1 0-1.5h1a2.75 2.75 0 0 0 2.75-2.75Z"
+                        clipRule="evenodd" />
                 </svg>
                 <span>zurück zur Alarmübersicht</span>
             </a>
@@ -35,41 +35,41 @@ function OverlayBackNavigation({onClick}: { onClick: () => any }) {
     );
 }
 
-function AlertHeader({name, type}: { name: string, type: AlertType }) {
+function AlertHeader({ name, type }: { name: string, type: AlertType }) {
     return (
         <div className="flex flex-row gap-x-4 items-center">
-            <AlertPing type={type}/>
+            <AlertPing type={type} />
             <span className="font-medium text-xl text-violet-800">{name}</span>
         </div>
     );
 }
 
-function HintMessage({message}: { message?: string }) {
+function HintMessage({ message }: { message?: string }) {
     return (
         message &&
         <div className="flex flex-col gap-y-4">
             <span className="font-medium text-gray-600">Hinweis</span>
             {message &&
                 <span className="text-gray-600">
-                    <div dangerouslySetInnerHTML={{__html: message}}/>
+                    <div dangerouslySetInnerHTML={{ __html: message }} />
                 </span>
             }
         </div>
     );
 }
 
-function AlertLinks({links}: { links: Link[] }) {
+function AlertLinks({ links }: { links: Link[] }) {
     let additionalLinks = links.map(l => {
         return (
             <a className="px-4 py-3 rounded-md border border-solid border-gray-200 text-violet-800 hover:bg-violet-100"
-               href={l.href} target="_blank">
+                href={l.href} target="_blank">
                 <div className="flex flex-row gap-x-2 items-center">
                     <span>{l.displayText}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
                         <path
-                            d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"/>
+                            d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z" />
                         <path
-                            d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"/>
+                            d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z" />
                     </svg>
                 </div>
             </a>
@@ -86,7 +86,7 @@ function AlertLinks({links}: { links: Link[] }) {
     );
 }
 
-function AlertHistory({history}: { history: RulesetHistory }) {
+function AlertHistory({ history }: { history: RulesetHistory }) {
 
     const convertAmpelStatusToFillColor = (status: AmpelStatus): string => {
         switch (status) {
@@ -127,41 +127,69 @@ function AlertHistory({history}: { history: RulesetHistory }) {
                     height={400}
                     data={transformedData}
                 >
-                    <CartesianGrid stroke="#f5f5f5"/>
-                    <Tooltip/>
-                    <Legend/>
-                    <Bar name="Ampelstatus" yAxisId="status" dataKey="ampelStatus">
+                    <CartesianGrid stroke="#f5f5f5" />
+                    <Tooltip />
+                    <Legend />
+                    {/* <Bar name="Ampelstatus" yAxisId="status" dataKey="ampelStatus">
                         {
                             transformedData.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={entry.ampelStatusFillColor}/>
                             ))
                         }
-                    </Bar>
-                    <Line name="Leitanalyt" yAxisId="value" dataKey="analyteValue" stroke="rgba(91, 33, 182, 0.7)"/>
-                    <XAxis dataKey="date"/>
-                    <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true}/>
-                    <YAxis yAxisId="value" dataKey="analyteValue"/>
+                    </Bar> */}
+                    <Line name="Leitanalyt" yAxisId="value" dataKey="analyteValue" stroke="rgba(91, 33, 182, 0.7)"
+                        dot={(props) => (
+                            <>
+                                <circle
+                                    cx={props.cx}
+                                    cy={props.cy}
+                                    r={4}
+                                    fill="red"
+                                    stroke="black"
+                                    strokeWidth={1}
+                                />
+                                <circle
+                                    cx={props.cx}
+                                    cy={props.cy + 8}
+                                    r={4}
+                                    fill="white"
+                                    stroke="black"
+                                    strokeWidth={1}
+                                />
+                                <circle
+                                    cx={props.cx}
+                                    cy={props.cy + 16}
+                                    r={4}
+                                    fill="white"
+                                    stroke="black"
+                                    strokeWidth={1}
+                                />
+                            </>
+                        )} />
+                    <XAxis dataKey="date" />
+                    <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} />
+                    <YAxis yAxisId="value" dataKey="analyteValue" />
                 </ComposedChart>
             </ResponsiveContainer>
         </div>
     );
 }
 
-export default function AlertDetailOverlay({data, onClose}: OverlayProps) {
+export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
     return (
         data &&
         <div className="h-full flex flex-col gap-y-4 bg-white">
-            <OverlayBackNavigation onClick={onClose}/>
+            <OverlayBackNavigation onClick={onClose} />
             <div className="px-6">
                 <div className="flex flex-col gap-y-8">
-                    <AlertHeader name={data.ruleset} type={data.ampelStatus}/>
+                    <AlertHeader name={data.ruleset} type={data.ampelStatus} />
 
                     <div className="grid grid-cols-2 gap-x-12">
-                        <HintMessage message={data.message}/>
-                        <AlertLinks links={data.links}/>
+                        <HintMessage message={data.message} />
+                        <AlertLinks links={data.links} />
                     </div>
 
-                    <AlertHistory history={data.rulesetHistory}/>
+                    <AlertHistory history={data.rulesetHistory} />
                 </div>
             </div>
         </div>
