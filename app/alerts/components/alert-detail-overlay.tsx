@@ -12,6 +12,7 @@ import {
     XAxis,
     YAxis
 } from "recharts";
+import StatusIcon from "./status-icon";
 
 type OverlayProps = {
     data: AlertDetails
@@ -153,37 +154,31 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                                     <>
                                         <circle
                                             cx={props.cx}
-                                            cy={props.cy - 8}
-                                            r={4}
-                                            fill={ampelStatus == 2 ? "red" : "white"}
+                                            cy={props.cy - 12}
+                                            r={5}
+                                            fill={ampelStatus == 1 ? "red" : "white"}
                                             stroke="black"
                                             strokeWidth={1} />
-                                        <circle
-                                            cx={props.cx}
-                                            cy={props.cy}
-                                            r={4}
-                                            fill={ampelStatus == 1 ? "yellow" : "white"}
+                                        <polygon
+                                            points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
+                                            fill={ampelStatus == 2 ? "yellow" : "white"}
                                             stroke="black"
-                                            strokeWidth={1} />
-                                        <circle
-                                            cx={props.cx}
-                                            cy={props.cy + 8}
-                                            r={4}
-                                            fill={ampelStatus == 3 ? "green" : "white"}
+                                            strokeWidth={1}
+                                        />
+                                        <rect
+                                            x={props.cx - 6}
+                                            y={props.cy + 8}
+                                            width={11}
+                                            height={11}
+                                            fill={ampelStatus == 3 ? "limegreen" : "white"}
                                             stroke="black"
-                                            strokeWidth={1} />
+                                            strokeWidth={1}
+                                        />
                                     </>
                                 );
                             } else {
                                 return (
-                                    <circle
-                                        key={`point-${index}`}
-                                        cx={props.cx}
-                                        cy={props.cy}
-                                        r={4}
-                                        fill={ampelStatus == 2 ? "red" : ampelStatus == 1 ? "yellow" : ampelStatus == 3 ? "green" : "white"}
-                                        stroke="black"
-                                        strokeWidth={1} />
+                                    <StatusIcon ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
                                 );
                             }
                         }} />
