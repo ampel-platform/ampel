@@ -1,11 +1,11 @@
 import { faker } from "@faker-js/faker";
 import AlertCard from "./components/alert-card";
-import { useParams } from "react-router";
 import { ReactNode, useEffect, useState } from "react";
 import { AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory } from "./types";
 import PatientMetaDataHeader from "./components/patient-data-header";
 import AlertDetailOverlay from "./components/alert-detail-overlay";
 import InconspicuousStateCard from "./components/inconspicuous-state-card";
+import { useParams } from "@remix-run/react";
 
 const generateFakeHistoryData = (): RulesetHistory => {
     return {
@@ -77,6 +77,7 @@ export default function PatientAlerts() {
     }
 
     useEffect(() => {
+        console.log(params.patient_id);
         setPatientMetaData({
             name: "Max Mustermann",
             patientId: params.patient_id || "",
