@@ -77,7 +77,6 @@ export default function PatientAlerts() {
     }
 
     useEffect(() => {
-        console.log(params.patient_id);
         setPatientMetaData({
             name: "Max Mustermann",
             patientId: params.patient_id || "",
@@ -270,9 +269,12 @@ export default function PatientAlerts() {
         });
 
         setRulesetsByStatus(rulesetsByStatus);
+            setIsLoading(true);
     }, []);
 
+const [isLoading, setIsLoading] = useState(false);
 
+if (!isLoading) return null;
     return (
         patientMetaData && rulesetsByStatus &&
         <div className="w-full h-full px-4">
