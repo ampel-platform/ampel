@@ -137,40 +137,61 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                             ))
                         }
                     </Bar> */}
-                    <Line name="Leitanalyt" yAxisId="value" dataKey="analyteValue" stroke="rgba(91, 33, 182, 0.7)"
-                        dot={(props) => (
-                            <>
-                                <circle
-                                    cx={props.cx}
-                                    cy={props.cy}
-                                    r={4}
-                                    fill="red"
-                                    stroke="black"
-                                    strokeWidth={1}
-                                />
-                                <circle
-                                    cx={props.cx}
-                                    cy={props.cy + 8}
-                                    r={4}
-                                    fill="white"
-                                    stroke="black"
-                                    strokeWidth={1}
-                                />
-                                <circle
-                                    cx={props.cx}
-                                    cy={props.cy + 16}
-                                    r={4}
-                                    fill="white"
-                                    stroke="black"
-                                    strokeWidth={1}
-                                />
-                            </>
-                        )} />
+                    <Line
+                        name="Leitanalyt"
+                        yAxisId="value"
+                        dataKey="analyteValue"
+                        stroke="rgba(91, 33, 182, 0.7)"
+                        dot={(props) => {
+                            const { index } = props;
+                            const isLastPoint = index === transformedData.length - 1;
+                            const ampelStatus = props.points[index].payload.ampelStatus;
+                            console.log(ampelStatus);
+                            console.log(isLastPoint);
+                            if (isLastPoint) {
+                                return (
+                                    <>
+                                        <circle
+                                            cx={props.cx}
+                                            cy={props.cy - 8}
+                                            r={4}
+                                            fill={ampelStatus == 2 ? "red" : "white"}
+                                            stroke="black"
+                                            strokeWidth={1} />
+                                        <circle
+                                            cx={props.cx}
+                                            cy={props.cy}
+                                            r={4}
+                                            fill={ampelStatus == 1 ? "yellow" : "white"}
+                                            stroke="black"
+                                            strokeWidth={1} />
+                                        <circle
+                                            cx={props.cx}
+                                            cy={props.cy + 8}
+                                            r={4}
+                                            fill={ampelStatus == 3 ? "green" : "white"}
+                                            stroke="black"
+                                            strokeWidth={1} />
+                                    </>
+                                );
+                            } else {
+                                return (
+                                    <circle
+                                        key={`point-${index}`}
+                                        cx={props.cx}
+                                        cy={props.cy}
+                                        r={4}
+                                        fill={ampelStatus == 2 ? "red" : ampelStatus == 1 ? "yellow" : ampelStatus == 3 ? "green" : "white"}
+                                        stroke="black"
+                                        strokeWidth={1} />
+                                );
+                            }
+                        }} />
                     <XAxis dataKey="date" />
                     <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} />
                     <YAxis yAxisId="value" dataKey="analyteValue" />
                 </ComposedChart>
-            </ResponsiveContainer>
+            </ResponsiveContainer >
         </div>
     );
 }
