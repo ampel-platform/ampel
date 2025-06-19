@@ -1,11 +1,11 @@
 import { AlertDetails, AlertType, AmpelStatus, Link, RulesetHistory } from "../types";
 import AlertPing from "./AlertPing";
 import {
-    Bar,
+
     CartesianGrid,
-    Cell,
+
     ComposedChart,
-    Legend,
+
     Line,
     ResponsiveContainer,
     Tooltip,

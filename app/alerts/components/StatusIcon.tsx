@@ -6,7 +6,7 @@ type AmpelStatusIconProps = {
 }
 
 
-export default function StatusIcon({ ampelStatus, cx, cy, index }: AmpelStatusIconProps) {
+export default function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps) {
 
     switch (ampelStatus) {
         case 1:
