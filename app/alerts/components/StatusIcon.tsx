@@ -1,7 +1,3 @@
-import green from "../../../assets/green.png";
-import yellow from "../../../assets/yellow.png";
-import red from "../../../assets/red.png";
-
 type AmpelStatusIconProps = {
     ampelStatus: number
     cx: number

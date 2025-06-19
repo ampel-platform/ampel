@@ -1,5 +1,5 @@
 import { AlertDetails, AlertType, AmpelStatus, Link, RulesetHistory } from "../types";
-import AlertPing from "./alert-ping";
+import AlertPing from "./AlertPing";
 import {
     Bar,
     CartesianGrid,
@@ -12,8 +12,8 @@ import {
     XAxis,
     YAxis
 } from "recharts";
-import StatusIcon from "./status-icon";
-import StatusLegend from "./status-legend";
+import StatusIcon from "./StatusIcon";
+import StatusLegend from "./StatusLegend";
 
 type OverlayProps = {
     data: AlertDetails
@@ -150,7 +150,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                             const { index } = props;
                             const isLastPoint = index === transformedData.length - 1;
                             const ampelStatus = props.points[index].payload.ampelStatus;
-            
+
                             if (isLastPoint) {
                                 return (
                                     <>
@@ -162,7 +162,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                                             stroke="black"
                                             strokeWidth={1} />
                                         <polygon
-            
+
                                             points={`${props.cx - mr},${props.cy - 5 - mr} ${props.cx - 6 - mr},${props.cy + 6 - mr} ${props.cx + 6 - mr},${props.cy + 6 - mr}`}
                                             fill={ampelStatus == 2 ? "yellow" : "white"}
                                             stroke="black"
@@ -185,12 +185,12 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                                 );
                             }
                         }} />
-                    <XAxis dataKey="date" label={{ value: "Datum", position: "insideBottomRight", offset: -5 }}/>
+                    <XAxis dataKey="date" label={{ value: "Datum", position: "insideBottomRight", offset: -5 }} />
                     {/* <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} /> */}
                     <YAxis yAxisId="value" dataKey="analyteValue" label={{ value: "μl/mol", angle: 45, position: "insideLeft" }} />
                 </ComposedChart>
             </ResponsiveContainer >
-        
+
 
 
         </div>
@@ -208,10 +208,10 @@ export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
 
                     <div className="grid grid-cols-2 gap-x-12">
                         <HintMessage message={data.message} />
-                      <div className="flex items-center justify-between gap-4">
-                     <AlertLinks links={data.links} />
-                                <StatusLegend/>
-</div>
+                        <div className="flex items-center justify-between gap-4">
+                            <AlertLinks links={data.links} />
+                            <StatusLegend />
+                        </div>
                     </div>
 
                     <AlertHistory history={data.rulesetHistory} />

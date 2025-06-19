@@ -2,8 +2,9 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration, } from "@remix-run/rea
 import { LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css?url";
 import React from "react";
-import Sidebar from "./components/nav/sidebar";
-// 
+import Sidebar from "./components/nav/Sidebar";
+
+
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: styles },
 ];

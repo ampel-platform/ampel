@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import NavItem from "./nav-item";
+import NavItem from "./NavItem";
 import logo from "../../../assets/ampel-logo.svg";
 
 

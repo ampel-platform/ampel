@@ -4,7 +4,7 @@ type Props = {
     creationTime: Date
 }
 
-export default function InconspicuousStateCard({title, description, creationTime}: Props) {
+export default function InconspicuousStateCard({ title, description, creationTime }: Props) {
     return (
         <div className="rounded-md flex flex-col border border-solid border-gray-200"
         >

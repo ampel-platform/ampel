@@ -1,10 +1,10 @@
 import { faker } from "@faker-js/faker";
-import AlertCard from "./components/alert-card";
+import AlertCard from "./components/AlertCard";
 import { ReactNode, useEffect, useState } from "react";
 import { AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory } from "./types";
-import PatientMetaDataHeader from "./components/patient-data-header";
-import AlertDetailOverlay from "./components/alert-detail-overlay";
-import InconspicuousStateCard from "./components/inconspicuous-state-card";
+import PatientMetaDataHeader from "./components/PatientDataHeader";
+import AlertDetailOverlay from "./components/AlertDetailOverlay";
+import InconspicuousStateCard from "./components/InconspicuousStateCard";
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
