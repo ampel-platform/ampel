@@ -82,6 +82,9 @@ npm run start
 
 This will run remix-serve using the built server entry in build/server/index.js.
 
+frontend (use chrome): http://10.101.188.93:3000/alerts/patients/123/cases/456
+backend: http://localhost:3000
+
 ### 📊 Data & Visualization
 
 This project uses:

@@ -3,11 +3,11 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
-    //server config damit es in docker funktioniert
-    server: {
+    server: {    //server config damit es in docker funktioniert
         host: true,
         port: 5173,
     },
+      build: { sourcemap: false },
     plugins: [remix({
         routes(defineRoutes) {
             return defineRoutes((route) => {
