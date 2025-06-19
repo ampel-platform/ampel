@@ -1,12 +1,23 @@
 import { faker } from "@faker-js/faker";
 import AlertCard from "./components/alert-card";
-import { useParams } from "react-router";
 import { ReactNode, useEffect, useState } from "react";
 import { AlertDetails, AlertType, AmpelStatus, PatientMetaData, Ruleset, RulesetHistory } from "./types";
 import PatientMetaDataHeader from "./components/patient-data-header";
 import AlertDetailOverlay from "./components/alert-detail-overlay";
 import InconspicuousStateCard from "./components/inconspicuous-state-card";
+import { LoaderFunctionArgs } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
+
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+    const { patient_id, case_id } = params;
+
+    if (!patient_id || !case_id) {
+        throw new Response("Not Found", { status: 404 });
+    }
+
+    return { patient_id, case_id };
+};
 const generateFakeHistoryData = (): RulesetHistory => {
     return {
         data: [
@@ -55,7 +66,7 @@ const generateFakeHistoryData = (): RulesetHistory => {
 }
 
 export default function PatientAlerts() {
-    const params = useParams();
+    const { patient_id, case_id } = useLoaderData<typeof loader>();
     const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
     const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState("left-full");
     const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
@@ -79,8 +90,8 @@ export default function PatientAlerts() {
     useEffect(() => {
         setPatientMetaData({
             name: "Max Mustermann",
-            patientId: params.patient_id || "",
-            caseId: params.case_id || "",
+            patientId: patient_id || "",
+            caseId: case_id || "",
             sex: "männlich",
             birthdate: faker.date.birthdate()
         });
