@@ -1,5 +1,5 @@
-import React from "react";
-import StatusIcon from "./StatusIcon";
+import React from 'react';
+import StatusIcon from './StatusIcon';
 
 export default function StatusLegend() {
   return (

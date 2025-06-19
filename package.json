@@ -7,13 +7,15 @@
     "dev": "remix vite:dev",
     "build": "remix vite:build",
     "start": "remix-serve ./build/server/index.js",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "@faker-js/faker": "^9.8.0",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.2",
     "@remix-run/serve": "^2.9.2",
+    "eslint-plugin-prettier": "^5.5.0",
     "isbot": "^5.1.28",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -27,8 +29,10 @@
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
     "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.37.5",
     "postcss": "^8.5.6",
+    "prettier": "3.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
