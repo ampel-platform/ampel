@@ -7,7 +7,7 @@ export default defineConfig({
         routes(defineRoutes) {
             return defineRoutes((route) => {
                 route("/", "routes/root-redirect.tsx");
-                route("alerts/patients/:patient_id/cases/:case_id", "alerts/patient-alerts.tsx")
+                route("alerts/patients/:patient_id/cases/:case_id", "alerts/PatientAlerts.tsx")
             });
         },
     })],
