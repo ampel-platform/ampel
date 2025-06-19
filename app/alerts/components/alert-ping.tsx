@@ -1,10 +1,10 @@
-import {AlertType} from "../types";
+import { AlertType } from "../types";
 
 type Props = {
     type: AlertType
 }
 
-export default function AlertPing({type}: Props) {
+export default function AlertPing({ type }: Props) {
     const color = type === AlertType.Warning ? "bg-amber-200" : "bg-rose-300";
 
     return (
