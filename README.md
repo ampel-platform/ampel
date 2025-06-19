@@ -33,29 +33,41 @@ For Vite-specific configurations like module aliasing or SSR behavior, check:
 
     vite.config.js
 
-    remix.config.js
+We use Remix v2+ with Vite & Flat Routes Mode so we need no remix.config.js file.
 
 ### 🗂️ Project Structure (excerpt)
+
 ```bash
 ampel-ui/
-├── app/                 # Remix routes, logic, and components
-│   ├── routes/          # File-based routing (Remix)
-│   └── components/      # Reusable React UI components
-├── public/              # Static assets
-├── styles/              # Tailwind & global CSS
-├── vite.config.js       # Vite config including aliasing and SSR support
-├── remix.config.js      # Remix-specific configuration
-├── tailwind.config.js   # Tailwind CSS configuration
-└── tsconfig.json        # TypeScript configuration
+├── app/                          # Remix routes, logic, and components
+│   ├── routes/                   # File-based routing utils (Remix)
+│   │   └── root-redirect.tsx     # Weiterleitungen o.ä.
+│   ├── components/               # Reusable React UI components
+│   │   └── alerts/               # Alerts-spezifische Seiten und Komponenten
+│   │       ├── components/       # Komponenten speziell für Alerts
+│   │       ├── PatientAlerts.tsx # Alerts-Seite für Patienten
+│   │       └── types.ts          # Typdefinitionen für Alerts
+│   └── pages/                    # For the pages structured in more sub foulders like the alerts page
+├── public/                       # Static assets
+├── styles/                       # Tailwind & global CSS
+├── vite.config.js                # Vite config including aliasing and SSR support
+├── tailwind.config.js            # Tailwind CSS configuration
+├── eslint.config.js              # ESLint-Konfiguration
+├── postcss.config.mjs            # Tailwind/PostCSS Setup
+├── .prettierrc                   # Prettier-Konfiguration
+└── tsconfig.json                 # TypeScript configuration
 ```
 
 ### 🧪 Linting
+
 ```bash
 npm run lint
 ```
+
 This uses .gitignore as ignore path to skip common development artifacts.
 
 ### ⚙️ Build & Production
+
 Create a production build
 
 ```bash
@@ -63,11 +75,12 @@ npm run build
 ```
 
 Start the production server
+
 ```bash
 npm run start
 ```
-This will run remix-serve using the built server entry in build/server/index.js.
 
+This will run remix-serve using the built server entry in build/server/index.js.
 
 ### 📊 Data & Visualization
 
