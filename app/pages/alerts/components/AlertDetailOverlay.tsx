@@ -1,6 +1,9 @@
 import {
+  Bar,
   CartesianGrid,
+  Cell,
   ComposedChart,
+  Legend,
   Line,
   ResponsiveContainer,
   Tooltip,
@@ -130,23 +133,18 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
       };
     });
 
-  const mr = 1;
+
+
+
 
   return (
     <div className='flex flex-col gap-y-4'>
       <span className='font-medium text-gray-600'>Leitanalyt</span>
       <ResponsiveContainer width='100%' aspect={4}>
-        <ComposedChart width={500} height={400} data={transformedData}>
+        <ComposedChart width={500} height={400} data={transformedData}   margin={{ top: 20, right: 60, bottom: 20, left: 20 }} > 
           <CartesianGrid stroke='#f5f5f5' />
           <Tooltip />
-          {/*<Legend />
-                     <Bar name="Ampelstatus" yAxisId="status" dataKey="ampelStatus">
-                        {
-                            transformedData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.ampelStatusFillColor}/>
-                            ))
-                        }
-                    </Bar> */}
+          
           <Line
             name='Leitanalyt'
             yAxisId='value'
@@ -161,7 +159,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                 return (
                   <>
                     <circle
-                      cx={props.cx - 1}
+                      cx={props.cx }
                       cy={props.cy - 12}
                       r={5}
                       fill={ampelStatus == 1 ? 'red' : 'white'}
@@ -169,13 +167,13 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                       strokeWidth={1}
                     />
                     <polygon
-                      points={`${props.cx - mr},${props.cy - 5 - mr} ${props.cx - 6 - mr},${props.cy + 6 - mr} ${props.cx + 6 - mr},${props.cy + 6 - mr}`}
+                      points={`${props.cx },${props.cy - 5 } ${props.cx - 6 },${props.cy + 6 } ${props.cx + 6 },${props.cy + 6 }`}
                       fill={ampelStatus == 2 ? 'yellow' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
                     <rect
-                      x={props.cx - 7}
+                      x={props.cx - 6}
                       y={props.cy + 8}
                       width={11}
                       height={11}
@@ -193,14 +191,24 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
           />
           <XAxis
             dataKey='date'
+              padding={{ right: 100 }}
             label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
           />
-          {/* <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} /> */}
           <YAxis
             yAxisId='value'
             dataKey='analyteValue'
             label={{ value: 'μl/mol', angle: 45, position: 'insideLeft' }}
           />
+
+          {/* <Legend />
+          <Bar name="Ampelstatus" yAxisId="status" dataKey="ampelStatus">
+            {
+                transformedData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.ampelStatusFillColor}/>
+                ))
+            }
+          </Bar>  */}
+          <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} /> 
         </ComposedChart>
       </ResponsiveContainer>
     </div>
