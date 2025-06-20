@@ -314,12 +314,8 @@ export default function PatientAlerts() {
     });
 
     setRulesetsByStatus(rulesetsByStatus);
-    setIsLoading(true);
   }, []);
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  if (!isLoading) return null;
   return (
     patientMetaData &&
     rulesetsByStatus && (
