@@ -16,11 +16,9 @@ COPY . .
 # Install Remix and other dependencies
 RUN npm install remix react react-dom vite tailwindcss
 
-# Build the application
-RUN npm run build
-
 # Expose the port for the application
 EXPOSE 5173
 
 # Run the command to start the development server
 CMD ["npm", "run", "dev"]
+
