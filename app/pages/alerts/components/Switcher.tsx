@@ -12,7 +12,6 @@ export function Switcher(props: SwitcherProps) {
     const newState = !isChecked;
     setIsChecked(newState);
     if (props.onChange) {
-      console.log(newState);
       props.onChange(newState);
     }
   };
