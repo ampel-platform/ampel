@@ -8,13 +8,13 @@ type AmpelStatusIconProps = {
 export default function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps) {
   switch (ampelStatus) {
     case 1:
-      return <circle cx={cx} cy={cy} r={5} fill={'red'} stroke="black" strokeWidth={1} />;
+      return <circle cx={cx} cy={cy} r={5} fill={'red'} stroke='black' strokeWidth={1} />;
     case 2:
       return (
         <polygon
           points={`${cx},${cy - 5} ${cx - 6},${cy + 6} ${cx + 6},${cy + 6}`}
           fill={'yellow'}
-          stroke="black"
+          stroke='black'
           strokeWidth={1}
         />
       );
@@ -26,11 +26,11 @@ export default function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps
           width={11}
           height={11}
           fill={'limegreen'}
-          stroke="black"
+          stroke='black'
           strokeWidth={1}
         />
       );
     default:
-      return <circle r={4} fill={'white'} stroke="black" strokeWidth={1} />;
+      return <circle r={4} fill={'white'} stroke='black' strokeWidth={1} />;
   }
 }

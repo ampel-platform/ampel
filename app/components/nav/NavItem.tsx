@@ -12,8 +12,7 @@ export default function NavItem({ displayName, icon, linkTarget = '#', active = 
 
   return (
     <a
-      className={`flex flex-row gap-x-4 px-4 py-3 hover:rounded-md hover:bg-gray-50 hover:text-violet-800
-                       ${additionalActiveClasses}`}
+      className={`flex flex-row gap-x-4 px-4 py-3 hover:rounded-md hover:bg-gray-50 hover:text-violet-800 ${additionalActiveClasses}`}
       href={linkTarget}
     >
       {icon}

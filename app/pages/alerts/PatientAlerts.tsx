@@ -1,6 +1,12 @@
 import { faker } from '@faker-js/faker';
-import AlertCard from './components/AlertCard';
+import { LoaderFunctionArgs } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useEffect, useState } from 'react';
+
+import AlertCard from './components/AlertCard';
+import AlertDetailOverlay from './components/AlertDetailOverlay';
+import InconspicuousStateCard from './components/InconspicuousStateCard';
+import PatientMetaDataHeader from './components/PatientDataHeader';
 import {
   AlertDetails,
   AlertType,
@@ -9,11 +15,6 @@ import {
   Ruleset,
   RulesetHistory,
 } from './types';
-import PatientMetaDataHeader from './components/PatientDataHeader';
-import AlertDetailOverlay from './components/AlertDetailOverlay';
-import InconspicuousStateCard from './components/InconspicuousStateCard';
-import { LoaderFunctionArgs } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { patient_id, case_id } = params;
@@ -248,7 +249,7 @@ export default function PatientAlerts() {
       },
     ];
 
-    let rulesetsByStatus: Map<AmpelStatus, ReactNode[]> = new Map([
+    const rulesetsByStatus: Map<AmpelStatus, ReactNode[]> = new Map([
       [AmpelStatus.RED, []],
       [AmpelStatus.YELLOW, []],
       [AmpelStatus.GREEN, []],
@@ -322,8 +323,8 @@ export default function PatientAlerts() {
   return (
     patientMetaData &&
     rulesetsByStatus && (
-      <div className="w-full h-full px-4">
-        <div className="w-full h-full flex flex-col gap-y-10">
+      <div className='h-full w-full px-4'>
+        <div className='flex h-full w-full flex-col gap-y-10'>
           <PatientMetaDataHeader
             name={patientMetaData.name}
             patientId={patientMetaData.patientId}
@@ -332,76 +333,75 @@ export default function PatientAlerts() {
             birthdate={patientMetaData.birthdate}
           />
 
-          <div className="w-full h-full flex flex-col relative">
+          <div className='relative flex h-full w-full flex-col'>
             <div
-              className={`w-full h-full absolute transition-all ease-in-out duration-500 z-50 
-                                     ${detailOverlayVisibilityClasses}`}
+              className={`absolute z-50 h-full w-full transition-all duration-500 ease-in-out ${detailOverlayVisibilityClasses}`}
             >
               <AlertDetailOverlay data={detailOverlayData} onClose={hideDetailOverlay} />
             </div>
 
-            <div className="w-full h-full flex flex-col gap-y-20">
-              <div className="flex flex-row gap-x-12">
-                <div className="w-full flex flex-col items-start gap-y-4">
-                  <div className="flex flex-row gap-x-4 items-baseline">
-                    <span className="text-lg text-gray-600">Kritische Zustände</span>
-                    <span className="rounded-md px-3 bg-rose-100 text-rose-800 text-base">
+            <div className='flex h-full w-full flex-col gap-y-20'>
+              <div className='flex flex-row gap-x-12'>
+                <div className='flex w-full flex-col items-start gap-y-4'>
+                  <div className='flex flex-row items-baseline gap-x-4'>
+                    <span className='text-lg text-gray-600'>Kritische Zustände</span>
+                    <span className='rounded-md bg-rose-100 px-3 text-base text-rose-800'>
                       {rulesetsByStatus.get(AmpelStatus.RED)?.length}
                     </span>
                   </div>
 
-                  <div className="w-full grid grid-cols-2 gap-3">
+                  <div className='grid w-full grid-cols-2 gap-3'>
                     {rulesetsByStatus.get(AmpelStatus.RED)}
                   </div>
                 </div>
-                <div className="w-full flex flex-col items-start gap-y-4">
-                  <div className="flex flex-row gap-x-4 items-baseline">
-                    <span className="text-lg text-gray-600">Warnende Zustände</span>
-                    <span className="rounded-md px-3 bg-amber-100 text-amber-800 text-base">
+                <div className='flex w-full flex-col items-start gap-y-4'>
+                  <div className='flex flex-row items-baseline gap-x-4'>
+                    <span className='text-lg text-gray-600'>Warnende Zustände</span>
+                    <span className='rounded-md bg-amber-100 px-3 text-base text-amber-800'>
                       {rulesetsByStatus.get(AmpelStatus.YELLOW)?.length}
                     </span>
                   </div>
 
-                  <div className="w-full grid grid-cols-2 gap-3">
+                  <div className='grid w-full grid-cols-2 gap-3'>
                     {rulesetsByStatus.get(AmpelStatus.YELLOW)}
                   </div>
                 </div>
               </div>
 
-              <div className="w-full h-full flex flex-col gap-y-4">
+              <div className='flex h-full w-full flex-col gap-y-4'>
                 <a
-                  className="flex flex-row gap-x-4 text-gray-600 items-center hover:cursor-pointer"
+                  className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer'
                   onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}
                 >
-                  <span className="text-lg">Unauffällige Zustände</span>
-                  <span className="rounded-md px-3 bg-gray-100 text-gray-800 text-base">
+                  <span className='text-lg'>Unauffällige Zustände</span>
+                  <span className='rounded-md bg-gray-100 px-3 text-base text-gray-800'>
                     {rulesetsByStatus.get(AmpelStatus.GREEN)?.length}
                   </span>
                   {!inconspicuousStatesVisible && (
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="size-4"
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 16 16'
+                      fill='currentColor'
+                      className='size-4'
                     >
                       <path
-                        fillRule="evenodd"
-                        d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
-                        clipRule="evenodd"
+                        fillRule='evenodd'
+                        d='M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z'
+                        clipRule='evenodd'
                       />
                     </svg>
                   )}
                   {inconspicuousStatesVisible && (
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="size-4"
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 16 16'
+                      fill='currentColor'
+                      className='size-4'
                     >
                       <path
-                        fillRule="evenodd"
-                        d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                        clipRule="evenodd"
+                        fillRule='evenodd'
+                        d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'
+                        clipRule='evenodd'
                       />
                     </svg>
                   )}

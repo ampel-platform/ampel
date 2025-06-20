@@ -3,6 +3,8 @@ import ts from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import react from 'eslint-plugin-react';
 import prettier from 'eslint-plugin-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default [
     {
@@ -38,8 +40,9 @@ export default [
                 ecmaFeatures: { jsx: true },
             },
         },
-        plugins: { '@typescript-eslint': ts, react, prettier, },
-        rules: {
+        plugins: 
+            { '@typescript-eslint': ts, react, prettier,   'simple-import-sort': simpleImportSort, 'unused-imports': unusedImports, },  
+       rules: {
             // TypeScript-spezifisch
             '@typescript-eslint/no-unused-vars': [
                 'warn',
@@ -57,6 +60,23 @@ export default [
 
             // Prettier aktivieren
             'prettier/prettier': 'warn',
+                    "no-console": "warn",
+
+            // Sort imports
+            'simple-import-sort/imports': 'error',
+            'simple-import-sort/exports': 'error',
+            
+            "unused-imports/no-unused-imports": "error",
+
+            "no-var": "error",
+            "prefer-const": "error",
+            "no-else-return": "error",
+            "no-return-await": "error",
+            "max-classes-per-file": ["error", 2],
+            "dot-notation": "warn",
+            "dot-location": ["error", "property"],
+            "no-empty-function": "warn",
+            "@typescript-eslint/no-empty-function": "warn"
         },
         settings: {
             react: {
