@@ -18,7 +18,7 @@ export default function App() {
       </head>
       <body className='w-screen overflow-x-hidden'>
         <div className='flex h-screen w-screen flex-row gap-x-20'>
-          <Sidebar />
+          {/* <Sidebar /> */}   {/* disabled but will be in future important for admin dashboard*/}
           <div className='h-full w-full pl-4 pt-4'>
             <Outlet />
             <ScrollRestoration />
