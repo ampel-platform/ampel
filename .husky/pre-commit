@@ -1,4 +1,5 @@
-npx eslint --fix
-npx prettier --write .
+# .husky/pre-commit
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
 
-git add .
+npx lint-staged
