@@ -99,3 +99,15 @@ This project uses:
     recharts for interactive and responsive charts
 
     @faker-js/faker to generate mock data for development/testing
+
+### 🧹 Code-Qualität & Formatierung
+
+Dieses Projekt verwendet folgende Tools für konsistenten und sauberen Code:
+
+- **Prettier** für automatisches Code-Formatting
+- **ESLint** für statische Codeanalyse
+- **lint-staged** für das Prüfen und Formatieren geänderter Dateien vor Commits
+
+Die Konfiguration ist bereits eingerichtet – beim Commit werden betroffene Dateien automatisch formatiert und geprüft.
+
+👉 Siehe [`.eslintrc`](./.eslintrc), [`.prettierrc`](./.prettierrc).
