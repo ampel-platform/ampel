@@ -1,9 +1,6 @@
 import {
-  Bar,
   CartesianGrid,
-  Cell,
   ComposedChart,
-  Legend,
   Line,
   ResponsiveContainer,
   Tooltip,
@@ -133,18 +130,19 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
       };
     });
 
-
-
-
-
   return (
     <div className='flex flex-col gap-y-4'>
       <span className='font-medium text-gray-600'>Leitanalyt</span>
       <ResponsiveContainer width='100%' aspect={4}>
-        <ComposedChart width={500} height={400} data={transformedData}   margin={{ top: 20, right: 60, bottom: 20, left: 20 }} > 
+        <ComposedChart
+          width={500}
+          height={400}
+          data={transformedData}
+          margin={{ top: 20, right: 60, bottom: 20, left: 20 }}
+        >
           <CartesianGrid stroke='#f5f5f5' />
           <Tooltip />
-          
+
           <Line
             name='Leitanalyt'
             yAxisId='value'
@@ -159,7 +157,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                 return (
                   <>
                     <circle
-                      cx={props.cx }
+                      cx={props.cx}
                       cy={props.cy - 12}
                       r={5}
                       fill={ampelStatus == 1 ? 'red' : 'white'}
@@ -167,7 +165,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                       strokeWidth={1}
                     />
                     <polygon
-                      points={`${props.cx },${props.cy - 5 } ${props.cx - 6 },${props.cy + 6 } ${props.cx + 6 },${props.cy + 6 }`}
+                      points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
                       fill={ampelStatus == 2 ? 'yellow' : 'white'}
                       stroke='black'
                       strokeWidth={1}
@@ -191,7 +189,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
           />
           <XAxis
             dataKey='date'
-              padding={{ right: 100 }}
+            padding={{ right: 100 }}
             label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
           />
           <YAxis
@@ -208,7 +206,7 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
                 ))
             }
           </Bar>  */}
-          <YAxis yAxisId="status" dataKey="ampelStatus" orientation="right" hide={true} /> 
+          <YAxis yAxisId='status' dataKey='ampelStatus' orientation='right' hide={true} />
         </ComposedChart>
       </ResponsiveContainer>
     </div>

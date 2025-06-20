@@ -4,7 +4,7 @@ import StatusIcon from './StatusIcon';
 
 export default function StatusLegend() {
   return (
-    <div className='mt-2 flex flex-col items-start gap-2 text-xs text-gray-600 mr-14'>
+    <div className='mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600'>
       {[1, 2, 3].map((status) => (
         <div key={status} className='flex items-center gap-1'>
           {/* Dummy cx/cy so the icon renders outside charts */}
