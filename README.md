@@ -86,6 +86,7 @@ npm run start
 
 Dieses Projekt verwendet eine getrennte Docker-Konfiguration für **Entwicklung** und **Produktion**. Alle relevanten Compose-Dateien befinden sich in:
 
+- Add/Create the required env files `.env.dev` and `.env.prod`
 - `docker/dev/docker-compose.yml` – für lokale Entwicklung
 - `docker/prod/docker-compose.yml` – für produktionsnahe Builds
 
