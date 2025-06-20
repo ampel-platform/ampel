@@ -2,7 +2,6 @@ import { LinksFunction } from '@remix-run/node';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import React from 'react';
 
-import Sidebar from './components/nav/Sidebar';
 import styles from './tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
@@ -18,7 +17,7 @@ export default function App() {
       </head>
       <body className='w-screen overflow-x-hidden'>
         <div className='flex h-screen w-screen flex-row gap-x-20'>
-          {/* <Sidebar /> */}   {/* disabled but will be in future important for admin dashboard*/}
+          {/* <Sidebar /> */} {/* disabled but will be in future important for admin dashboard*/}
           <div className='h-full w-full pl-4 pt-4'>
             <Outlet />
             <ScrollRestoration />
