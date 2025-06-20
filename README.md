@@ -85,6 +85,17 @@ This will run remix-serve using the built server entry in build/server/index.js.
 frontend (use chrome): http://10.101.188.93:3000/alerts/patients/123/cases/456
 backend: http://localhost:3000
 
+---
+
+## 🐳 Docker Setup
+
+Dieses Projekt verwendet eine getrennte Docker-Konfiguration für **Entwicklung** und **Produktion**. Alle relevanten Compose-Dateien befinden sich in:
+
+- `docker/dev/docker-compose.yml` – für lokale Entwicklung
+- `docker/prod/docker-compose.yml` – für produktionsnahe Builds
+
+---
+
 ### 📊 Data & Visualization
 
 This project uses:
