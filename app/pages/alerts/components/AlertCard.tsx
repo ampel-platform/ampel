@@ -3,15 +3,22 @@
 import { AlertType } from '../types';
 import AlertPing from './AlertPing';
 
-type Props = {
+type AlertCardProps = {
   title: string;
   message?: string;
   creationTime: Date;
   type: AlertType;
-  onClick: () => any;
+  onClick: () => void;
 };
 
-export default function AlertCard({ title, message, creationTime, type, onClick }: Props) {
+/**
+ * A visual representation of an alert.
+ * The component displays a card with the alert title, an optional message, the creation time, and a colored circle representing the alert type.
+ * The component is clickable and calls the given onClick prop when clicked.
+ * @param {{ title: string, message?: string, creationTime: Date, type: AlertType, onClick: () => void }} props
+ * @returns {JSX.Element}
+ */
+export default function AlertCard({ title, message, creationTime, type, onClick }: AlertCardProps) {
   return (
     <div
       className='relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer'

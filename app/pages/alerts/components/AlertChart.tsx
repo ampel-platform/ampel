@@ -11,7 +11,7 @@ import {
 import { AmpelStatus } from '../types';
 import StatusIcon from './StatusIcon';
 
-type DataPoint = {
+type AlertChartDataPoint = {
   date: string;
   analyteValue: number;
   ampelStatus: AmpelStatus;
@@ -19,8 +19,22 @@ type DataPoint = {
 };
 
 type AlertChartProps = {
-  transformedData: DataPoint[];
+  transformedData: AlertChartDataPoint[];
 };
+
+/**
+ * Renders an alert chart displaying analyte values over time with respective ampel statuses.
+ * The chart includes a line plot with customized icons representing the ampel status at each data point.
+ * The last data point is highlighted with specific shapes based on the ampel status:
+ * - Red circle for status 1
+ * - Yellow triangle for status 2
+ * - Green square for status 3
+ * The chart is responsive and includes tooltips, grid lines, and labeled axes.
+ * 
+ * @param {Object} props - The component props
+ * @param {AlertChartDataPoint[]} props.transformedData - Array of data points to be plotted
+ * @returns {JSX.Element} The rendered alert chart component
+ */
 
 export default function AlertChart({ transformedData }: AlertChartProps) {
   return (

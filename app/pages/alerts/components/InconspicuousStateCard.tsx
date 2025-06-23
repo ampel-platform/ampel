@@ -1,10 +1,17 @@
-type Props = {
+type InconspicuousStateProps = {
   title: string;
   description: string;
   creationTime: Date;
 };
 
-export default function InconspicuousStateCard({ title, description, creationTime }: Props) {
+/**
+ * A visual representation of an inconspicuous state.
+ * The component displays a card with a title, an optional description, and the creation time.
+ * The component is not clickable and does not call any onClick prop when clicked.
+ * @param {{ title: string, description?: string, creationTime: Date }} props
+ * @returns {JSX.Element}
+ */
+export default function InconspicuousStateCard({ title, description, creationTime }: InconspicuousStateProps) {
   return (
     <div className='flex flex-col rounded-md border border-solid border-gray-200'>
       <div className='flex w-full flex-col gap-y-2 px-4 py-3'>

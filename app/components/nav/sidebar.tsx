@@ -3,6 +3,13 @@ import React from 'react';
 import logo from '../../../assets/ampel-logo.svg';
 import NavItem from './NavItem';
 
+/**
+ * The main navigation sidebar component. WIP (Work In Progress)
+ *
+ * This component renders a sidebar with a logo at the top and a list of navigation items below it.
+ *
+ * @returns The JSX element representing the sidebar.
+ */
 export default function Sidebar() {
   return (
     <div className='flex w-80 shrink-0 flex-col items-center gap-y-10 pt-4'>

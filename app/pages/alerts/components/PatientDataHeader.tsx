@@ -1,8 +1,14 @@
 import { PatientMetaData } from '../types';
 
-type Props = PatientMetaData;
+type PatientMetaDataHeaderProps = PatientMetaData;
 
-export default function PatientMetaDataHeader({ name, patientId, caseId, sex, birthdate }: Props) {
+/**
+ * A component to display patient metadata (name, patient ID, case ID, sex, birthdate)
+ * in a consistent and visually appealing way.
+ * @param {{ name: string; patientId: string; caseId: string; sex: "m nnlich" | "weiblich"; birthdate: Date }} props
+ * @returns {JSX.Element}
+ */
+export default function PatientMetaDataHeader({ name, patientId, caseId, sex, birthdate }: PatientMetaDataHeaderProps) {
   return (
     <div className='flex flex-col gap-y-2'>
       <span className='text-3xl font-medium text-gray-700'>{name}</span>

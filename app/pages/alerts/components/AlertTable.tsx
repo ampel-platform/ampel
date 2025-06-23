@@ -1,7 +1,7 @@
 import { AmpelStatus } from '../types';
 import StatusIcon from './StatusIcon';
 
-type DataPoint = {
+type AlertTableDataPoint = {
   date: string;
   analyteValue: number;
   ampelStatus: AmpelStatus;
@@ -9,7 +9,7 @@ type DataPoint = {
 };
 
 type AlertTableProps = {
-  transformedData: DataPoint[];
+  transformedData: AlertTableDataPoint[];
 };
 
 /**
@@ -18,7 +18,7 @@ type AlertTableProps = {
  * The ampel status is represented by a colored circle and the status number.
  * The color of the circle is determined by the status number (1 = red, 2 = yellow, 3 = green).
  * The table will be scrollable if there are more rows than can fit in the given space.
- * @param {{ transformedData: DataPoint[] }} props
+ * @param {{ transformedData: AlertTableDataPoint[] }} props
  * @returns {JSX.Element}
  */
 export default function AlertTable({ transformedData }: AlertTableProps) {

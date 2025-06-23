@@ -5,6 +5,19 @@ type SwitcherProps = {
   onChange: (newState: boolean) => void;
   label?: string;
 };
+/**
+ * A toggle switch component that can be used to represent an on/off state.
+ * It consists of a checkbox input styled to look like a switch, and an optional label.
+ * The component maintains its state internally and triggers a callback when the state changes.
+ *
+ * @param {SwitcherProps} props - The properties for the Switcher component.
+ * @param {boolean} [props.initialState=false] - The initial state of the switch (checked or not).
+ * @param {string} [props.label] - An optional label to display next to the switch.
+ * @param {(newState: boolean) => void} props.onChange - A callback function that is called when the switch state changes.
+ * 
+ * @returns {JSX.Element} The rendered switch component.
+ */
+
 export function Switcher(props: SwitcherProps) {
   const [isChecked, setIsChecked] = useState(props.initialState);
 

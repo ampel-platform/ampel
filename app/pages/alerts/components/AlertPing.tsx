@@ -1,10 +1,18 @@
 import { AlertType } from '../types';
 
-type Props = {
+type AlertPingProps = {
   type: AlertType;
 };
 
-export default function AlertPing({ type }: Props) {
+/**
+ * A small visual indicator that shows the type of an alert.
+ *
+ * @param {{ type: AlertType }} props
+ * @prop {AlertType} type - The type of the alert. Can be either a warning or a critical alert.
+ * @returns {JSX.Element}
+ */
+
+export default function AlertPing({ type }: AlertPingProps) {
   const color = type === AlertType.Warning ? 'bg-amber-200' : 'bg-rose-300';
 
   return (

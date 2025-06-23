@@ -47,3 +47,23 @@ export type AlertDetails = {
   rulesetHistory: RulesetHistory;
   links: Link[];
 };
+
+
+export type ScoringSystem = {
+  name: string;
+  version: string;
+  ampelstatus: 'green' | 'yellow' | 'red' | 'none';
+  analyte: string;
+  analytevalue: number | string;
+  unit: string;
+  severity: string;
+  severityhint: string;
+  meta?: Record<string, any>;
+};
+
+export type AmpelResult = {
+  medicalcase: number;
+  patient: number;
+  birthdate: string; // ISO string
+  scoringsystems: ScoringSystem[];
+};

@@ -2,6 +2,17 @@ import React from 'react';
 
 import StatusIcon from './StatusIcon';
 
+/**
+ * Renders a legend for the status icons used in the application.
+ * The legend displays three different statuses: 
+ * - Red (Rot) for Critical (Kritisch)
+ * - Yellow (Gelb) for Warning (Warnung)
+ * - Green (Grün) for Normal
+ * Each status is accompanied by an icon generated using the StatusIcon component.
+ * This component helps users understand the meaning of the status icons 
+ * that appear in charts and other visualizations.
+ */
+
 export default function StatusLegend() {
   return (
     <div className='mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600'>

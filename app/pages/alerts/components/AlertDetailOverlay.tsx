@@ -9,10 +9,52 @@ import { Switcher } from './Switcher';
 
 type OverlayProps = {
   data: AlertDetails;
-  onClose: () => any;
+  onClose: () => void;
 };
 
-function OverlayBackNavigation({ onClick }: { onClick: () => any }) {
+
+
+/**
+ * A component that displays a detailed view of an alert.
+ * The component renders an overlay containing the alert name, type, hint message, links and a history of the alert status.
+ * The overlay is closed when the user clicks the back navigation button.
+ * @param {{ data: AlertDetails, onClose: () => void }} props
+ * @returns {JSX.Element}
+ */
+export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
+  return (
+    data && (
+      <div className='flex h-full flex-col gap-y-4 bg-white'>
+        <OverlayBackNavigation onClick={onClose} />
+        <div className='px-6'>
+          <div className='flex flex-col gap-y-8'>
+            <AlertHeader name={data.ruleset} type={data.ampelStatus} />
+            <div className='grid grid-cols-2 gap-x-12'>
+              <HintMessage message={data.message} />
+              <div className='flex items-center justify-between gap-4'>
+                <AlertLinks links={data.links} />
+                <StatusLegend />
+              </div>
+            </div>
+            <AlertHistory history={data.rulesetHistory} />
+          </div>
+        </div>
+      </div>
+    )
+  );
+}
+
+
+
+
+/**
+ * A back navigation component that displays a link with an arrow pointing to the left.
+ * The component is used in the alert detail overlay to allow the user to navigate back to the alert overview.
+ * The component calls the given onClick handler when clicked.
+ * @param {{ onClick: () => void }} props
+ * @returns {JSX.Element}
+ */
+function OverlayBackNavigation({ onClick }: { onClick: () => void }) {
   return (
     <div className='flex flex-row'>
       <a
@@ -38,6 +80,15 @@ function OverlayBackNavigation({ onClick }: { onClick: () => any }) {
   );
 }
 
+/**
+ * A header component that displays an alert name with an associated visual indicator.
+ * 
+ * @param {{ name: string; type: AlertType }} props
+ * @param {string} props.name - The name of the alert to be displayed.
+ * @param {AlertType} props.type - The type of the alert, used to determine the visual indicator.
+ * @returns {JSX.Element} The rendered alert header component.
+ */
+
 function AlertHeader({ name, type }: { name: string; type: AlertType }) {
   return (
     <div className='flex flex-row items-center gap-x-4'>
@@ -47,6 +98,16 @@ function AlertHeader({ name, type }: { name: string; type: AlertType }) {
   );
 }
 
+/**
+ * A component to display a hint message with an optional HTML content.
+ * The hint message is rendered as a flex column with a font-medium label
+ * and a text-gray-600 content. The content is rendered as HTML using the
+ * `dangerouslySetInnerHTML` property.
+ * If no message is provided, the component does not render anything.
+ * @param {{ message?: string }} props
+ * @param {string} [props.message] - The hint message to be rendered.
+ * @returns {JSX.Element} The rendered hint message component.
+ */
 function HintMessage({ message }: { message?: string }) {
   return (
     message && (
@@ -62,6 +123,16 @@ function HintMessage({ message }: { message?: string }) {
   );
 }
 
+/**
+ * A component to display a list of links as a flex column with a label
+ * and a flex row of links. Each link is rendered as an anchor tag with
+ * a rounded border and a hover effect. The links are passed as a prop
+ * with the shape of an array of objects with a `displayText` property
+ * and an `href` property.
+ * @param {{ links: Link[] }} props
+ * @param {Link[]} props.links - The list of links to be rendered.
+ * @returns {JSX.Element} The rendered link list component.
+ */
 function AlertLinks({ links }: { links: Link[] }) {
   const additionalLinks = links.map((l) => {
     return (
@@ -94,6 +165,16 @@ function AlertLinks({ links }: { links: Link[] }) {
   );
 }
 
+
+/**
+ * A component to display a history of alerts for a given ruleset.
+ *
+ * The component takes a RulesetHistory object as a prop and renders a
+ * chart or a table, depending on the state of the Switcher component.
+ *
+ * @param {{ history: RulesetHistory }} props
+ * @returns {JSX.Element} The rendered alert history component.
+ */
 function AlertHistory({ history }: { history: RulesetHistory }) {
   const convertAmpelStatusToFillColor = (status: AmpelStatus): string => {
     switch (status) {
@@ -139,28 +220,5 @@ function AlertHistory({ history }: { history: RulesetHistory }) {
         <AlertTable transformedData={transformedData} />
       )}
     </>
-  );
-}
-
-export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
-  return (
-    data && (
-      <div className='flex h-full flex-col gap-y-4 bg-white'>
-        <OverlayBackNavigation onClick={onClose} />
-        <div className='px-6'>
-          <div className='flex flex-col gap-y-8'>
-            <AlertHeader name={data.ruleset} type={data.ampelStatus} />
-            <div className='grid grid-cols-2 gap-x-12'>
-              <HintMessage message={data.message} />
-              <div className='flex items-center justify-between gap-4'>
-                <AlertLinks links={data.links} />
-                <StatusLegend />
-              </div>
-            </div>
-            <AlertHistory history={data.rulesetHistory} />
-          </div>
-        </div>
-      </div>
-    )
   );
 }
