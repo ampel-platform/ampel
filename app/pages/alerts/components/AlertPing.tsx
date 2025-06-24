@@ -13,7 +13,7 @@ type AlertPingProps = {
  */
 
 export default function AlertPing({ type }: AlertPingProps) {
-  const color = type === AlertType.Warning ? 'bg-amber-200' : 'bg-rose-300';
+  const color = type === AlertType.Warning ? 'bg-alert-warning' : 'bg-alert-critical';
 
   return (
     <span className='relative flex h-4 w-4'>
