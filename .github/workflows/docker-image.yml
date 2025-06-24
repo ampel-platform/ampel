@@ -4,7 +4,12 @@ on:
   push:
     branches: [ "master" ]
     tags:     [ "v*" ]         # nur Tags, die mit v beginnen
-    
+
+
+permissions:
+  contents: read
+  packages: write
+
 jobs:
 
   build:
