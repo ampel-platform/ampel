@@ -40,21 +40,21 @@ We use Remix v2+ with Vite & Flat Routes Mode so we need no remix.config.js file
 ```bash
 ampel-ui/
 ├── app/                          # Remix routes, logic, and components
-│   ├── routes/                   # File-based routing utils (Remix)
-│   │   └── root-redirect.tsx     # Weiterleitungen o.ä.
+│   ├── routes/                   # File-based routing utilities (Remix)
+│   │   └── root-redirect.tsx     # Redirects and similar logic
 │   ├── components/               # Reusable React UI components
-│   │   └── alerts/               # Alerts-spezifische Seiten und Komponenten
-│   │       ├── components/       # Komponenten speziell für Alerts
-│   │       ├── PatientAlerts.tsx # Alerts-Seite für Patienten
-│   │       └── types.ts          # Typdefinitionen für Alerts
-│   └── pages/                    # For the pages structured in more sub foulders like the alerts page
+│   │   └── alerts/               # Alert-specific pages and components
+│   │       ├── components/       # Components specifically for alerts
+│   │       ├── PatientAlerts.tsx # Alerts page for patients
+│   │       └── types.ts          # Type definitions for alerts
+│   └── pages/                    # For pages structured in subfolders, like the alerts page
 ├── public/                       # Static assets
 ├── styles/                       # Tailwind & global CSS
 ├── vite.config.js                # Vite config including aliasing and SSR support
 ├── tailwind.config.js            # Tailwind CSS configuration
-├── eslint.config.js              # ESLint-Konfiguration
-├── postcss.config.mjs            # Tailwind/PostCSS Setup
-├── .prettierrc                   # Prettier-Konfiguration
+├── eslint.config.js              # ESLint configuration
+├── postcss.config.mjs            # Tailwind/PostCSS setup
+├── .prettierrc                   # Prettier configuration
 └── tsconfig.json                 # TypeScript configuration
 ```
 
@@ -84,11 +84,11 @@ npm run start
 
 ## 🐳 Docker Setup
 
-Dieses Projekt verwendet eine getrennte Docker-Konfiguration für **Entwicklung** und **Produktion**. Alle relevanten Compose-Dateien befinden sich in:
+This project uses a separate Docker configuration for development and production. All relevant Compose files are located in:
 
 - Add/Create the required env files `.env.dev` and `.env.prod`
-- `docker/dev/docker-compose.yml` – für lokale Entwicklung
-- `docker/prod/docker-compose.yml` – für produktionsnahe Builds
+- `docker/dev/docker-compose.yml` – for local development
+- `docker/prod/docker-compose.yml` –  for production-like builds
 
 ---
 
@@ -102,12 +102,12 @@ This project uses:
 
 ### 🧹 Code-Qualität & Formatierung
 
-Dieses Projekt verwendet folgende Tools für konsistenten und sauberen Code:
+This project uses the following tools to ensure consistent and clean code:
 
-- **Prettier** für automatisches Code-Formatting
-- **ESLint** für statische Codeanalyse
-- **lint-staged** für das Prüfen und Formatieren geänderter Dateien vor Commits
+- **Prettier** for automatic code formatting
+- **ESLint** for static code analysis
+- **lint-staged** to check and format changed files before commits
 
-Die Konfiguration ist bereits eingerichtet – beim Commit werden betroffene Dateien automatisch formatiert und geprüft.
+The configuration is already set up – affected files are automatically formatted and linted during each commit.
 
-👉 Siehe [`.eslintrc`](./.eslintrc), [`.prettierrc`](./.prettierrc).
+👉 See [`.eslintrc`](./.eslintrc), [`.prettierrc`](./.prettierrc).
