@@ -1,7 +1,5 @@
-'use client';
-
 import { AlertType } from '../types';
-import AlertPing from './AlertPing';
+import AlertPing from './components/AlertPing';
 
 type AlertCardProps = {
   title: string;
