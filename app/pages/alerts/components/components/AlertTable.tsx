@@ -1,4 +1,4 @@
-import { AmpelStatus } from '../types';
+import { AmpelStatus } from '../../types';
 import StatusIcon from './StatusIcon';
 
 type AlertTableDataPoint = {

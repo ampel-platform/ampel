@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RulesetHistory, AmpelStatus } from '../types';
+import { RulesetHistory, AmpelStatus } from '../../types';
 import AlertChart from './AlertChart';
 import AlertTable from './AlertTable';
 import { Switcher } from './Switcher';
