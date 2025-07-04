@@ -2,19 +2,12 @@ import { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useEffect, useState } from 'react';
 
+import { FakeAlertRepository } from './AmpelResultRepository';
 import AlertCard from './components/AlertCard';
 import AlertDetailOverlay from './components/AlertDetailOverlay';
 import InconspicuousStateCard from './components/InconspicuousStateCard';
 import PatientMetaDataHeader from './components/PatientDataHeader';
-import {
-  AlertDetails,
-  AlertType,
-  AmpelStatus,
-  PatientMetaData,
-  Ruleset,
-  RulesetHistory,
-} from './types';
-import { FakeAlertRepository } from './AmpelResultRepository';
+import { AlertDetails, PatientMetaData, AmpelStatus, AlertType } from './types';
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { patient_id, case_id } = params;
 
