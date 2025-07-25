@@ -110,4 +110,4 @@ This project uses the following tools to ensure consistent and clean code:
 
 The configuration is already set up – affected files are automatically formatted and linted during each commit.
 
-👉 See [`.eslintrc`](./.eslintrc), [`.prettierrc`](./.prettierrc).
+👉 See [`.eslint.config.ts`](./eslint.config.ts), [`.prettierrc`](./.prettierrc).
