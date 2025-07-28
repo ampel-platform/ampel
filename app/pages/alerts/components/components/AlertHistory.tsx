@@ -1,22 +1,23 @@
 import { useState } from 'react';
-import { RulesetHistory, AmpelStatus } from '../../types';
-import AlertChart from './AlertChart';
-import AlertTable from './AlertTable';
+
+import { AmpelStatus, RulesetHistory } from '../../types';
+import { AlertChart } from './AlertChart';
+import { AlertTable } from './AlertTable';
 import { Switcher } from './Switcher';
 
-type AlertHistoryProps = {
+interface AlertHistoryProps {
   history: RulesetHistory;
-};
+}
 
 /**
  * A component to display a history of alerts for a given ruleset.
  *
  * @param {{ history: RulesetHistory }} props
  * @prop {RulesetHistory} history - The history object containing alert data for the ruleset.
- * @returns {JSX.Element} The rendered alert history component.
+ * @returns {React.ReactNode } The rendered alert history component.
  */
-export default function AlertHistory({ history }: AlertHistoryProps): JSX.Element {
-  const [isChart, setIsChart] = useState(true);
+// eslint-disable-next-line no-undef
+export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
   const convertAmpelStatusToFillColor = (status: AmpelStatus): string => {
     switch (status) {
       case AmpelStatus.RED:
@@ -53,7 +54,8 @@ export default function AlertHistory({ history }: AlertHistoryProps): JSX.Elemen
         onChange={(newState) => {
           setEnabledChart(newState);
         }}
-        initialState={enabledChart} />
+        initialState={enabledChart}
+      />
       {enabledChart ? (
         <AlertChart transformedData={transformedData} />
       ) : (

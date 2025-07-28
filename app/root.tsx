@@ -6,7 +6,8 @@ import styles from './tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
-export default function App() {
+// eslint-disable-next-line import/no-default-export
+export default function App(): React.ReactNode {
   return (
     <html lang='en'>
       <head>

@@ -1,6 +1,6 @@
-type HintMessageProps = {
+interface HintMessageProps {
   message?: string;
-};
+}
 
 /**
  * A component to display a hint message with optional HTML content.
@@ -9,18 +9,16 @@ type HintMessageProps = {
  *
  * @param {{ message?: string }} props
  * @prop {string} [message] - The hint message to be rendered as HTML.
- * @returns {JSX.Element} The rendered hint message component.
+ * @returns {React.ReactNode } The rendered hint message component.
  */
-export default function HintMessage({ message }: HintMessageProps): JSX.Element | null {
+// eslint-disable-next-line no-undef
+export function HintMessage({ message }: HintMessageProps): React.ReactNode | null {
   if (!message) return null;
 
   return (
     <div className='flex flex-col gap-1'>
-      <span className='text-sm font-medium text-muted-foreground'>Hinweis</span>
-      <div
-        className='text-sm text-gray-600'
-        dangerouslySetInnerHTML={{ __html: message }}
-      />
+      <span className='text-muted-foreground text-sm font-medium'>Hinweis</span>
+      <div className='text-sm text-gray-600' dangerouslySetInnerHTML={{ __html: message }} />
     </div>
   );
 }

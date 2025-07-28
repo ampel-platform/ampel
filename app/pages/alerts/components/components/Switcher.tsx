@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-type SwitcherProps = {
+interface SwitcherProps {
   initialState?: boolean;
+  // eslint-disable-next-line @/no-unused-vars
   onChange: (newState: boolean) => void;
   label?: string;
-};
+}
 /**
  * A toggle switch component that can be used to represent an on/off state.
  * It consists of a checkbox input styled to look like a switch, and an optional label.
@@ -14,14 +15,14 @@ type SwitcherProps = {
  * @param {boolean} [props.initialState=false] - The initial state of the switch (checked or not).
  * @param {string} [props.label] - An optional label to display next to the switch.
  * @param {(newState: boolean) => void} props.onChange - A callback function that is called when the switch state changes.
- * 
- * @returns {JSX.Element} The rendered switch component.
+ *
+ * @returns {React.ReactNode } The rendered switch component.
  */
 
-export function Switcher(props: SwitcherProps) {
+export function Switcher(props: SwitcherProps): React.ReactNode {
   const [isChecked, setIsChecked] = useState(props.initialState);
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (): void => {
     const newState = !isChecked;
     setIsChecked(newState);
     if (props.onChange) {

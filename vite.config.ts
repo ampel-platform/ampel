@@ -1,7 +1,8 @@
 import { vitePlugin as remix } from '@remix-run/dev';
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   server: {
     //server config damit es in docker funktioniert
@@ -14,13 +15,14 @@ export default defineConfig({
       routes(defineRoutes) {
         return defineRoutes((route) => {
           route('/', 'routes/root-redirect.tsx');
-          route('alerts/patients/:patient_id/cases/:case_id', 'pages/alerts/PatientAlerts.tsx');
+          route('alerts/patients/:patient_id/cases/:case_id', 'pages/alerts/PatientAlertsPage.tsx');
         });
       },
     }),
   ],
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       '@': path.resolve(__dirname, './app'),
     },
   },

@@ -1,16 +1,16 @@
 import { AmpelStatus } from '../../types';
-import StatusIcon from './StatusIcon';
+import { StatusIcon } from './StatusIcon';
 
-type AlertTableDataPoint = {
+interface AlertTableDataPoint {
   date: string;
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
-};
+}
 
-type AlertTableProps = {
+interface AlertTableProps {
   transformedData: AlertTableDataPoint[];
-};
+}
 
 /**
  * A table component to display a list of analyte values with their respective ampel status.
@@ -19,11 +19,12 @@ type AlertTableProps = {
  * The color of the circle is determined by the status number (1 = red, 2 = yellow, 3 = green).
  * The table will be scrollable if there are more rows than can fit in the given space.
  * @param {{ transformedData: AlertTableDataPoint[] }} props
- * @returns {JSX.Element}
+ * @returns {React.ReactNode }
  */
-export default function AlertTable({ transformedData }: AlertTableProps) {
+// eslint-disable-next-line no-undef
+export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
   const sortedData = [...transformedData].sort((a, b) => {
-    const parseDate = (str: string) => {
+    const parseDate = (str: string): Date => {
       const [datePart, timePart] = str.split(', ');
       const [day, month, year] = datePart.split('.').map(Number);
       const [hours, minutes, seconds] = timePart.split(':').map(Number);

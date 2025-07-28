@@ -6,9 +6,16 @@ type PatientMetaDataHeaderProps = PatientMetaData;
  * A component to display patient metadata (name, patient ID, case ID, sex, birthdate)
  * in a consistent and visually appealing way.
  * @param {{ name: string; patientId: string; caseId: string; sex: "m nnlich" | "weiblich"; birthdate: Date }} props
- * @returns {JSX.Element}
+ * @returns {React.ReactNode }
  */
-export default function PatientMetaDataHeader({ name, patientId, caseId, sex, birthdate }: PatientMetaDataHeaderProps) {
+export function PatientMetaDataHeader({
+  name,
+  patientId,
+  caseId,
+  sex,
+  birthdate,
+  // eslint-disable-next-line no-undef
+}: PatientMetaDataHeaderProps): React.ReactNode {
   return (
     <div className='flex flex-col gap-y-2'>
       <span className='text-3xl font-medium text-gray-700'>{name}</span>

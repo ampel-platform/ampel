@@ -1,26 +1,31 @@
 import React, { ReactNode } from 'react';
 
-type NavItemProps = {
+interface NavItemProps {
   displayName: string;
   icon: ReactNode;
   linkTarget?: string;
   active?: boolean;
-};
+}
 
 /**
  * Renders a navigation item with an icon and display name.
  * The component can optionally highlight itself if marked as active.
- * 
+ *
  * @param {NavItemProps} props - The properties for the NavItem component.
  * @param {string} props.displayName - The display name of the navigation item.
  * @param {ReactNode} props.icon - The icon to display alongside the navigation item.
  * @param {string} [props.linkTarget='#'] - The target URL for the navigation item link.
  * @param {boolean} [props.active=false] - Whether the navigation item should be displayed as active.
- * 
- * @returns {JSX.Element} The rendered navigation item component.
+ *
+ * @returns {React.ReactNode } The rendered navigation item component.
  */
 
-export default function NavItem({ displayName, icon, linkTarget = '#', active = false }: NavItemProps) {
+export function NavItem({
+  displayName,
+  icon,
+  linkTarget = '#',
+  active = false,
+}: NavItemProps): React.ReactNode {
   const additionalActiveClasses = active === true ? 'bg-gray-50 text-violet-800' : '';
 
   return (

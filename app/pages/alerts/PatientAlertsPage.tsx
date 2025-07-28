@@ -1,14 +1,17 @@
+/* eslint-disable import/no-default-export */
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useEffect, useState } from 'react';
 
 import { FakeAlertRepository } from './AmpelResultRepository';
-import AlertCard from './components/AlertCard';
-import AlertDetailOverlay from './components/AlertDetailOverlay';
-import InconspicuousStateCard from './components/InconspicuousStateCard';
-import PatientMetaDataHeader from './components/PatientDataHeader';
-import { AlertDetails, PatientMetaData, AmpelStatus, AlertType } from './types';
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+import { AlertCard } from './components/AlertCard';
+import { AlertDetailOverlay } from './components/AlertDetailOverlay';
+import { InconspicuousStateCard } from './components/InconspicuousStateCard';
+import { PatientMetaDataHeader } from './components/PatientDataHeader';
+import { AlertDetails, AlertType, AmpelStatus, PatientMetaData } from './types';
+export const loader = async ({
+  params,
+}: LoaderFunctionArgs): Promise<{ patient_id: string; case_id: string }> => {
   const { patient_id, case_id } = params;
 
   if (!patient_id || !case_id) {
@@ -18,13 +21,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   return { patient_id, case_id };
 };
 
-
 /**
  * Displays a page with alerts for a given patient and case.
  *
  * @returns A JSX element representing the page
  */
-export default function PatientAlerts() {
+
+// eslint-disable-next-line no-undef
+export default function PatientAlertsPage(): React.ReactNode {
   const { patient_id, case_id } = useLoaderData<typeof loader>();
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
   const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState('left-full');
@@ -39,21 +43,21 @@ export default function PatientAlerts() {
     ]),
   );
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const displayDetailOverlay = (details: AlertDetails) => {
     setDetailOverlayData(details);
     setDetailOverlayVisibilityClasses('left-0');
   };
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const hideDetailOverlay = () => {
     setDetailOverlayVisibilityClasses('left-full');
   };
 
   useEffect(() => {
-   setPatientMetaData(
-    FakeAlertRepository.getFakePatientMetaData(patient_id || '', case_id || '')
-  );
+    setPatientMetaData(FakeAlertRepository.getFakePatientMetaData(patient_id || '', case_id || ''));
 
-  const rulesets = FakeAlertRepository.getFakeRulesets();
+    const rulesets = FakeAlertRepository.getFakeRulesets();
 
     const rulesetsByStatus: Map<AmpelStatus, ReactNode[]> = new Map([
       [AmpelStatus.RED, []],

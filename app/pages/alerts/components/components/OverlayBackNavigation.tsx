@@ -1,6 +1,6 @@
-type OverlayBackNavigationProps = {
+interface OverlayBackNavigationProps {
   onClick: () => void;
-};
+}
 
 /**
  * A back navigation component that displays a link with an arrow pointing to the left.
@@ -8,9 +8,10 @@ type OverlayBackNavigationProps = {
  *
  * @param {{ onClick: () => void }} props
  * @prop {() => void} onClick - The click handler to navigate back.
- * @returns {JSX.Element} The rendered back navigation component.
+ * @returns {React.ReactNode } The rendered back navigation component.
  */
-export default function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): JSX.Element {
+// eslint-disable-next-line no-undef
+export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): React.ReactNode {
   return (
     <div className='flex flex-row'>
       <a

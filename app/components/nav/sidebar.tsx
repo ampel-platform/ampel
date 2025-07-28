@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../../../assets/ampel-logo.svg';
-import NavItem from './NavItem';
+import { NavItem } from './NavItem';
 
 /**
  * The main navigation sidebar component. WIP (Work In Progress)
@@ -10,7 +10,7 @@ import NavItem from './NavItem';
  *
  * @returns The JSX element representing the sidebar.
  */
-export default function Sidebar() {
+export function Sidebar(): React.ReactNode {
   return (
     <div className='flex w-80 shrink-0 flex-col items-center gap-y-10 pt-4'>
       <img src={logo} className='aspect-video h-auto w-48' alt='Ampel Logo' />

@@ -1,22 +1,29 @@
 import { AlertType } from '../types';
-import AlertPing from './components/AlertPing';
+import { AlertPing } from './components/AlertPing';
 
-type AlertCardProps = {
+interface AlertCardProps {
   title: string;
   message?: string;
   creationTime: Date;
   type: AlertType;
   onClick: () => void;
-};
+}
 
 /**
  * A visual representation of an alert.
  * The component displays a card with the alert title, an optional message, the creation time, and a colored circle representing the alert type.
  * The component is clickable and calls the given onClick prop when clicked.
  * @param {{ title: string, message?: string, creationTime: Date, type: AlertType, onClick: () => void }} props
- * @returns {JSX.Element}
+ * @returns {React.ReactNode }
  */
-export default function AlertCard({ title, message, creationTime, type, onClick }: AlertCardProps) {
+export function AlertCard({
+  title,
+  message,
+  creationTime,
+  type,
+  onClick,
+  // eslint-disable-next-line no-undef
+}: AlertCardProps): React.ReactNode {
   return (
     <div
       className='relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer'

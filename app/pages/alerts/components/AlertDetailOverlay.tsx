@@ -1,27 +1,25 @@
-
-import StatusLegend from './components/StatusLegend';
-import AlertLinks from './components/AlertLinks';
-import AlertHeader from './components/AlertHeader';
-import AlertHistory from './components/AlertHistory';
-import OverlayBackNavigation from './components/OverlayBackNavigation';
-import HintMessage from './components/HintMessage';
 import { AlertDetails } from '../types';
+import { AlertHeader } from './components/AlertHeader';
+import { AlertHistory } from './components/AlertHistory';
+import { AlertLinks } from './components/AlertLinks';
+import { HintMessage } from './components/HintMessage';
+import { OverlayBackNavigation } from './components/OverlayBackNavigation';
+import { StatusLegend } from './components/StatusLegend';
 
-type OverlayProps = {
+interface OverlayProps {
   data: AlertDetails;
   onClose: () => void;
-};
-
-
+}
 
 /**
  * A component that displays a detailed view of an alert.
  * The component renders an overlay containing the alert name, type, hint message, links and a history of the alert status.
  * The overlay is closed when the user clicks the back navigation button.
  * @param {{ data: AlertDetails, onClose: () => void }} props
- * @returns {JSX.Element}
+ * @returns {React.ReactNode }
  */
-export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
+// eslint-disable-next-line no-undef
+export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.ReactNode {
   return (
     data && (
       <div className='flex h-full flex-col gap-y-4 bg-white'>
@@ -43,7 +41,3 @@ export default function AlertDetailOverlay({ data, onClose }: OverlayProps) {
     )
   );
 }
-
-
-
-

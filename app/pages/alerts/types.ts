@@ -1,3 +1,4 @@
+/* eslint-disable @/no-unused-vars */
 export enum AmpelStatus {
   GREEN = 1,
   YELLOW,
@@ -9,47 +10,46 @@ export enum AlertType {
   Critical,
 }
 
-export type PatientMetaData = {
+export interface PatientMetaData {
   name: string;
   patientId: string;
   caseId: string;
   sex: 'männlich' | 'weiblich';
   birthdate: Date;
-};
+}
 
-export type Link = {
+export interface Link {
   displayText: string;
   href: string;
-};
+}
 
-export type Ruleset = {
+export interface Ruleset {
   ruleset: string;
   ampelStatus: AmpelStatus;
   message?: string;
   resultTime: Date;
   history: RulesetHistory;
   links?: Link[];
-};
+}
 
-export type RulesetHistory = {
+export interface RulesetHistory {
   data: {
     date: Date;
     analyteValue: number;
     ampelStatus: AmpelStatus;
   }[];
-};
+}
 
-export type AlertDetails = {
+export interface AlertDetails {
   ruleset: string;
   ampelStatus: AlertType;
   message?: string;
   resultTime: Date;
   rulesetHistory: RulesetHistory;
   links: Link[];
-};
+}
 
-
-export type ScoringSystem = {
+export interface ScoringSystem {
   name: string;
   version: string;
   ampelstatus: 'green' | 'yellow' | 'red' | 'none';
@@ -58,12 +58,13 @@ export type ScoringSystem = {
   unit: string;
   severity: string;
   severityhint: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: Record<string, any>;
-};
+}
 
-export type AmpelResult = {
+export interface AmpelResult {
   medicalcase: number;
   patient: number;
   birthdate: string; // ISO string
   scoringsystems: ScoringSystem[];
-};
+}

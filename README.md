@@ -45,7 +45,7 @@ ampel-ui/
 │   ├── components/               # Reusable React UI components
 │   │   └── alerts/               # Alert-specific pages and components
 │   │       ├── components/       # Components specifically for alerts
-│   │       ├── PatientAlerts.tsx # Alerts page for patients
+│   │       ├── PatientAlertsPage.tsx # Alerts page for patients
 │   │       └── types.ts          # Type definitions for alerts
 │   └── pages/                    # For pages structured in subfolders, like the alerts page
 ├── public/                       # Static assets
@@ -88,7 +88,7 @@ This project uses a separate Docker configuration for development and production
 
 - Add/Create the required env files `.env.dev` and `.env.prod`
 - `docker/dev/docker-compose.yml` – for local development
-- `docker/prod/docker-compose.yml` –  for production-like builds
+- `docker/prod/docker-compose.yml` – for production-like builds
 
 ---
 

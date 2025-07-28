@@ -1,18 +1,20 @@
-import { AlertType } from "../../types";
+import React from 'react';
 
-type AlertPingProps = {
+import { AlertType } from '../../types';
+
+interface AlertPingProps {
   type: AlertType;
-};
+}
 
 /**
  * A small visual indicator that shows the type of an alert.
  *
  * @param {{ type: AlertType }} props
  * @prop {AlertType} type - The type of the alert. Can be either a warning or a critical alert.
- * @returns {JSX.Element}
+ * @returns {React.ReactNode }
  */
 
-export default function AlertPing({ type }: AlertPingProps) {
+export function AlertPing({ type }: AlertPingProps): React.ReactNode {
   const color = type === AlertType.Warning ? 'bg-alert-warning' : 'bg-alert-critical';
 
   return (

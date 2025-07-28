@@ -9,18 +9,18 @@ import {
 } from 'recharts';
 
 import { AmpelStatus } from '../../types';
-import StatusIcon from './StatusIcon';
+import { StatusIcon } from './StatusIcon';
 
-type AlertChartDataPoint = {
+interface AlertChartDataPoint {
   date: string;
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
-};
+}
 
-type AlertChartProps = {
+interface AlertChartProps {
   transformedData: AlertChartDataPoint[];
-};
+}
 
 /**
  * Renders an alert chart displaying analyte values over time with respective ampel statuses.
@@ -30,13 +30,14 @@ type AlertChartProps = {
  * - Yellow triangle for status 2
  * - Green square for status 3
  * The chart is responsive and includes tooltips, grid lines, and labeled axes.
- * 
+ *
  * @param {Object} props - The component props
  * @param {AlertChartDataPoint[]} props.transformedData - Array of data points to be plotted
- * @returns {JSX.Element} The rendered alert chart component
+ * @returns {React.ReactNode } The rendered alert chart component
  */
 
-export default function AlertChart({ transformedData }: AlertChartProps) {
+// eslint-disable-next-line no-undef
+export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
     <div className='flex flex-col gap-y-4'>
       <span className='font-medium text-gray-600'>Leitanalyt</span>
