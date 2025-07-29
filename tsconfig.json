@@ -12,8 +12,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["@remix-run/node", "vite/client"]
+    "types": ["@remix-run/node", "vite/client", "vitest/globals", "@testing-library/jest-dom" ]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx", "app/tests/AlertCard.test.tsxx"],
   "exclude": ["node_modules"]
 }
