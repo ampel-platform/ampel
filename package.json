@@ -15,8 +15,8 @@
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
-      "eslint --fix --ignore-pattern '.config/*'",
-      "prettier --write --ignore-pattern '.config/*'"
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "dependencies": {

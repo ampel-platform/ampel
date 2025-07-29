@@ -35,6 +35,7 @@ export default [
       '**/build/*',
       '**/public/*',
       'vite.config.js',
+      'vitest.config.ts',
     ],
   },
   js.configs.recommended,
