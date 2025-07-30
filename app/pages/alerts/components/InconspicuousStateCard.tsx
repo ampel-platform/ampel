@@ -18,7 +18,10 @@ export function InconspicuousStateCard({
   // eslint-disable-next-line no-undef
 }: InconspicuousStateProps): React.ReactNode {
   return (
-    <div className='flex flex-col rounded-md border border-solid border-gray-200'>
+    <div
+      className='flex flex-col rounded-md border border-solid border-gray-200'
+      data-testid='inconspicuous-state-card'
+    >
       <div className='flex w-full flex-col gap-y-2 px-4 py-3'>
         <span className='line-clamp-1 text-lg font-medium text-gray-500'>{title}</span>
         <span className='line-clamp-3 text-gray-400'>{description}</span>

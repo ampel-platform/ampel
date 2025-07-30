@@ -28,6 +28,7 @@ export function AlertCard({
     <div
       className='relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer'
       onClick={onClick}
+      data-testid={type === AlertType.Warning ? 'warning-alert-card' : 'critical-alert-card'}
     >
       <div className='absolute -right-2 -top-2'>
         <AlertPing type={type} />
