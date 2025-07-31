@@ -14,7 +14,7 @@ vi.mock('@remix-run/react', async () => {
 });
 
 describe('PatientAlertsPage Integration', () => {
-  it('zeigt alle Hauptbereiche & Patientendaten korrekt an und zeigt die richtige Anzahl der Kritischen, Warnenden und unauffälligen Alerts korrekt an', () => {
+  it('displays all main sections & patient data correctly and shows the correct number of critical, warning, and inconspicuous alerts', () => {
     
     const { container } = render(<TestPatientAlertsPage />);
     // snapshot test
@@ -31,7 +31,7 @@ describe('PatientAlertsPage Integration', () => {
     expect(screen.getAllByTestId('inconspicuous-state-card').length).toBe(9);
   });
 
-    it('öffnet & schließt die Detailansicht der Kritischen Alerts und Überprüft das Vorhandensein des Hinweises, Weiterführende Links, Legende, Tabelle, Diagramm und der Close-Button', async () => {
+    it('opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
       const showCriticalAlertStatesButton = screen.getAllByTestId('critical-alert-card')[0];
 
       // Initiale Ansicht
@@ -63,7 +63,7 @@ describe('PatientAlertsPage Integration', () => {
       expect(document.body).toMatchSnapshot('alert-overlay-closed');
     });
     
-    it('öffnet & schließt die Detailansicht der Warnenden Alerts und Überprüft das Vorhandensein des Hinweises, Weiterführende Links, Legende, Tabelle, Diagramm und der Close-Button', async () => {
+    it('opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
       const showWarningAlertStatesButton = screen.getAllByTestId('warning-alert-card')[0];
 
       // Initiale Ansicht

@@ -92,13 +92,48 @@ This project uses a separate Docker configuration for development and production
 
 ---
 
-### 📊 Data & Visualization
+## 🧪 Testing
 
-This project uses:
+This project uses **[Vitest](https://vitest.dev/)** for testing React components and application logic.  
+All test files are located in the `app/tests/` directory and follow the naming convention `*.test.tsx` or `*.test.ts`.
 
-    recharts for interactive and responsive charts
+### Test Types
 
-    @faker-js/faker to generate mock data for development/testing
+- **Unit Tests:** Test individual components and utility functions.
+- **Integration Tests:** Test multiple components together and simulate user interactions.
+- **Snapshot Tests:**
+  - Capture and compare the rendered output of React components to detect UI regressions.
+  - Snapshots are stored alongside test files.
+  - Obsolete snapshots should be cleaned up automatically or via `vitest --update`.
+
+### Test Strategy
+
+This testing setup uses integration tests, which also include unit tests and snapshot tests.  
+Integration tests verify that multiple components work together as intended, while unit tests check individual functions or components in isolation.  
+Snapshot tests are used to detect unintended UI changes by comparing the rendered output of components over time.
+
+In practice, our integration tests combine these approaches:  
+they validate both the correct behavior of UI components (unit testing), their interaction in the app (integration testing), and the stability of the rendered output (snapshot testing).
+
+### Running Tests
+
+```sh
+npm run test
+```
+
+Runs all tests in watch mode.
+
+```sh
+npm run coverage
+```
+
+Runs tests with coverage reporting (HTML summary in /coverage).
+
+React Testing Library is used for rendering components and querying the DOM.
+
+Faker is seeded deterministically in tests to ensure reproducible results.
+
+Tests are automatically run in the CI pipeline (GitHub Actions) on every push to the main branch and for pull requests and in every commit to avoid broken builds on the main branch.
 
 ### 🧹 Code-Qualität & Formatierung
 
@@ -109,5 +144,7 @@ This project uses the following tools to ensure consistent and clean code:
 - **lint-staged** to check and format changed files before commits
 
 The configuration is already set up – affected files are automatically formatted and linted during each commit.
+
+This Project uses the best practises from the [google style guide](https://google.github.io/styleguide/tsguide.html).
 
 👉 See [`.eslint.config.ts`](./eslint.config.ts), [`.prettierrc`](./.prettierrc).
