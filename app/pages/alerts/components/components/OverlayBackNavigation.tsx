@@ -17,6 +17,7 @@ export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): 
       <a
         href='#'
         className='flex flex-row items-center gap-x-2 text-gray-600 hover:text-violet-800'
+        data-testid='overlay-back-navigation'
         onClick={(e) => {
           e.preventDefault(); // verhindert ungewolltes Scrollen o. Ä.
           onClick();

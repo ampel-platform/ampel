@@ -44,9 +44,12 @@ export const AmpelResultRepository = {
  * @returns {RulesetHistory} The generated fake history data.
  */
 function generateFakeHistoryData(): RulesetHistory {
+  faker.seed(0);
+  const refDate = new Date('2025-07-30T00:00:00Z');
+
   return {
     data: Array.from({ length: 8 }).map(() => ({
-      date: faker.date.recent({ days: 5 }),
+      date: faker.date.recent({ days: 5, refDate }),
       analyteValue: faker.number.int({ min: 0, max: 50 }),
       ampelStatus: faker.number.int({ min: 1, max: 3 }),
     })),
@@ -68,7 +71,7 @@ function generateFakePatientMetaData(patient_id: string, case_id: string): Patie
     patientId: patient_id,
     caseId: case_id,
     sex: 'männlich',
-    birthdate: faker.date.birthdate(),
+    birthdate: new Date("1991-07-30T15:20:16"),
   };
 }
 
@@ -99,7 +102,7 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.RED,
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
-      resultTime: faker.date.recent(),
+      resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
       links: [
         {
@@ -117,7 +120,7 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.YELLOW,
       message:
         "<p>Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb < 4,3 mmol/l dringend zu erwägen.</p><br>Bitte reflektieren Sie patientenspezifisch:<br><p style='margin-left: 10px'>- <b>allg. Risikofaktoren,</b><br>- <b>Klinik</b><br>- <b>Ischämietypische EKG</b>-Veränderungen<br>- <b>Labor</b> und betreiben Sie ggf. <b>weitere Diagnostik.</b></p><br>Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden.\"",
-      resultTime: faker.date.recent(),
+      resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
       links: [
         {
@@ -135,7 +138,7 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.RED,
       message:
         'Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
       links: [
         {
@@ -157,7 +160,7 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.RED,
       message:
         'Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
       links: [
         {
@@ -174,28 +177,28 @@ function generateFakeRulesets(): Ruleset[] {
       ruleset: 'Sepsis',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion einer potentiellen Sepsiskonstellation',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Hypokaliämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Hypocalcämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Hyponatriämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
@@ -203,21 +206,21 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.GREEN,
       message:
         'Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Diabetes',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von bisher nicht kodiertem Diabetes mellitus',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Fibrinogenmangel',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von unbekanntem Fibrinogenmangel',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
@@ -225,14 +228,14 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.GREEN,
       message:
         'Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
     {
       ruleset: 'Procalcitonin-Monitoring',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion eines nicht adäquaten Procalcitoninabfalls',
-      resultTime: faker.date.recent(),
+       resultTime: new Date("2025-07-30T15:20:16"),
       history: generateFakeHistoryData(),
     },
   ];

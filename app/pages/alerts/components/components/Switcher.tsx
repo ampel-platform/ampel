@@ -40,6 +40,7 @@ export function Switcher(props: SwitcherProps): React.ReactNode {
         <div className='relative'>
           <input
             type='checkbox'
+            data-testid='switcher'
             checked={isChecked}
             onChange={handleCheckboxChange}
             className='sr-only'
