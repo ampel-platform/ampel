@@ -11,7 +11,10 @@
     "format": "npx prettier --write .",
     "prepare": "husky",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "clean": "rm -rf node_modules", 
+    "reinstall": "npm run clean && npm install", 
+    "rebuild": "npm run clean && npm install && npm run build"
   },
   "prepare": "husky",
   "lint-staged": {
