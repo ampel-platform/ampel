@@ -26,14 +26,14 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
 function formatDate(dateString: string) {
   const isoDate = Date.parse(dateString);
   if (!isNaN(isoDate)) {
-    return new Date(dateString).toLocaleString('de-DE', { hour12: false });
+    return new Date(dateString).toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  });
   }
   const [datePart, timePart] = dateString.split(', ');
   if (!datePart || !timePart) return dateString;
   const [day, month, year] = datePart.split('.').map(Number);
   const [hour, minute, second] = timePart.split(':').map(Number);
   const dateObj = new Date(year, month - 1, day, hour, minute, second);
-  return dateObj.toLocaleString('de-DE', { hour12: false });
+  return dateObj.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  });
 }
 
 
