@@ -40,7 +40,6 @@ We use Remix v2+ with Vite & Flat Routes Mode so we need no remix.config.js file
 ```bash
 ampel-ui/
 ├── app/                          # Remix routes, logic, and components
-│   ├── components/               # Reusable React UI components
 │   ├── pages/                    # For pages structured in subfolders, like the alerts page
 │   │   └── alerts/               # Alert-spezifische Seiten & Komponenten
 │   │       ├── components/       # Alert-Komponenten (UI, Logic)
