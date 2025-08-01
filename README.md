@@ -40,14 +40,18 @@ We use Remix v2+ with Vite & Flat Routes Mode so we need no remix.config.js file
 ```bash
 ampel-ui/
 ├── app/                          # Remix routes, logic, and components
+│   ├── components/               # Reusable React UI components
+│   ├── pages/                    # For pages structured in subfolders, like the alerts page
+│   │   └── alerts/               # Alert-spezifische Seiten & Komponenten
+│   │       ├── components/       # Alert-Komponenten (UI, Logic)
+│   │       ├── PatientAlertsPage.tsx # Alerts page for patients
+│   │       ├── PatientAlertsPageInner.tsx # Body of the Alerts page for patients
+│   │       ├── TestPatientAlertsPage.tsx # Test Alerts page for patients
+│   │       ├── types.ts           # Type definitions for alerts
+│   │       └── AmpelResultRepository.tsx
 │   ├── routes/                   # File-based routing utilities (Remix)
 │   │   └── root-redirect.tsx     # Redirects and similar logic
-│   ├── components/               # Reusable React UI components
-│   │   └── alerts/               # Alert-specific pages and components
-│   │       ├── components/       # Components specifically for alerts
-│   │       ├── PatientAlertsPage.tsx # Alerts page for patients
-│   │       └── types.ts          # Type definitions for alerts
-│   └── pages/                    # For pages structured in subfolders, like the alerts page
+│   └── tests/                    # For Testing
 ├── public/                       # Static assets
 ├── styles/                       # Tailwind & global CSS
 ├── vite.config.js                # Vite config including aliasing and SSR support

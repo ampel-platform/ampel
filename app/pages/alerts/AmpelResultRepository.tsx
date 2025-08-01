@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { el, faker } from '@faker-js/faker';
 
 import { AmpelResult } from './types';
 import { PatientMetaData, RulesetHistory } from './types';
@@ -43,16 +43,32 @@ export const AmpelResultRepository = {
  * Each data point has a random date within the last 5 days, a random analyte value between 0 and 50, and a random ampel status between 1 and 3 (inclusive).
  * @returns {RulesetHistory} The generated fake history data.
  */
-function generateFakeHistoryData(): RulesetHistory {
-  faker.seed(0);
+function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): RulesetHistory {
+  faker.seed(seed);
   const refDate = new Date('2025-07-30T00:00:00Z');
 
+  const data = Array.from({ length: 8 }).map(() => ({
+    date: faker.date.recent({ days: 5, refDate }),
+    analyteValue: faker.number.int({ min: 0, max: 50 }),
+    ampelStatus: faker.number.int({ min: 1, max: 3 }),
+  })).map((data,index) => {
+      if (index === 7) {
+        return ({
+          ...data,
+          ampelStatus: ampelStatus === AmpelStatus.RED ? 1 : 
+        ampelStatus === AmpelStatus.YELLOW ? 2 :
+        3,
+        });
+       
+      } else {
+      return ({
+        ...data,
+      });
+    }
+    });
+
   return {
-    data: Array.from({ length: 8 }).map(() => ({
-      date: faker.date.recent({ days: 5, refDate }),
-      analyteValue: faker.number.int({ min: 0, max: 50 }),
-      ampelStatus: faker.number.int({ min: 1, max: 3 }),
-    })),
+   data
   };
 }
 
@@ -103,7 +119,7 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
       resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.RED, 1),
       links: [
         {
           displayText: 'Deximed',
@@ -121,7 +137,7 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         "<p>Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb < 4,3 mmol/l dringend zu erwägen.</p><br>Bitte reflektieren Sie patientenspezifisch:<br><p style='margin-left: 10px'>- <b>allg. Risikofaktoren,</b><br>- <b>Klinik</b><br>- <b>Ischämietypische EKG</b>-Veränderungen<br>- <b>Labor</b> und betreiben Sie ggf. <b>weitere Diagnostik.</b></p><br>Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden.\"",
       resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.YELLOW,2),
       links: [
         {
           displayText: 'Deximed',
@@ -139,7 +155,7 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         'Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.RED,3),
       links: [
         {
           displayText: 'Deximed',
@@ -161,7 +177,7 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         'Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.RED,4),
       links: [
         {
           displayText: 'Deximed',
@@ -178,28 +194,28 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion einer potentiellen Sepsiskonstellation',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,5),
     },
     {
       ruleset: 'Hypokaliämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,6),
     },
     {
       ruleset: 'Hypocalcämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,7),
     },
     {
       ruleset: 'Hyponatriämie',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,8),
     },
     {
       ruleset: 'Laktatämie',
@@ -207,21 +223,21 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         'Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,9),
     },
     {
       ruleset: 'Diabetes',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von bisher nicht kodiertem Diabetes mellitus',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,10),
     },
     {
       ruleset: 'Fibrinogenmangel',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von unbekanntem Fibrinogenmangel',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,11),
     },
     {
       ruleset: 'Hyperglykämie',
@@ -229,14 +245,14 @@ function generateFakeRulesets(): Ruleset[] {
       message:
         'Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,12),
     },
     {
       ruleset: 'Procalcitonin-Monitoring',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion eines nicht adäquaten Procalcitoninabfalls',
        resultTime: new Date("2025-07-30T15:20:16"),
-      history: generateFakeHistoryData(),
+      history: generateFakeHistoryData(AmpelStatus.GREEN,13),
     },
   ];
 }

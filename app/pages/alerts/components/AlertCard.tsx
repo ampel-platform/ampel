@@ -1,4 +1,4 @@
-import { AlertType } from '../types';
+import { AlertDetails, AlertType } from '../types';
 import { AlertPing } from './components/AlertPing';
 
 interface AlertCardProps {
@@ -7,6 +7,7 @@ interface AlertCardProps {
   creationTime: Date;
   type: AlertType;
   onClick: () => void;
+  alertDetails?: AlertDetails;
 }
 
 /**
