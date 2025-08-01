@@ -23,6 +23,20 @@ interface AlertTableProps {
  */
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
+function formatDate(dateString: string) {
+  const isoDate = Date.parse(dateString);
+  if (!isNaN(isoDate)) {
+    return new Date(dateString).toLocaleString('de-DE', { hour12: false });
+  }
+  const [datePart, timePart] = dateString.split(', ');
+  if (!datePart || !timePart) return dateString;
+  const [day, month, year] = datePart.split('.').map(Number);
+  const [hour, minute, second] = timePart.split(':').map(Number);
+  const dateObj = new Date(year, month - 1, day, hour, minute, second);
+  return dateObj.toLocaleString('de-DE', { hour12: false });
+}
+
+
   const sortedData = [...transformedData].sort((a, b) => {
     const parseDate = (str: string): Date => {
       const [datePart, timePart] = str.split(', ');
@@ -50,7 +64,7 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
           <tbody className='divide-y divide-gray-100'>
             {sortedData.map((row, index) => (
               <tr key={index} className='hover:bg-gray-50'>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.date}</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{formatDate(row.date)}</td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>Leitanalyt</td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue}</td>
                 <td className='whitespace-nowrap px-6 py-4'>

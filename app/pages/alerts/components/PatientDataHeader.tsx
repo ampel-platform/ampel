@@ -35,7 +35,7 @@ export function PatientMetaDataHeader({
         </span>
         <span className='flex flex-row gap-x-2'>
           <span className='text-gray-600'>Geburtsdatum</span>
-          <span className='text-violet-800'>{birthdate.toLocaleDateString()}</span>
+          <span className='text-violet-800'>{birthdate.toLocaleDateString('de-DE', { hour12: false })}</span>
         </span>
       </div>
     </div>

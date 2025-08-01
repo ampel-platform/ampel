@@ -27,7 +27,7 @@ export function InconspicuousStateCard({
         <span className='line-clamp-3 text-gray-400'>{description}</span>
         <div className='flex flex-row justify-end gap-x-2 text-xs text-gray-400'>
           <span>festgestellt am:</span>
-          <span className='font-mono'>{creationTime.toLocaleString()}</span>
+          <span className='font-mono'>{creationTime.toLocaleString('de-DE', { hour12: false })}</span>
         </div>
       </div>
     </div>
