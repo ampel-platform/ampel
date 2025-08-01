@@ -2,7 +2,7 @@ import { AmpelStatus } from '../../types';
 import { StatusIcon } from './StatusIcon';
 
 interface AlertTableDataPoint {
-  date: string;
+  date: Date;
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
@@ -23,30 +23,12 @@ interface AlertTableProps {
  */
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
-function formatDate(dateString: string) {
-  const isoDate = Date.parse(dateString);
-  if (!isNaN(isoDate)) {
-    return new Date(dateString).toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  });
-  }
-  const [datePart, timePart] = dateString.split(', ');
-  if (!datePart || !timePart) return dateString;
-  const [day, month, year] = datePart.split('.').map(Number);
-  const [hour, minute, second] = timePart.split(':').map(Number);
-  const dateObj = new Date(year, month - 1, day, hour, minute, second);
-  return dateObj.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  });
+function formatDate(date: Date) {
+  return date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' });
 }
 
+const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
 
-  const sortedData = [...transformedData].sort((a, b) => {
-    const parseDate = (str: string): Date => {
-      const [datePart, timePart] = str.split(', ');
-      const [day, month, year] = datePart.split('.').map(Number);
-      const [hours, minutes, seconds] = timePart.split(':').map(Number);
-      return new Date(year, month - 1, day, hours, minutes, seconds);
-    };
-
-    return parseDate(b.date).getTime() - parseDate(a.date).getTime(); // Absteigend
-  });
   return (
     <div className='pr-12'>
       <div className='w-full overflow-auto rounded-xl border border-gray-200 shadow-sm'>

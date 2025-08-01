@@ -40,7 +40,7 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
     })
     .map((h) => {
       return {
-        date: h.date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  }),
+        date: h.date,
         analyteValue: h.analyteValue,
         ampelStatus: h.ampelStatus,
         ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus),

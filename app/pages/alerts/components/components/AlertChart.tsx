@@ -12,7 +12,7 @@ import { AmpelStatus } from '../../types';
 import { StatusIcon } from './StatusIcon';
 
 interface AlertChartDataPoint {
-  date: string;
+  date: Date;
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
@@ -100,6 +100,11 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
             dataKey='date'
             padding={{ right: 100 }}
             label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
+            tickFormatter={(date: Date) =>
+            date instanceof Date
+              ? date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })
+              : String(date)
+          }
           />
           <YAxis
             yAxisId='value'
