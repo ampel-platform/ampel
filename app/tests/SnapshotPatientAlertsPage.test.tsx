@@ -1,10 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import TestPatientAlertsPage from '../pages/alerts/TestPatientAlertsPage';
 
-// Mock useLoaderData (wie gehabt)
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual('@remix-run/react');
   return {
@@ -31,65 +29,65 @@ describe('PatientAlertsPage Integration', () => {
     expect(screen.getAllByTestId('inconspicuous-state-card').length).toBe(9);
   });
 
-    it('opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
-      const showCriticalAlertStatesButton = screen.getAllByTestId('critical-alert-card')[0];
+  it('opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
+    const showCriticalAlertStatesButton = screen.getAllByTestId('critical-alert-card')[0];
 
-      // Initiale Ansicht
-      expect(showCriticalAlertStatesButton).toBeInTheDocument();
-      expect(screen.queryByTestId('overlay-back-navigation')).not.toBeInTheDocument();
+    // Initiale Ansicht
+    expect(showCriticalAlertStatesButton).toBeInTheDocument();
+    expect(screen.queryByTestId('overlay-back-navigation')).not.toBeInTheDocument();
 
 
-      // Detailsansicht öffnen
-      await showCriticalAlertStatesButton.click();
+    // Detailsansicht öffnen
+    await showCriticalAlertStatesButton.click();
 
-      // Prüfen, dass Overlay angezeigt wird (z.B. anhand eines Test-ID oder anderen markanten Elements)
-      const closeButton = screen.getByTestId('overlay-back-navigation');
-      expect(closeButton).toBeInTheDocument();
+    // Prüfen, dass Overlay angezeigt wird (z.B. anhand eines Test-ID oder anderen markanten Elements)
+    const closeButton = screen.getByTestId('overlay-back-navigation');
+    expect(closeButton).toBeInTheDocument();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('alert-overlay-open');
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('alert-overlay-open');
 
-      // Button Switcher zum anzeigen der Tabelle statt Diagramm
-      const switcher = screen.getByTestId('switcher');
-      await switcher.click();
+    // Button Switcher zum anzeigen der Tabelle statt Diagramm
+    const switcher = screen.getByTestId('switcher');
+    await switcher.click();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('alert-overlay-open-table');
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('alert-overlay-open-table');
 
-      // Detailsansicht schließen
-      await closeButton.click();
+    // Detailsansicht schließen
+    await closeButton.click();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('alert-overlay-closed');
-    });
-    
-    it('opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
-      const showWarningAlertStatesButton = screen.getAllByTestId('warning-alert-card')[0];
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('alert-overlay-closed');
+  });
+  
+  it('opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
+    const showWarningAlertStatesButton = screen.getAllByTestId('warning-alert-card')[0];
 
-      // Initiale Ansicht
-      expect(showWarningAlertStatesButton).toBeInTheDocument();
+    // Initiale Ansicht
+    expect(showWarningAlertStatesButton).toBeInTheDocument();
 
-      // Detailsansicht öffnen
-      await showWarningAlertStatesButton.click();
+    // Detailsansicht öffnen
+    await showWarningAlertStatesButton.click();
 
-      // Prüfen, dass Overlay angezeigt wird (z.B. anhand eines Test-ID oder anderen markanten Elements)
-      const closeButton = screen.getByTestId('overlay-back-navigation');
-      expect(closeButton).toBeInTheDocument();
+    // Prüfen, dass Overlay angezeigt wird (z.B. anhand eines Test-ID oder anderen markanten Elements)
+    const closeButton = screen.getByTestId('overlay-back-navigation');
+    expect(closeButton).toBeInTheDocument();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('warning-overlay-open');
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('warning-overlay-open');
 
-      // Button Switcher zum anzeigen der Tabelle statt Diagramm
-      const switcher = await screen.getByTestId('switcher');
-      await switcher.click();
+    // Button Switcher zum anzeigen der Tabelle statt Diagramm
+    const switcher = await screen.getByTestId('switcher');
+    await switcher.click();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('alert-overlay-open-table');
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('alert-overlay-open-table');
 
-      // Detailsansicht schließen
-      await closeButton.click();
+    // Detailsansicht schließen
+    await closeButton.click();
 
-      // Snapshot test
-      expect(document.body).toMatchSnapshot('warning-overlay-closed');
-    });
+    // Snapshot test
+    expect(document.body).toMatchSnapshot('warning-overlay-closed');
+  });
 });

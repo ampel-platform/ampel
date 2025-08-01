@@ -28,7 +28,7 @@ export const loader = async ({
  */
 
 // eslint-disable-next-line no-undef
-export default function PatientAlertsPage(): React.ReactNode {
+export default function TestPatientAlertsPage(): React.ReactNode {
   const { patient_id, case_id } = useLoaderData<typeof loader>();
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
   const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState('left-full');
