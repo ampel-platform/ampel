@@ -3,11 +3,11 @@ import { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useEffect, useState } from 'react';
 
-import { FakeAlertRepository } from './AmpelResultRepository';
 import { AlertCard } from './components/AlertCard';
 import { InconspicuousStateCard } from './components/InconspicuousStateCard';
-import { AlertDetails, AlertType, AmpelStatus, PatientMetaData } from './types';
-import { PatientAlertsPageInner } from './PatientAlertsPageInner';
+import { AlertType, AmpelStatus, PatientMetaData } from './types';
+import { PatientAlertsPage } from './PatientAlertsPage';
+import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';
 export const loader = async ({
   params,
 }: LoaderFunctionArgs): Promise<{ patient_id: string; case_id: string }> => {
@@ -16,6 +16,8 @@ export const loader = async ({
   if (!patient_id || !case_id) {
     throw new Response('Not Found', { status: 404 });
   }
+
+  // await AmpelResultRepository.getByMedicalCaseId(case_id);
 
   return { patient_id, case_id };
 };
@@ -27,7 +29,7 @@ export const loader = async ({
  */
 
 // eslint-disable-next-line no-undef
-export default function PatientAlertsPage(): React.ReactNode {
+export default function PatientAlertsPageController(): React.ReactNode {
   const { patient_id, case_id } = useLoaderData<typeof loader>();
   
   const [patientMetaData, setPatientMetaData] = useState(null as unknown as PatientMetaData);
@@ -41,9 +43,9 @@ export default function PatientAlertsPage(): React.ReactNode {
 
 
   useEffect(() => {
-    setPatientMetaData(FakeAlertRepository.getFakePatientMetaData(patient_id || '', case_id || ''));
+    setPatientMetaData(FakeAmpelResultRepository.getFakePatientMetaData(patient_id || '', case_id || ''));
 
-    const rulesets = FakeAlertRepository.getFakeRulesets();
+    const rulesets = FakeAmpelResultRepository.getFakeRulesets();
 
     const rulesetsByStatus: Map<AmpelStatus, ReactNode[]> = new Map([
       [AmpelStatus.RED, []],
@@ -111,7 +113,7 @@ export default function PatientAlertsPage(): React.ReactNode {
   }, []);
 
    return (
-    <PatientAlertsPageInner
+    <PatientAlertsPage
       patientMetaData={patientMetaData}
       rulesetsByStatus={rulesetsByStatus}
     />

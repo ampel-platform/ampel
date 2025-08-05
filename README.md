@@ -43,9 +43,8 @@ ampel-ui/
 │   ├── pages/                    # For pages structured in subfolders, like the alerts page
 │   │   └── alerts/               # Alert-spezifische Seiten & Komponenten
 │   │       ├── components/       # Alert-Komponenten (UI, Logic)
-│   │       ├── PatientAlertsPage.tsx # Alerts page for patients
-│   │       ├── PatientAlertsPageInner.tsx # Body of the Alerts page for patients
-│   │       ├── TestPatientAlertsPage.tsx # Test Alerts page for patients
+│   │       ├── PatientAlertsPage.tsx # Alerts page for patient alerts
+│   │       ├── PatientAlertsPageController.tsx # The Alerts controller for loading patient alerts
 │   │       ├── types.ts           # Type definitions for alerts
 │   │       └── AmpelResultRepository.tsx
 │   ├── routes/                   # File-based routing utilities (Remix)

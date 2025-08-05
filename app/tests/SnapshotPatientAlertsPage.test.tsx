@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import TestPatientAlertsPage from '../pages/alerts/TestPatientAlertsPage';
+import TestPatientAlertsPage from './TestPatientAlertsPageController';
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual('@remix-run/react');
