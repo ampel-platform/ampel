@@ -36,12 +36,14 @@ interface AlertChartProps {
  * @returns {React.ReactNode } The rendered alert chart component
  */
 
+const isTest = import.meta.env.VITE_CHART_TEST === '1';
+
 // eslint-disable-next-line no-undef
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
-    <div className='flex flex-col gap-y-4'>
-      <span className='font-medium text-gray-600'>Leitanalyt</span>
-      <ResponsiveContainer width='100%' aspect={4}>
+    <div className='flex flex-col gap-y-4 w-full'>
+      <span className='font-medium text-gray-600' >Leitanalyt</span>
+      <ResponsiveContainer width='100%' height={isTest ? 400 : undefined} aspect={isTest ?  undefined : 4}>
         <ComposedChart
           width={500}
           height={400}
@@ -52,6 +54,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           <Tooltip />
           <Line
             name='Leitanalyt'
+            isAnimationActive={isTest ? false : true}
             yAxisId='value'
             dataKey='analyteValue'
             stroke='rgba(91, 33, 182, 0.7)'

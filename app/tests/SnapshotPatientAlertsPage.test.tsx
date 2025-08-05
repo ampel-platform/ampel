@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import TestPatientAlertsPage from './TestPatientAlertsPageController';
+import PatientAlertsPageController from '../pages/alerts/PatientAlertsPageController';
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual('@remix-run/react');
@@ -14,7 +14,7 @@ vi.mock('@remix-run/react', async () => {
 describe('PatientAlertsPage Integration', () => {
   it('displays all main sections & patient data correctly and shows the correct number of critical, warning, and inconspicuous alerts', () => {
     
-    const { container } = render(<TestPatientAlertsPage />);
+    const { container } = render(<PatientAlertsPageController />);
     // snapshot test
     expect(container).toMatchSnapshot();
 

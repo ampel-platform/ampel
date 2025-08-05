@@ -8,6 +8,9 @@ import { InconspicuousStateCard } from './components/InconspicuousStateCard';
 import { AlertType, AmpelStatus, PatientMetaData } from './types';
 import { PatientAlertsPage } from './PatientAlertsPage';
 import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';
+
+const isTest = import.meta.env.VITE_CHART_TEST === '1';
+
 export const loader = async ({
   params,
 }: LoaderFunctionArgs): Promise<{ patient_id: string; case_id: string }> => {
@@ -21,6 +24,8 @@ export const loader = async ({
 
   return { patient_id, case_id };
 };
+
+
 
 /**
  * Displays a page with alerts for a given patient and case.
@@ -43,6 +48,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
 
 
   useEffect(() => {
+    if (isTest || true) {
     setPatientMetaData(FakeAmpelResultRepository.getFakePatientMetaData(patient_id || '', case_id || ''));
 
     const rulesets = FakeAmpelResultRepository.getFakeRulesets();
@@ -110,12 +116,20 @@ export default function PatientAlertsPageController(): React.ReactNode {
     });
 
     setRulesetsByStatus(rulesetsByStatus);
+    }
   }, []);
 
    return (
-    <PatientAlertsPage
-      patientMetaData={patientMetaData}
-      rulesetsByStatus={rulesetsByStatus}
-    />
+    <div> 
+       {isTest || true && (
+        <div className="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900">
+          TEST
+        </div>
+      )}
+      <PatientAlertsPage
+        patientMetaData={patientMetaData}
+        rulesetsByStatus={rulesetsByStatus}
+      />
+    </div>
   );
 }
