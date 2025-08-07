@@ -14,18 +14,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/ampel-cdss-org/ampel-ui
-          tags: |
-            type=ref,event=branch   # master → master, feature-x → feature-x
-            type=ref,event=tag      # v0.0.3 → v0.0.3
-            type=sha                # f597a8e → sha-f597a8e
-
       - name: Release Info Preparation
         id: release-prep
         run: |
@@ -64,7 +53,6 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ghcr.io/${{ steps.release-prep.outputs.REPOSITORY }}:${{ steps.release-prep.outputs.VERSION }}
           file: ./docker/prod/Dockerfile
           push: true
