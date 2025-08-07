@@ -15,6 +15,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          labels: |
+            org.opencontainers.image.revision=${{ github.sha }}
+
       - name: Release Info Preparation
         id: release-prep
         run: |
@@ -54,5 +61,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/${{ steps.release-prep.outputs.REPOSITORY }}:${{ steps.release-prep.outputs.VERSION }}
+          labels: ${{ steps.meta.outputs.labels }}
           file: ./docker/prod/Dockerfile
           push: true

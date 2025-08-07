@@ -1,6 +1,12 @@
 # Use an official Node.js image as the base
 FROM node:20
 
+# Other labels will be set by the CI pipeline
+LABEL org.opencontainers.image.title="AMPEL UI"
+LABEL org.opencontainers.image.description="Default UI for the AMPEL platform."
+LABEL org.opencontainers.image.authors="AMPEL CDSS Team <clemens.malkawi@medizin.uni-leipzig.de>"
+LABEL org.opencontainers.image.vendor="AMPEL CDSS"
+
 # Set the working directory to /app
 WORKDIR /app
 
