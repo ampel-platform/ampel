@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { PatientMetaDataHeader } from './components/PatientDataHeader';
-import { AlertDetailOverlay } from './components/AlertDetailOverlay';
-import { AmpelStatus, AlertDetails, PatientMetaData } from './types';
+import React from 'react';
 import { ReactNode } from 'react';
+
+import { AlertDetailOverlay } from './components/AlertDetailOverlay';
+import { PatientMetaDataHeader } from './components/PatientDataHeader';
+import { AlertDetails, AmpelStatus, PatientMetaData } from './types/types';
 
 interface PatientAlertsPageProps {
   patientMetaData: PatientMetaData;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
 }
-
-
 
 export function PatientAlertsPage({
   patientMetaData,
@@ -19,28 +19,27 @@ export function PatientAlertsPage({
   const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState('left-full');
   const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
 
-  const displayDetailOverlay = (details: AlertDetails) => {
+  const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
     setDetailOverlayVisibilityClasses('left-0');
   };
 
-  const hideDetailOverlay = () => {
+  const hideDetailOverlay = (): void => {
     setDetailOverlayVisibilityClasses('left-full');
   };
-
-  // Wir klonen die AlertCards, um die onClick-Handler für das Overlay zu injizieren:
-  function cloneAlertCards(status: AmpelStatus) {
+  function cloneAlertCards(status: AmpelStatus): ReactNode[] {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (rulesetsByStatus.get(status) || []).map((child: any) =>
-      child && child.type && child.props && child.props.onClick
-        ? (
-          // inject onClick mit Overlay
-          <child.type
-            {...child.props}
-            onClick={() => displayDetailOverlay(child.props.alertDetails)}
-            key={child.key}
-          />
-        )
-        : child
+      child && child.type && child.props && child.props.onClick ? (
+        // inject onClick mit Overlay
+        <child.type
+          {...child.props}
+          onClick={() => displayDetailOverlay(child.props.alertDetails)}
+          key={child.key}
+        />
+      ) : (
+        child
+      ),
     );
   }
 

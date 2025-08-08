@@ -2,18 +2,20 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import PatientAlertsPageController from '../pages/alerts/PatientAlertsPageController';
+/* eslint-disable no-undef */
 
 vi.mock('@remix-run/react', async () => {
-  const actual = await vi.importActual('@remix-run/react');
+  const actual = await vi.importActual<typeof import('@remix-run/react')>('@remix-run/react');
+  const { uiFakesToApi } = await import('../tests/FakeAmpelResultRepository'); // adjust path if needed
+  const data = uiFakesToApi('TESTID'); // API-shaped payload
   return {
     ...actual,
-    useLoaderData: () => ({ patient_id: 'TESTID', case_id: 'CASEID' }),
+    useLoaderData: () => ({ case_id: 'CASEID', data }), // supply what the route expects
   };
 });
 
 describe('PatientAlertsPage Integration', () => {
   it('displays all main sections & patient data correctly and shows the correct number of critical, warning, and inconspicuous alerts', () => {
-    
     const { container } = render(<PatientAlertsPageController />);
     // snapshot test
     expect(container).toMatchSnapshot();
@@ -35,7 +37,6 @@ describe('PatientAlertsPage Integration', () => {
     // Initiale Ansicht
     expect(showCriticalAlertStatesButton).toBeInTheDocument();
     expect(screen.queryByTestId('overlay-back-navigation')).not.toBeInTheDocument();
-
 
     // Detailsansicht öffnen
     await showCriticalAlertStatesButton.click();
@@ -60,7 +61,7 @@ describe('PatientAlertsPage Integration', () => {
     // Snapshot test
     expect(document.body).toMatchSnapshot('alert-overlay-closed');
   });
-  
+
   it('opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {
     const showWarningAlertStatesButton = screen.getAllByTestId('warning-alert-card')[0];
 

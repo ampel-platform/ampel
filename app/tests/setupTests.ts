@@ -10,6 +10,7 @@ class ResizeObserver {
 }
 
 // @ts-ignore
+// eslint-disable-next-line no-undef
 global.ResizeObserver = ResizeObserver;
 
 expect.extend({ toBeInTheDocument /* , weitere matcher */ });

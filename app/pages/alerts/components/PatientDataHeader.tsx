@@ -1,4 +1,4 @@
-import { PatientMetaData } from '../types';
+import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
 
@@ -35,7 +35,9 @@ export function PatientMetaDataHeader({
         </span>
         <span className='flex flex-row gap-x-2'>
           <span className='text-gray-600'>Geburtsdatum</span>
-          <span className='text-violet-800'>{birthdate.toLocaleDateString('de-DE', { hour12: false, timeZone: 'Europe/Berlin'  })}</span>
+          <span className='text-violet-800'>
+            {birthdate.toLocaleDateString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })}
+          </span>
         </span>
       </div>
     </div>

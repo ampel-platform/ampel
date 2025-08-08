@@ -1,4 +1,4 @@
-import { Link } from '../../types';
+import { Link } from '../../types/types';
 
 interface AlertLinksProps {
   links: Link[];

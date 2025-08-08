@@ -1,4 +1,4 @@
-import { AmpelStatus } from '../../types';
+import { AmpelStatus } from '../../types/types';
 import { StatusIcon } from './StatusIcon';
 
 interface AlertTableDataPoint {
@@ -23,11 +23,11 @@ interface AlertTableProps {
  */
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
-function formatDate(date: Date) {
-  return date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' });
-}
+  function formatDate(date: Date): string {
+    return date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' });
+  }
 
-const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
+  const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
     <div className='pr-12'>
@@ -46,7 +46,9 @@ const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date
           <tbody className='divide-y divide-gray-100'>
             {sortedData.map((row, index) => (
               <tr key={index} className='hover:bg-gray-50'>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{formatDate(row.date)}</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
+                  {formatDate(row.date)}
+                </td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>Leitanalyt</td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue}</td>
                 <td className='whitespace-nowrap px-6 py-4'>

@@ -1,4 +1,4 @@
-import { AlertDetails } from '../types';
+import { AlertDetails } from '../types/types';
 import { AlertHeader } from './components/AlertHeader';
 import { AlertHistory } from './components/AlertHistory';
 import { AlertLinks } from './components/AlertLinks';

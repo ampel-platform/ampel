@@ -8,7 +8,7 @@ import {
   YAxis,
 } from 'recharts';
 
-import { AmpelStatus } from '../../types';
+import { AmpelStatus } from '../../types/types';
 import { StatusIcon } from './StatusIcon';
 
 interface AlertChartDataPoint {
@@ -36,14 +36,12 @@ interface AlertChartProps {
  * @returns {React.ReactNode } The rendered alert chart component
  */
 
-const isTest = import.meta.env.VITE_CHART_TEST === '1';
-
 // eslint-disable-next-line no-undef
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
-    <div className='flex flex-col gap-y-4 w-full'>
-      <span className='font-medium text-gray-600' >Leitanalyt</span>
-      <ResponsiveContainer width='100%' height={isTest ? 400 : undefined} aspect={isTest ?  undefined : 4}>
+    <div className='flex w-full flex-col gap-y-4'>
+      <span className='font-medium text-gray-600'>Leitanalyt</span>
+      <ResponsiveContainer width='100%' height={400}>
         <ComposedChart
           width={500}
           height={400}
@@ -54,7 +52,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           <Tooltip />
           <Line
             name='Leitanalyt'
-            isAnimationActive={isTest ? false : true}
+            isAnimationActive={false}
             yAxisId='value'
             dataKey='analyteValue'
             stroke='rgba(91, 33, 182, 0.7)'
@@ -70,13 +68,13 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                       cx={props.cx}
                       cy={props.cy - 12}
                       r={5}
-                      fill={ampelStatus === 1 ? 'red' : 'white'}
+                      fill={ampelStatus === AmpelStatus.RED ? 'red' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
                     <polygon
                       points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
-                      fill={ampelStatus === 2 ? 'yellow' : 'white'}
+                      fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
@@ -85,7 +83,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                       y={props.cy + 8}
                       width={11}
                       height={11}
-                      fill={ampelStatus === 3 ? 'limegreen' : 'white'}
+                      fill={ampelStatus === AmpelStatus.GREEN ? 'limegreen' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
@@ -104,10 +102,10 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
             padding={{ right: 100 }}
             label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
             tickFormatter={(date: Date) =>
-            date instanceof Date
-              ? date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })
-              : String(date)
-          }
+              date instanceof Date
+                ? date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })
+                : String(date)
+            }
           />
           <YAxis
             yAxisId='value'

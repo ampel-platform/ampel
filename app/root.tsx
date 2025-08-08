@@ -1,10 +1,8 @@
 import { LinksFunction } from '@remix-run/node';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
 import React from 'react';
-import {
-  isRouteErrorResponse,
-  useRouteError,
-} from "@remix-run/react";
+
 import styles from './tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
@@ -33,9 +31,6 @@ export default function App(): React.ReactNode {
   );
 }
 
-
-
-
 export function ErrorBoundary() {
   const error = useRouteError();
 
@@ -61,7 +56,6 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any) {
         <pre>{error.stack}</pre>
       </div>
     );
-  } else {
-    return <h1>Unknown Error</h1>;
   }
+  return <h1>Unknown Error</h1>;
 }

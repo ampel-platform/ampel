@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AlertType } from '../../types';
+import { AlertType } from '../../types/types';
 
 interface AlertPingProps {
   type: AlertType;
