@@ -51,11 +51,11 @@ export interface AlertDetails {
 export interface ScoringSystem {
   name: string;
   version: string;
-  ampelstatus: 'green' | 'yellow' | 'red' | 'none';
+  ampelstatus: AmpelStatus;
   analyte: string;
   analytevalue: number | string;
   unit: string;
-  severity: string;
+  severity:  string | null | undefined;
   severityhint: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: Record<string, any>;

@@ -1,10 +1,12 @@
 import type {
   AmpelResult,
-  AmpelStatus,
   PatientMetaData,
   Ruleset,
   RulesetHistory,
   ScoringSystem as UiScoringSystem,
+} from './types';
+import {
+  AmpelStatus,
 } from './types';
 import {
   ApiResultCollection,
@@ -13,7 +15,7 @@ import {
 } from './types-api';
 
 const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
-  s === 'GREEN' ? 'green' : s === 'YELLOW' ? 'yellow' : s === 'RED' ? 'red' : 'none';
+  s === 'green' ? AmpelStatus.GREEN : s === 'yellow' ? AmpelStatus.YELLOW : s === 'red' ? AmpelStatus.RED : AmpelStatus.GREEN;
 
 function toNumberOrString(v: string): number | string {
   const n = Number(v);
@@ -51,7 +53,7 @@ export function mapApiToUi(
       return {
         name: ss.scoringSystemName,
         version: ss.scoringSystemVersion,
-        ampelstatus: 'none',
+        ampelstatus: AmpelStatus.GREEN,
         analyte: '',
         analytevalue: '',
         unit: '',
@@ -107,8 +109,6 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   if (!parsed.success) return []; // no data → no cards
 
   const api = parsed.data;
-  const toEnum = (s: 'GREEN' | 'YELLOW' | 'RED' | 'NONE'): AmpelStatus =>
-    s === 'RED' ? 3 : s === 'YELLOW' ? 2 : 1;
 
   return api.scoringSystems.map((ss) => {
     const sorted = [...ss.results].sort(
@@ -122,7 +122,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
       data: ss.results.map((r) => ({
         date: new Date(r.resultCreationTime ?? r.analyteMeasuringTime),
         analyteValue: Number(r.analyteValue),
-        ampelStatus: toEnum(r.status === 'NONE' ? 'GREEN' : r.status),
+        ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
       })),
     };
 
@@ -133,8 +133,8 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
 
     return {
       ruleset: ss.scoringSystemName,
-      ampelStatus: toEnum(
-        (latest?.status ?? 'GREEN') === 'NONE' ? 'GREEN' : (latest?.status ?? 'GREEN'),
+      ampelStatus: statusToUi(
+        (latest?.status ?? 'green') === 'none' ? 'green' : (latest?.status ?? 'green'),
       ),
       message: latest?.severityComment ?? latest?.severity ?? '',
       resultTime: new Date(

@@ -215,7 +215,7 @@ function generateFakeRulesets(): Ruleset[] {
 }
 
 const enumToApi = (s: AmpelStatus): ApiStatus =>
-  s === AmpelStatus.RED ? 'RED' : s === AmpelStatus.YELLOW ? 'YELLOW' : 'GREEN';
+  s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
 export function uiFakesToApi(case_id: string): ApiResultCollection {
   const rulesets = generateFakeRulesets(); // ← your long list with history
