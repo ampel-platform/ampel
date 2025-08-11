@@ -14,8 +14,9 @@ export default defineConfig({
     remix({
       routes(defineRoutes) {
         return defineRoutes((route) => {
-          route('/', 'routes/root-redirect.tsx');
+          route('/', 'routes/root-redirect.tsx'); // redirect to test medical case 0001949132 ↓
           route('alerts/cases/:case_id', 'pages/alerts/PatientAlertsPageController.tsx');
+          route('*', 'routes/catchall-redirect.tsx'); // redirect to test medical case 0001949132 ↑
         });
       },
     }),
