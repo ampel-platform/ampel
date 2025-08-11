@@ -65,6 +65,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                 return (
                   <>
                     <circle
+                              key={`last-circle-${index}`}
                       cx={props.cx}
                       cy={props.cy - 12}
                       r={5}
@@ -73,12 +74,14 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                       strokeWidth={1}
                     />
                     <polygon
+                              key={`last-triangle-${index}`}
                       points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
                       fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
                     <rect
+                              key={`last-square-${index}`}
                       x={props.cx - 5.5}
                       y={props.cy + 8}
                       width={11}
@@ -92,7 +95,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
               }
 
               return (
-                <StatusIcon ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
+                <StatusIcon       key={`status-icon-${index}`} ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
               );
             }}
           />
