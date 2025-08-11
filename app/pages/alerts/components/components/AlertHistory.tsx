@@ -46,7 +46,7 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
         ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus),
       };
     });
-  const [enabledChart, setEnabledChart] = useState(true);
+  const [enabledChart, setEnabledChart] = useState(false);
   return (
     <>
       <Switcher

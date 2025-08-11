@@ -948,7 +948,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -957,456 +956,27 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Diagram anzeigen
+                        Als Tabelle anzeigen
                       </div>
                     </label>
                     <div
-                      class="pr-12"
+                      class="flex w-full flex-col gap-y-4"
                     >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      <span
+                        class="font-medium text-gray-600"
                       >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (μl/mol)
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 22:12:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                15
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                28.7.2025, 10:28:21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 18:40:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 04:03:33
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                36
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 14:17:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                7
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:33:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                44
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 00:22:04
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                17
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:51:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                10
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
+                        Leitanalyt
+                      </span>
+                      <div
+                        class="recharts-responsive-container"
+                        style="width: 100%; height: 400px; min-width: 0;"
+                      />
                     </div>
                   </div>
                 </div>
@@ -2272,7 +1842,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -2281,27 +1850,456 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Tabelle anzeigen
+                        Als Diagram anzeigen
                       </div>
                     </label>
                     <div
-                      class="flex w-full flex-col gap-y-4"
+                      class="pr-12"
                     >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        Leitanalyt
-                      </span>
                       <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
+                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      >
+                        <table
+                          class="min-w-full divide-y divide-gray-200 text-sm"
+                        >
+                          <thead
+                            class="bg-gray-50 text-left"
+                          >
+                            <tr>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Datum & Uhrzeit des Messzeitpunktes
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Analyt
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Wert (μl/mol)
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Status
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="divide-y divide-gray-100"
+                          >
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                29.7.2025, 22:12:28
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                15
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
+                                      stroke="black"
+                                      stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    3
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                28.7.2025, 10:28:21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 18:40:28
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
+                                      stroke="black"
+                                      stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    3
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 04:03:33
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                36
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 14:17:47
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                7
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 02:33:03
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                44
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 00:22:04
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                17
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                25.7.2025, 18:51:47
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                10
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
+                                      stroke="black"
+                                      stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    3
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -3167,7 +3165,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -3176,456 +3173,27 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Diagram anzeigen
+                        Als Tabelle anzeigen
                       </div>
                     </label>
                     <div
-                      class="pr-12"
+                      class="flex w-full flex-col gap-y-4"
                     >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      <span
+                        class="font-medium text-gray-600"
                       >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (μl/mol)
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 22:12:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                15
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                28.7.2025, 10:28:21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 18:40:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 04:03:33
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                36
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 14:17:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                7
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:33:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                44
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 00:22:04
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                17
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:51:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                10
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    3
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
+                        Leitanalyt
+                      </span>
+                      <div
+                        class="recharts-responsive-container"
+                        style="width: 100%; height: 400px; min-width: 0;"
+                      />
                     </div>
                   </div>
                 </div>
@@ -4526,7 +4094,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -4535,27 +4102,449 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Tabelle anzeigen
+                        Als Diagram anzeigen
                       </div>
                     </label>
                     <div
-                      class="flex w-full flex-col gap-y-4"
+                      class="pr-12"
                     >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        Leitanalyt
-                      </span>
                       <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
+                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      >
+                        <table
+                          class="min-w-full divide-y divide-gray-200 text-sm"
+                        >
+                          <thead
+                            class="bg-gray-50 text-left"
+                          >
+                            <tr>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Datum & Uhrzeit des Messzeitpunktes
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Analyt
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Wert (μl/mol)
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Status
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="divide-y divide-gray-100"
+                          >
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                29.7.2025, 07:36:13
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                4
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                29.7.2025, 00:15:23
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                43
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 06:20:09
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                1
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 06:15:18
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 10:02:09
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                31
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 02:34:28
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                31
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                25.7.2025, 18:09:58
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                25.7.2025, 09:51:03
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -5456,7 +5445,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -5465,27 +5453,449 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Tabelle anzeigen
+                        Als Diagram anzeigen
                       </div>
                     </label>
                     <div
-                      class="flex w-full flex-col gap-y-4"
+                      class="pr-12"
                     >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        Leitanalyt
-                      </span>
                       <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
+                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      >
+                        <table
+                          class="min-w-full divide-y divide-gray-200 text-sm"
+                        >
+                          <thead
+                            class="bg-gray-50 text-left"
+                          >
+                            <tr>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Datum & Uhrzeit des Messzeitpunktes
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Analyt
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Wert (μl/mol)
+                              </th>
+                              <th
+                                class="px-6 py-3 font-medium text-gray-700"
+                              >
+                                Status
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="divide-y divide-gray-100"
+                          >
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                29.7.2025, 07:36:13
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                4
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                29.7.2025, 00:15:23
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                43
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 06:20:09
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                1
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                27.7.2025, 06:15:18
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 10:02:09
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                31
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <polygon
+                                      fill="yellow"
+                                      points="7,2 1,13 13,13"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    2
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26.7.2025, 02:34:28
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                31
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                25.7.2025, 18:09:58
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                26
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="hover:bg-gray-50"
+                            >
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                25.7.2025, 09:51:03
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                Leitanalyt
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4 text-gray-900"
+                              >
+                                21
+                              </td>
+                              <td
+                                class="whitespace-nowrap px-6 py-4"
+                              >
+                                <div
+                                  class="flex items-center gap-2"
+                                >
+                                  <div
+                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                  />
+                                  <svg
+                                    height="14"
+                                    width="14"
+                                  >
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
+                                      stroke="black"
+                                      stroke-width="1"
+                                    />
+                                  </svg>
+                                   
+                                  <span
+                                    class="text-gray-700"
+                                  >
+                                    Status 
+                                    1
+                                  </span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -6386,7 +6796,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="relative"
                       >
                         <input
-                          checked=""
                           class="sr-only"
                           data-testid="switcher"
                           type="checkbox"
@@ -6395,449 +6804,27 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="block h-8 w-14 rounded-full bg-[#E5E7EB]"
                         />
                         <div
-                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 bg-black"
+                          class="dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 translate-x-6 bg-white"
                         />
                       </div>
                       <div
                         class="pl-3 text-gray-600"
                       >
-                        Als Diagram anzeigen
+                        Als Tabelle anzeigen
                       </div>
                     </label>
                     <div
-                      class="pr-12"
+                      class="flex w-full flex-col gap-y-4"
                     >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                      <span
+                        class="font-medium text-gray-600"
                       >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (μl/mol)
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 07:36:13
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                4
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 00:15:23
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                43
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:20:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                1
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:15:18
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 10:02:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    2
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:34:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:09:58
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 09:51:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Leitanalyt
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                   
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    Status 
-                                    1
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
+                        Leitanalyt
+                      </span>
+                      <div
+                        class="recharts-responsive-container"
+                        style="width: 100%; height: 400px; min-width: 0;"
+                      />
                     </div>
                   </div>
                 </div>
