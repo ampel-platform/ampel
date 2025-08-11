@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "remix vite:dev",
+    "test-dev": "cross-env NODE_ENV=test VITE_CHART_TEST=1 remix vite:dev",
     "build": "remix vite:build",
     "start": "remix-serve ./build/server/index.js",
     "lint": "npx eslint --fix",
