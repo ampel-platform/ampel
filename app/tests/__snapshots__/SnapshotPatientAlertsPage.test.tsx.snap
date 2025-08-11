@@ -886,17 +886,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -924,18 +925,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>
@@ -1780,17 +1780,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -1818,18 +1819,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>
@@ -1928,22 +1928,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
                                       stroke="black"
                                       stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    3
+                                    <span>
+                                      Kritisch
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -1986,12 +1985,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2027,22 +2026,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
                                       stroke="black"
                                       stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    3
+                                    <span>
+                                      Kritisch
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2078,21 +2076,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2128,21 +2127,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2178,21 +2178,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2235,12 +2236,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -2276,22 +2277,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                     height="14"
                                     width="14"
                                   >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
+                                    <circle
+                                      cx="7"
+                                      cy="7"
+                                      fill="red"
+                                      r="5"
                                       stroke="black"
                                       stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    3
+                                    <span>
+                                      Kritisch
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -3103,17 +3103,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -3141,18 +3142,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>
@@ -4032,17 +4032,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -4070,18 +4071,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>
@@ -4187,12 +4187,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4235,12 +4235,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4283,12 +4283,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4324,21 +4324,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4381,12 +4382,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4422,21 +4423,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4472,21 +4474,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -4522,21 +4525,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5383,17 +5387,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -5421,18 +5426,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>
@@ -5538,12 +5542,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5586,12 +5590,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5634,12 +5638,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5675,21 +5679,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5732,12 +5737,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                       stroke-width="1"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    2
+                                    <span>
+                                      Warnung
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5773,21 +5778,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5823,21 +5829,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -5873,21 +5880,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                     height="14"
                                     width="14"
                                   >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
+                                    <rect
+                                      fill="limegreen"
+                                      height="11"
                                       stroke="black"
                                       stroke-width="1"
+                                      width="11"
+                                      x="1.5"
+                                      y="1.5"
                                     />
                                   </svg>
-                                   
                                   <span
                                     class="text-gray-700"
                                   >
-                                    Status 
-                                    1
+                                    <span>
+                                      Normal
+                                    </span>
                                   </span>
                                 </div>
                               </td>
@@ -6734,17 +6742,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <circle
-                                cx="7"
-                                cy="7"
-                                fill="red"
-                                r="5"
+                              <rect
+                                fill="limegreen"
+                                height="11"
                                 stroke="black"
                                 stroke-width="1"
+                                width="11"
+                                x="1.5"
+                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Rot = Kritisch
+                              Grün = Normal
                             </span>
                           </div>
                           <div
@@ -6772,18 +6781,17 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               height="14"
                               width="14"
                             >
-                              <rect
-                                fill="limegreen"
-                                height="11"
+                              <circle
+                                cx="7"
+                                cy="7"
+                                fill="red"
+                                r="5"
                                 stroke="black"
                                 stroke-width="1"
-                                width="11"
-                                x="1.5"
-                                y="1.5"
                               />
                             </svg>
                             <span>
-                              Grün = Normal
+                              Rot = Kritisch
                             </span>
                           </div>
                         </div>

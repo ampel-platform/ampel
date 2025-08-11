@@ -56,8 +56,12 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                     <div className={`h-3 w-3 rounded-full ${row.ampelStatusFillColor}`} />
                     <svg width={14} height={14}>
                       <StatusIcon ampelStatus={row.ampelStatus} cx={7} cy={7} index={0} />
-                    </svg>{' '}
-                    <span className='text-gray-700'>Status {row.ampelStatus}</span>
+                    </svg>
+                    <span className='text-gray-700'>
+                    {row.ampelStatus === 1 && <span>Normal</span>}
+                    {row.ampelStatus === 2 && <span>Warnung</span>}
+                    {row.ampelStatus === 3 && <span>Kritisch</span>}
+                    </span>
                   </div>
                 </td>
               </tr>

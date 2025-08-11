@@ -26,7 +26,7 @@ interface AmpelStatusIconProps {
 // eslint-disable-next-line no-undef
 export function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps): React.ReactNode {
   switch (ampelStatus) {
-    case 1:
+    case 3:
       return <circle cx={cx} cy={cy} r={5} fill={'red'} stroke='black' strokeWidth={1} />;
     case 2:
       return (
@@ -37,7 +37,7 @@ export function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps): React
           strokeWidth={1}
         />
       );
-    case 3:
+    case 1:
       return (
         <rect
           x={cx - 5.5}

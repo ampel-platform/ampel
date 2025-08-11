@@ -22,9 +22,9 @@ export function StatusLegend(): React.ReactNode {
           <svg width={14} height={14}>
             <StatusIcon ampelStatus={status} cx={7} cy={7} index={0} />
           </svg>
-          {status === 1 && <span>Rot = Kritisch</span>}
+          {status === 1 && <span>Grün = Normal</span>}
           {status === 2 && <span>Gelb = Warnung</span>}
-          {status === 3 && <span>Grün = Normal</span>}
+          {status === 3 && <span>Rot = Kritisch</span>}
         </div>
       ))}
     </div>
