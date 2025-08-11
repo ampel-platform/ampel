@@ -34,7 +34,7 @@ export default function App(): React.ReactNode {
 export function ErrorBoundary() {
   const error = useRouteError();
 
-  ErrorBoundaryBody(isRouteErrorResponse(error), error);
+  return ErrorBoundaryBody(isRouteErrorResponse(error), error);
 }
 
 export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any) {
