@@ -44,6 +44,8 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
         analyteValue: h.analyteValue,
         ampelStatus: h.ampelStatus,
         ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus),
+        unit: history.data[0].unit,
+        analyteValueName: h.analyteValueName,
       };
     });
   const [enabledChart, setEnabledChart] = useState(false);

@@ -971,7 +971,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="font-medium text-gray-600"
                       >
-                        Leitanalyt
+                        Akute Nierenschädigung [AKIN 1, Vancomycin]
                       </span>
                       <div
                         class="recharts-responsive-container"
@@ -1885,7 +1885,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
                               >
-                                Wert (μl/mol)
+                                Wert (
+                                µmol/l
+                                )
                               </th>
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
@@ -1908,7 +1910,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -1958,7 +1960,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2006,7 +2008,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2056,7 +2058,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2107,7 +2109,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2158,7 +2160,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2209,7 +2211,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2257,7 +2259,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Akute Nierenschädigung [AKIN 1, Vancomycin]
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -3188,7 +3190,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="font-medium text-gray-600"
                       >
-                        Leitanalyt
+                        Akute Nierenschädigung [AKIN 1, Vancomycin]
                       </span>
                       <div
                         class="recharts-responsive-container"
@@ -4137,7 +4139,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
                               >
-                                Wert (μl/mol)
+                                Wert (
+                                µmol/l
+                                )
                               </th>
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
@@ -4160,7 +4164,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4208,7 +4212,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4256,7 +4260,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4304,7 +4308,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4355,7 +4359,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4403,7 +4407,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4454,7 +4458,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -4505,7 +4509,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5492,7 +5496,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
                               >
-                                Wert (μl/mol)
+                                Wert (
+                                µmol/l
+                                )
                               </th>
                               <th
                                 class="px-6 py-3 font-medium text-gray-700"
@@ -5515,7 +5521,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5563,7 +5569,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5611,7 +5617,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5659,7 +5665,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5710,7 +5716,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5758,7 +5764,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5809,7 +5815,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -5860,7 +5866,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Leitanalyt
+                                Anämie
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -6827,7 +6833,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       <span
                         class="font-medium text-gray-600"
                       >
-                        Leitanalyt
+                        Anämie
                       </span>
                       <div
                         class="recharts-responsive-container"

@@ -6,6 +6,8 @@ interface AlertTableDataPoint {
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
+  unit: string;
+  analyteValueName: string;
 }
 
 interface AlertTableProps {
@@ -39,7 +41,7 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                 Datum & Uhrzeit des Messzeitpunktes
               </th>
               <th className='px-6 py-3 font-medium text-gray-700'>Analyt</th>
-              <th className='px-6 py-3 font-medium text-gray-700'>Wert (μl/mol)</th>
+              <th className='px-6 py-3 font-medium text-gray-700'>Wert ({transformedData[0].unit})</th>
               <th className='px-6 py-3 font-medium text-gray-700'>Status</th>
             </tr>
           </thead>
@@ -49,7 +51,7 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
                   {formatDate(row.date)}
                 </td>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>Leitanalyt</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValueName}</td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue}</td>
                 <td className='whitespace-nowrap px-6 py-4'>
                   <div className='flex items-center gap-2'>

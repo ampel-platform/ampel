@@ -123,6 +123,8 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
         date: new Date(r.resultCreationTime ?? r.analyteMeasuringTime),
         analyteValue: Number(r.analyteValue),
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
+        unit: r.analyteValueUnit,
+        analyteValueName: r.analyteName
       })),
     };
 

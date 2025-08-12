@@ -16,6 +16,8 @@ interface AlertChartDataPoint {
   analyteValue: number;
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
+  unit: string;
+  analyteValueName: string;
 }
 
 interface AlertChartProps {
@@ -40,7 +42,7 @@ interface AlertChartProps {
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
     <div className='flex w-full flex-col gap-y-4'>
-      <span className='font-medium text-gray-600'>Leitanalyt</span>
+      <span className='font-medium text-gray-600'>{transformedData[0].analyteValueName}</span>
       <ResponsiveContainer width='100%' height={400}>
         <ComposedChart
           width={500}
@@ -49,9 +51,11 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           margin={{ top: 20, right: 60, bottom: 20, left: 20 }}
         >
           <CartesianGrid stroke='#f5f5f5' />
-          <Tooltip />
+          <Tooltip 
+            formatter={(value) => [`${value} ${transformedData[0].unit}`, transformedData[0].analyteValueName]} 
+            />
           <Line
-            name='Leitanalyt'
+            name={'Leitanalyt'}
             isAnimationActive={false}
             yAxisId='value'
             dataKey='analyteValue'
@@ -65,7 +69,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                 return (
                   <>
                     <circle
-                              key={`last-circle-${index}`}
+                      key={`last-circle-${index}`}
                       cx={props.cx}
                       cy={props.cy - 12}
                       r={5}
@@ -74,14 +78,14 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
                       strokeWidth={1}
                     />
                     <polygon
-                              key={`last-triangle-${index}`}
+                      key={`last-triangle-${index}`}
                       points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
                       fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
                       stroke='black'
                       strokeWidth={1}
                     />
                     <rect
-                              key={`last-square-${index}`}
+                      key={`last-square-${index}`}
                       x={props.cx - 5.5}
                       y={props.cy + 8}
                       width={11}
@@ -95,7 +99,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
               }
 
               return (
-                <StatusIcon       key={`status-icon-${index}`} ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
+                <StatusIcon key={`status-icon-${index}`} ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
               );
             }}
           />
@@ -113,7 +117,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           <YAxis
             yAxisId='value'
             dataKey='analyteValue'
-            label={{ value: 'μl/mol', angle: 45, position: 'insideLeft' }}
+            label={{ value: transformedData[0].unit, angle: 45, position: 'insideLeft' }}
           />
         </ComposedChart>
       </ResponsiveContainer>

@@ -22,6 +22,8 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
     date: faker.date.recent({ days: 5, refDate }),
     analyteValue: faker.number.int({ min: 0, max: 50 }),
     ampelStatus: faker.number.int({ min: 1, max: 3 }),
+    unit: 'µmol/l',
+    analyteValueName: 'LCRE_S',
   }))
     .sort((a, b) => a.date.getTime() - b.date.getTime())
     .map((d, idx, arr) => (idx === arr.length - 1 ? { ...d, ampelStatus } : d));
@@ -234,7 +236,7 @@ export function uiFakesToApi(case_id: string): ApiResultCollection {
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
       analyteName: rs.ruleset, // no analyte in UI fake → reuse ruleset name
       analyteValue: String(h.analyteValue ?? ''),
-      analyteValueUnit: '',
+      analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
       resultCreationTime: new Date(h.date.getTime() + 60_000).toISOString(),
       metaInformation:
