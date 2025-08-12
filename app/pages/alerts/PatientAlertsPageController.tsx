@@ -106,6 +106,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
           break;
       }
     }
+
     return grouped;
   }, [data]);
 

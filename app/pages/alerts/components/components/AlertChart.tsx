@@ -17,7 +17,7 @@ interface AlertChartDataPoint {
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
   unit: string;
-  analyteValueName: string;
+  analyteName: string;
 }
 
 interface AlertChartProps {
@@ -42,7 +42,7 @@ interface AlertChartProps {
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
     <div className='flex w-full flex-col gap-y-4'>
-      <span className='font-medium text-gray-600'>{transformedData[0].analyteValueName}</span>
+      <span className='font-medium text-gray-600'>{transformedData[0].analyteName}</span>
       <ResponsiveContainer width='100%' height={400}>
         <ComposedChart
           width={500}
@@ -52,7 +52,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
         >
           <CartesianGrid stroke='#f5f5f5' />
           <Tooltip 
-            formatter={(value) => [`${value} ${transformedData[0].unit}`, transformedData[0].analyteValueName]} 
+            formatter={(value) => [`${value} ${transformedData[0].unit}`, transformedData[0].analyteName]} 
             />
           <Line
             name={'Leitanalyt'}

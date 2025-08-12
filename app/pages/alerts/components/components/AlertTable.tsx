@@ -7,7 +7,7 @@ interface AlertTableDataPoint {
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
   unit: string;
-  analyteValueName: string;
+  analyteName: string
 }
 
 interface AlertTableProps {
@@ -29,7 +29,7 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
     return date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' });
   }
 
-  const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
+  const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
     <div className='pr-12'>
@@ -51,8 +51,8 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
                   {formatDate(row.date)}
                 </td>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValueName}</td>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue}</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteName}</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue} {row.unit}</td>
                 <td className='whitespace-nowrap px-6 py-4'>
                   <div className='flex items-center gap-2'>
                     <div className={`h-3 w-3 rounded-full ${row.ampelStatusFillColor}`} />

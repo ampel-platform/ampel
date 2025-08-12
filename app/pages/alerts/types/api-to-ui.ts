@@ -124,7 +124,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
         analyteValue: Number(r.analyteValue),
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
         unit: r.analyteValueUnit,
-        analyteValueName: r.analyteName
+        analyteName: r.analyteName
       })),
     };
 

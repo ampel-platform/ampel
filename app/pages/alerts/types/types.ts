@@ -37,7 +37,7 @@ export interface RulesetHistory {
     analyteValue: number;
     ampelStatus: AmpelStatus;
     unit: string;
-    analyteValueName: string;
+    analyteName: string;
   }[];
 }
 

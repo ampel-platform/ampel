@@ -23,7 +23,7 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
     analyteValue: faker.number.int({ min: 0, max: 50 }),
     ampelStatus: faker.number.int({ min: 1, max: 3 }),
     unit: 'µmol/l',
-    analyteValueName: 'LCRE_S',
+    analyteName: 'LCRE_S',
   }))
     .sort((a, b) => a.date.getTime() - b.date.getTime())
     .map((d, idx, arr) => (idx === arr.length - 1 ? { ...d, ampelStatus } : d));

@@ -1916,6 +1916,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 15
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -1966,6 +1968,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2014,6 +2018,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2064,6 +2070,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 36
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2115,6 +2123,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 7
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2166,6 +2176,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 44
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2217,6 +2229,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 17
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -2265,6 +2279,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 10
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4170,6 +4186,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 4
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4218,6 +4236,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 43
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4266,6 +4286,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 1
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4314,6 +4336,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4365,6 +4389,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 31
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4413,6 +4439,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 31
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4464,6 +4492,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 26
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -4515,6 +4545,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5527,6 +5559,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 4
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5575,6 +5609,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 43
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5623,6 +5659,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 1
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5671,6 +5709,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5722,6 +5762,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 31
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5770,6 +5812,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 31
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5821,6 +5865,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 26
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
@@ -5872,6 +5918,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
                                 21
+                                 
+                                µmol/l
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4"
