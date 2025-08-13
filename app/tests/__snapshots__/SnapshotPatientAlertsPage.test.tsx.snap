@@ -18,9 +18,18 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
           class="flex flex-col gap-y-2"
         >
           <span
-            class="text-3xl font-medium text-gray-700"
+            class="flex flex-row justify-between"
           >
-            Unbekannt
+            <span
+              class="text-3xl font-medium text-gray-700"
+            >
+              Unbekannt
+            </span>
+            <img
+              alt="AMPEL Logo"
+              src="/assets/ampel-logo.svg"
+              width="80"
+            />
           </span>
           <div
             class="grid grid-cols-4"
@@ -703,9 +712,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
@@ -1597,9 +1615,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
@@ -2938,9 +2965,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
@@ -3832,9 +3868,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
@@ -5205,9 +5250,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
@@ -6578,9 +6632,18 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="flex flex-row justify-between"
             >
-              Unbekannt
+              <span
+                class="text-3xl font-medium text-gray-700"
+              >
+                Unbekannt
+              </span>
+              <img
+                alt="AMPEL Logo"
+                src="/assets/ampel-logo.svg"
+                width="80"
+              />
             </span>
             <div
               class="grid grid-cols-4"
