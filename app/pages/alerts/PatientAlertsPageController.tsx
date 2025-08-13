@@ -23,7 +23,7 @@ export const loader = async ({
   params,
 }: LoaderFunctionArgs): Promise<TypedResponse<LoaderData>> => {
   const { case_id } = params;
-  if (!case_id) throw new Response('Not Found', { status: 404 });
+  if (!case_id) throw new Response('case_id fehlt', { status: 404 });
 
   let data: ApiResultCollection;
   if (isTest) {
