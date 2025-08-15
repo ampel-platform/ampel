@@ -8,63 +8,70 @@ on:
     branches: ['develop']
 
 permissions:
-  contents: read
+  contents: write       # nötig, um Releases zu erstellen
   packages: write
 
 jobs:
   release:
-    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    if: ${{ github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          labels: |
-            org.opencontainers.image.revision=${{ github.sha }}
+    - uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run coverage
 
-      - name: Release Info Preparation
-        id: release-prep
-        run: |
-          echo "REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
-          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+    - name: Docker meta
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        labels: |
+          org.opencontainers.image.revision=${{ github.sha }}
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+    - uses: docker/setup-qemu-action@v3
+    - uses: docker/setup-buildx-action@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+    - name: Login to GHCR
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/checkout@v4
+    - name: Release Info
+      id: rel
+      shell: bash
+      run: |
+        TAG="${GITHUB_REF#refs/tags/}"
+        VERSION="${TAG#v}"
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        if [[ "$TAG" =~ -(alpha|beta|rc) ]]; then
+          echo "PRERELEASE=true" >> $GITHUB_OUTPUT
+        else
+          echo "PRERELEASE=false" >> $GITHUB_OUTPUT
+        fi
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        platforms: linux/amd64,linux/arm64
+        tags: ghcr.io/${{ github.repository }}:${{ steps.rel.outputs.VERSION }}
+        labels: ${{ steps.meta.outputs.labels }}
+        file: ./docker/prod/Dockerfile
+        push: true
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm run coverage
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/${{ steps.release-prep.outputs.REPOSITORY }}:${{ steps.release-prep.outputs.VERSION }}
-          labels: ${{ steps.meta.outputs.labels }}
-          file: ./docker/prod/Dockerfile
-          push: true
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ steps.rel.outputs.VERSION }}
+        generate_release_notes: true
+        prerelease: ${{ steps.rel.outputs.PRERELEASE }}
+        make_latest: legacy   # GitHub-Default: neueste stabile = "Latest
   test:
     runs-on: ubuntu-latest
     steps:
