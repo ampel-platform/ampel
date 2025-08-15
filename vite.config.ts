@@ -3,8 +3,9 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 // eslint-disable-next-line import/no-default-export
-export default defineConfig({
-  server: {
+export default defineConfig(({ command, mode }) => {
+    const isDev = command === 'serve' || mode === 'development';
+  return({  server: {
     //server config damit es in docker funktioniert
     host: true,
     port: 5173,
@@ -14,9 +15,14 @@ export default defineConfig({
     remix({
       routes(defineRoutes) {
         return defineRoutes((route) => {
-          route('/', 'routes/root-redirect.tsx'); // redirect to test medical case 0001949132 ↓
+           if (!isDev) {
+          route('/', 'routes/root-redirect.tsx'); // only 4 development because this tool gets opened in a route redirect to test medical case 0001949132 ↓
+          } else
+          {
+            route('/', 'routes/init-catchall-redirect.tsx'); // redirect to last route medical case ↓
+          }
           route('alerts/cases/:case_id', 'pages/alerts/PatientAlertsPageController.tsx');
-          route('*', 'routes/catchall-redirect.tsx'); // redirect to test medical case 0001949132 ↑
+          route('*', 'routes/catchall-redirect.tsx'); // redirect to last route medical case ↑
         });
       },
     }),
@@ -26,5 +32,6 @@ export default defineConfig({
       // eslint-disable-next-line no-undef
       '@': path.resolve(__dirname, './app'),
     },
-  },
+  },})
+
 });
