@@ -14,7 +14,9 @@
     "coverage": "cross-env NODE_ENV=test VITE_CHART_TEST=1 vitest run --coverage",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "rebuild": "npm run clean && npm install && npm run build"
+    "rebuild": "npm run clean && npm install && npm run build",
+    "release:lint": "eslint . --ext .ts,.tsx --max-warnings 0 --cache --cache-location .eslintcache",
+    "format:check": "prettier . --check"
   },
   "prepare": "husky",
   "lint-staged": {
