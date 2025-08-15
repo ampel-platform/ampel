@@ -51,9 +51,12 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           margin={{ top: 20, right: 60, bottom: 20, left: 20 }}
         >
           <CartesianGrid stroke='#f5f5f5' />
-          <Tooltip 
-            formatter={(value) => [`${value} ${transformedData[0].unit}`, transformedData[0].analyteName]} 
-            />
+          <Tooltip
+            formatter={(value) => [
+              `${value} ${transformedData[0].unit}`,
+              transformedData[0].analyteName,
+            ]}
+          />
           <Line
             name={'Leitanalyt'}
             isAnimationActive={false}
@@ -99,7 +102,13 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
               }
 
               return (
-                <StatusIcon key={`status-icon-${index}`} ampelStatus={ampelStatus} cx={props.cx} cy={props.cy} index={index} />
+                <StatusIcon
+                  key={`status-icon-${index}`}
+                  ampelStatus={ampelStatus}
+                  cx={props.cx}
+                  cy={props.cy}
+                  index={index}
+                />
               );
             }}
           />

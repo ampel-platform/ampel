@@ -7,7 +7,7 @@ interface AlertTableDataPoint {
   ampelStatus: AmpelStatus;
   ampelStatusFillColor: string;
   unit: string;
-  analyteName: string
+  analyteName: string;
 }
 
 interface AlertTableProps {
@@ -41,7 +41,9 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                 Datum & Uhrzeit des Messzeitpunktes
               </th>
               <th className='px-6 py-3 font-medium text-gray-700'>Analyt</th>
-              <th className='px-6 py-3 font-medium text-gray-700'>Wert ({transformedData[0].unit})</th>
+              <th className='px-6 py-3 font-medium text-gray-700'>
+                Wert ({transformedData[0].unit})
+              </th>
               <th className='px-6 py-3 font-medium text-gray-700'>Status</th>
             </tr>
           </thead>
@@ -52,7 +54,9 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                   {formatDate(row.date)}
                 </td>
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteName}</td>
-                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>{row.analyteValue} {row.unit}</td>
+                <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
+                  {row.analyteValue} {row.unit}
+                </td>
                 <td className='whitespace-nowrap px-6 py-4'>
                   <div className='flex items-center gap-2'>
                     <div className={`h-3 w-3 rounded-full ${row.ampelStatusFillColor}`} />
@@ -60,9 +64,9 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                       <StatusIcon ampelStatus={row.ampelStatus} cx={7} cy={7} index={0} />
                     </svg>
                     <span className='text-gray-700'>
-                    {row.ampelStatus === 1 && <span>Normal</span>}
-                    {row.ampelStatus === 2 && <span>Warnung</span>}
-                    {row.ampelStatus === 3 && <span>Kritisch</span>}
+                      {row.ampelStatus === 1 && <span>Normal</span>}
+                      {row.ampelStatus === 2 && <span>Warnung</span>}
+                      {row.ampelStatus === 3 && <span>Kritisch</span>}
                     </span>
                   </div>
                 </td>

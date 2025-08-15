@@ -5,9 +5,7 @@ import type {
   RulesetHistory,
   ScoringSystem as UiScoringSystem,
 } from './types';
-import {
-  AmpelStatus,
-} from './types';
+import { AmpelStatus } from './types';
 import {
   ApiResultCollection,
   type ApiResultCollection as ApiResultCollectionT,
@@ -15,7 +13,13 @@ import {
 } from './types-api';
 
 const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
-  s === 'green' ? AmpelStatus.GREEN : s === 'yellow' ? AmpelStatus.YELLOW : s === 'red' ? AmpelStatus.RED : AmpelStatus.GREEN;
+  s === 'green'
+    ? AmpelStatus.GREEN
+    : s === 'yellow'
+      ? AmpelStatus.YELLOW
+      : s === 'red'
+        ? AmpelStatus.RED
+        : AmpelStatus.GREEN;
 
 function toNumberOrString(v: string): number | string {
   const n = Number(v);
@@ -124,7 +128,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
         analyteValue: Number(r.analyteValue),
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
         unit: r.analyteValueUnit,
-        analyteName: r.analyteName
+        analyteName: r.analyteName,
       })),
     };
 

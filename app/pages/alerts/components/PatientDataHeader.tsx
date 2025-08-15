@@ -1,5 +1,5 @@
-import { PatientMetaData } from '../types/types';
 import Logo from '../../../../assets/ampel-logo.svg';
+import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
 
@@ -21,7 +21,7 @@ export function PatientMetaDataHeader({
     <div className='flex flex-col gap-y-2'>
       <span className='flex flex-row justify-between'>
         <span className='text-3xl font-medium text-gray-700'>{name}</span>
-        <img src={Logo} width={80} alt="AMPEL Logo" />
+        <img src={Logo} width={80} alt='AMPEL Logo' />
       </span>
       <div className='grid grid-cols-4'>
         <span className='flex flex-row gap-x-2'>
