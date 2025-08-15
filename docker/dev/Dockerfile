@@ -13,9 +13,6 @@ RUN npm install
 # Copy the application code to the working directory
 COPY . .
 
-# Install Remix and other dependencies
-RUN npm install remix react react-dom vite tailwindcss
-
 # Expose the port for the application
 EXPOSE 5173
 
