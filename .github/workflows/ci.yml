@@ -33,6 +33,7 @@ jobs:
       - name: ESLint (no warnings allowed)
         run: npm run release:lint
   test:
+    needs: quality-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
