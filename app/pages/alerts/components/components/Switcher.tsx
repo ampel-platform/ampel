@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 interface SwitcherProps {
   initialState?: boolean;
-  // eslint-disable-next-line @/no-unused-vars
+
   onChange: (newState: boolean) => void;
   label?: string;
 }

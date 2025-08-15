@@ -1,6 +1,7 @@
 import { LinksFunction } from '@remix-run/node';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
+import type { JSX } from 'react';
 import React from 'react';
 
 import { ErrorBoundaryBody } from './ErrorBoundaryBody';
@@ -32,7 +33,7 @@ export default function App(): React.ReactNode {
   );
 }
 
-export function ErrorBoundary() {
+export function ErrorBoundary(): JSX.Element {
   const error = useRouteError();
 
   return ErrorBoundaryBody(isRouteErrorResponse(error), error);

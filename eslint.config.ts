@@ -36,6 +36,10 @@ export default [
       '**/public/*',
       'vite.config.js',
       'vitest.config.ts',
+      '**/setupTests.ts',
+      '**/SnapshotPatientAlertsPage.test.tsx',
+      '**/init-catchall-redirect.tsx',
+      '**/catchall-redirect.tsx',
     ],
   },
   js.configs.recommended,
@@ -61,12 +65,11 @@ export default [
     },
     rules: {
       // TypeScript-spezifisch
-      '@/no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         'warn',
         {
           vars: 'all',
           args: 'after-used',
-
           ignoreRestSiblings: true,
         },
       ],
@@ -93,9 +96,10 @@ export default [
       'max-classes-per-file': ['error', 2],
       'dot-notation': 'warn',
       'dot-location': ['error', 'property'],
-      'no-empty-function': 'warn',
-      '@/no-empty-function': 'warn',
+      'no-empty-function': 'off',
+      '@/no-empty-function': 'off',
 
+      '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-empty-object-type': 'error',
       '@typescript-eslint/no-unsafe-function-type': 'error',

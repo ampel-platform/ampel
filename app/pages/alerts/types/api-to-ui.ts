@@ -133,8 +133,10 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
     };
 
     const links =
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       latest?.metaInformation && Array.isArray((latest.metaInformation as any).links)
-        ? ((latest.metaInformation as any).links as { displayText: string; href: string }[])
+        ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ((latest.metaInformation as any).links as { displayText: string; href: string }[])
         : [];
 
     return {

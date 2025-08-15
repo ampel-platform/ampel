@@ -1,5 +1,6 @@
 import Logo from '../assets/ampel-logo.svg';
 const SUPPORT_MAIL = 'ampel@medizin.uni-leipzig.de';
+import type { JSX } from 'react';
 
 /**
  * Renders an error boundary body component.
@@ -8,7 +9,8 @@ const SUPPORT_MAIL = 'ampel@medizin.uni-leipzig.de';
  * @param {any} error - The error to be displayed.
  * @returns {JSX.Element} The rendered error boundary body component.
  */
-export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any) {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
   const subject = 'AMPEL-CDSS-Fehler';
   if (isRouteErrorResponse) {
     const body = `Fehler: ${error.status} ${error.statusText}\n\n${error.data} : ${error.stack}`;

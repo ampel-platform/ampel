@@ -49,7 +49,6 @@ export default function PatientAlertsPageController(): React.ReactNode {
     ]);
 
     const rulesets = apiToRulesets(data);
-
     for (const rs of rulesets) {
       switch (rs.ampelStatus) {
         case AmpelStatus.RED:
