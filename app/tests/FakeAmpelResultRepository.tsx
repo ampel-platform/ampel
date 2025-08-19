@@ -40,10 +40,10 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
  * @returns {PatientMetaData} The generated fake patient metadata.
  */
 
-function generateFakePatientMetaData(patient_id: string, case_id: string): PatientMetaData {
+function generateFakePatientMetaData( case_id: string): PatientMetaData {
   return {
     name: 'Max Mustermann',
-    patientId: patient_id,
+    patientId: 'patient_id',
     caseId: case_id,
     sex: 'männlich',
     birthdate: new Date('1991-07-30T15:20:16Z'),
@@ -255,18 +255,9 @@ export function uiFakesToApi(case_id: string): ApiResultCollection {
   return {
     medicalCaseId: case_id,
     scoringSystems,
-    // If your zod schema includes `patient`, you can add it here using your UI fake:
-    // patient: {
-    //   id: patient_id,
-    //   name: "Max Mustermann",
-    //   sex: "männlich",
-    //   birthdate: "1991-07-30T15:20:16Z",
-    // },
   } satisfies ApiResultCollection;
 }
 
 export const FakeAmpelResultRepository = {
-  getFakePatientMetaData: generateFakePatientMetaData,
-  getFakeRulesets: generateFakeRulesets,
   uiFakesToApi: uiFakesToApi,
 };

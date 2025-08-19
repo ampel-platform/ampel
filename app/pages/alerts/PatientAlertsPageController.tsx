@@ -10,13 +10,15 @@ import { InconspicuousStateCard } from './components/InconspicuousStateCard';
 import { PatientAlertsPage } from './PatientAlertsPage';
 import { apiToPatientMetaData, apiToRulesets } from './types/api-to-ui';
 import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
-import { ApiResultCollection } from './types/types-api';
+import { ApiResultCollection, PatientApiResult } from './types/types-api';
+import { PatientResultRepository } from './PatientRepository';
 
-const isTest = import.meta.env?.VITE_CHART_TEST === '1';
+const isTest = import.meta.env?.VITE_TEST === 'test';
 
 interface LoaderData {
   case_id: string;
   data: ApiResultCollection;
+  patientData?: PatientApiResult;
 }
 
 export const loader = async ({
@@ -26,20 +28,25 @@ export const loader = async ({
   if (!case_id) throw new Response('case_id fehlt', { status: 404 });
 
   let data: ApiResultCollection;
+  let patientData: PatientApiResult | undefined;
   if (isTest) {
     data = await FakeAmpelResultRepository.uiFakesToApi(case_id);
   } else {
-    data = await AmpelResultRepository.getByMedicalCaseId(case_id);
+    [data, patientData] = await Promise.all([
+      AmpelResultRepository.getByMedicalCaseId(case_id),
+      PatientResultRepository.getByMedicalCaseId(case_id),
+    ])
   }
 
-  return json<LoaderData>({ case_id, data });
+  return json<LoaderData>({ case_id, data, patientData });
 };
 
 // eslint-disable-next-line no-undef
 export default function PatientAlertsPageController(): React.ReactNode {
   const { data } = useLoaderData<LoaderData>();
+  const { data: patientData } = useLoaderData<LoaderData>();
 
-  const patientMetaData: PatientMetaData = useMemo(() => apiToPatientMetaData(data), [data]);
+  const patientMetaData: PatientMetaData = useMemo(() => apiToPatientMetaData(patientData), [patientData]);
 
   const rulesetsByStatus = useMemo(() => {
     const grouped = new Map<AmpelStatus, ReactNode[]>([

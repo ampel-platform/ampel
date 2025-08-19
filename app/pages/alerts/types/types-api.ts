@@ -27,12 +27,21 @@ export const ApiScoringSystemResults = z.object({
 });
 export type ApiScoringSystemResults = z.infer<typeof ApiScoringSystemResults>;
 
-/** Top-Level Antwort (ResultCollection) */
 export const ApiResultCollection = z.object({
   medicalCaseId: z.string(),
   scoringSystems: z.array(ApiScoringSystemResults),
-  // Falls dein Backend später Patientendaten mitliefert, hier ergänzen:
-  // patientId: z.string().optional(),
-  // birthdate: z.string().optional(),
 });
 export type ApiResultCollection = z.infer<typeof ApiResultCollection>;
+
+export const PatientApiResult = z.object({
+  name: z.string(),
+  patientId: z.string(),
+  sex: z.enum(['männlich', 'weiblich']),
+  birthdate: z.date(),
+})
+export type PatientApiResult = {
+  name: string;
+  patientId: string;
+  sex: 'männlich' | 'weiblich';
+  birthdate: Date;
+};
