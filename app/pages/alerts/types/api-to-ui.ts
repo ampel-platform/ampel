@@ -83,30 +83,6 @@ export function mapApiToUi(
   return { medicalcase, patient, birthdate, scoringsystems };
 }
 
-/** === API -> UI.PatientMetaData (mit sicheren Fallbacks) === */
-export function apiToPatientMetaData(apiPayload: unknown): PatientMetaData {
-  const parsed = ApiResultCollection.safeParse(apiPayload);
-  if (!parsed.success) {
-    // Fallback so tests don’t crash if loader data is missing
-    return {
-      name: 'Unbekannt',
-      patientId: '—',
-      caseId: '—',
-      sex: 'männlich',
-      birthdate: new Date('1991-07-30T15:20:16Z'),
-    };
-  }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const api = parsed.data as any;
-  const p = api.patient ?? {};
-  return {
-    name: p.name ?? 'Unbekannt',
-    patientId: p.id ?? '—',
-    caseId: api.medicalCaseId,
-    sex: p.sex ?? 'männlich',
-    birthdate: new Date(p.birthdate ?? '1991-07-30T15:20:16Z'),
-  };
-}
 
 export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const parsed = ApiResultCollection.safeParse(apiPayload);
