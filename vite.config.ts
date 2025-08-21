@@ -7,8 +7,7 @@ export default defineConfig(({ command, mode }) => {
   const isDev = command === 'serve' || mode === 'development';
   return {
     server: {
-      //server config damit es in docker funktioniert
-      host: true,
+      host: '127.0.0.1',
       port: 5173,
     },
     build: { sourcemap: false },
