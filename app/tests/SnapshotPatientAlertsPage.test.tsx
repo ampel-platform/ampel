@@ -2,33 +2,40 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import PatientAlertsPageController from '../pages/alerts/PatientAlertsPageController';
+import { ApiResultCollection, PatientApiResult } from '../pages/alerts/types/types-api';
 /* eslint-disable no-undef */
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>('@remix-run/react');
-  const { uiFakesToApi } = await import('../tests/FakeAmpelResultRepository'); // adjust path if needed
-  const data = uiFakesToApi('TESTID'); // API-shaped payload
+  const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository'); 
+  let data: ApiResultCollection;
+  let patientData: PatientApiResult;
+  [data, patientData] = await Promise.all([
+          FakeAmpelResultRepository.uiFakesToApi('CASEID'),
+          FakeAmpelResultRepository.generateFakePatientMetaData(),
+        ])
   return {
     ...actual,
-    useLoaderData: () => ({ case_id: 'CASEID', data }), // supply what the route expects
-  };
+    useLoaderData: () => ({ case_id: 'CASEID', data, patientData }), // supply what the route expects
+  }
 });
 
-describe('PatientAlertsPage Integration', () => {
-  it('displays all main sections & patient data correctly and shows the correct number of critical, warning, and inconspicuous alerts', () => {
+describe('PatientAlertsPage Integration', async () => {
+  it('displays all main sections & patient data correctly and shows the correct number of critical, warning, and inconspicuous alerts', async () => {
     const { container } = render(<PatientAlertsPageController />);
+
     // snapshot test
     expect(container).toMatchSnapshot();
 
     // Headlines prüfen
-    expect(screen.getByText(/Kritische Zustände/)).toBeInTheDocument();
-    expect(screen.getByText(/Warnende Zustände/)).toBeInTheDocument();
-    expect(screen.getByText(/Unauffällige Zustände/)).toBeInTheDocument();
+    expect(await screen.getByText(/Kritische Zustände/)).toBeInTheDocument();
+    expect(await screen.getByText(/Warnende Zustände/)).toBeInTheDocument();
+    expect(await screen.getByText(/Unauffällige Zustände/)).toBeInTheDocument();
 
     // Cards zählen (exakte Zahl siehe Faker)
-    expect(screen.getAllByTestId('critical-alert-card').length).toBe(3);
-    expect(screen.getAllByTestId('warning-alert-card').length).toBe(1);
-    expect(screen.getAllByTestId('inconspicuous-state-card').length).toBe(9);
+    expect(await screen.getAllByTestId('critical-alert-card').length).toBe(3);
+    expect(await screen.getAllByTestId('warning-alert-card').length).toBe(1);
+    expect(await screen.getAllByTestId('inconspicuous-state-card').length).toBe(9);
   });
 
   it('opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button', async () => {

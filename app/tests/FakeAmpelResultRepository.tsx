@@ -7,6 +7,7 @@ import {
   ApiResultCollection,
   ApiScoringSystemResults,
   ApiStatus,
+  PatientApiResult,
 } from '../pages/alerts/types/types-api';
 
 /**
@@ -40,11 +41,12 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
  * @returns {PatientMetaData} The generated fake patient metadata.
  */
 
-function generateFakePatientMetaData( case_id: string): PatientMetaData {
+
+async function generateFakePatientMetaData(): Promise<PatientApiResult> {
+  await sleep(1000);
   return {
     name: 'Max Mustermann',
     patientId: 'patient_id',
-    caseId: case_id,
     sex: 'männlich',
     birthdate: new Date('1991-07-30T15:20:16Z'),
   };
@@ -219,7 +221,10 @@ function generateFakeRulesets(): Ruleset[] {
 const enumToApi = (s: AmpelStatus): ApiStatus =>
   s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
-export function uiFakesToApi(case_id: string): ApiResultCollection {
+ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
+  // add a sleep to simulate loading time
+  await sleep(1000);
+
   const rulesets = generateFakeRulesets(); // ← your long list with history
 
   const scoringSystems: ApiScoringSystemResults[] = rulesets.map((rs, idx) => {
@@ -260,4 +265,8 @@ export function uiFakesToApi(case_id: string): ApiResultCollection {
 
 export const FakeAmpelResultRepository = {
   uiFakesToApi: uiFakesToApi,
+  generateFakePatientMetaData: generateFakePatientMetaData,
 };
+
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
