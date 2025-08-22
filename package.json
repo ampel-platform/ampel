@@ -17,7 +17,8 @@
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build",
     "release:lint": "eslint . --ext .ts,.tsx --max-warnings 0 --cache --cache-location .eslintcache",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "format:write": "prettier . --write"
   },
   "prepare": "husky",
   "lint-staged": {

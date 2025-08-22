@@ -7,17 +7,17 @@ import { ApiResultCollection, PatientApiResult } from '../pages/alerts/types/typ
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>('@remix-run/react');
-  const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository'); 
+  const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository');
   let data: ApiResultCollection;
   let patientData: PatientApiResult;
   [data, patientData] = await Promise.all([
-          FakeAmpelResultRepository.uiFakesToApi('CASEID'),
-          FakeAmpelResultRepository.generateFakePatientMetaData(),
-        ])
+    FakeAmpelResultRepository.uiFakesToApi('CASEID'),
+    FakeAmpelResultRepository.generateFakePatientMetaData(),
+  ]);
   return {
     ...actual,
     useLoaderData: () => ({ case_id: 'CASEID', data, patientData }), // supply what the route expects
-  }
+  };
 });
 
 describe('PatientAlertsPage Integration', async () => {

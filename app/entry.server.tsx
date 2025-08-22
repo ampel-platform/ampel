@@ -1,6 +1,6 @@
 import { PassThrough } from 'node:stream';
 
-import type {  EntryContext } from '@remix-run/node';
+import type { EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { renderToPipeableStream } from 'react-dom/server';
