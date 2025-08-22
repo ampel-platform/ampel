@@ -8,10 +8,10 @@ import { AmpelResultRepository } from './AmpelResultRepository';
 import { AlertCard } from './components/AlertCard';
 import { InconspicuousStateCard } from './components/InconspicuousStateCard';
 import { PatientAlertsPage } from './PatientAlertsPage';
-import {  apiToRulesets } from './types/api-to-ui';
+import { PatientResultRepository } from './PatientRepository';
+import { apiToRulesets } from './types/api-to-ui';
 import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
 import { ApiResultCollection, PatientApiResult } from './types/types-api';
-import { PatientResultRepository } from './PatientRepository';
 
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 
@@ -30,15 +30,15 @@ export const loader = async ({
   let data: ApiResultCollection;
   let patientData: PatientApiResult;
   if (isTest) {
-      [data, patientData] = await Promise.all([
-        FakeAmpelResultRepository.uiFakesToApi(case_id),
-        FakeAmpelResultRepository.generateFakePatientMetaData(),
-       ])
+    [data, patientData] = await Promise.all([
+      FakeAmpelResultRepository.uiFakesToApi(case_id),
+      FakeAmpelResultRepository.generateFakePatientMetaData(),
+    ]);
   } else {
     [data, patientData] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
       PatientResultRepository.getByMedicalCaseId(case_id),
-    ])
+    ]);
   }
 
   return json<LoaderData>({ case_id, data, patientData });
@@ -52,14 +52,15 @@ export default function PatientAlertsPageController(): React.ReactNode {
 
   if (!data || !patientData || !case_id) return null;
 
-  const patientMetaData: PatientMetaData = useMemo(() => { 
+  const patientMetaData: PatientMetaData = useMemo(() => {
     return {
-    name: patientData.name,
-    patientId: patientData.patientId,
-    caseId: case_id,
-    sex: patientData.sex,
-    birthdate: new Date(patientData.birthdate),
-  }  }, [patientData, case_id]);
+      name: patientData.name,
+      patientId: patientData.patientId,
+      caseId: case_id,
+      sex: patientData.sex,
+      birthdate: new Date(patientData.birthdate),
+    };
+  }, [patientData, case_id]);
 
   const rulesetsByStatus = useMemo(() => {
     const grouped = new Map<AmpelStatus, ReactNode[]>([

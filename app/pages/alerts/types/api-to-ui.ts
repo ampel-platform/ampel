@@ -1,6 +1,5 @@
 import type {
   AmpelResult,
-  PatientMetaData,
   Ruleset,
   RulesetHistory,
   ScoringSystem as UiScoringSystem,
@@ -82,7 +81,6 @@ export function mapApiToUi(
 
   return { medicalcase, patient, birthdate, scoringsystems };
 }
-
 
 export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const parsed = ApiResultCollection.safeParse(apiPayload);

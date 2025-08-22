@@ -40,6 +40,8 @@ export default [
       '**/SnapshotPatientAlertsPage.test.tsx',
       '**/init-catchall-redirect.tsx',
       '**/catchall-redirect.tsx',
+      '**/entry.server.tsx',
+      '**/entry.client.tsx',
     ],
   },
   js.configs.recommended,

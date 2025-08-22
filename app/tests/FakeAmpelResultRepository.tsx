@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-import { PatientMetaData, RulesetHistory } from '../pages/alerts/types/types';
+import { RulesetHistory } from '../pages/alerts/types/types';
 import { AmpelStatus, Ruleset } from '../pages/alerts/types/types';
 import {
   ApiResult,
@@ -40,7 +40,6 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
  * @param {string} case_id - The unique identifier for the case.
  * @returns {PatientMetaData} The generated fake patient metadata.
  */
-
 
 async function generateFakePatientMetaData(): Promise<PatientApiResult> {
   await sleep(1000);
@@ -221,7 +220,7 @@ function generateFakeRulesets(): Ruleset[] {
 const enumToApi = (s: AmpelStatus): ApiStatus =>
   s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
- export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
+export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
   // add a sleep to simulate loading time
   await sleep(1000);
 
@@ -268,5 +267,5 @@ export const FakeAmpelResultRepository = {
   generateFakePatientMetaData: generateFakePatientMetaData,
 };
 
-export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
+// eslint-disable-next-line no-undef
+export const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));

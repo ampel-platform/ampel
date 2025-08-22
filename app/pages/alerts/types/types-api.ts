@@ -38,10 +38,10 @@ export const PatientApiResult = z.object({
   patientId: z.string(),
   sex: z.enum(['männlich', 'weiblich']),
   birthdate: z.date(),
-})
-export type PatientApiResult = {
+});
+export interface PatientApiResult {
   name: string;
   patientId: string;
   sex: 'männlich' | 'weiblich';
   birthdate: Date;
-};
+}
