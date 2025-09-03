@@ -37,7 +37,7 @@ export const loader = async ({
   } else {
     [data, patientData] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
-      PatientResultRepository.getByMedicalCaseId(case_id),
+      FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
   }
 
