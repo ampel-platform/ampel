@@ -10,7 +10,9 @@
 - npm ≥ 9
 
 ### Add .env
-create a .env File with the required EnvVars: 
+
+create a .env File with the required EnvVars:
+
 - BASE_API_URL=http://backend
 
 ### Install dependencies

@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
 import { AlertDetails, AmpelStatus, PatientMetaData } from './types/types';
-import { env } from 'node:process';
 
 interface PatientAlertsPageProps {
   patientMetaData: PatientMetaData;
@@ -63,7 +62,7 @@ export function PatientAlertsPage({
           >
             <AlertDetailOverlay data={detailOverlayData} onClose={hideDetailOverlay} />
           </div>
-          
+
           <div className='flex h-full w-full flex-col gap-y-20'>
             <div className='flex flex-row gap-x-12'>
               <div className='flex w-full flex-col items-start gap-y-4'>

@@ -8,7 +8,6 @@ import { AmpelResultRepository } from './AmpelResultRepository';
 import { AlertCard } from './components/AlertCard';
 import { InconspicuousStateCard } from './components/InconspicuousStateCard';
 import { PatientAlertsPage } from './PatientAlertsPage';
-import { PatientResultRepository } from './PatientRepository';
 import { apiToRulesets } from './types/api-to-ui';
 import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
 import { ApiResultCollection, PatientApiResult } from './types/types-api';
