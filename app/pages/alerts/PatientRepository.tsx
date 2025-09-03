@@ -1,6 +1,6 @@
+import { env } from 'node:process';
 import { PatientApiResult } from './types/types-api';
 
-const BASE_URL = 'http://backend.ampel.internal';
 const PATH = 'patient';
 
 export const PatientResultRepository = {
@@ -9,7 +9,7 @@ export const PatientResultRepository = {
       if (!caseId) {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
-      const res = await fetch(`${BASE_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`, {
+      const res = await fetch(`${env.BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`, {
         headers: { Accept: 'application/json' },
       });
 
