@@ -1,8 +1,9 @@
 /* eslint-disable import/no-default-export */
-import { json, type LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
+import { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useMemo } from 'react';
 
+import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';
 import { AmpelResultRepository } from './AmpelResultRepository';
 import { AlertCard } from './components/AlertCard';
@@ -11,7 +12,6 @@ import { PatientAlertsPage } from './PatientAlertsPage';
 import { apiToRulesets } from './types/api-to-ui';
 import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
 import { ApiResultCollection, PatientApiResult } from './types/types-api';
-import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
@@ -22,33 +22,38 @@ interface LoaderData {
   patientData?: PatientApiResult;
 }
 
-export const loader = async ({
-  params,
-}: LoaderFunctionArgs): Promise<TypedResponse<LoaderData>> => {
-  const { case_id } = params;
+export async function loader({ params }: LoaderFunctionArgs): Promise<LoaderData> {
+  const case_id = params.case_id;
   if (!case_id) throw new Response('case_id fehlt', { status: 404 });
+  return loadAlertsForCase(case_id);
+}
 
+async function loadAlertsForCase(case_id: string): Promise<LoaderData> {
   let data: ApiResultCollection;
   let patientData: PatientApiResult;
+
   if (isTest) {
     [data, patientData] = await Promise.all([
       FakeAmpelResultRepository.uiFakesToApi(case_id),
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
   } else if (isDemo) {
-      [data, patientData] = await Promise.all([
+    [data, patientData] = await Promise.all([
       FakeDemoAmpelResultRepository.uiDemoFakesToApi(case_id),
       FakeDemoAmpelResultRepository.generateDemoFakePatientMetaData(),
     ]);
   } else {
-   [data, patientData] = await Promise.all([
+    // NOTE: Must be browser-safe in SPA mode.
+    // If AmpelResultRepository uses fetch/XHR to your API, it’s fine.
+    // If it imports Node-only modules, gate those behind SSR or refactor to HTTP calls.
+    [data, patientData] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
   }
 
-  return json<LoaderData>({ case_id, data, patientData });
-};
+  return { case_id, data, patientData };
+}
 
 // eslint-disable-next-line no-undef
 export default function PatientAlertsPageController(): React.ReactNode {
@@ -141,7 +146,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
           TEST
         </div>
       )}
-       {isDemo && (
+      {isDemo && (
         <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
           DEMO
         </div>

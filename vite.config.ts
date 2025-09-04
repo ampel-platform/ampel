@@ -13,6 +13,7 @@ export default defineConfig(({ command, mode }) => {
     build: { sourcemap: false },
     plugins: [
       remix({
+        //ssr: false, //dont disable server-side rendering because we will loose the ability to controll the route redicrects (because we dont want to make this with cookies)
         routes(defineRoutes) {
           return defineRoutes((route) => {
             if (!isDev) {

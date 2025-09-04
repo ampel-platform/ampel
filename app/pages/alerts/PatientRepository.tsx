@@ -1,5 +1,3 @@
-import { env } from 'node:process';
-
 import { PatientApiResult } from './types/types-api';
 
 const PATH = 'patient';
@@ -11,7 +9,7 @@ export const PatientResultRepository = {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
       const res = await fetch(
-        `${env.BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
+        `${import.meta.env.BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
         {
           headers: { Accept: 'application/json' },
         },

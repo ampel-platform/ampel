@@ -97,7 +97,7 @@ function generateDemoFakeRulesets(): Ruleset[] {
           href: '#',
         },
       ],
-    }
+    },
   ];
 }
 
