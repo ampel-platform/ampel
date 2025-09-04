@@ -18,7 +18,8 @@
     "rebuild": "npm run clean && npm install && npm run build",
     "release:lint": "eslint . --ext .ts,.tsx --max-warnings 0 --cache --cache-location .eslintcache",
     "format:check": "prettier . --check",
-    "format:write": "prettier . --write"
+    "format:write": "prettier . --write",
+    "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo remix vite:dev"   
   },
   "prepare": "husky",
   "lint-staged": {

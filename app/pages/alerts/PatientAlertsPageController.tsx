@@ -11,8 +11,10 @@ import { PatientAlertsPage } from './PatientAlertsPage';
 import { apiToRulesets } from './types/api-to-ui';
 import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
 import { ApiResultCollection, PatientApiResult } from './types/types-api';
+import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
+const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
 
 interface LoaderData {
   case_id: string;
@@ -33,8 +35,13 @@ export const loader = async ({
       FakeAmpelResultRepository.uiFakesToApi(case_id),
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
+  } else if (isDemo) {
+      [data, patientData] = await Promise.all([
+      FakeDemoAmpelResultRepository.uiDemoFakesToApi(case_id),
+      FakeDemoAmpelResultRepository.generateDemoFakePatientMetaData(),
+    ]);
   } else {
-    [data, patientData] = await Promise.all([
+   [data, patientData] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
@@ -45,9 +52,7 @@ export const loader = async ({
 
 // eslint-disable-next-line no-undef
 export default function PatientAlertsPageController(): React.ReactNode {
-  const { data } = useLoaderData<LoaderData>();
-  const { patientData } = useLoaderData<LoaderData>();
-  const { case_id } = useLoaderData<LoaderData>();
+  const { data, patientData, case_id } = useLoaderData<LoaderData>();
 
   if (!data || !patientData || !case_id) return null;
 
@@ -134,6 +139,11 @@ export default function PatientAlertsPageController(): React.ReactNode {
       {isTest && (
         <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
           TEST
+        </div>
+      )}
+       {isDemo && (
+        <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
+          DEMO
         </div>
       )}
       <PatientAlertsPage patientMetaData={patientMetaData} rulesetsByStatus={rulesetsByStatus} />
