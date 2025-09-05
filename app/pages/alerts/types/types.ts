@@ -3,7 +3,12 @@ export enum AmpelStatus {
   YELLOW,
   RED,
 }
-
+export enum AmpelKisStatus {
+  GREEN = 1,
+  YELLOW,
+  RED,
+  NONE,
+}
 export enum AlertType {
   Warning,
   Critical,
