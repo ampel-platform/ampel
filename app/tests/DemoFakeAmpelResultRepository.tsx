@@ -63,7 +63,7 @@ async function generateDemoFakePatientMetaData(): Promise<PatientApiResult> {
 function generateDemoFakeRulesets(): Ruleset[] {
   return [
     {
-      ruleset: 'Akute Nierenschädigung [AKIN 1, Vancomycin]',
+      ruleset: 'AKI',
       ampelStatus: AmpelStatus.RED,
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
@@ -79,25 +79,7 @@ function generateDemoFakeRulesets(): Ruleset[] {
           href: '#',
         },
       ],
-    },
-    {
-      ruleset: 'Hyperkalzämie',
-      ampelStatus: AmpelStatus.YELLOW,
-      message:
-        'Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.',
-      resultTime: new Date('2025-07-30T15:20:16Z'),
-      history: generateDemoFakeHistoryData(AmpelStatus.YELLOW, 4),
-      links: [
-        {
-          displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/endokrinologie-stoffwechsel/symptome/hyperkalzaemie#diagnostik-diagnostische-uberlegungen',
-        },
-        {
-          displayText: 'Labor',
-          href: '#',
-        },
-      ],
-    },
+    }
   ];
 }
 
