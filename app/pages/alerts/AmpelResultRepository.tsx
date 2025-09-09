@@ -9,7 +9,7 @@ export const AmpelResultRepository = {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
       const res = await fetch(
-        `${import.meta.env.BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
+        `${import.meta.env.VITE_BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
         {
           headers: { Accept: 'application/json' },
         },
