@@ -72,7 +72,11 @@ function generateDemoFakeRulesets(): Ruleset[] {
       links: [
         {
           displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese',
+          href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
+        },
+        {
+          displayText: 'SOP',
+          href: '#',
         },
         {
           displayText: 'Labor',

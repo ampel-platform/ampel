@@ -44,9 +44,9 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
 async function generateFakePatientMetaData(): Promise<PatientApiResult> {
   await sleep(1000);
   return {
-    name: 'Max Mustermann',
-    patientId: 'patient_id',
-    sex: 'männlich',
+    name: 'Max Musterfrau',
+    patientId: '123456',
+    sex: 'weiblich',
     birthdate: new Date('1991-07-30T15:20:16Z'),
   };
 }
@@ -74,7 +74,7 @@ async function generateFakePatientMetaData(): Promise<PatientApiResult> {
 function generateFakeRulesets(): Ruleset[] {
   return [
     {
-      ruleset: 'Akute Nierenschädigung [AKIN 1, Vancomycin]',
+      ruleset: 'AKI',
       ampelStatus: AmpelStatus.RED,
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
@@ -83,7 +83,7 @@ function generateFakeRulesets(): Ruleset[] {
       links: [
         {
           displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese',
+          href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
         },
         {
           displayText: 'Labor',

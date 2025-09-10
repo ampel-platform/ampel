@@ -21,17 +21,26 @@ export function AlertLinks({ links }: AlertLinksProps): React.ReactNode {
     <div className='flex flex-col gap-2'>
       <span className='text-muted-foreground text-sm'>Weiterführende Links</span>
       <div className='flex flex-wrap gap-2'>
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100'
-          >
-            {link.displayText}
-          </a>
-        ))}
+        {links.map((link, index) =>
+          link.displayText === 'SOP' || link.displayText === 'Labor' ? (
+            <a
+              key={index}
+              className='cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400'
+            >
+              {link.displayText}
+            </a>
+          ) : (
+            <a
+              key={index}
+              href={link.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100'
+            >
+              {link.displayText}
+            </a>
+          ),
+        )}
       </div>
     </div>
   );

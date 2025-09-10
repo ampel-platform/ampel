@@ -91,7 +91,7 @@ export function PatientAlertsPage({
               </div>
             </div>
 
-            <div className='flex h-full w-full flex-col gap-y-4'>
+            <div className='flex h-full w-full flex-col gap-y-4 pr-4'>
               <a
                 className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer'
                 onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}

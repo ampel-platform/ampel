@@ -1,4 +1,4 @@
-import Logo from '../../../../assets/ampel-logo.svg';
+import Logo from '../../../../assets/UKL_Logo_Vektor.svg';
 import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
@@ -19,11 +19,11 @@ export function PatientMetaDataHeader({
 }: PatientMetaDataHeaderProps): React.ReactNode {
   return (
     <div className='flex flex-col gap-y-2'>
-      <span className='flex flex-row justify-between'>
+      <span className='top-0 flex flex-row justify-between'>
         <span className='text-3xl font-medium text-gray-700'>{name}</span>
-        <img src={Logo} width={80} alt='AMPEL Logo' />
+        <img src={Logo} width={200} alt='AMPEL Logo' className='pr-10' />
       </span>
-      <div className='grid grid-cols-4'>
+      <div className='grid w-full grid-cols-4'>
         <span className='flex flex-row gap-x-2'>
           <span className='text-gray-600'>Patientennummer</span>
           <span className='text-violet-800'>{patientId}</span>

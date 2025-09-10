@@ -13,21 +13,22 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
           class="flex flex-col gap-y-2"
         >
           <span
-            class="flex flex-row justify-between"
+            class="top-0 flex flex-row justify-between"
           >
             <span
               class="text-3xl font-medium text-gray-700"
             >
-              Max Mustermann
+              Max Musterfrau
             </span>
             <img
               alt="AMPEL Logo"
-              src="/assets/ampel-logo.svg"
-              width="80"
+              class="pr-10"
+              src="/assets/UKL_Logo_Vektor.svg"
+              width="200"
             />
           </span>
           <div
-            class="grid grid-cols-4"
+            class="grid w-full grid-cols-4"
           >
             <span
               class="flex flex-row gap-x-2"
@@ -40,7 +41,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               <span
                 class="text-violet-800"
               >
-                patient_id
+                123456
               </span>
             </span>
             <span
@@ -68,7 +69,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               <span
                 class="text-violet-800"
               >
-                männlich
+                weiblich
               </span>
             </span>
             <span
@@ -143,7 +144,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                       <span
                         class="line-clamp-1 text-lg font-medium text-violet-800"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                       <span
                         class="line-clamp-3 text-gray-700"
@@ -368,7 +369,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </div>
             </div>
             <div
-              class="flex h-full w-full flex-col gap-y-4"
+              class="flex h-full w-full flex-col gap-y-4 pr-4"
             >
               <a
                 class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -702,21 +703,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -729,7 +731,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -757,7 +759,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -832,7 +834,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="text-xl font-medium text-violet-800"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                     </div>
                     <div
@@ -868,17 +870,14 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           >
                             <a
                               class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese"
+                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -979,7 +978,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="font-medium text-gray-600"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                       <div
                         class="recharts-responsive-container"
@@ -1040,7 +1039,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -1265,7 +1264,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -1600,21 +1599,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -1627,7 +1627,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -1655,7 +1655,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -1730,7 +1730,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="text-xl font-medium text-violet-800"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                     </div>
                     <div
@@ -1766,17 +1766,14 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           >
                             <a
                               class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese"
+                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -1922,7 +1919,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -1974,7 +1971,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2024,7 +2021,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2076,7 +2073,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2129,7 +2126,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2182,7 +2179,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2235,7 +2232,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2285,7 +2282,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
                               >
-                                Akute Nierenschädigung [AKIN 1, Vancomycin]
+                                AKI
                               </td>
                               <td
                                 class="whitespace-nowrap px-6 py-4 text-gray-900"
@@ -2385,7 +2382,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -2610,7 +2607,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -2945,21 +2942,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -2972,7 +2970,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -3000,7 +2998,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -3075,7 +3073,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="text-xl font-medium text-violet-800"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                     </div>
                     <div
@@ -3111,17 +3109,14 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           >
                             <a
                               class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenversagen-akutes#allgemeine-informationen-atiologie-und-pathogenese"
+                              href="https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -3222,7 +3217,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       <span
                         class="font-medium text-gray-600"
                       >
-                        Akute Nierenschädigung [AKIN 1, Vancomycin]
+                        AKI
                       </span>
                       <div
                         class="recharts-responsive-container"
@@ -3283,7 +3278,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -3508,7 +3503,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -3843,21 +3838,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -3870,7 +3866,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -3898,7 +3894,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -4051,10 +4047,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -4660,7 +4653,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -4885,7 +4878,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -5220,21 +5213,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -5247,7 +5241,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -5275,7 +5269,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -5428,10 +5422,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -6037,7 +6028,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -6262,7 +6253,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -6597,21 +6588,22 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="flex flex-row justify-between"
+              class="top-0 flex flex-row justify-between"
             >
               <span
                 class="text-3xl font-medium text-gray-700"
               >
-                Max Mustermann
+                Max Musterfrau
               </span>
               <img
                 alt="AMPEL Logo"
-                src="/assets/ampel-logo.svg"
-                width="80"
+                class="pr-10"
+                src="/assets/UKL_Logo_Vektor.svg"
+                width="200"
               />
             </span>
             <div
-              class="grid grid-cols-4"
+              class="grid w-full grid-cols-4"
             >
               <span
                 class="flex flex-row gap-x-2"
@@ -6624,7 +6616,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  patient_id
+                  123456
                 </span>
               </span>
               <span
@@ -6652,7 +6644,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 <span
                   class="text-violet-800"
                 >
-                  männlich
+                  weiblich
                 </span>
               </span>
               <span
@@ -6805,10 +6797,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               Deximed
                             </a>
                             <a
-                              class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                              href="#"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
                             >
                               Labor
                             </a>
@@ -6970,7 +6959,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         <span
                           class="line-clamp-1 text-lg font-medium text-violet-800"
                         >
-                          Akute Nierenschädigung [AKIN 1, Vancomycin]
+                          AKI
                         </span>
                         <span
                           class="line-clamp-3 text-gray-700"
@@ -7195,7 +7184,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4"
+                class="flex h-full w-full flex-col gap-y-4 pr-4"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
