@@ -1,9 +1,6 @@
 import Logo from '../assets/UKL_Logo_Vektor.svg';
 const SUPPORT_MAIL = 'ampel@medizin.uni-leipzig.de';
 import type { JSX } from 'react';
-
-import { BASE_API_URL } from './config.server';
-
 /**
  * Renders an error boundary body component.
  *
@@ -12,9 +9,9 @@ import { BASE_API_URL } from './config.server';
  * @returns {JSX.Element} The rendered error boundary body component.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
   const subject = 'AMPEL-CDSS-Fehler';
-  const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
 
   if (isRouteErrorResponse) {
     const body = `Fehler: ${error.status} ${error.statusText}\n\n${error.data} : ${error.stack}`;
@@ -26,7 +23,6 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
           helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
-          {BASE_URL}
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
@@ -41,7 +37,6 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
           helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
-          {BASE_URL}
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
@@ -55,7 +50,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
         ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen
-        Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: ${BASE_URL}
+        Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
       </p>
       <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
     </div>
