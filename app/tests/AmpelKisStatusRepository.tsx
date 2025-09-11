@@ -1,6 +1,8 @@
+import { BASE_API_URL } from '../config.server';
 import { AmpelKisStatus } from '../pages/alerts/types/types';
 
 const PATH = 'kis-status';
+const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
 
 export const AmpelKisStatusRepository = {
   async getByMedicalCaseId(caseId: string): Promise<AmpelKisStatus> {
@@ -9,10 +11,9 @@ export const AmpelKisStatusRepository = {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
 
-      const res = await fetch(
-        `${import.meta.env.VITE_BASE_API_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
-        { headers: { Accept: 'application/json' } },
-      );
+      const res = await fetch(`${BASE_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`, {
+        headers: { Accept: 'application/json' },
+      });
 
       if (res.status === 404) {
         throw new Response('Ampel-Status wurde nicht gefunden', { status: 404 });

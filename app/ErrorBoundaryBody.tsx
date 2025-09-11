@@ -1,6 +1,8 @@
-import Logo from '../assets/ampel-logo.svg';
+import Logo from '../assets/UKL_Logo_Vektor.svg';
 const SUPPORT_MAIL = 'ampel@medizin.uni-leipzig.de';
 import type { JSX } from 'react';
+
+import { BASE_API_URL } from './config.server';
 
 /**
  * Renders an error boundary body component.
@@ -12,16 +14,19 @@ import type { JSX } from 'react';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
   const subject = 'AMPEL-CDSS-Fehler';
+  const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
+
   if (isRouteErrorResponse) {
     const body = `Fehler: ${error.status} ${error.statusText}\n\n${error.data} : ${error.stack}`;
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
         <img src={Logo} width={300} alt='AMPEL Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
-          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+          {BASE_URL}
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
@@ -29,13 +34,14 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   } else if (error instanceof Error) {
     const body = `Fehler: ${error.message} \n\n ${error.stack}`;
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
         <img src={Logo} width={300} alt='AMPEL Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
-          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+          {BASE_URL}
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
@@ -43,13 +49,13 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   }
   const body = `Fehler: ${error} \n\n ${error.stack} \n\n ${error.message} \n\n ${error.data} \n\n ${error.statusText}`;
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
       <img src={Logo} width={300} alt='AMPEL Logo' />
       <h1>Unerwartete Ansicht</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
         ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen
-        Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+        Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: ${BASE_URL}
       </p>
       <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
     </div>

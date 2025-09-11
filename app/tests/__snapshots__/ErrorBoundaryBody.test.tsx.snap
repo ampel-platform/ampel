@@ -3,11 +3,11 @@
 exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
 <div>
   <div
-    style="text-align: center;"
+    style="text-align: center; padding-top: 4rem;"
   >
     <img
       alt="AMPEL Logo"
-      src="/assets/ampel-logo.svg"
+      src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
     <h1>
@@ -16,7 +16,8 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+      http://localhost:8080
     </p>
     <a
       href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: 404 Not Found
@@ -32,11 +33,11 @@ Seite nicht gefunden : undefined"
 exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
 <div>
   <div
-    style="text-align: center;"
+    style="text-align: center; padding-top: 4rem;"
   >
     <img
       alt="AMPEL Logo"
-      src="/assets/ampel-logo.svg"
+      src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
     <h1>
@@ -45,7 +46,8 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+      http://localhost:8080
     </p>
     <a
       href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: Etwas ist schiefgelaufen 
@@ -61,11 +63,11 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
 exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
 <div>
   <div
-    style="text-align: center;"
+    style="text-align: center; padding-top: 4rem;"
   >
     <img
       alt="AMPEL Logo"
-      src="/assets/ampel-logo.svg"
+      src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
     <h1>
@@ -74,7 +76,8 @@ exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+      http://localhost:8080
     </p>
     <a
       href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: 12345 
