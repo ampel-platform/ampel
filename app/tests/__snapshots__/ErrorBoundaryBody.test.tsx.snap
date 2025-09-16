@@ -16,7 +16,7 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
     </p>
     <a
       href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: 404 Not Found
@@ -45,7 +45,7 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
     </p>
     <a
       href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: Etwas ist schiefgelaufen 

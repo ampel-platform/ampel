@@ -22,7 +22,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
-          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
@@ -36,7 +36,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
-          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden: Base URL: $
+          helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
         </p>
         <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
       </div>
