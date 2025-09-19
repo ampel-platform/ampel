@@ -9,27 +9,15 @@ interface AlertCardProps {
   type: AlertType;
   onClick: () => void;
   alertDetails?: AlertDetails;
-  onDismiss?: () => void; // optional, shown as an "X" button; click won't bubble
 }
 
-export function AlertCard({
-  title,
-  creationTime,
-  type,
-  onClick,
-  onDismiss,
-}: AlertCardProps): React.ReactNode {
+export function AlertCard({ title, creationTime, type, onClick }: AlertCardProps): React.ReactNode {
   const bgClasses =
     type === AlertType.Critical
       ? 'bg-rose-400/90 ring-rose-600/30'
       : type === AlertType.Warning
         ? 'bg-amber-300/90 ring-amber-500/30'
         : 'bg-emerald-300/90 ring-emerald-500/30';
-
-  const handleDismiss = (e: React.MouseEvent): void => {
-    e.stopPropagation();
-    if (typeof onDismiss === 'function') onDismiss();
-  };
 
   const formatRelative = (d: Date): string => {
     const pad = (n: number): string => String(n).padStart(2, '0');
@@ -74,16 +62,6 @@ export function AlertCard({
         <div className='flex items-center gap-2'>
           <span className='font-mono'>{formatRelative(creationTime)}</span>
         </div>
-
-        {/* Dismiss button (optional) */}
-        <button
-          type='button'
-          aria-label='dismiss alert'
-          onClick={handleDismiss}
-          className='inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20'
-        >
-          ×
-        </button>
       </div>
     </div>
   );

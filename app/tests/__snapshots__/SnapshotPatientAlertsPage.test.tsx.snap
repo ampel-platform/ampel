@@ -148,13 +148,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                           29.07.2025, 22:12 Uhr
                         </span>
                       </div>
-                      <button
-                        aria-label="dismiss alert"
-                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                        type="button"
-                      >
-                        ×
-                      </button>
                     </div>
                   </div>
                   <div
@@ -185,13 +178,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                           28.07.2025, 13:11 Uhr
                         </span>
                       </div>
-                      <button
-                        aria-label="dismiss alert"
-                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                        type="button"
-                      >
-                        ×
-                      </button>
                     </div>
                   </div>
                   <div
@@ -222,13 +208,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                           29.07.2025, 23:10 Uhr
                         </span>
                       </div>
-                      <button
-                        aria-label="dismiss alert"
-                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                        type="button"
-                      >
-                        ×
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -281,13 +260,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                           29.07.2025, 07:36 Uhr
                         </span>
                       </div>
-                      <button
-                        aria-label="dismiss alert"
-                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                        type="button"
-                      >
-                        ×
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -968,13 +940,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -1005,13 +970,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -1042,13 +1000,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -1101,13 +1052,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -2236,13 +2180,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -2273,13 +2210,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -2310,13 +2240,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -2369,13 +2292,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -3057,13 +2973,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -3094,13 +3003,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -3131,13 +3033,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -3190,13 +3085,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -4357,13 +4245,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -4394,13 +4275,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -4431,13 +4305,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -4490,13 +4357,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -5657,13 +5517,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -5694,13 +5547,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -5731,13 +5577,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -5790,13 +5629,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -6513,13 +6345,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 22:12 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -6550,13 +6375,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             28.07.2025, 13:11 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                     <div
@@ -6587,13 +6405,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 23:10 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -6646,13 +6457,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             29.07.2025, 07:36 Uhr
                           </span>
                         </div>
-                        <button
-                          aria-label="dismiss alert"
-                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
-                          type="button"
-                        >
-                          ×
-                        </button>
                       </div>
                     </div>
                   </div>
