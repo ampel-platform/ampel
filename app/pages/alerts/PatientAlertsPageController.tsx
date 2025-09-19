@@ -87,7 +87,6 @@ export default function PatientAlertsPageController(): React.ReactNode {
               key={rs.ruleset}
               type={AlertType.Critical}
               title={rs.ruleset}
-              message={rs.message}
               creationTime={rs.resultTime}
               alertDetails={{
                 ruleset: rs.ruleset,
@@ -107,7 +106,6 @@ export default function PatientAlertsPageController(): React.ReactNode {
               key={rs.ruleset}
               type={AlertType.Warning}
               title={rs.ruleset}
-              message={rs.message}
               creationTime={rs.resultTime}
               alertDetails={{
                 ruleset: rs.ruleset,

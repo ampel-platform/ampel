@@ -78,7 +78,7 @@ function generateFakeRulesets(): Ruleset[] {
       ampelStatus: AmpelStatus.RED,
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
-      resultTime: new Date('2025-07-30T15:20:16Z'),
+      resultTime: new Date(),
       history: generateFakeHistoryData(AmpelStatus.RED, 1),
       links: [
         {

@@ -121,144 +121,114 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   class="grid w-full grid-cols-2 gap-3"
                 >
                   <div
-                    class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                    class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                     data-testid="critical-alert-card"
+                    role="button"
+                    style="height: 160px;"
+                    tabindex="0"
                   >
                     <div
-                      class="absolute -right-2 -top-2"
+                      class="px-4 pt-3"
                     >
-                      <span
-                        class="relative flex h-4 w-4"
-                      >
-                        <span
-                          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                        />
-                        <span
-                          class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                        />
-                      </span>
-                    </div>
-                    <div
-                      class="flex w-full flex-col gap-y-2 px-4 py-3"
-                    >
-                      <span
-                        class="line-clamp-1 text-lg font-medium text-violet-800"
+                      <h3
+                        class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                       >
                         AKI
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-700"
-                      >
-                        <div>
-                          Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                        </div>
-                      </span>
+                      </h3>
+                    </div>
+                    <div
+                      class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                    >
                       <div
-                        class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                        class="flex items-center gap-2"
                       >
-                        <span>
-                          festgestellt am:
-                        </span>
                         <span
                           class="font-mono"
                         >
-                          29.7.2025, 22:12:28
+                          29.07.2025, 22:12 Uhr
                         </span>
                       </div>
+                      <button
+                        aria-label="dismiss alert"
+                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                        type="button"
+                      >
+                        ×
+                      </button>
                     </div>
                   </div>
                   <div
-                    class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                    class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                     data-testid="critical-alert-card"
+                    role="button"
+                    style="height: 160px;"
+                    tabindex="0"
                   >
                     <div
-                      class="absolute -right-2 -top-2"
+                      class="px-4 pt-3"
                     >
-                      <span
-                        class="relative flex h-4 w-4"
-                      >
-                        <span
-                          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                        />
-                        <span
-                          class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                        />
-                      </span>
-                    </div>
-                    <div
-                      class="flex w-full flex-col gap-y-2 px-4 py-3"
-                    >
-                      <span
-                        class="line-clamp-1 text-lg font-medium text-violet-800"
+                      <h3
+                        class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                       >
                         Refeeding Syndrom
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-700"
-                      >
-                        <div>
-                          Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                        </div>
-                      </span>
+                      </h3>
+                    </div>
+                    <div
+                      class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                    >
                       <div
-                        class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                        class="flex items-center gap-2"
                       >
-                        <span>
-                          festgestellt am:
-                        </span>
                         <span
                           class="font-mono"
                         >
-                          28.7.2025, 13:11:34
+                          28.07.2025, 13:11 Uhr
                         </span>
                       </div>
+                      <button
+                        aria-label="dismiss alert"
+                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                        type="button"
+                      >
+                        ×
+                      </button>
                     </div>
                   </div>
                   <div
-                    class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                    class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                     data-testid="critical-alert-card"
+                    role="button"
+                    style="height: 160px;"
+                    tabindex="0"
                   >
                     <div
-                      class="absolute -right-2 -top-2"
+                      class="px-4 pt-3"
                     >
-                      <span
-                        class="relative flex h-4 w-4"
-                      >
-                        <span
-                          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                        />
-                        <span
-                          class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                        />
-                      </span>
-                    </div>
-                    <div
-                      class="flex w-full flex-col gap-y-2 px-4 py-3"
-                    >
-                      <span
-                        class="line-clamp-1 text-lg font-medium text-violet-800"
+                      <h3
+                        class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                       >
                         Hyperkalzämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-700"
-                      >
-                        <div>
-                          Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                        </div>
-                      </span>
+                      </h3>
+                    </div>
+                    <div
+                      class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                    >
                       <div
-                        class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                        class="flex items-center gap-2"
                       >
-                        <span>
-                          festgestellt am:
-                        </span>
                         <span
                           class="font-mono"
                         >
-                          29.7.2025, 23:10:09
+                          29.07.2025, 23:10 Uhr
                         </span>
                       </div>
+                      <button
+                        aria-label="dismiss alert"
+                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                        type="button"
+                      >
+                        ×
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -284,85 +254,40 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   class="grid w-full grid-cols-2 gap-3"
                 >
                   <div
-                    class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                    class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                     data-testid="warning-alert-card"
+                    role="button"
+                    style="height: 160px;"
+                    tabindex="0"
                   >
                     <div
-                      class="absolute -right-2 -top-2"
+                      class="px-4 pt-3"
                     >
-                      <span
-                        class="relative flex h-4 w-4"
-                      >
-                        <span
-                          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                        />
-                        <span
-                          class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                        />
-                      </span>
-                    </div>
-                    <div
-                      class="flex w-full flex-col gap-y-2 px-4 py-3"
-                    >
-                      <span
-                        class="line-clamp-1 text-lg font-medium text-violet-800"
+                      <h3
+                        class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                       >
                         Anämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-700"
-                      >
-                        <div>
-                          <p>
-                            Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                          </p>
-                          <br />
-                          Bitte reflektieren Sie patientenspezifisch:
-                          <br />
-                          <p
-                            style="margin-left: 10px"
-                          >
-                            - 
-                            <b>
-                              allg. Risikofaktoren,
-                            </b>
-                            <br />
-                            - 
-                            <b>
-                              Klinik
-                            </b>
-                            <br />
-                            - 
-                            <b>
-                              Ischämietypische EKG
-                            </b>
-                            -Veränderungen
-                            <br />
-                            - 
-                            <b>
-                              Labor
-                            </b>
-                             und betreiben Sie ggf. 
-                            <b>
-                              weitere Diagnostik.
-                            </b>
-                          </p>
-                          <br />
-                          Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                        </div>
-                      </span>
+                      </h3>
+                    </div>
+                    <div
+                      class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                    >
                       <div
-                        class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                        class="flex items-center gap-2"
                       >
-                        <span>
-                          festgestellt am:
-                        </span>
                         <span
                           class="font-mono"
                         >
-                          29.7.2025, 07:36:13
+                          29.07.2025, 07:36 Uhr
                         </span>
                       </div>
+                      <button
+                        aria-label="dismiss alert"
+                        class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                        type="button"
+                      >
+                        ×
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1016,144 +941,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1179,85 +1074,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2359,144 +2209,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2522,85 +2342,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -3255,144 +3030,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -3418,85 +3163,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -4630,144 +4330,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -4793,85 +4463,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -6005,144 +5630,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -6168,85 +5763,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -6936,144 +6486,114 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           AKI
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 22:12:28
+                            29.07.2025, 22:12 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Refeeding Syndrom
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            28.7.2025, 13:11:34
+                            28.07.2025, 13:11 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="critical-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-critical"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-critical"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Hyperkalzämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 23:10:09
+                            29.07.2025, 23:10 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -7099,85 +6619,40 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     class="grid w-full grid-cols-2 gap-3"
                   >
                     <div
-                      class="relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer"
+                      class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
                       data-testid="warning-alert-card"
+                      role="button"
+                      style="height: 160px;"
+                      tabindex="0"
                     >
                       <div
-                        class="absolute -right-2 -top-2"
+                        class="px-4 pt-3"
                       >
-                        <span
-                          class="relative flex h-4 w-4"
-                        >
-                          <span
-                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-alert-warning"
-                          />
-                          <span
-                            class="relative inline-flex h-4 w-4 rounded-full bg-alert-warning"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        class="flex w-full flex-col gap-y-2 px-4 py-3"
-                      >
-                        <span
-                          class="line-clamp-1 text-lg font-medium text-violet-800"
+                        <h3
+                          class="line-clamp-2 text-2xl font-semibold leading-snug text-gray-900"
                         >
                           Anämie
-                        </span>
-                        <span
-                          class="line-clamp-3 text-gray-700"
-                        >
-                          <div>
-                            <p>
-                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                            </p>
-                            <br />
-                            Bitte reflektieren Sie patientenspezifisch:
-                            <br />
-                            <p
-                              style="margin-left: 10px"
-                            >
-                              - 
-                              <b>
-                                allg. Risikofaktoren,
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Klinik
-                              </b>
-                              <br />
-                              - 
-                              <b>
-                                Ischämietypische EKG
-                              </b>
-                              -Veränderungen
-                              <br />
-                              - 
-                              <b>
-                                Labor
-                              </b>
-                               und betreiben Sie ggf. 
-                              <b>
-                                weitere Diagnostik.
-                              </b>
-                            </p>
-                            <br />
-                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                          </div>
-                        </span>
+                        </h3>
+                      </div>
+                      <div
+                        class="mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70"
+                      >
                         <div
-                          class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
+                          class="flex items-center gap-2"
                         >
-                          <span>
-                            festgestellt am:
-                          </span>
                           <span
                             class="font-mono"
                           >
-                            29.7.2025, 07:36:13
+                            29.07.2025, 07:36 Uhr
                           </span>
                         </div>
+                        <button
+                          aria-label="dismiss alert"
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20"
+                          type="button"
+                        >
+                          ×
+                        </button>
                       </div>
                     </div>
                   </div>

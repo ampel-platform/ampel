@@ -1,5 +1,6 @@
+import React from 'react';
+
 import { AlertDetails, AlertType } from '../types/types';
-import { AlertPing } from './components/AlertPing';
 
 interface AlertCardProps {
   title: string;
@@ -8,45 +9,81 @@ interface AlertCardProps {
   type: AlertType;
   onClick: () => void;
   alertDetails?: AlertDetails;
+  onDismiss?: () => void; // optional, shown as an "X" button; click won't bubble
 }
 
-/**
- * A visual representation of an alert.
- * The component displays a card with the alert title, an optional message, the creation time, and a colored circle representing the alert type.
- * The component is clickable and calls the given onClick prop when clicked.
- * @param {{ title: string, message?: string, creationTime: Date, type: AlertType, onClick: () => void }} props
- * @returns {React.ReactNode }
- */
 export function AlertCard({
   title,
-  message,
   creationTime,
   type,
   onClick,
-  // eslint-disable-next-line no-undef
+  onDismiss,
 }: AlertCardProps): React.ReactNode {
+  const bgClasses =
+    type === AlertType.Critical
+      ? 'bg-rose-400/90 ring-rose-600/30'
+      : type === AlertType.Warning
+        ? 'bg-amber-300/90 ring-amber-500/30'
+        : 'bg-emerald-300/90 ring-emerald-500/30';
+
+  const handleDismiss = (e: React.MouseEvent): void => {
+    e.stopPropagation();
+    if (typeof onDismiss === 'function') onDismiss();
+  };
+
+  const formatRelative = (d: Date): string => {
+    const pad = (n: number): string => String(n).padStart(2, '0');
+    const now = new Date();
+    // compare local calendar days
+    const startOfDay = (x: Date): Date => new Date(x.getFullYear(), x.getMonth(), x.getDate());
+    const diffDays = Math.floor((startOfDay(now).getTime() - startOfDay(d).getTime()) / 86400000);
+
+    const hh = pad(d.getHours());
+    const mm = pad(d.getMinutes());
+
+    if (diffDays === 0) return `Heute, ${hh}:${mm} Uhr`;
+    if (diffDays === 1) return `Gestern, ${hh}:${mm} Uhr`;
+    if (diffDays === 2) return `Vorgestern, ${hh}:${mm} Uhr`;
+
+    const dd = pad(d.getDate());
+    const mo = pad(d.getMonth() + 1);
+    const yyyy = d.getFullYear();
+    return `${dd}.${mo}.${yyyy}, ${hh}:${mm} Uhr`;
+  };
+
   return (
     <div
-      className='relative flex flex-col overflow-visible rounded-md border border-solid border-gray-200 hover:cursor-pointer'
+      className={`group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 ${bgClasses} shadow-sm transition-shadow hover:shadow-md`}
+      // Fixed, grid-friendly height. Width is 100% to let the parent grid define columns.
+      style={{ height: '160px' }}
       onClick={onClick}
       data-testid={type === AlertType.Warning ? 'warning-alert-card' : 'critical-alert-card'}
+      role='button'
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') onClick();
+      }}
     >
-      <div className='absolute -right-2 -top-2'>
-        <AlertPing type={type} />
+      {/* Header / Title */}
+      <div className='px-4 pt-3'>
+        <h3 className='line-clamp-2 text-2xl font-semibold leading-snug text-gray-900'>{title}</h3>
       </div>
-      <div className='flex w-full flex-col gap-y-2 px-4 py-3'>
-        <span className='line-clamp-1 text-lg font-medium text-violet-800'>{title}</span>
-        {message && (
-          <span className='line-clamp-3 text-gray-700'>
-            <div dangerouslySetInnerHTML={{ __html: message }} />
-          </span>
-        )}
-        <div className='flex flex-row justify-end gap-x-2 text-xs text-gray-400'>
-          <span>festgestellt am:</span>
-          <span className='font-mono'>
-            {creationTime.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })}
-          </span>
+
+      {/* Footer */}
+      <div className='mt-auto flex items-center justify-between px-4 pb-3 pt-2 text-xs text-gray-900/70'>
+        <div className='flex items-center gap-2'>
+          <span className='font-mono'>{formatRelative(creationTime)}</span>
         </div>
+
+        {/* Dismiss button (optional) */}
+        <button
+          type='button'
+          aria-label='dismiss alert'
+          onClick={handleDismiss}
+          className='inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 text-gray-900 hover:bg-black/20'
+        >
+          ×
+        </button>
       </div>
     </div>
   );
