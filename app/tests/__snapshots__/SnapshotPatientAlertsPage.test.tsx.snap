@@ -733,24 +733,28 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
+                          >
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"
@@ -1525,24 +1529,28 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
+                          >
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"
@@ -2764,24 +2772,28 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
+                          >
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"
@@ -3556,59 +3568,63 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          <p>
-                            Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                          </p>
-                          <br />
-                          Bitte reflektieren Sie patientenspezifisch:
-                          <br />
-                          <p
-                            style="margin-left: 10px"
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
                           >
-                            - 
-                            <b>
-                              allg. Risikofaktoren,
-                            </b>
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            <p>
+                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Klinik
-                            </b>
+                            Bitte reflektieren Sie patientenspezifisch:
                             <br />
-                            - 
-                            <b>
-                              Ischämietypische EKG
-                            </b>
-                            -Veränderungen
+                            <p
+                              style="margin-left: 10px"
+                            >
+                              - 
+                              <b>
+                                allg. Risikofaktoren,
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Klinik
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Ischämietypische EKG
+                              </b>
+                              -Veränderungen
+                              <br />
+                              - 
+                              <b>
+                                Labor
+                              </b>
+                               und betreiben Sie ggf. 
+                              <b>
+                                weitere Diagnostik.
+                              </b>
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Labor
-                            </b>
-                             und betreiben Sie ggf. 
-                            <b>
-                              weitere Diagnostik.
-                            </b>
-                          </p>
-                          <br />
-                          Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"
@@ -4827,59 +4843,63 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          <p>
-                            Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                          </p>
-                          <br />
-                          Bitte reflektieren Sie patientenspezifisch:
-                          <br />
-                          <p
-                            style="margin-left: 10px"
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
                           >
-                            - 
-                            <b>
-                              allg. Risikofaktoren,
-                            </b>
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            <p>
+                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Klinik
-                            </b>
+                            Bitte reflektieren Sie patientenspezifisch:
                             <br />
-                            - 
-                            <b>
-                              Ischämietypische EKG
-                            </b>
-                            -Veränderungen
+                            <p
+                              style="margin-left: 10px"
+                            >
+                              - 
+                              <b>
+                                allg. Risikofaktoren,
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Klinik
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Ischämietypische EKG
+                              </b>
+                              -Veränderungen
+                              <br />
+                              - 
+                              <b>
+                                Labor
+                              </b>
+                               und betreiben Sie ggf. 
+                              <b>
+                                weitere Diagnostik.
+                              </b>
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Labor
-                            </b>
-                             und betreiben Sie ggf. 
-                            <b>
-                              weitere Diagnostik.
-                            </b>
-                          </p>
-                          <br />
-                          Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"
@@ -6098,59 +6118,63 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-2 gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
                     >
                       <div
-                        class="flex flex-col gap-1"
+                        class="lg:col-span-2"
                       >
-                        <span
-                          class="text-muted-foreground text-sm font-medium"
-                        >
-                          Hinweis
-                        </span>
                         <div
-                          class="text-sm text-gray-600"
+                          class="flex flex-col gap-1"
                         >
-                          <p>
-                            Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
-                          </p>
-                          <br />
-                          Bitte reflektieren Sie patientenspezifisch:
-                          <br />
-                          <p
-                            style="margin-left: 10px"
+                          <span
+                            class="text-muted-foreground text-sm font-medium"
                           >
-                            - 
-                            <b>
-                              allg. Risikofaktoren,
-                            </b>
+                            Hinweis
+                          </span>
+                          <div
+                            class="text-sm text-gray-600"
+                          >
+                            <p>
+                              Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb &lt; 4,3 mmol/l dringend zu erwägen.
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Klinik
-                            </b>
+                            Bitte reflektieren Sie patientenspezifisch:
                             <br />
-                            - 
-                            <b>
-                              Ischämietypische EKG
-                            </b>
-                            -Veränderungen
+                            <p
+                              style="margin-left: 10px"
+                            >
+                              - 
+                              <b>
+                                allg. Risikofaktoren,
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Klinik
+                              </b>
+                              <br />
+                              - 
+                              <b>
+                                Ischämietypische EKG
+                              </b>
+                              -Veränderungen
+                              <br />
+                              - 
+                              <b>
+                                Labor
+                              </b>
+                               und betreiben Sie ggf. 
+                              <b>
+                                weitere Diagnostik.
+                              </b>
+                            </p>
                             <br />
-                            - 
-                            <b>
-                              Labor
-                            </b>
-                             und betreiben Sie ggf. 
-                            <b>
-                              weitere Diagnostik.
-                            </b>
-                          </p>
-                          <br />
-                          Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                            Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center justify-between gap-4"
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <div
                           class="flex flex-col gap-2"

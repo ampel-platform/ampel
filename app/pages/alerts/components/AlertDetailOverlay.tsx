@@ -27,9 +27,11 @@ export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.React
         <div className='px-6'>
           <div className='flex flex-col gap-y-8'>
             <AlertHeader name={data.ruleset} type={data.ampelStatus} />
-            <div className='grid grid-cols-2 gap-x-12'>
-              <HintMessage message={data.message} />
-              <div className='flex items-center justify-between gap-4'>
+            <div className='grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12'>
+              <div className='lg:col-span-2'>
+                <HintMessage message={data.message} />
+              </div>
+              <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <AlertLinks links={data.links} />
                 <StatusLegend />
               </div>
