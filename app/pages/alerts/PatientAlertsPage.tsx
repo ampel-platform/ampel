@@ -64,8 +64,8 @@ export function PatientAlertsPage({
           </div>
 
           <div className='flex h-full w-full flex-col gap-y-20'>
-            <div className='flex flex-row gap-x-12'>
-              <div className='flex w-full flex-col items-start gap-y-4'>
+            <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
+              <div className='order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
                 <div className='flex flex-row items-baseline gap-x-4'>
                   <span className='text-lg text-gray-600'>Kritische Zustände</span>
                   <span className='rounded-md bg-rose-100 px-3 text-base text-rose-800'>
@@ -73,11 +73,11 @@ export function PatientAlertsPage({
                   </span>
                 </div>
 
-                <div className='grid w-full grid-cols-2 gap-3'>
+                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
                   {cloneAlertCards(AmpelStatus.RED)}
                 </div>
               </div>
-              <div className='flex w-full flex-col items-start gap-y-4'>
+              <div className='order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
                 <div className='flex flex-row items-baseline gap-x-4'>
                   <span className='text-lg text-gray-600'>Warnende Zustände</span>
                   <span className='rounded-md bg-amber-100 px-3 text-base text-amber-800'>
@@ -85,13 +85,13 @@ export function PatientAlertsPage({
                   </span>
                 </div>
 
-                <div className='grid w-full grid-cols-2 gap-3'>
+                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
                   {cloneAlertCards(AmpelStatus.YELLOW)}
                 </div>
               </div>
             </div>
 
-            <div className='flex h-full w-full flex-col gap-y-4 pr-4'>
+            <div className='order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2'>
               <a
                 className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer'
                 onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}
@@ -131,7 +131,7 @@ export function PatientAlertsPage({
               </a>
 
               <div
-                className={`grid grid-cols-3 gap-3 overflow-hidden ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
+                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
               >
                 {rulesetsByStatus.get(AmpelStatus.GREEN)}
               </div>

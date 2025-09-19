@@ -13,25 +13,24 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
           class="flex flex-col gap-y-2"
         >
           <span
-            class="top-0 flex flex-row justify-between"
+            class="top-0 flex flex-wrap items-start justify-between gap-3"
           >
             <span
-              class="text-3xl font-medium text-gray-700"
+              class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
             >
               Max Musterfrau
             </span>
             <img
-              alt="AMPEL Logo"
-              class="pr-10"
+              alt="UKL Logo"
+              class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
               src="/assets/UKL_Logo_Vektor.svg"
-              width="200"
             />
           </span>
           <div
-            class="grid w-full grid-cols-4"
+            class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
           >
             <span
-              class="flex flex-row gap-x-2"
+              class="flex min-w-0 flex-row flex-wrap gap-x-2"
             >
               <span
                 class="text-gray-600"
@@ -45,7 +44,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </span>
             </span>
             <span
-              class="flex flex-row gap-x-2"
+              class="flex min-w-0 flex-row flex-wrap gap-x-2"
             >
               <span
                 class="text-gray-600"
@@ -59,7 +58,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </span>
             </span>
             <span
-              class="flex flex-row gap-x-2"
+              class="flex min-w-0 flex-row flex-wrap gap-x-2"
             >
               <span
                 class="text-gray-600"
@@ -73,7 +72,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </span>
             </span>
             <span
-              class="flex flex-row gap-x-2"
+              class="flex min-w-0 flex-row flex-wrap gap-x-2"
             >
               <span
                 class="text-gray-600"
@@ -98,10 +97,10 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
             class="flex h-full w-full flex-col gap-y-20"
           >
             <div
-              class="flex flex-row gap-x-12"
+              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <div
-                class="flex w-full flex-col items-start gap-y-4"
+                class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
               >
                 <div
                   class="flex flex-row items-baseline gap-x-4"
@@ -118,7 +117,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   </span>
                 </div>
                 <div
-                  class="grid w-full grid-cols-2 gap-3"
+                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                 >
                   <div
                     class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -213,7 +212,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                 </div>
               </div>
               <div
-                class="flex w-full flex-col items-start gap-y-4"
+                class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
               >
                 <div
                   class="flex flex-row items-baseline gap-x-4"
@@ -230,7 +229,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   </span>
                 </div>
                 <div
-                  class="grid w-full grid-cols-2 gap-3"
+                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                 >
                   <div
                     class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -266,7 +265,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </div>
             </div>
             <div
-              class="flex h-full w-full flex-col gap-y-4 pr-4"
+              class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
             >
               <a
                 class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -295,7 +294,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                 </svg>
               </a>
               <div
-                class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
               >
                 <div
                   class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -600,25 +599,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -632,7 +630,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -646,7 +644,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -660,7 +658,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -890,10 +888,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -910,7 +908,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -1005,7 +1003,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -1022,7 +1020,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -1058,7 +1056,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -1087,7 +1085,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -1393,25 +1391,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -1425,7 +1422,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -1439,7 +1436,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -1453,7 +1450,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -2130,10 +2127,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -2150,7 +2147,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -2245,7 +2242,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -2262,7 +2259,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -2298,7 +2295,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -2327,7 +2324,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -2633,25 +2630,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -2665,7 +2661,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -2679,7 +2675,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -2693,7 +2689,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -2923,10 +2919,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -2943,7 +2939,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -3038,7 +3034,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -3055,7 +3051,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -3091,7 +3087,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -3120,7 +3116,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -3426,25 +3422,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -3458,7 +3453,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -3472,7 +3467,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -3486,7 +3481,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -4195,10 +4190,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -4215,7 +4210,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -4310,7 +4305,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -4327,7 +4322,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -4363,7 +4358,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -4392,7 +4387,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -4698,25 +4693,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -4730,7 +4724,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -4744,7 +4738,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -4758,7 +4752,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -5467,10 +5461,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -5487,7 +5481,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -5582,7 +5576,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -5599,7 +5593,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -5635,7 +5629,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -5664,7 +5658,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
@@ -5970,25 +5964,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             class="flex flex-col gap-y-2"
           >
             <span
-              class="top-0 flex flex-row justify-between"
+              class="top-0 flex flex-wrap items-start justify-between gap-3"
             >
               <span
-                class="text-3xl font-medium text-gray-700"
+                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
               </span>
               <img
-                alt="AMPEL Logo"
-                class="pr-10"
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
                 src="/assets/UKL_Logo_Vektor.svg"
-                width="200"
               />
             </span>
             <div
-              class="grid w-full grid-cols-4"
+              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
             >
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -6002,7 +5995,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -6016,7 +6009,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -6030,7 +6023,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex flex-row gap-x-2"
+                class="flex min-w-0 flex-row flex-wrap gap-x-2"
               >
                 <span
                   class="text-gray-600"
@@ -6295,10 +6288,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="flex h-full w-full flex-col gap-y-20"
             >
               <div
-                class="flex flex-row gap-x-12"
+                class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
               >
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -6315,7 +6308,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -6410,7 +6403,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </div>
                 </div>
                 <div
-                  class="flex w-full flex-col items-start gap-y-4"
+                  class="order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1"
                 >
                   <div
                     class="flex flex-row items-baseline gap-x-4"
@@ -6427,7 +6420,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-2 gap-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -6463,7 +6456,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </div>
               </div>
               <div
-                class="flex h-full w-full flex-col gap-y-4 pr-4"
+                class="order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2"
               >
                 <a
                   class="flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer"
@@ -6492,7 +6485,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </svg>
                 </a>
                 <div
-                  class="grid grid-cols-3 gap-3 overflow-hidden hidden"
+                  class="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 hidden"
                 >
                   <div
                     class="flex flex-col rounded-md border border-solid border-gray-200"
