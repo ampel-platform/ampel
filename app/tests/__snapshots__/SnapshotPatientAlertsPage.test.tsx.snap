@@ -19,6 +19,12 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
             >
               Max Musterfrau
+               (*
+              30.7.1991
+               
+              | 
+              w
+              )
             </span>
             <img
               alt="UKL Logo"
@@ -27,13 +33,13 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
             />
           </span>
           <div
-            class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+            class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
           >
             <span
-              class="flex min-w-0 flex-row flex-wrap gap-x-2"
+              class="whitespace-nowrap"
             >
               <span
-                class="text-gray-600"
+                class="mr-2 text-gray-600"
               >
                 Patientennummer
               </span>
@@ -44,10 +50,10 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               </span>
             </span>
             <span
-              class="flex min-w-0 flex-row flex-wrap gap-x-2"
+              class="whitespace-nowrap"
             >
               <span
-                class="text-gray-600"
+                class="mr-2 text-gray-600"
               >
                 Fallnummer
               </span>
@@ -55,34 +61,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                 class="text-violet-800"
               >
                 CASEID
-              </span>
-            </span>
-            <span
-              class="flex min-w-0 flex-row flex-wrap gap-x-2"
-            >
-              <span
-                class="text-gray-600"
-              >
-                Geschlecht
-              </span>
-              <span
-                class="text-violet-800"
-              >
-                weiblich
-              </span>
-            </span>
-            <span
-              class="flex min-w-0 flex-row flex-wrap gap-x-2"
-            >
-              <span
-                class="text-gray-600"
-              >
-                Geburtsdatum
-              </span>
-              <span
-                class="text-violet-800"
-              >
-                30.7.1991
               </span>
             </span>
           </div>
@@ -605,6 +583,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -613,13 +597,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -630,10 +614,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -641,34 +625,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
@@ -1401,6 +1357,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -1409,13 +1371,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -1426,10 +1388,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -1437,34 +1399,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
@@ -2644,6 +2578,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -2652,13 +2592,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -2669,10 +2609,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -2680,34 +2620,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
@@ -3440,6 +3352,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -3448,13 +3366,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -3465,10 +3383,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -3476,34 +3394,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
@@ -4715,6 +4605,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -4723,13 +4619,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -4740,10 +4636,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -4751,34 +4647,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
@@ -5990,6 +5858,12 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
               >
                 Max Musterfrau
+                 (*
+                30.7.1991
+                 
+                | 
+                w
+                )
               </span>
               <img
                 alt="UKL Logo"
@@ -5998,13 +5872,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               />
             </span>
             <div
-              class="grid w-full grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3 lg:grid-cols-4"
+              class="flex flex-wrap items-baseline gap-x-12 gap-y-1"
             >
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Patientennummer
                 </span>
@@ -6015,10 +5889,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 </span>
               </span>
               <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
+                class="whitespace-nowrap"
               >
                 <span
-                  class="text-gray-600"
+                  class="mr-2 text-gray-600"
                 >
                   Fallnummer
                 </span>
@@ -6026,34 +5900,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   class="text-violet-800"
                 >
                   CASEID
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geschlecht
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  weiblich
-                </span>
-              </span>
-              <span
-                class="flex min-w-0 flex-row flex-wrap gap-x-2"
-              >
-                <span
-                  class="text-gray-600"
-                >
-                  Geburtsdatum
-                </span>
-                <span
-                  class="text-violet-800"
-                >
-                  30.7.1991
                 </span>
               </span>
             </div>
