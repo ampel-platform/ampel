@@ -1,9 +1,13 @@
+import { Mail, Phone } from 'lucide-react';
 import React from 'react';
 
 import Logo from '../../../../assets/UKL_Logo_Vektor.svg';
 import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
+
+const contactEmail = 'ampel@uniklinik-leipzig.de';
+const contactPhone = '0341 - 97 11342';
 
 /**
  * A component to display patient metadata (name, patient ID, case ID, sex, birthdate)
@@ -36,7 +40,7 @@ export function PatientMetaDataHeader({
         />
       </span>
 
-      <div className='flex flex-wrap items-baseline gap-x-12 gap-y-1'>
+      <div className='flex flex-wrap items-baseline gap-x-14 gap-y-1'>
         <span className='whitespace-nowrap'>
           <span className='mr-2 text-gray-600'>Patientennummer</span>
           <span className='text-violet-800'>{patientId}</span>
@@ -45,6 +49,28 @@ export function PatientMetaDataHeader({
         <span className='whitespace-nowrap'>
           <span className='mr-2 text-gray-600'>Fallnummer</span>
           <span className='text-violet-800'>{caseId}</span>
+        </span>
+      </div>
+
+      <div className='mt-2 flex flex-wrap items-center gap-x-1 gap-y-2'>
+        <span className='mr-2 text-gray-600'>Fragen?</span>
+
+        <span
+          className='flex items-center gap-1 text-gray-600'
+          aria-label={`E-Mail an ${contactEmail}`}
+        >
+          <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
+          <span className='whitespace-nowrap'>{contactEmail}</span>
+        </span>
+
+        <span
+          className='flex items-center gap-1 text-gray-600'
+          aria-label={`Anrufen: ${contactPhone}`}
+        >
+          <Phone className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
+          <span className='whitespace-nowrap'>
+            {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+          </span>
         </span>
       </div>
     </div>
