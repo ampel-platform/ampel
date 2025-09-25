@@ -52,11 +52,11 @@ export function PatientMetaDataHeader({
         </span>
       </div>
 
-      <div className='mt-2 flex flex-wrap items-center gap-x-1 gap-y-2'>
-        <span className='mr-2 text-gray-600'>Fragen?</span>
+      <span className='mr-2 text-gray-600'>Fragen?</span>
 
+      <div className='flex flex-wrap items-center gap-x-1 gap-y-2'>
         <span
-          className='flex items-center gap-1 text-gray-600'
+          className='mr-5 flex items-center gap-1 text-gray-600'
           aria-label={`E-Mail an ${contactEmail}`}
         >
           <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
