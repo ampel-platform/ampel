@@ -165,7 +165,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   </span>
                 </div>
                 <div
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                 >
                   <div
                     class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -277,7 +277,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                   </span>
                 </div>
                 <div
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                 >
                   <div
                     class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -1008,7 +1008,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -1120,7 +1120,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -2299,7 +2299,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -2411,7 +2411,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -3143,7 +3143,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -3255,7 +3255,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -4466,7 +4466,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -4578,7 +4578,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -5789,7 +5789,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -5901,7 +5901,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"
@@ -6668,7 +6668,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-rose-400/90 ring-rose-600/30 shadow-sm transition-shadow hover:shadow-md"
@@ -6780,7 +6780,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </span>
                   </div>
                   <div
-                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                    class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2"
                   >
                     <div
                       class="group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 bg-amber-300/90 ring-amber-500/30 shadow-sm transition-shadow hover:shadow-md"

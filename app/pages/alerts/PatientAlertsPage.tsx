@@ -73,7 +73,7 @@ export function PatientAlertsPage({
                   </span>
                 </div>
 
-                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
                   {cloneAlertCards(AmpelStatus.RED)}
                 </div>
               </div>
@@ -85,7 +85,7 @@ export function PatientAlertsPage({
                   </span>
                 </div>
 
-                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
                   {cloneAlertCards(AmpelStatus.YELLOW)}
                 </div>
               </div>
