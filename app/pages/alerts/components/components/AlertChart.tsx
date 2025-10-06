@@ -9,6 +9,7 @@ import {
 } from 'recharts';
 
 import { AmpelStatus } from '../../types/types';
+import { formatDeBerlin } from './formatDate';
 import { StatusIcon } from './StatusIcon';
 
 interface AlertChartDataPoint {
@@ -112,9 +113,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
             padding={{ right: 100 }}
             label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
             tickFormatter={(date: Date) =>
-              date instanceof Date
-                ? date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' })
-                : String(date)
+              date instanceof Date ? formatDeBerlin(date) : String(date)
             }
           />
           <YAxis

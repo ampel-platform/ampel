@@ -35,12 +35,16 @@ jobs:
   test:
     needs: quality-check
     runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Berlin
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+      - run: node -e "console.log(Intl.DateTimeFormat().resolvedOptions())"
+      - run: date && date -u
       - run: npm ci
       - run: npm run coverage
 
