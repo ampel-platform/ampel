@@ -879,7 +879,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
@@ -1723,7 +1723,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
@@ -3014,7 +3014,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
@@ -3893,7 +3893,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
@@ -5216,7 +5216,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
@@ -6539,7 +6539,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </div>
                         </div>
                         <div
-                          class="mr-14 mt-2 flex flex-col items-start gap-2 text-xs text-gray-600"
+                          class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
                           <div
                             class="flex items-center gap-1"
