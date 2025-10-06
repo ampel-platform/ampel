@@ -24,7 +24,7 @@ export function PatientMetaDataHeader({
 }: PatientMetaDataHeaderProps): React.ReactNode {
   return (
     <div className='flex flex-col gap-y-2'>
-      <span className='top-0 flex flex-wrap items-start justify-between gap-3'>
+      <span className='top-0 flex flex-wrap items-end justify-between gap-3'>
         <span className='break-words text-2xl font-medium text-gray-700 sm:text-3xl'>
           {name} (*
           {birthdate.toLocaleDateString('de-DE', {
@@ -40,36 +40,30 @@ export function PatientMetaDataHeader({
         />
       </span>
 
-      <div className='flex flex-wrap items-baseline gap-x-14 gap-y-1'>
-        <span className='whitespace-nowrap'>
-          <span className='mr-2 text-gray-600'>Patientennummer</span>
-          <span className='text-violet-800'>{patientId}</span>
-        </span>
-
-        <span className='whitespace-nowrap'>
-          <span className='mr-2 text-gray-600'>Fallnummer</span>
-          <span className='text-violet-800'>{caseId}</span>
-        </span>
-      </div>
-
-      <span className='mr-2 text-gray-600'>Fragen?</span>
-
-      <div className='flex flex-wrap items-center gap-x-1 gap-y-2'>
-        <span
-          className='mr-5 flex items-center gap-1 text-gray-600'
-          aria-label={`E-Mail an ${contactEmail}`}
-        >
-          <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
-          <span className='whitespace-nowrap'>{contactEmail}</span>
-        </span>
-
-        <span
-          className='flex items-center gap-1 text-gray-600'
-          aria-label={`Anrufen: ${contactPhone}`}
-        >
-          <Phone className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
+      <div className='flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1'>
+        <span className='flex flex-wrap items-baseline gap-x-14 gap-y-1'>
           <span className='whitespace-nowrap'>
-            {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+            <span className='mr-2 text-gray-600'>Patientennummer</span>
+            <span className='text-violet-800'>{patientId}</span>
+          </span>
+
+          <span className=''>
+            <span className='mr-2 text-gray-600'>Fallnummer</span>
+            <span className='text-violet-800'>{caseId}</span>
+          </span>
+        </span>
+
+        <span className='flex flex-wrap items-baseline gap-x-1 gap-y-1'>
+          <span className='mr-10 flex items-center gap-1 text-gray-600'>
+            <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
+            <span className='whitespace-nowrap'>{contactEmail}</span>
+          </span>
+
+          <span className='flex items-center gap-1 text-gray-600'>
+            <Phone className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
+            <span className='whitespace-nowrap'>
+              {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+            </span>
           </span>
         </span>
       </div>
