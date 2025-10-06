@@ -29,7 +29,9 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
     return date.toLocaleString('de-DE', { hour12: false, timeZone: 'Europe/Berlin' });
   }
 
-  const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
+  const sortedData = transformedData
+    .sort((a, b) => b.date.getTime() - a.date.getTime())
+    .slice(1, 8);
 
   return (
     <div className='pr-12'>

@@ -4,7 +4,6 @@ import { AlertHistory } from './components/AlertHistory';
 import { AlertLinks } from './components/AlertLinks';
 import { HintMessage } from './components/HintMessage';
 import { OverlayBackNavigation } from './components/OverlayBackNavigation';
-import { StatusLegend } from './components/StatusLegend';
 
 interface OverlayProps {
   data: AlertDetails;
@@ -27,13 +26,12 @@ export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.React
         <div className='px-6'>
           <div className='flex flex-col gap-y-8'>
             <AlertHeader name={data.ruleset} type={data.ampelStatus} />
-            <div className='grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12'>
-              <div className='lg:col-span-2'>
+            <div className='grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12'>
+              <div className='lg:col-span-3'>
                 <HintMessage message={data.message} />
               </div>
               <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <AlertLinks links={data.links} />
-                <StatusLegend />
               </div>
             </div>
             <AlertHistory history={data.rulesetHistory} />

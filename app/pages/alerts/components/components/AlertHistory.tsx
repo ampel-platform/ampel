@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { AmpelStatus, RulesetHistory } from '../../types/types';
 import { AlertChart } from './AlertChart';
 import { AlertTable } from './AlertTable';
+import { StatusLegend } from './StatusLegend';
 import { Switcher } from './Switcher';
 
 interface AlertHistoryProps {
@@ -51,6 +52,18 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
   const [enabledChart, setEnabledChart] = useState(false);
   return (
     <>
+      <div className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>
+        <div className='lg:col-span-3'>
+          {enabledChart ? (
+            <AlertChart transformedData={transformedData} />
+          ) : (
+            <AlertTable transformedData={transformedData} />
+          )}
+        </div>
+        <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
+          <StatusLegend />
+        </div>
+      </div>
       <Switcher
         label={enabledChart ? 'Als Tabelle anzeigen' : 'Als Diagram anzeigen'}
         onChange={(newState) => {
@@ -58,11 +71,6 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
         }}
         initialState={enabledChart}
       />
-      {enabledChart ? (
-        <AlertChart transformedData={transformedData} />
-      ) : (
-        <AlertTable transformedData={transformedData} />
-      )}
     </>
   );
 }

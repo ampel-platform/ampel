@@ -41,15 +41,9 @@ interface AlertChartProps {
 // eslint-disable-next-line no-undef
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
   return (
-    <div className='flex w-full flex-col gap-y-4'>
-      <span className='font-medium text-gray-600'>{transformedData[0].analyteName}</span>
+    <div className='flex w-full flex-col'>
       <ResponsiveContainer width='100%' height={400}>
-        <ComposedChart
-          width={500}
-          height={400}
-          data={transformedData}
-          margin={{ top: 20, right: 60, bottom: 20, left: 20 }}
-        >
+        <ComposedChart width={500} height={400} data={transformedData}>
           <CartesianGrid stroke='#f5f5f5' />
           <Tooltip
             formatter={(value) => [

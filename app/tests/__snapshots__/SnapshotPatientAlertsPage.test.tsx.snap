@@ -829,10 +829,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -878,6 +878,26 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="flex w-full flex-col"
+                        >
+                          <div
+                            class="recharts-responsive-container"
+                            style="width: 100%; height: 400px; min-width: 0;"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -967,19 +987,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         Als Tabelle anzeigen
                       </div>
                     </label>
-                    <div
-                      class="flex w-full flex-col gap-y-4"
-                    >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        AKI
-                      </span>
-                      <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1673,10 +1680,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -1722,6 +1729,426 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="pr-12"
+                        >
+                          <div
+                            class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                          >
+                            <table
+                              class="min-w-full divide-y divide-gray-200 text-sm"
+                            >
+                              <thead
+                                class="bg-gray-50 text-left"
+                              >
+                                <tr>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Datum & Uhrzeit des Messzeitpunktes
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Analyt
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Wert (
+                                    µmol/l
+                                    )
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Status
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody
+                                class="divide-y divide-gray-100"
+                              >
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    28.7.2025, 10:28:21
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 18:40:28
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <circle
+                                          cx="7"
+                                          cy="7"
+                                          fill="red"
+                                          r="5"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Kritisch
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 04:03:33
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    36
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 14:17:47
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    7
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 02:33:03
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    44
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 00:22:04
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    17
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    25.7.2025, 18:51:47
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    AKI
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    10
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <circle
+                                          cx="7"
+                                          cy="7"
+                                          fill="red"
+                                          r="5"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Kritisch
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                           
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -1811,466 +2238,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         Als Diagram anzeigen
                       </div>
                     </label>
-                    <div
-                      class="pr-12"
-                    >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
-                      >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (
-                                µmol/l
-                                )
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 22:12:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                15
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Kritisch
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                28.7.2025, 10:28:21
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 18:40:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Kritisch
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 04:03:33
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                36
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 14:17:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                7
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:33:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                44
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 00:22:04
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                17
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:51:47
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                AKI
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                10
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(251, 207, 232, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <circle
-                                      cx="7"
-                                      cy="7"
-                                      fill="red"
-                                      r="5"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Kritisch
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
-                    </div>
                   </div>
                 </div>
               </div>
@@ -2964,10 +2931,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -3013,6 +2980,26 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="flex w-full flex-col"
+                        >
+                          <div
+                            class="recharts-responsive-container"
+                            style="width: 100%; height: 400px; min-width: 0;"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -3102,19 +3089,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         Als Tabelle anzeigen
                       </div>
                     </label>
-                    <div
-                      class="flex w-full flex-col gap-y-4"
-                    >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        AKI
-                      </span>
-                      <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -3808,10 +3782,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -3892,6 +3866,425 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="pr-12"
+                        >
+                          <div
+                            class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                          >
+                            <table
+                              class="min-w-full divide-y divide-gray-200 text-sm"
+                            >
+                              <thead
+                                class="bg-gray-50 text-left"
+                              >
+                                <tr>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Datum & Uhrzeit des Messzeitpunktes
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Analyt
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Wert (
+                                    µmol/l
+                                    )
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Status
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody
+                                class="divide-y divide-gray-100"
+                              >
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    29.7.2025, 00:15:23
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    43
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 06:20:09
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    1
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 06:15:18
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 10:02:09
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    31
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 02:34:28
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    31
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    25.7.2025, 18:09:58
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    25.7.2025, 09:51:03
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                           
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -3981,463 +4374,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         Als Diagram anzeigen
                       </div>
                     </label>
-                    <div
-                      class="pr-12"
-                    >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
-                      >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (
-                                µmol/l
-                                )
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 07:36:13
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                4
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 00:15:23
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                43
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:20:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                1
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:15:18
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 10:02:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:34:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:09:58
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 09:51:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
-                    </div>
                   </div>
                 </div>
               </div>
@@ -5131,10 +5067,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -5215,6 +5151,425 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="pr-12"
+                        >
+                          <div
+                            class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                          >
+                            <table
+                              class="min-w-full divide-y divide-gray-200 text-sm"
+                            >
+                              <thead
+                                class="bg-gray-50 text-left"
+                              >
+                                <tr>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Datum & Uhrzeit des Messzeitpunktes
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Analyt
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Wert (
+                                    µmol/l
+                                    )
+                                  </th>
+                                  <th
+                                    class="px-6 py-3 font-medium text-gray-700"
+                                  >
+                                    Status
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody
+                                class="divide-y divide-gray-100"
+                              >
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    29.7.2025, 00:15:23
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    43
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 06:20:09
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    1
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    27.7.2025, 06:15:18
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 10:02:09
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    31
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <polygon
+                                          fill="yellow"
+                                          points="7,2 1,13 13,13"
+                                          stroke="black"
+                                          stroke-width="1"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Warnung
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26.7.2025, 02:34:28
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    31
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    25.7.2025, 18:09:58
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    26
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="hover:bg-gray-50"
+                                >
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    25.7.2025, 09:51:03
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    Anämie
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4 text-gray-900"
+                                  >
+                                    21
+                                     
+                                    µmol/l
+                                  </td>
+                                  <td
+                                    class="whitespace-nowrap px-6 py-4"
+                                  >
+                                    <div
+                                      class="flex items-center gap-2"
+                                    >
+                                      <div
+                                        class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
+                                      />
+                                      <svg
+                                        height="14"
+                                        width="14"
+                                      >
+                                        <rect
+                                          fill="limegreen"
+                                          height="11"
+                                          stroke="black"
+                                          stroke-width="1"
+                                          width="11"
+                                          x="1.5"
+                                          y="1.5"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="text-gray-700"
+                                      >
+                                        <span>
+                                          Normal
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                           
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -5304,463 +5659,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         Als Diagram anzeigen
                       </div>
                     </label>
-                    <div
-                      class="pr-12"
-                    >
-                      <div
-                        class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
-                      >
-                        <table
-                          class="min-w-full divide-y divide-gray-200 text-sm"
-                        >
-                          <thead
-                            class="bg-gray-50 text-left"
-                          >
-                            <tr>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Datum & Uhrzeit des Messzeitpunktes
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Analyt
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Wert (
-                                µmol/l
-                                )
-                              </th>
-                              <th
-                                class="px-6 py-3 font-medium text-gray-700"
-                              >
-                                Status
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="divide-y divide-gray-100"
-                          >
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 07:36:13
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                4
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                29.7.2025, 00:15:23
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                43
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:20:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                1
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                27.7.2025, 06:15:18
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 10:02:09
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(254, 243, 199, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <polygon
-                                      fill="yellow"
-                                      points="7,2 1,13 13,13"
-                                      stroke="black"
-                                      stroke-width="1"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Warnung
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26.7.2025, 02:34:28
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                31
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 18:09:58
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                26
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="hover:bg-gray-50"
-                            >
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                25.7.2025, 09:51:03
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                Anämie
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4 text-gray-900"
-                              >
-                                21
-                                 
-                                µmol/l
-                              </td>
-                              <td
-                                class="whitespace-nowrap px-6 py-4"
-                              >
-                                <div
-                                  class="flex items-center gap-2"
-                                >
-                                  <div
-                                    class="h-3 w-3 rounded-full rgba(243, 244, 246, 0.7)"
-                                  />
-                                  <svg
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <rect
-                                      fill="limegreen"
-                                      height="11"
-                                      stroke="black"
-                                      stroke-width="1"
-                                      width="11"
-                                      x="1.5"
-                                      y="1.5"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="text-gray-700"
-                                  >
-                                    <span>
-                                      Normal
-                                    </span>
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                       
-                    </div>
                   </div>
                 </div>
               </div>
@@ -6454,10 +6352,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </span>
                     </div>
                     <div
-                      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-12"
+                      class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12"
                     >
                       <div
-                        class="lg:col-span-2"
+                        class="lg:col-span-3"
                       >
                         <div
                           class="flex flex-col gap-1"
@@ -6538,6 +6436,26 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                             </a>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
+                    >
+                      <div
+                        class="lg:col-span-3"
+                      >
+                        <div
+                          class="flex w-full flex-col"
+                        >
+                          <div
+                            class="recharts-responsive-container"
+                            style="width: 100%; height: 400px; min-width: 0;"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
                         <div
                           class="mr-14 mt-2 flex w-60 flex-col items-start gap-2 text-xs text-gray-600"
                         >
@@ -6627,19 +6545,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         Als Tabelle anzeigen
                       </div>
                     </label>
-                    <div
-                      class="flex w-full flex-col gap-y-4"
-                    >
-                      <span
-                        class="font-medium text-gray-600"
-                      >
-                        Anämie
-                      </span>
-                      <div
-                        class="recharts-responsive-container"
-                        style="width: 100%; height: 400px; min-width: 0;"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
