@@ -13,9 +13,9 @@ COPY . .
 # Setze Zeitzone auf UTC wie im GitHub Actions Runner
 ENV TZ=Etc/UTC
 
-# Setze Locale explizit auf en_US (optional)
-ENV LANG=en_US.UTF-8
-ENV LC_ALL=en_US.UTF-8
+# Setze Locale explizit auf de_DE (optional)
+ENV LANG=de_DE.UTF-8
+ENV LC_ALL=de_DE.UTF-8
 
 # Default-Command: Tests ausführen
 CMD ["npm", "run", "coverage"]
