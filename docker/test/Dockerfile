@@ -10,10 +10,10 @@ RUN npm ci
 # Source rein (das meiste, was für tests gebraucht wird)
 COPY . .
 
-# Setze Zeitzone auf UTC wie im GitHub Actions Runner
-ENV TZ=Etc/UTC
+# Setze Zeitzone
+ENV TZ=Europe/Berlin
 
-# Setze Locale explizit auf de_DE (optional)
+# Setze Locale explizit auf de_DE
 ENV LANG=de_DE.UTF-8
 ENV LC_ALL=de_DE.UTF-8
 
