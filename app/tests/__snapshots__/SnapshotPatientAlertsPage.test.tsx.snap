@@ -2726,7 +2726,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 </body>
 `;
 
-exports[`PatientAlertsPage Integration > opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button > alert-overlay-open-table 1`] = `
+exports[`PatientAlertsPage Integration > opens & closes the detail view of critical alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button > alert-overlay-open-diagramm 1`] = `
 <body>
   <div>
     <div>
@@ -3574,7 +3574,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 </body>
 `;
 
-exports[`PatientAlertsPage Integration > opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button > alert-overlay-open-table 1`] = `
+exports[`PatientAlertsPage Integration > opens & closes the detail view of warning alerts and checks for the presence of the hint, further links, legend, table, chart, and the close button > alert-overlay-open-diagramm 1`] = `
 <body>
   <div>
     <div>

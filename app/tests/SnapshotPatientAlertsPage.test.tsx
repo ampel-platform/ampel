@@ -55,12 +55,12 @@ describe('PatientAlertsPage Integration', async () => {
     // Snapshot test
     expect(document.body).toMatchSnapshot('alert-overlay-open');
 
-    // Button Switcher zum anzeigen der Tabelle statt Diagramm
+    // Button Switcher zum anzeigen der Diagramm statt Tabelle
     const switcher = screen.getByTestId('switcher');
     await switcher.click();
 
     // Snapshot test
-    expect(document.body).toMatchSnapshot('alert-overlay-open-table');
+    expect(document.body).toMatchSnapshot('alert-overlay-open-diagramm');
 
     // Detailsansicht schließen
     await closeButton.click();
@@ -85,12 +85,12 @@ describe('PatientAlertsPage Integration', async () => {
     // Snapshot test
     expect(document.body).toMatchSnapshot('warning-overlay-open');
 
-    // Button Switcher zum anzeigen der Tabelle statt Diagramm
+    // Button Switcher zum anzeigen der Diagramm statt Tabelle
     const switcher = await screen.getByTestId('switcher');
     await switcher.click();
 
     // Snapshot test
-    expect(document.body).toMatchSnapshot('alert-overlay-open-table');
+    expect(document.body).toMatchSnapshot('alert-overlay-open-diagramm');
 
     // Detailsansicht schließen
     await closeButton.click();
