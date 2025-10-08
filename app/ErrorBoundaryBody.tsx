@@ -1,6 +1,6 @@
-import Logo from '../assets/UKL_Logo_Vektor.svg';
-const SUPPORT_MAIL = 'ampel@medizin.uni-leipzig.de';
 import type { JSX } from 'react';
+
+import Logo from '../assets/UKL_Logo_Vektor.svg';
 /**
  * Renders an error boundary body component.
  *
@@ -10,11 +10,11 @@ import type { JSX } from 'react';
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
-  const subject = 'AMPEL-CDSS-Fehler';
+const contactEmail = 'ampel@uniklinik-leipzig.de';
+const contactPhone = '0341 - 97 11342';
 
+export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
   if (isRouteErrorResponse) {
-    const body = `Fehler: ${error.status} ${error.statusText}\n\n${error.data} : ${error.stack}`;
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
         <img src={Logo} width={300} alt='AMPEL Logo' />
@@ -24,11 +24,15 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
           helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
         </p>
-        <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
+
+        <p className='whitespace-nowrap'>{contactEmail}</p>
+
+        <p className='whitespace-nowrap'>
+          {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+        </p>
       </div>
     );
   } else if (error instanceof Error) {
-    const body = `Fehler: ${error.message} \n\n ${error.stack}`;
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
         <img src={Logo} width={300} alt='AMPEL Logo' />
@@ -38,11 +42,15 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
           ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte
           helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
         </p>
-        <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
+
+        <p className='whitespace-nowrap'>{contactEmail}</p>
+
+        <p className='whitespace-nowrap'>
+          {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+        </p>
       </div>
     );
   }
-  const body = `Fehler: ${error} \n\n ${error.stack} \n\n ${error.message} \n\n ${error.data} \n\n ${error.statusText}`;
   return (
     <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
       <img src={Logo} width={300} alt='AMPEL Logo' />
@@ -52,7 +60,12 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
         ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen
         Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
       </p>
-      <a href={`mailto:${SUPPORT_MAIL}?subject=${subject}&body=${body}`}>E-Mail an Support</a>
+
+      <p className='whitespace-nowrap'>{contactEmail}</p>
+
+      <p className='whitespace-nowrap'>
+        {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
+      </p>
     </div>
   );
 }

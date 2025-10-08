@@ -18,13 +18,16 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
     >
       Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
     </p>
-    <a
-      href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: 404 Not Found
-
-Seite nicht gefunden : undefined"
+    <p
+      class="whitespace-nowrap"
     >
-      E-Mail an Support
-    </a>
+      ampel@uniklinik-leipzig.de
+    </p>
+    <p
+      class="whitespace-nowrap"
+    >
+      0341 - 97 11342
+    </p>
   </div>
 </div>
 `;
@@ -47,13 +50,16 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
     >
       Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
     </p>
-    <a
-      href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: Etwas ist schiefgelaufen 
-
- STACKTRACE"
+    <p
+      class="whitespace-nowrap"
     >
-      E-Mail an Support
-    </a>
+      ampel@uniklinik-leipzig.de
+    </p>
+    <p
+      class="whitespace-nowrap"
+    >
+      0341 - 97 11342
+    </p>
   </div>
 </div>
 `;
@@ -76,19 +82,16 @@ exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
     >
       Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
     </p>
-    <a
-      href="mailto:ampel@medizin.uni-leipzig.de?subject=AMPEL-CDSS-Fehler&body=Fehler: 12345 
-
- undefined 
-
- undefined 
-
- undefined 
-
- undefined"
+    <p
+      class="whitespace-nowrap"
     >
-      E-Mail an Support
-    </a>
+      ampel@uniklinik-leipzig.de
+    </p>
+    <p
+      class="whitespace-nowrap"
+    >
+      0341 - 97 11342
+    </p>
   </div>
 </div>
 `;
