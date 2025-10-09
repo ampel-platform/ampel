@@ -13,7 +13,7 @@
 
 create a .env File with the required EnvVars:
 
-- BASE_API_URL=http://backend
+- VITE_BASE_API_URL=http://backend
 
 ### Install dependencies
 
