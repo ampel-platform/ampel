@@ -16,7 +16,8 @@ export function PatientAlertsPage({
   rulesetsByStatus,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
-  const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] = useState('left-full');
+  const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] =
+    useState('left-full ml-4');
   const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
@@ -25,7 +26,7 @@ export function PatientAlertsPage({
   };
 
   const hideDetailOverlay = (): void => {
-    setDetailOverlayVisibilityClasses('left-full');
+    setDetailOverlayVisibilityClasses('left-full ml-4');
   };
   function cloneAlertCards(status: AmpelStatus): ReactNode[] {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -46,7 +47,7 @@ export function PatientAlertsPage({
   if (!patientMetaData || !rulesetsByStatus) return null;
 
   return (
-    <div className='h-full w-full px-4'>
+    <div className='h-full px-4'>
       <div className='flex h-full w-full flex-col gap-y-10'>
         <PatientMetaDataHeader
           name={patientMetaData.name}
@@ -63,7 +64,7 @@ export function PatientAlertsPage({
             <AlertDetailOverlay data={detailOverlayData} onClose={hideDetailOverlay} />
           </div>
 
-          <div className='flex h-full w-full flex-col gap-y-20'>
+          <div className='ml-2 flex h-full w-full flex-col gap-y-20'>
             <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
               <div className='order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
                 <div className='flex flex-row items-baseline gap-x-4'>
