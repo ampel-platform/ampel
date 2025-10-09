@@ -41,15 +41,18 @@ interface AlertChartProps {
 
 // eslint-disable-next-line no-undef
 export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
+  const transformedDataSliced = transformedData;
+  // .sort((a, b) => a.date.getTime() - b.date.getTime())
+  // .slice(transformedData.length - 10, transformedData.length - 1);
   return (
-    <div className='flex w-full flex-col'>
-      <ResponsiveContainer width='100%' height={400}>
-        <ComposedChart width={500} height={400} data={transformedData}>
+    <div className='flex h-[500px] w-full flex-col'>
+      <ResponsiveContainer width='100%' height={500}>
+        <ComposedChart width={500} height={500} data={transformedDataSliced}>
           <CartesianGrid stroke='#f5f5f5' />
           <Tooltip
             formatter={(value) => [
-              `${value} ${transformedData[0].unit}`,
-              transformedData[0].analyteName,
+              `${value} ${transformedDataSliced[0].unit}`,
+              transformedDataSliced[0].analyteName,
             ]}
           />
           <Line
@@ -60,7 +63,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
             stroke='rgba(91, 33, 182, 0.7)'
             dot={(props) => {
               const { index } = props;
-              const isLastPoint = index === transformedData.length - 1;
+              const isLastPoint = index === transformedDataSliced.length - 1;
               const ampelStatus = props.points[index].payload.ampelStatus;
 
               if (isLastPoint) {
@@ -119,7 +122,7 @@ export function AlertChart({ transformedData }: AlertChartProps): React.ReactNod
           <YAxis
             yAxisId='value'
             dataKey='analyteValue'
-            label={{ value: transformedData[0].unit, angle: 45, position: 'insideLeft' }}
+            label={{ value: transformedDataSliced[0].unit, angle: 45, position: 'insideLeft' }}
           />
         </ComposedChart>
       </ResponsiveContainer>

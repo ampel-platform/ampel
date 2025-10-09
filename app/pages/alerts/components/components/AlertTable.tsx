@@ -26,19 +26,15 @@ interface AlertTableProps {
  */
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
-  const sortedData = transformedData
-    .sort((a, b) => b.date.getTime() - a.date.getTime())
-    .slice(1, 8);
+  const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
-    <div className='pr-12'>
+    <div className='h-[500px] overflow-y-scroll pr-12'>
       <div className='w-full overflow-auto rounded-xl border border-gray-200 shadow-sm'>
         <table className='min-w-full divide-y divide-gray-200 text-sm'>
           <thead className='bg-gray-50 text-left'>
             <tr>
-              <th className='px-6 py-3 font-medium text-gray-700'>
-                Datum & Uhrzeit des Messzeitpunktes
-              </th>
+              <th className='px-6 py-3 font-medium text-gray-700'>Messzeitpunkt</th>
               <th className='px-6 py-3 font-medium text-gray-700'>Analyt</th>
               <th className='px-6 py-3 font-medium text-gray-700'>
                 Wert ({transformedData[0].unit})
@@ -56,7 +52,7 @@ export function AlertTable({ transformedData }: AlertTableProps): React.ReactNod
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
                   {row.analyteValue} {row.unit}
                 </td>
-                <td className='whitespace-nowrap px-6 py-4'>
+                <td className='whitespace-nowrap py-4'>
                   <div className='flex items-center gap-2'>
                     <div className={`h-3 w-3 rounded-full ${row.ampelStatusFillColor}`} />
                     <svg width={14} height={14}>

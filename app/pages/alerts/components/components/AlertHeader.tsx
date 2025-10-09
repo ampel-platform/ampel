@@ -19,7 +19,9 @@ export function AlertHeader({ name, type }: AlertHeaderProps): React.ReactNode {
   return (
     <div className='flex flex-row items-center gap-x-4'>
       <AlertPing type={type} />
-      <span className='text-xl font-medium text-violet-800'>{name}</span>
+      <span className='text-xl font-medium text-violet-800'>
+        {name} - {type == 1 ? 'Kritisch' : 'Warnung'}
+      </span>
     </div>
   );
 }

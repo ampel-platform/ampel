@@ -16,7 +16,7 @@ export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): 
     <div className='flex flex-row'>
       <a
         href='#'
-        className='flex flex-row items-center gap-x-2 text-gray-600 hover:text-violet-800'
+        className='flex flex-row items-center text-gray-600 hover:text-violet-800'
         data-testid='overlay-back-navigation'
         onClick={(e) => {
           e.preventDefault(); // verhindert ungewolltes Scrollen o. Ä.
@@ -27,7 +27,7 @@ export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): 
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 16 16'
           fill='currentColor'
-          className='size-4'
+          className='size-6'
         >
           <path
             fillRule='evenodd'
@@ -35,7 +35,6 @@ export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): 
             clipRule='evenodd'
           />
         </svg>
-        <span>zurück zur Alarmübersicht</span>
       </a>
     </div>
   );

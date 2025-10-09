@@ -16,9 +16,8 @@ export function HintMessage({ message }: HintMessageProps): React.ReactNode | nu
   if (!message) return null;
 
   return (
-    <div className='flex flex-col gap-1'>
-      <span className='text-muted-foreground text-sm font-medium'>Hinweis</span>
-      <div className='text-sm text-gray-600' dangerouslySetInnerHTML={{ __html: message }} />
+    <div className='rounded-xl bg-gray-100 p-1'>
+      <div className='text-m font-bold' dangerouslySetInnerHTML={{ __html: message }} />
     </div>
   );
 }

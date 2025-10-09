@@ -22,7 +22,7 @@ export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.React
   return (
     data && (
       <div className='flex h-full flex-col gap-y-4 bg-white'>
-        <div className='max-w-[1000px]'>
+        <div className='flex max-w-[1000px] flex-row items-start'>
           <OverlayBackNavigation onClick={onClose} />
           <div className='px-6'>
             <div className='flex flex-col gap-y-8'>
