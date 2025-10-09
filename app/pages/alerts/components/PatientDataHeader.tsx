@@ -31,7 +31,7 @@ export function PatientMetaDataHeader({
             hour12: false,
             timeZone: 'Europe/Berlin',
           })}{' '}
-          | {sex.charAt(0)})
+          | {sex.charAt(0).toUpperCase()})
         </span>
         <img
           src={Logo}
