@@ -19,11 +19,17 @@ RUN npm install
 # Copy the application code to the working directory
 COPY . .
 
+# >>> bake VITE_* into the client bundle
+ARG VITE_BASE_API_URL
+ENV VITE_BASE_API_URL=$VITE_BASE_API_URL
+
 # Build the application
 RUN npm run build
 
 # Expose the port for the application
-EXPOSE 3000
+EXPOSE 3003
+
+ENV HOST=0.0.0.0 PORT=3003
 
 # Run the command to start the production server
 CMD ["npm", "run", "start"]
