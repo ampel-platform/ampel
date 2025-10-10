@@ -878,12 +878,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col"
+                            class="flex h-[500px] w-full flex-col overflow-x-auto"
                           >
                             <div
-                              class="recharts-responsive-container"
-                              style="width: 100%; height: 500px; min-width: 0;"
-                            />
+                              style="width: 700px;"
+                            >
+                              <div
+                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                              >
+                                <div
+                                  style="width: 700px;"
+                                >
+                                  <div
+                                    class="recharts-responsive-container"
+                                    style="width: 100%; height: 500px; min-width: 0;"
+                                  />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div
@@ -3022,12 +3034,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col"
+                            class="flex h-[500px] w-full flex-col overflow-x-auto"
                           >
                             <div
-                              class="recharts-responsive-container"
-                              style="width: 100%; height: 500px; min-width: 0;"
-                            />
+                              style="width: 700px;"
+                            >
+                              <div
+                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                              >
+                                <div
+                                  style="width: 700px;"
+                                >
+                                  <div
+                                    class="recharts-responsive-container"
+                                    style="width: 100%; height: 500px; min-width: 0;"
+                                  />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div
@@ -6563,12 +6587,24 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col"
+                            class="flex h-[500px] w-full flex-col overflow-x-auto"
                           >
                             <div
-                              class="recharts-responsive-container"
-                              style="width: 100%; height: 500px; min-width: 0;"
-                            />
+                              style="width: 700px;"
+                            >
+                              <div
+                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                              >
+                                <div
+                                  style="width: 700px;"
+                                >
+                                  <div
+                                    class="recharts-responsive-container"
+                                    style="width: 100%; height: 500px; min-width: 0;"
+                                  />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div

@@ -1,3 +1,4 @@
+import React, { useLayoutEffect, useMemo, useRef } from 'react';
 import {
   CartesianGrid,
   ComposedChart,
@@ -20,112 +21,150 @@ interface AlertChartDataPoint {
   unit: string;
   analyteName: string;
 }
-
 interface AlertChartProps {
   transformedData: AlertChartDataPoint[];
 }
 
-/**
- * Renders an alert chart displaying analyte values over time with respective ampel statuses.
- * The chart includes a line plot with customized icons representing the ampel status at each data point.
- * The last data point is highlighted with specific shapes based on the ampel status:
- * - Red circle for status 1
- * - Yellow triangle for status 2
- * - Green square for status 3
- * The chart is responsive and includes tooltips, grid lines, and labeled axes.
- *
- * @param {Object} props - The component props
- * @param {AlertChartDataPoint[]} props.transformedData - Array of data points to be plotted
- * @returns {React.ReactNode } The rendered alert chart component
- */
+interface TickProps {
+  x: number;
+  y: number;
+  payload: { value: string | number | Date };
+}
 
-// eslint-disable-next-line no-undef
-export function AlertChart({ transformedData }: AlertChartProps): React.ReactNode {
-  const transformedDataSliced = transformedData;
-  // .sort((a, b) => a.date.getTime() - b.date.getTime())
-  // .slice(transformedData.length - 10, transformedData.length - 1);
+export function AlertChart({ transformedData: data }: AlertChartProps): React.ReactNode {
+  const pxPerPoint = 80;
+  const minWidth = 700;
+  const chartWidth = useMemo(() => Math.max(minWidth, data.length * pxPerPoint), [data.length]);
+
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  // initial scroll to right (and when data length changes)
+  useLayoutEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    // eslint-disable-next-line no-undef
+    const id = requestAnimationFrame(() => {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'auto' }); // use 'smooth' if desired
+    });
+    // eslint-disable-next-line no-undef, @typescript-eslint/explicit-function-return-type
+    return () => cancelAnimationFrame(id);
+  }, [data.length]);
+  // horizontal scroll: give each point a fixed pixel width
+
+  const DateTimeTick: React.FC<TickProps> = ({ x, y, payload }) => {
+    const v = payload.value instanceof Date ? payload.value : new Date(payload.value);
+    const [d, t] = formatDeBerlin(v).split(', ');
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text textAnchor='middle' fontSize={12}>
+          <tspan x={0} dy={0}>
+            {d}
+          </tspan>
+          <tspan x={0} dy={14}>
+            {t}
+          </tspan>
+        </text>
+      </g>
+    );
+  };
   return (
-    <div className='flex h-[500px] w-full flex-col'>
-      <ResponsiveContainer width='100%' height={500}>
-        <ComposedChart width={500} height={500} data={transformedDataSliced}>
-          <CartesianGrid stroke='#f5f5f5' />
-          <Tooltip
-            formatter={(value) => [
-              `${value} ${transformedDataSliced[0].unit}`,
-              transformedDataSliced[0].analyteName,
-            ]}
-          />
-          <Line
-            name={'Leitanalyt'}
-            isAnimationActive={false}
-            yAxisId='value'
-            dataKey='analyteValue'
-            stroke='rgba(91, 33, 182, 0.7)'
-            dot={(props) => {
-              const { index } = props;
-              const isLastPoint = index === transformedDataSliced.length - 1;
-              const ampelStatus = props.points[index].payload.ampelStatus;
-
-              if (isLastPoint) {
-                return (
-                  <>
-                    <circle
-                      key={`last-circle-${index}`}
-                      cx={props.cx}
-                      cy={props.cy - 12}
-                      r={5}
-                      fill={ampelStatus === AmpelStatus.RED ? 'red' : 'white'}
-                      stroke='black'
-                      strokeWidth={1}
-                    />
-                    <polygon
-                      key={`last-triangle-${index}`}
-                      points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
-                      fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
-                      stroke='black'
-                      strokeWidth={1}
-                    />
-                    <rect
-                      key={`last-square-${index}`}
-                      x={props.cx - 5.5}
-                      y={props.cy + 8}
-                      width={11}
-                      height={11}
-                      fill={ampelStatus === AmpelStatus.GREEN ? 'limegreen' : 'white'}
-                      stroke='black'
-                      strokeWidth={1}
-                    />
-                  </>
-                );
-              }
-
-              return (
-                <StatusIcon
-                  key={`status-icon-${index}`}
-                  ampelStatus={ampelStatus}
-                  cx={props.cx}
-                  cy={props.cy}
-                  index={index}
+    <div ref={scrollerRef} className='flex h-[500px] w-full flex-col overflow-x-auto'>
+      <div style={{ width: chartWidth }}>
+        <div className='flex h-[500px] w-full flex-col overflow-x-auto'>
+          <div style={{ width: chartWidth }}>
+            <ResponsiveContainer width='100%' height={500}>
+              <ComposedChart data={data} margin={{ top: 30, right: 0, bottom: 0, left: 48 }}>
+                <CartesianGrid stroke='#f5f5f5' />
+                <Tooltip
+                  formatter={(v) => [`${v} ${data[0].unit}`, data[0].analyteName]}
+                  labelFormatter={(label, payload) => {
+                    const raw = payload?.[0]?.payload?.date ?? label; // robust
+                    const d = raw instanceof Date ? raw : new Date(raw);
+                    return formatDeBerlin(d); // e.g. "23.06.2023, 09:57"
+                  }}
                 />
-              );
-            }}
-          />
 
-          <XAxis
-            dataKey='date'
-            padding={{ right: 100 }}
-            label={{ value: 'Datum', position: 'insideBottomRight', offset: -5 }}
-            tickFormatter={(date: Date) =>
-              date instanceof Date ? formatDeBerlin(date) : String(date)
-            }
-          />
-          <YAxis
-            yAxisId='value'
-            dataKey='analyteValue'
-            label={{ value: transformedDataSliced[0].unit, angle: 45, position: 'insideLeft' }}
-          />
-        </ComposedChart>
-      </ResponsiveContainer>
+                <Line
+                  name='Leitanalyt'
+                  isAnimationActive={false}
+                  yAxisId='right'
+                  dataKey='analyteValue'
+                  stroke='rgba(91, 33, 182, 0.7)'
+                  dot={(props) => {
+                    const { index } = props;
+                    const isLast = index === data.length - 1;
+                    const ampelStatus = props.points[index].payload.ampelStatus;
+
+                    if (isLast) {
+                      return (
+                        <>
+                          <circle
+                            cx={props.cx}
+                            cy={props.cy - 12}
+                            r={5}
+                            fill={ampelStatus === AmpelStatus.RED ? 'red' : 'white'}
+                            stroke='black'
+                            strokeWidth={1}
+                          />
+                          <polygon
+                            points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
+                            fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
+                            stroke='black'
+                            strokeWidth={1}
+                          />
+                          <rect
+                            x={props.cx - 5.5}
+                            y={props.cy + 8}
+                            width={11}
+                            height={11}
+                            fill={ampelStatus === AmpelStatus.GREEN ? 'limegreen' : 'white'}
+                            stroke='black'
+                            strokeWidth={1}
+                          />
+                        </>
+                      );
+                    }
+                    return (
+                      <StatusIcon
+                        ampelStatus={ampelStatus}
+                        cx={props.cx}
+                        cy={props.cy}
+                        index={index}
+                      />
+                    );
+                  }}
+                />
+
+                <XAxis
+                  dataKey='date'
+                  tick={(props) => <DateTimeTick {...props} />} // pass props through
+                  height={60}
+                  tickMargin={8}
+                  padding={{ left: 20, right: 40 }}
+                  interval={0}
+                />
+                {/* LEFT Y */}
+                <YAxis
+                  yAxisId='left'
+                  dataKey='analyteValue'
+                  domain={['dataMin - 15', 'dataMax + 25']}
+                  tickCount={7}
+                  label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
+                />
+
+                {/* RIGHT Y (mirror scale) */}
+                <YAxis
+                  yAxisId='right'
+                  orientation='right'
+                  domain={['dataMin - 15', 'dataMax + 25']}
+                  tickCount={7}
+                  label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
+                />
+              </ComposedChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
