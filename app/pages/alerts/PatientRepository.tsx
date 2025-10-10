@@ -11,7 +11,7 @@ const BASE_URL =
   // eslint-disable-next-line no-undef
   (typeof window !== 'undefined' ? window.ENV?.BASE_API_URL : undefined) ??
   import.meta.env.VITE_BASE_API_URL ??
-  'http://localhost:8080';
+  'http://backend.ampel.internal';
 
 export const PatientResultRepository = {
   async getByMedicalCaseId(caseId: string): Promise<PatientApiResult> {
