@@ -1,4 +1,3 @@
-// import { getBaseUrl } from '../../utils/env.client';
 import { ApiResultCollection, type ApiResultCollection as ApiT } from './types/types-api';
 
 const PATH = 'ampelresults';
@@ -34,7 +33,9 @@ export const AmpelResultRepository = {
 
       return ApiResultCollection.parse(json);
     } catch (error) {
-      throw new Error(`Der Server ist nicht erreichbar: ${error}`);
+      throw new Error(
+        `Der Server ist nicht erreichbar: BASE_URL: ${BASE_URL} with the error: ${error}`,
+      );
     }
   },
 };
