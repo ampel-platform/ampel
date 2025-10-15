@@ -23,6 +23,7 @@ interface AlertChartDataPoint {
 }
 interface AlertChartProps {
   transformedData: AlertChartDataPoint[];
+  height?: number;
 }
 
 interface TickProps {
@@ -31,7 +32,7 @@ interface TickProps {
   payload: { value: string | number | Date };
 }
 
-export function AlertChart({ transformedData: data }: AlertChartProps): React.ReactNode {
+export function AlertChart({ transformedData: data, height }: AlertChartProps): React.ReactNode {
   const pxPerPoint = 80;
   const minWidth = 700;
   const chartWidth = useMemo(() => Math.max(minWidth, data.length * pxPerPoint), [data.length]);
@@ -68,11 +69,17 @@ export function AlertChart({ transformedData: data }: AlertChartProps): React.Re
     );
   };
   return (
-    <div ref={scrollerRef} className='flex h-[500px] w-full flex-col overflow-x-auto'>
+    // if length of data is over 9 enable horizontal scroll
+    <div
+      ref={scrollerRef}
+      className={`h-[${height ?? 475}px] w-full ${data.length > 9 ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+    >
       <div style={{ width: chartWidth }}>
-        <div className='flex h-[500px] w-full flex-col overflow-x-auto'>
+        <div
+          className={`h-[${height ?? 475}px] w-full ${data.length > 9 ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+        >
           <div style={{ width: chartWidth }}>
-            <ResponsiveContainer width='100%' height={500}>
+            <ResponsiveContainer width='100%' height={height ?? 475}>
               <ComposedChart data={data} margin={{ top: 30, right: 0, bottom: 0, left: 48 }}>
                 <CartesianGrid stroke='#f5f5f5' />
                 <Tooltip
@@ -145,14 +152,16 @@ export function AlertChart({ transformedData: data }: AlertChartProps): React.Re
                   padding={{ left: 20, right: 40 }}
                   interval={0}
                 />
-                {/* LEFT Y */}
-                <YAxis
-                  yAxisId='left'
-                  dataKey='analyteValue'
-                  domain={['dataMin - 15', 'dataMax + 25']}
-                  tickCount={7}
-                  label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
-                />
+                {/* LEFT Y if more than 9 points */}
+                {data.length > 9 && (
+                  <YAxis
+                    yAxisId='left'
+                    dataKey='analyteValue'
+                    domain={['dataMin - 15', 'dataMax + 25']}
+                    tickCount={7}
+                    label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
+                  />
+                )}
 
                 {/* RIGHT Y (mirror scale) */}
                 <YAxis

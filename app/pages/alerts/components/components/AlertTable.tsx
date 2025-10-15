@@ -13,6 +13,7 @@ interface AlertTableDataPoint {
 
 interface AlertTableProps {
   transformedData: AlertTableDataPoint[];
+  height?: number;
 }
 
 /**
@@ -25,12 +26,16 @@ interface AlertTableProps {
  * @returns {React.ReactNode }
  */
 // eslint-disable-next-line no-undef
-export function AlertTable({ transformedData }: AlertTableProps): React.ReactNode {
+export function AlertTable({ transformedData, height }: AlertTableProps): React.ReactNode {
   const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
-    <div className='h-[500px] overflow-y-scroll pr-12'>
-      <div className='w-full overflow-auto rounded-xl border border-gray-200 shadow-sm'>
+    <div
+      className={`h-[${height ?? 475}px] ${sortedData.length > 8 ? 'overflow-y-scroll' : 'overflow-y-hidden'} pr-12`}
+    >
+      <div
+        className={`w-full ${sortedData.length > 8 ? 'overflow-auto' : 'overflow-hidden'} rounded-xl border border-gray-200 shadow-sm`}
+      >
         <table className='min-w-full divide-y divide-gray-200 text-sm'>
           <thead className='bg-gray-50 text-left'>
             <tr>

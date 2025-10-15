@@ -878,20 +878,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col overflow-x-auto"
+                            class="h-[475px] w-full overflow-x-hidden"
                           >
                             <div
                               style="width: 700px;"
                             >
                               <div
-                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                                class="h-[475px] w-full overflow-x-hidden"
                               >
                                 <div
                                   style="width: 700px;"
                                 >
                                   <div
                                     class="recharts-responsive-container"
-                                    style="width: 100%; height: 500px; min-width: 0;"
+                                    style="width: 100%; height: 475px; min-width: 0;"
                                   />
                                 </div>
                               </div>
@@ -1736,10 +1736,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[500px] overflow-y-scroll pr-12"
+                            class="h-[475px] overflow-y-hidden pr-12"
                           >
                             <div
-                              class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                              class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
                             >
                               <table
                                 class="min-w-full divide-y divide-gray-200 text-sm"
@@ -3034,20 +3034,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col overflow-x-auto"
+                            class="h-[475px] w-full overflow-x-hidden"
                           >
                             <div
                               style="width: 700px;"
                             >
                               <div
-                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                                class="h-[475px] w-full overflow-x-hidden"
                               >
                                 <div
                                   style="width: 700px;"
                                 >
                                   <div
                                     class="recharts-responsive-container"
-                                    style="width: 100%; height: 500px; min-width: 0;"
+                                    style="width: 100%; height: 475px; min-width: 0;"
                                   />
                                 </div>
                               </div>
@@ -3927,10 +3927,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[500px] overflow-y-scroll pr-12"
+                            class="h-[475px] overflow-y-hidden pr-12"
                           >
                             <div
-                              class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                              class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
                             >
                               <table
                                 class="min-w-full divide-y divide-gray-200 text-sm"
@@ -5257,10 +5257,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[500px] overflow-y-scroll pr-12"
+                            class="h-[475px] overflow-y-hidden pr-12"
                           >
                             <div
-                              class="w-full overflow-auto rounded-xl border border-gray-200 shadow-sm"
+                              class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
                             >
                               <table
                                 class="min-w-full divide-y divide-gray-200 text-sm"
@@ -6587,20 +6587,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="flex h-[500px] w-full flex-col overflow-x-auto"
+                            class="h-[475px] w-full overflow-x-hidden"
                           >
                             <div
                               style="width: 700px;"
                             >
                               <div
-                                class="flex h-[500px] w-full flex-col overflow-x-auto"
+                                class="h-[475px] w-full overflow-x-hidden"
                               >
                                 <div
                                   style="width: 700px;"
                                 >
                                   <div
                                     class="recharts-responsive-container"
-                                    style="width: 100%; height: 500px; min-width: 0;"
+                                    style="width: 100%; height: 475px; min-width: 0;"
                                   />
                                 </div>
                               </div>

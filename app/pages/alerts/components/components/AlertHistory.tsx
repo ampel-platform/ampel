@@ -50,14 +50,15 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
       };
     });
   const [enabledChart, setEnabledChart] = useState(false);
+  const historyHeight = 475;
   return (
     <>
       <div className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>
         <div className='lg:col-span-3'>
           {enabledChart ? (
-            <AlertChart transformedData={transformedData} />
+            <AlertChart transformedData={transformedData} height={historyHeight} />
           ) : (
-            <AlertTable transformedData={transformedData} />
+            <AlertTable transformedData={transformedData} height={historyHeight} />
           )}
         </div>
         <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
