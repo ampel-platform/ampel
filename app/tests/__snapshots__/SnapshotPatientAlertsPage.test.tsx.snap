@@ -1736,7 +1736,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[475px] overflow-y-hidden pr-12"
+                            class="overflow-y-hidden pr-12"
+                            style="height: 475px;"
                           >
                             <div
                               class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
@@ -3927,7 +3928,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[475px] overflow-y-hidden pr-12"
+                            class="overflow-y-hidden pr-12"
+                            style="height: 475px;"
                           >
                             <div
                               class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
@@ -5257,7 +5259,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[475px] overflow-y-hidden pr-12"
+                            class="overflow-y-hidden pr-12"
+                            style="height: 475px;"
                           >
                             <div
                               class="w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm"
