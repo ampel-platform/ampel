@@ -68,15 +68,18 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
       </g>
     );
   };
+
+  const scroll = data.length > 9;
+
   return (
     // if length of data is over 9 enable horizontal scroll
     <div
       ref={scrollerRef}
-      className={`h-[${height ?? 475}px] w-full ${data.length > 9 ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+      className={`h-[${height ?? 475}px] w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
     >
       <div style={{ width: chartWidth }}>
         <div
-          className={`h-[${height ?? 475}px] w-full ${data.length > 9 ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+          className={`h-[${height ?? 475}px] w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
         >
           <div style={{ width: chartWidth }}>
             <ResponsiveContainer width='100%' height={height ?? 475}>

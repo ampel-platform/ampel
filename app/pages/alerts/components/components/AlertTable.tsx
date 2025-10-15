@@ -28,13 +28,15 @@ interface AlertTableProps {
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData, height }: AlertTableProps): React.ReactNode {
   const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
+  const scroll = sortedData.length > 8;
 
   return (
     <div
-      className={`h-[${height ?? 475}px] ${sortedData.length > 8 ? 'overflow-y-scroll' : 'overflow-y-hidden'} pr-12`}
+      style={{ height: height }}
+      className={`${scroll ? `overflow-y-scroll` : `overflow-y-hidden`} pr-12`}
     >
       <div
-        className={`w-full ${sortedData.length > 8 ? 'overflow-auto' : 'overflow-hidden'} rounded-xl border border-gray-200 shadow-sm`}
+        className={`w-full ${scroll ? `overflow-auto` : `overflow-hidden`} rounded-xl border border-gray-200 shadow-sm`}
       >
         <table className='min-w-full divide-y divide-gray-200 text-sm'>
           <thead className='bg-gray-50 text-left'>
