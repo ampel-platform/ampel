@@ -51,6 +51,7 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
     });
   const [enabledChart, setEnabledChart] = useState(false);
   const historyHeight = 475;
+  const hasMoreThanOneDataPoint = transformedData.length > 1;
   return (
     <>
       <div className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>
@@ -65,13 +66,15 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
           <StatusLegend />
         </div>
       </div>
-      <Switcher
-        label={enabledChart ? 'Als Tabelle anzeigen' : 'Als Diagram anzeigen'}
-        onChange={(newState) => {
-          setEnabledChart(newState);
-        }}
-        initialState={enabledChart}
-      />
+      {hasMoreThanOneDataPoint && (
+        <Switcher
+          label={enabledChart ? 'Als Tabelle anzeigen' : 'Als Diagram anzeigen'}
+          onChange={(newState) => {
+            setEnabledChart(newState);
+          }}
+          initialState={enabledChart}
+        />
+      )}
     </>
   );
 }
