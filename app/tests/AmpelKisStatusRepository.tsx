@@ -1,18 +1,8 @@
+import { BASE_API_URL } from '../config.server';
 import { AmpelKisStatus } from '../pages/alerts/types/types';
 
 const PATH = 'kis-status';
-
-declare global {
-  interface Window {
-    ENV?: { BASE_API_URL?: string };
-  }
-}
-
-const BASE_URL =
-  // eslint-disable-next-line no-undef
-  (typeof window !== 'undefined' ? window.ENV?.BASE_API_URL : undefined) ??
-  import.meta.env.VITE_BASE_API_URL ??
-  'http://backend.ampel.internal';
+const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
 
 export const AmpelKisStatusRepository = {
   async getByMedicalCaseId(caseId: string): Promise<AmpelKisStatus> {

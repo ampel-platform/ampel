@@ -42,6 +42,7 @@ export default [
       '**/catchall-redirect.tsx',
       '**/entry.server.tsx',
       '**/entry.client.tsx',
+      '**/config.server.ts',
     ],
   },
   js.configs.recommended,
