@@ -7,7 +7,7 @@
     "dev": "remix vite:dev",
     "test-dev": "cross-env VITE_TEST_DATA_VIEW=test remix vite:dev",
     "build": "remix vite:build",
-    "start": "cross-env PORT=3003 HOST=127.0.0.1 remix-serve ./build/server/index.js",
+    "start": "remix-serve ./build/server/index.js",
     "lint": "npx eslint --fix",
     "format": "npx prettier --write .",
     "prepare": "husky",
