@@ -97,7 +97,7 @@ export function AlertChart({ transformedData: data }: AlertChartProps): React.Re
 
                     if (isLast) {
                       return (
-                        <>
+                        <g key={`dot-${index}`}>
                           <circle
                             cx={props.cx}
                             cy={props.cy - 12}
@@ -121,16 +121,18 @@ export function AlertChart({ transformedData: data }: AlertChartProps): React.Re
                             stroke='black'
                             strokeWidth={1}
                           />
-                        </>
+                        </g>
                       );
                     }
                     return (
-                      <StatusIcon
-                        ampelStatus={ampelStatus}
-                        cx={props.cx}
-                        cy={props.cy}
-                        index={index}
-                      />
+                      <g key={`dot-${index}`}>
+                        <StatusIcon
+                          ampelStatus={ampelStatus}
+                          cx={props.cx}
+                          cy={props.cy}
+                          index={index}
+                        />
+                      </g>
                     );
                   }}
                 />
