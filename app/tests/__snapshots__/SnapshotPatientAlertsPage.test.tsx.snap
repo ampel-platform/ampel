@@ -353,11 +353,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                     >
                       Sepsis
                     </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion einer potentiellen Sepsiskonstellation
-                    </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                     >
@@ -383,11 +378,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                       class="line-clamp-1 text-lg font-medium text-gray-500"
                     >
                       Hypokaliämie
-                    </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                     </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -415,11 +405,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                     >
                       Hypocalcämie
                     </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                    </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                     >
@@ -445,11 +430,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                       class="line-clamp-1 text-lg font-medium text-gray-500"
                     >
                       Hyponatriämie
-                    </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                     </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -477,11 +457,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                     >
                       Laktatämie
                     </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                    </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                     >
@@ -507,11 +482,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                       class="line-clamp-1 text-lg font-medium text-gray-500"
                     >
                       Diabetes
-                    </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion von bisher nicht kodiertem Diabetes mellitus
                     </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -539,11 +509,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                     >
                       Fibrinogenmangel
                     </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion von unbekanntem Fibrinogenmangel
-                    </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                     >
@@ -570,11 +535,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                     >
                       Hyperglykämie
                     </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                    </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                     >
@@ -600,11 +560,6 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
                       class="line-clamp-1 text-lg font-medium text-gray-500"
                     >
                       Procalcitonin-Monitoring
-                    </span>
-                    <span
-                      class="line-clamp-3 text-gray-400"
-                    >
-                      Detektion eines nicht adäquaten Procalcitoninabfalls
                     </span>
                     <div
                       class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -1210,11 +1165,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -1240,11 +1190,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -1272,11 +1217,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -1302,11 +1242,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -1334,11 +1269,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -1364,11 +1294,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -1396,11 +1321,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -1427,11 +1347,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -1457,11 +1372,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -2509,11 +2419,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -2539,11 +2444,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -2571,11 +2471,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -2601,11 +2496,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -2633,11 +2523,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -2663,11 +2548,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -2695,11 +2575,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -2726,11 +2601,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -2756,11 +2626,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -3367,11 +3232,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -3397,11 +3257,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -3429,11 +3284,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -3459,11 +3309,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -3491,11 +3336,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -3521,11 +3361,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -3553,11 +3388,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -3584,11 +3414,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -3614,11 +3439,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -4698,11 +4518,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -4728,11 +4543,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -4760,11 +4570,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -4790,11 +4595,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -4822,11 +4622,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -4852,11 +4647,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -4884,11 +4674,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -4915,11 +4700,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -4945,11 +4725,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6029,11 +5804,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6059,11 +5829,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6091,11 +5856,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6121,11 +5881,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6153,11 +5908,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6183,11 +5933,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6215,11 +5960,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6246,11 +5986,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6276,11 +6011,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6922,11 +6652,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Sepsis
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion einer potentiellen Sepsiskonstellation
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -6952,11 +6677,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hypokaliämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -6984,11 +6704,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hypocalcämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -7014,11 +6729,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Hyponatriämie
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -7046,11 +6756,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Laktatämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -7076,11 +6781,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Diabetes
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von bisher nicht kodiertem Diabetes mellitus
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
@@ -7108,11 +6808,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Fibrinogenmangel
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von unbekanntem Fibrinogenmangel
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -7139,11 +6834,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       >
                         Hyperglykämie
                       </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)
-                      </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"
                       >
@@ -7169,11 +6859,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         class="line-clamp-1 text-lg font-medium text-gray-500"
                       >
                         Procalcitonin-Monitoring
-                      </span>
-                      <span
-                        class="line-clamp-3 text-gray-400"
-                      >
-                        Detektion eines nicht adäquaten Procalcitoninabfalls
                       </span>
                       <div
                         class="flex flex-row justify-end gap-x-2 text-xs text-gray-400"

@@ -2,7 +2,6 @@ import { formatDeBerlin } from './components/formatDate';
 
 interface InconspicuousStateProps {
   title: string;
-  description: string;
   creationTime: Date;
 }
 
@@ -15,7 +14,6 @@ interface InconspicuousStateProps {
  */
 export function InconspicuousStateCard({
   title,
-  description,
   creationTime,
   // eslint-disable-next-line no-undef
 }: InconspicuousStateProps): React.ReactNode {
@@ -26,7 +24,8 @@ export function InconspicuousStateCard({
     >
       <div className='flex w-full flex-col gap-y-2 px-4 py-3'>
         <span className='line-clamp-1 text-lg font-medium text-gray-500'>{title}</span>
-        <span className='line-clamp-3 text-gray-400'>{description}</span>
+        {/* <span className='line-clamp-3 text-gray-400'>{description}</span> */}
+        {/* <span>{JSON.stringify(alertDetails)}</span> */}
         <div className='flex flex-row justify-end gap-x-2 text-xs text-gray-400'>
           <span>festgestellt am:</span>
           <span className='font-mono'>{formatDeBerlin(creationTime)}</span>

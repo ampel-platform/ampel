@@ -126,7 +126,6 @@ export default function PatientAlertsPageController(): React.ReactNode {
               <InconspicuousStateCard
                 key={rs.ruleset}
                 title={rs.ruleset}
-                description={rs.message || ''}
                 creationTime={rs.resultTime}
               />,
             );
