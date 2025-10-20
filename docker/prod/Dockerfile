@@ -19,9 +19,12 @@ RUN npm install
 # Copy the application code to the working directory
 COPY . .
 
-# >>> bake VITE_* into the client bundle
-ARG VITE_BASE_API_URL
-ENV VITE_BASE_API_URL=$VITE_BASE_API_URL
+# Set timezone to Europe/Berlin
+ENV TZ=Europe/Berlin
+
+# set locale to de_DE.UTF-8
+ENV LANG=de_DE.UTF-8
+ENV LC_ALL=de_DE.UTF-8
 
 # Build the application
 RUN npm run build
