@@ -16,7 +16,7 @@ export default defineConfig(({ command, mode }) => {
         //ssr: false, //dont disable server-side rendering because we will loose the ability to controll the route redicrects (because we dont want to make this with cookies)
         routes(defineRoutes) {
           return defineRoutes((route) => {
-            if (!isDev) {
+            if (isDev) {
               route('/', 'routes/root-redirect.tsx'); // only 4 development because this tool gets opened in a route redirect to test medical case 0001949132 ↓
             } else {
               route('/', 'routes/init-catchall-redirect.tsx'); // redirect to last route medical case ↓
