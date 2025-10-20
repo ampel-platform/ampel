@@ -17,7 +17,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   if (isRouteErrorResponse) {
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-        <img src={Logo} width={300} alt='AMPEL Logo' />
+        <img src={Logo} width={300} alt='UKL Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
@@ -35,7 +35,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   } else if (error instanceof Error) {
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-        <img src={Logo} width={300} alt='AMPEL Logo' />
+        <img src={Logo} width={300} alt='UKL Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
@@ -53,7 +53,7 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   }
   return (
     <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-      <img src={Logo} width={300} alt='AMPEL Logo' />
+      <img src={Logo} width={300} alt='UKL Logo' />
       <h1>Unerwartete Ansicht</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,

@@ -6,7 +6,7 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
     style="text-align: center; padding-top: 4rem;"
   >
     <img
-      alt="AMPEL Logo"
+      alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
@@ -38,7 +38,7 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
     style="text-align: center; padding-top: 4rem;"
   >
     <img
-      alt="AMPEL Logo"
+      alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
@@ -70,7 +70,7 @@ exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
     style="text-align: center; padding-top: 4rem;"
   >
     <img
-      alt="AMPEL Logo"
+      alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
