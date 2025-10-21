@@ -24,8 +24,16 @@ export const AmpelKisStatusRepository = {
 
       const json = await res.json();
       return parseAmpelKisStatus(json);
-    } catch (error) {
-      throw new Error(`Der Server ist nicht erreichbar: ${error}`);
+    } catch (err) {
+      if (err instanceof Response) throw err;
+
+      if (err instanceof TypeError) {
+        throw new Error(`Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`);
+      }
+
+      if (err instanceof Error) throw err;
+
+      throw new Error(String(err));
     }
   },
 };

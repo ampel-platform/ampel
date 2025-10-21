@@ -10,22 +10,30 @@ export const AmpelResultRepository = {
       if (!caseId) {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
+
       const res = await fetch(`${BASE_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`, {
         headers: { Accept: 'application/json' },
       });
 
-      if (res.status === 404)
+      if (res.status === 404) {
         throw new Response('Der Medizinsche Fall wurde nicht gefunden', { status: 404 });
+      }
       if (!res.ok) {
         throw new Error(`HTTP Error: ${res.status} ${res.statusText}`);
       }
-      const json = await res.json();
 
+      const json = await res.json();
       return ApiResultCollection.parse(json);
-    } catch (error) {
-      throw new Error(
-        `Der Server ist nicht erreichbar: BASE_URL: ${BASE_URL} with the error: ${error}`,
-      );
+    } catch (err) {
+      if (err instanceof Response) throw err;
+
+      if (err instanceof TypeError) {
+        throw new Error(`Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`);
+      }
+
+      if (err instanceof Error) throw err;
+
+      throw new Error(String(err));
     }
   },
 };

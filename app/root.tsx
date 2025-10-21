@@ -32,8 +32,15 @@ export default function App(): React.ReactNode {
   );
 }
 
-export function ErrorBoundary(): JSX.Element {
-  const error = useRouteError();
-
-  return ErrorBoundaryBody(isRouteErrorResponse(error), error);
+/**
+ * Only provide a custom ErrorBoundary in production.
+ * In dev, Remix’s error overlay will show because no ErrorBoundary is exported.
+ */
+let ErrorBoundaryImpl: undefined | (() => JSX.Element);
+if (import.meta.env.PROD) {
+  ErrorBoundaryImpl = function ErrorBoundary(): JSX.Element {
+    const error = useRouteError();
+    return ErrorBoundaryBody(isRouteErrorResponse(error), error);
+  };
 }
+export { ErrorBoundaryImpl as ErrorBoundary };
