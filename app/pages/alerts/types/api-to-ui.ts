@@ -1,14 +1,22 @@
-import type {
+import { Jsonify } from '@remix-run/server-runtime/dist/jsonify';
+
+import {
   AmpelResult,
+  AmpelStatus,
+  MedicalCaseMetadata,
+  MedicalCasePatientMetadata,
   Ruleset,
   RulesetHistory,
   ScoringSystem as UiScoringSystem,
+  SexUI,
 } from './types';
-import { AmpelStatus } from './types';
 import {
   ApiResultCollection,
   type ApiResultCollection as ApiResultCollectionT,
   type ApiStatus,
+  MedicalCaseMetadataApiResult,
+  PatientMetadataApiResult,
+  SexAPI,
 } from './types-api';
 
 const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
@@ -121,4 +129,40 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
       links: links,
     };
   });
+}
+
+function medicalCasePatientMetadataApiToUI(
+  apiResponse: Jsonify<PatientMetadataApiResult>,
+): MedicalCasePatientMetadata {
+  return {
+    id: apiResponse.id,
+    firstname: apiResponse.firstname,
+    lastname: apiResponse.lastname,
+    dateOfBirth: !apiResponse.dateOfBirth ? null : new Date(apiResponse.dateOfBirth),
+    sex: patientSexApiToUI(apiResponse.sex),
+  };
+}
+
+function patientSexApiToUI(sex: SexAPI): SexUI {
+  switch (sex) {
+    case 'male':
+      return 'männlich';
+    case 'female':
+      return 'weiblich';
+    case 'unknown':
+      return 'unbekannt';
+    default:
+      return 'unbekannt';
+  }
+}
+
+export function medicalCaseMetadataApiToUI(
+  apiResponse: Jsonify<MedicalCaseMetadataApiResult>,
+): MedicalCaseMetadata {
+  return {
+    id: apiResponse.id,
+    patient: apiResponse.patient
+      ? medicalCasePatientMetadataApiToUI(apiResponse.patient)
+      : undefined,
+  };
 }

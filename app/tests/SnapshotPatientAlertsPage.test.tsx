@@ -2,14 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import PatientAlertsPageController from '../pages/alerts/PatientAlertsPageController';
-import { ApiResultCollection, PatientApiResult } from '../pages/alerts/types/types-api';
+import { ApiResultCollection, MedicalCaseMetadataApiResult } from '../pages/alerts/types/types-api';
 /* eslint-disable no-undef */
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>('@remix-run/react');
   const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository');
   let data: ApiResultCollection;
-  let patientData: PatientApiResult;
+  let patientData: MedicalCaseMetadataApiResult;
   [data, patientData] = await Promise.all([
     FakeAmpelResultRepository.uiFakesToApi('CASEID'),
     FakeAmpelResultRepository.generateFakePatientMetaData(),

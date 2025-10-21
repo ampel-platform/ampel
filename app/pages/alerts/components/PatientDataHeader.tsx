@@ -1,71 +1,86 @@
-import { Mail, Phone } from 'lucide-react';
 import React from 'react';
 
 import Logo from '../../../../assets/UKL_Logo_Vektor.svg';
-import { PatientMetaData } from '../types/types';
-
-type PatientMetaDataHeaderProps = PatientMetaData;
+import { SexUI } from '../types/types';
+import { DefaultableMetadataInfo } from './components/DefaultableMetadataInfo';
 
 const contactEmail = 'ampel@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';
 
+interface PatientMetadataHeaderProps {
+  medicalCaseId: string;
+  patientId?: string | null;
+  firstname?: string | null;
+  lastname?: string | null;
+  dateOfBirth?: Date | null;
+  sex: SexUI;
+}
+
 /**
- * A component to display patient metadata (name, patient ID, case ID, sex, birthdate)
+ * A component to display patient metadata (firstname, lastname, patient ID, case ID, sex, birthdate)
  * in a consistent and visually appealing way.
- * @param {{ name: string; patientId: string; caseId: string; sex: "m nnlich" | "weiblich"; birthdate: Date }} props
+ * @param {{ fistname: string; lastname: string; patientId: string; caseId: string; sex: "m nnlich" | "weiblich"; birthdate: Date }} props
  * @returns {React.ReactNode }
  */
 export function PatientMetaDataHeader({
-  name,
+  medicalCaseId,
   patientId,
-  caseId,
+  firstname,
+  lastname,
+  dateOfBirth,
   sex,
-  birthdate,
-}: PatientMetaDataHeaderProps): React.ReactNode {
+}: PatientMetadataHeaderProps): React.ReactNode {
+  const patientNameSupplier = (): string | undefined => {
+    return !firstname && !lastname ? undefined : (firstname + ' ' + lastname).trim();
+  };
+
+  const patientDateOfBirthSupplier = (): string | undefined => {
+    return !dateOfBirth
+      ? undefined
+      : dateOfBirth.toLocaleDateString('de-DE', {
+          hour12: false,
+          timeZone: 'Europe/Berlin',
+        });
+  };
+
   return (
-    <div className='flex flex-col gap-y-2'>
-      <span className='top-0 flex flex-wrap items-end justify-between gap-3'>
-        <span className='break-words text-2xl font-medium text-gray-700 sm:text-3xl'>
-          {name} (*
-          {birthdate.toLocaleDateString('de-DE', {
-            hour12: false,
-            timeZone: 'Europe/Berlin',
-          })}{' '}
-          | {sex.charAt(0).toUpperCase()})
+    <div className='flex w-full flex-row items-center'>
+      <div className='flex w-full flex-grow rounded-xl bg-gray-50 px-6 py-2 shadow-sm'>
+        <span className='flex w-full items-start justify-evenly'>
+          <DefaultableMetadataInfo
+            title='Name'
+            valueSupplier={patientNameSupplier}
+            fallbackValue='unbekannt'
+          />
+          <DefaultableMetadataInfo
+            title='Geburtsdatum'
+            valueSupplier={patientDateOfBirthSupplier}
+            fallbackValue='unbekant'
+          />
+          <DefaultableMetadataInfo
+            title='Geschlecht'
+            valueSupplier={() => sex}
+            fallbackValue='unbekannt'
+          />
+          <DefaultableMetadataInfo
+            title='Patientennummer'
+            valueSupplier={() => patientId}
+            fallbackValue='unbekannt'
+          />
+          <DefaultableMetadataInfo title='Fallnummer' valueSupplier={() => medicalCaseId} />
         </span>
-        <img
-          src={Logo}
-          alt='UKL Logo'
-          className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
-        />
-      </span>
+      </div>
 
-      <div className='flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1'>
-        <span className='flex flex-wrap items-baseline gap-x-14 gap-y-1'>
-          <span className='whitespace-nowrap'>
-            <span className='mr-2 text-gray-600'>Patientennummer</span>
-            <span className='text-violet-800'>{patientId}</span>
-          </span>
+      <div className='flex w-full flex-row justify-end'>
+        <img src={Logo} alt='UKL Logo' className='pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14' />
 
-          <span className=''>
-            <span className='mr-2 text-gray-600'>Fallnummer</span>
-            <span className='text-violet-800'>{caseId}</span>
-          </span>
-        </span>
+        <div className='flex flex-col items-baseline gap-x-1 gap-y-1'>
+          <span className='whitespace-nowrap text-gray-600'>{contactEmail}</span>
 
-        <span className='flex flex-wrap items-baseline gap-x-1 gap-y-1'>
-          <span className='mr-10 flex items-center gap-1 text-gray-600'>
-            <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
-            <span className='whitespace-nowrap'>{contactEmail}</span>
+          <span className='whitespace-nowrap text-gray-600'>
+            {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
           </span>
-
-          <span className='flex items-center gap-1 text-gray-600'>
-            <Phone className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
-            <span className='whitespace-nowrap'>
-              {contactPhone.replace('+49', '0341 -').replace(/\s/g, ' ')}
-            </span>
-          </span>
-        </span>
+        </div>
       </div>
     </div>
   );

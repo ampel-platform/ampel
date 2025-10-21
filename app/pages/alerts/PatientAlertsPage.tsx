@@ -1,18 +1,16 @@
-import { useState } from 'react';
-import React from 'react';
-import { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
-import { AlertDetails, AmpelStatus, PatientMetaData } from './types/types';
+import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
 
 interface PatientAlertsPageProps {
-  patientMetaData: PatientMetaData;
+  medicalCaseMetadata: MedicalCaseMetadata;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
 }
 
 export function PatientAlertsPage({
-  patientMetaData,
+  medicalCaseMetadata,
   rulesetsByStatus,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
@@ -44,17 +42,22 @@ export function PatientAlertsPage({
     );
   }
 
-  if (!patientMetaData || !rulesetsByStatus) return null;
+  if (!medicalCaseMetadata || !rulesetsByStatus) return null;
 
   return (
     <div className='h-full px-4'>
       <div className='flex h-full w-full flex-col gap-y-10'>
         <PatientMetaDataHeader
-          name={patientMetaData.name}
-          patientId={patientMetaData.patientId}
-          caseId={patientMetaData.caseId}
-          sex={patientMetaData.sex}
-          birthdate={patientMetaData.birthdate}
+          medicalCaseId={medicalCaseMetadata.id}
+          patientId={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.id : undefined}
+          firstname={
+            medicalCaseMetadata.patient ? medicalCaseMetadata.patient.firstname : undefined
+          }
+          lastname={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.lastname : undefined}
+          dateOfBirth={
+            medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
+          }
+          sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
         />
 
         <div className='relative flex h-full w-full flex-col'>

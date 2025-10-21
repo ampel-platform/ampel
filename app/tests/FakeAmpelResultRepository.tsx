@@ -1,13 +1,12 @@
 import { faker } from '@faker-js/faker';
 
-import { RulesetHistory } from '../pages/alerts/types/types';
-import { AmpelStatus, Ruleset } from '../pages/alerts/types/types';
+import { AmpelStatus, Ruleset, RulesetHistory } from '../pages/alerts/types/types';
 import {
   ApiResult,
   ApiResultCollection,
   ApiScoringSystemResults,
   ApiStatus,
-  PatientApiResult,
+  MedicalCaseMetadataApiResult,
 } from '../pages/alerts/types/types-api';
 
 /**
@@ -41,13 +40,17 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
  * @returns {PatientMetaData} The generated fake patient metadata.
  */
 
-async function generateFakePatientMetaData(): Promise<PatientApiResult> {
+async function generateFakePatientMetaData(): Promise<MedicalCaseMetadataApiResult> {
   await sleep(1000);
   return {
-    name: 'Max Musterfrau',
-    patientId: '123456',
-    sex: 'weiblich',
-    birthdate: new Date('1991-07-30T15:20:16Z'),
+    id: 'med-123',
+    patient: {
+      id: '123456',
+      firstname: 'Max',
+      lastname: 'Musterfrau',
+      dateOfBirth: '1991-07-30T15:20:16Z',
+      sex: 'female',
+    },
   };
 }
 
