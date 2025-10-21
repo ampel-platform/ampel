@@ -20,11 +20,6 @@ const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
         ? AmpelStatus.RED
         : AmpelStatus.GREEN;
 
-function toNumberOrString(v: string): number | string {
-  const n = Number(v);
-  return Number.isFinite(n) ? n : v;
-}
-
 function pickLatest<T extends { resultCreationTime: string; analyteMeasuringTime: string }>(
   results: T[],
 ): T | undefined {
@@ -58,7 +53,7 @@ export function mapApiToUi(
         version: ss.scoringSystemVersion,
         ampelstatus: AmpelStatus.GREEN,
         analyte: '',
-        analytevalue: '',
+        analytevalue: 0,
         unit: '',
         severity: '',
         severityhint: '',
@@ -71,7 +66,7 @@ export function mapApiToUi(
       version: ss.scoringSystemVersion,
       ampelstatus: statusToUi(latest.status),
       analyte: latest.analyteName,
-      analytevalue: toNumberOrString(latest.analyteValue),
+      analytevalue: latest.analyteValue,
       unit: latest.analyteValueUnit,
       severity: latest.severity,
       severityhint: latest.severityComment ?? '',
@@ -99,7 +94,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
     const history: RulesetHistory = {
       data: ss.results.map((r) => ({
         date: new Date(r.resultCreationTime ?? r.analyteMeasuringTime),
-        analyteValue: Number(r.analyteValue),
+        analyteValue: r.analyteValue,
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
         unit: r.analyteValueUnit,
         analyteName: r.analyteName,

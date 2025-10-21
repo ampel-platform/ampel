@@ -51,7 +51,6 @@ async function loadAlertsForCase(case_id: string): Promise<LoaderData> {
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
   }
-
   return { case_id, data, patientData };
 }
 

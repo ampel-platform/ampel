@@ -102,14 +102,14 @@ export async function uiDemoFakesToApi(case_id: string): Promise<ApiResultCollec
     const safeHist =
       hist.length > 0
         ? hist
-        : [{ date: rs.resultTime, analyteValue: NaN, ampelStatus: rs.ampelStatus }];
+        : [{ date: rs.resultTime, analyteValue: 0, ampelStatus: rs.ampelStatus }];
 
     const results: ApiResult[] = safeHist.map((h, i, arr) => ({
       status: enumToApi(h.ampelStatus), // ✅ ApiStatus literal
       severity: '', // your UI fake has no separate severity
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
       analyteName: rs.ruleset, // no analyte in UI fake → reuse ruleset name
-      analyteValue: String(h.analyteValue ?? ''),
+      analyteValue: h.analyteValue,
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
       resultCreationTime: new Date(h.date.getTime() + 60_000).toISOString(),

@@ -239,7 +239,7 @@ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection
       severity: '', // your UI fake has no separate severity
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
       analyteName: rs.ruleset, // no analyte in UI fake → reuse ruleset name
-      analyteValue: String(h.analyteValue ?? ''),
+      analyteValue: h.analyteValue,
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
       resultCreationTime: new Date(h.date.getTime() + 60_000).toISOString(),

@@ -11,7 +11,7 @@ export const ApiResult = z.object({
   severity: z.string().nullable().optional(),
   severityComment: z.string().nullable().optional(),
   analyteName: z.string(),
-  analyteValue: z.string(), // kommt i. d. R. als String
+  analyteValue: z.number(), // kommt i. d. R. als String
   analyteValueUnit: z.string(),
   analyteMeasuringTime: z.string(), // LocalDateTime-String
   resultCreationTime: z.string(), // LocalDateTime-String
