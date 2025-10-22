@@ -26,7 +26,11 @@ export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.React
           <OverlayBackNavigation onClick={onClose} />
           <div className='px-6'>
             <div className='flex flex-col gap-y-8'>
-              <AlertHeader name={data.ruleset} type={data.ampelStatus} />
+              <AlertHeader
+                name={data.ruleset}
+                type={data.ampelStatus}
+                severity={data.rulesetHistory.data[0].severity}
+              />
               <div className='grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12'>
                 <div className='lg:col-span-3'>
                   <HintMessage message={data.message} />

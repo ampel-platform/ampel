@@ -4,6 +4,7 @@ import { AlertPing } from './AlertPing';
 interface AlertHeaderProps {
   name: string;
   type: AlertType;
+  severity?: string | null | undefined;
 }
 
 /**
@@ -15,12 +16,13 @@ interface AlertHeaderProps {
  * @returns {React.ReactNode } The rendered alert header component.
  */
 // eslint-disable-next-line no-undef
-export function AlertHeader({ name, type }: AlertHeaderProps): React.ReactNode {
+export function AlertHeader({ name, type, severity }: AlertHeaderProps): React.ReactNode {
   return (
     <div className='flex flex-row items-center gap-x-4'>
       <AlertPing type={type} />
       <span className='text-xl font-medium text-violet-800'>
-        {name} - {type == 1 ? 'Kritisch' : 'Warnung'}
+        {name}
+        {severity && ' - ' + severity}
       </span>
     </div>
   );
