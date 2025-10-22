@@ -32,6 +32,8 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
   return { data };
 }
 
+// für refeding RFS 30%
+
 /**
  * Generates a fake PatientMetaData object using provided patient and case IDs.
  * The function returns a mock patient metadata with a static name, sex, and a random birthdate.
@@ -75,6 +77,7 @@ function generateFakeRulesets(): Ruleset[] {
   return [
     {
       ruleset: 'AKI',
+      severity: 'AKIN 3 VANC',
       ampelStatus: AmpelStatus.RED,
       message:
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
@@ -93,6 +96,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Anämie',
+      severity: 'KPok|EKok',
       ampelStatus: AmpelStatus.YELLOW,
       message:
         "<p>Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb < 4,3 mmol/l dringend zu erwägen.</p><br>Bitte reflektieren Sie patientenspezifisch:<br><p style='margin-left: 10px'>- <b>allg. Risikofaktoren,</b><br>- <b>Klinik</b><br>- <b>Ischämietypische EKG</b>-Veränderungen<br>- <b>Labor</b> und betreiben Sie ggf. <b>weitere Diagnostik.</b></p><br>Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden.\"",
@@ -111,6 +115,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Refeeding Syndrom',
+      severity: 'RFS 30%',
       ampelStatus: AmpelStatus.RED,
       message:
         'Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.',
@@ -151,6 +156,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Sepsis',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion einer potentiellen Sepsiskonstellation',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -158,6 +164,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Hypokaliämie',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypokaliämie',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -165,6 +172,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Hypocalcämie',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hypocalcämie',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -172,6 +180,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Hyponatriämie',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion und Sicherstellung einer Konsequenz (Nachkontrolle) bei Hyponatriämie',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -179,6 +188,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Laktatämie',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message:
         'Detektion eines Infektionsgeschehens und Sicherstellung einer Konsequenz (Nachkontrolle)',
@@ -187,6 +197,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Diabetes',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von bisher nicht kodiertem Diabetes mellitus',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -194,6 +205,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Fibrinogenmangel',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von unbekanntem Fibrinogenmangel',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -201,6 +213,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Hyperglykämie',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message:
         'Detektion von anhaltenden Hyperglykämien bzw. solchen ohne Konsequenz (Nachkontrolle)',
@@ -209,6 +222,7 @@ function generateFakeRulesets(): Ruleset[] {
     },
     {
       ruleset: 'Procalcitonin-Monitoring',
+      severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion eines nicht adäquaten Procalcitoninabfalls',
       resultTime: new Date('2025-07-30T15:20:16Z'),
@@ -235,10 +249,10 @@ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection
         : [{ date: rs.resultTime, analyteValue: NaN, ampelStatus: rs.ampelStatus }];
 
     const results: ApiResult[] = safeHist.map((h, i, arr) => ({
-      status: enumToApi(h.ampelStatus), // ✅ ApiStatus literal
-      severity: '', // your UI fake has no separate severity
+      status: enumToApi(h.ampelStatus),
+      severity: rs.severity,
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
-      analyteName: rs.ruleset, // no analyte in UI fake → reuse ruleset name
+      analyteName: rs.ruleset,
       analyteValue: h.analyteValue,
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),

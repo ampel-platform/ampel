@@ -78,57 +78,66 @@ export default function PatientAlertsPageController(): React.ReactNode {
     ]);
 
     const rulesets = apiToRulesets(data);
+
     for (const rs of rulesets) {
-      switch (rs.ampelStatus) {
-        case AmpelStatus.RED:
-          grouped.get(AmpelStatus.RED)!.push(
-            <AlertCard
+      // robust neueste History bestimmen ohne Mutation
+      const latest = rs?.history?.data?.length
+        ? rs.history.data.reduce((acc, cur) => {
+            const a = acc?.date instanceof Date ? acc.date.getTime() : -Infinity;
+            const c = cur?.date instanceof Date ? cur.date.getTime() : -Infinity;
+            return c > a ? cur : acc;
+          })
+        : null;
+
+      const creationTime =
+        rs?.resultTime ?? (latest?.date instanceof Date ? latest.date : undefined);
+
+      if (rs.ampelStatus === AmpelStatus.RED) {
+        grouped.get(AmpelStatus.RED)!.push(
+          <AlertCard
+            key={rs.ruleset}
+            type={AlertType.Critical}
+            title={rs.ruleset}
+            creationTime={creationTime}
+            alertDetails={{
+              ruleset: rs.ruleset,
+              ampelStatus: AlertType.Critical,
+              message: rs.message,
+              resultTime: rs.resultTime,
+              rulesetHistory: rs.history,
+              links: rs.links || [],
+            }}
+            onClick={() => {}}
+          />,
+        );
+      } else if (rs.ampelStatus === AmpelStatus.YELLOW) {
+        grouped.get(AmpelStatus.YELLOW)!.push(
+          <AlertCard
+            key={rs.ruleset}
+            type={AlertType.Warning}
+            title={rs.ruleset}
+            creationTime={creationTime}
+            alertDetails={{
+              ruleset: rs.ruleset,
+              ampelStatus: AlertType.Warning,
+              message: rs.message,
+              resultTime: rs.resultTime,
+              rulesetHistory: rs.history,
+              links: rs.links || [],
+            }}
+            onClick={() => {}}
+          />,
+        );
+      } else if (rs.ampelStatus === AmpelStatus.GREEN) {
+        grouped
+          .get(AmpelStatus.GREEN)!
+          .push(
+            <InconspicuousStateCard
               key={rs.ruleset}
-              type={AlertType.Critical}
               title={rs.ruleset}
-              creationTime={rs.resultTime}
-              alertDetails={{
-                ruleset: rs.ruleset,
-                ampelStatus: AlertType.Critical,
-                message: rs.message,
-                resultTime: rs.resultTime,
-                rulesetHistory: rs.history,
-                links: rs.links || [],
-              }}
-              onClick={() => {}}
+              creationTime={creationTime}
             />,
           );
-          break;
-        case AmpelStatus.YELLOW:
-          grouped.get(AmpelStatus.YELLOW)!.push(
-            <AlertCard
-              key={rs.ruleset}
-              type={AlertType.Warning}
-              title={rs.ruleset}
-              creationTime={rs.resultTime}
-              alertDetails={{
-                ruleset: rs.ruleset,
-                ampelStatus: AlertType.Warning,
-                message: rs.message,
-                resultTime: rs.resultTime,
-                rulesetHistory: rs.history,
-                links: rs.links || [],
-              }}
-              onClick={() => {}}
-            />,
-          );
-          break;
-        case AmpelStatus.GREEN:
-          grouped
-            .get(AmpelStatus.GREEN)!
-            .push(
-              <InconspicuousStateCard
-                key={rs.ruleset}
-                title={rs.ruleset}
-                creationTime={rs.resultTime}
-              />,
-            );
-          break;
       }
     }
 

@@ -11,10 +11,10 @@ export const ApiResult = z.object({
   severity: z.string().nullable().optional(),
   severityComment: z.string().nullable().optional(),
   analyteName: z.string(),
-  analyteValue: z.number(), // kommt i. d. R. als String
+  analyteValue: z.number(),
   analyteValueUnit: z.string(),
-  analyteMeasuringTime: z.string(), // LocalDateTime-String
-  resultCreationTime: z.string(), // LocalDateTime-String
+  analyteMeasuringTime: z.string(),
+  resultCreationTime: z.string(),
   metaInformation: z.record(z.string(), z.unknown()).nullable().optional(),
 });
 export type ApiResult = z.infer<typeof ApiResult>;

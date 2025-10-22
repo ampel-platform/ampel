@@ -95,6 +95,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
       data: ss.results.map((r) => ({
         date: new Date(r.resultCreationTime ?? r.analyteMeasuringTime),
         analyteValue: r.analyteValue,
+        severity: r.severity,
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
         unit: r.analyteValueUnit,
         analyteName: r.analyteName,

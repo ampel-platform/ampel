@@ -34,6 +34,7 @@ export interface Ruleset {
   resultTime: Date;
   history: RulesetHistory;
   links?: Link[];
+  severity?: string | null | undefined;
 }
 
 export interface RulesetHistory {
@@ -43,6 +44,7 @@ export interface RulesetHistory {
     ampelStatus: AmpelStatus;
     unit: string;
     analyteName: string;
+    severity?: string | null | undefined;
   }[];
 }
 
@@ -62,7 +64,7 @@ export interface ScoringSystem {
   analyte: string;
   analytevalue: number | string;
   unit: string;
-  severity: string | null | undefined;
+  severity?: string | null | undefined;
   severityhint: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: Record<string, any>;

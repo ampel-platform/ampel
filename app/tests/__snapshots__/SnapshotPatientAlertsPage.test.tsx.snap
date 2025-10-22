@@ -775,8 +775,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="text-xl font-medium text-violet-800"
                         >
                           AKI
-                           - 
-                          Kritisch
+                           - AKIN 3 VANC
                         </span>
                       </div>
                       <div
@@ -1588,8 +1587,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="text-xl font-medium text-violet-800"
                         >
                           AKI
-                           - 
-                          Kritisch
+                           - AKIN 3 VANC
                         </span>
                       </div>
                       <div
@@ -2842,8 +2840,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="text-xl font-medium text-violet-800"
                         >
                           AKI
-                           - 
-                          Kritisch
+                           - AKIN 3 VANC
                         </span>
                       </div>
                       <div
@@ -3655,8 +3652,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="text-xl font-medium text-violet-800"
                         >
                           Anämie
-                           - 
-                          Warnung
+                           - KPok|EKok
                         </span>
                       </div>
                       <div
@@ -4941,8 +4937,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="text-xl font-medium text-violet-800"
                         >
                           Anämie
-                           - 
-                          Warnung
+                           - KPok|EKok
                         </span>
                       </div>
                       <div
@@ -6227,8 +6222,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="text-xl font-medium text-violet-800"
                         >
                           Anämie
-                           - 
-                          Warnung
+                           - KPok|EKok
                         </span>
                       </div>
                       <div
