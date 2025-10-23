@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
 
-import Logo from '../assets/UKL_Logo_Vektor.svg';
+import LampeLogo from '../assets/Lampe_Logo_Vektor.svg';
+import UklLogo from '../assets/UKL_Logo_Vektor.svg';
 /**
  * Renders an error boundary body component.
  *
@@ -10,14 +11,16 @@ import Logo from '../assets/UKL_Logo_Vektor.svg';
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-const contactEmail = 'ampel@uniklinik-leipzig.de';
+const contactEmail = 'lampe@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';
 
 export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {
   if (isRouteErrorResponse) {
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-        <img src={Logo} width={300} alt='UKL Logo' />
+        <img src={UklLogo} width={300} alt='UKL Logo' />
+        <br />
+        <img src={LampeLogo} width={150} alt='Lampe Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
@@ -35,7 +38,9 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   } else if (error instanceof Error) {
     return (
       <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-        <img src={Logo} width={300} alt='UKL Logo' />
+        <img src={UklLogo} width={300} alt='UKL Logo' />
+        <br />
+        <img src={LampeLogo} width={150} alt='Lampe Logo' />
         <h1>Unerwartete Ansicht</h1>
         <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
           Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
@@ -53,7 +58,9 @@ export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JS
   }
   return (
     <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-      <img src={Logo} width={300} alt='UKL Logo' />
+      <img src={UklLogo} width={300} alt='UKL Logo' />
+      <br />
+      <img src={LampeLogo} width={150} alt='Lampe Logo' />
       <h1>Unerwartete Ansicht</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen,
