@@ -3,9 +3,7 @@ import React from 'react';
 
 import LampeLogo from '../../../../assets/Lampe_Logo_Vektor.svg';
 import UklLogo from '../../../../assets/UKL_Logo_Vektor.svg';
-import { PatientMetaData } from '../types/types';
-
-type PatientMetaDataHeaderProps = PatientMetaData;
+import { SexUI } from '../types/types';
 
 const contactEmail = 'lampe@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';
