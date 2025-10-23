@@ -1,10 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from 'vitest';
 
-// stable env before importing the route module
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'test');
 
-// freeze time for deterministic snapshots
 beforeAll(() => {
   Object.defineProperty(window.HTMLElement.prototype, 'scrollTo', {
     value: () => {},
@@ -25,7 +23,6 @@ vi.mock('@remix-run/react', async () => {
   return { ...actual, useLoaderData: () => ({ case_id: 'CASEID', data, medicalCaseMetadata }) };
 });
 
-// import AFTER stubbing env and mocks
 const { default: PatientAlertsPageController } = await import(
   '../pages/alerts/PatientAlertsPageController'
 );
@@ -36,7 +33,6 @@ describe('PatientAlertsPage Integration', () => {
   });
 
   it('displays all main sections & counts (snapshot stable)', async () => {
-    // wait for content, THEN snapshot
     await screen.findByText(/Kritische Zustände/);
     await screen.findByText(/Warnende Zustände/);
     await screen.findByText(/Unauffällige Zustände/);
@@ -68,7 +64,7 @@ describe('PatientAlertsPage Integration', () => {
   });
 
   it('opens & closes the detail view of warning alerts (snapshots)', async () => {
-    const btn = (await screen.findAllByTestId('warning-alert-card'))[0]; // only one
+    const btn = (await screen.findAllByTestId('warning-alert-card'))[0];
     await btn.click();
 
     const close = await screen.findByTestId('overlay-back-navigation');

@@ -13,7 +13,7 @@ interface PatientMetaDataHeaderProps {
   patientId?: string | null;
   firstname?: string | null;
   lastname?: string | null;
-  dateOfBirth?: Date | string | null; // allow ISO strings from tests/loaders
+  dateOfBirth?: Date | string | null;
   sex?: SexUI | null;
 }
 

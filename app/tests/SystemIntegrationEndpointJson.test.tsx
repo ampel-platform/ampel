@@ -15,7 +15,6 @@ if (!isSystemTest) {
     it('the JSON Structure have all required main sections for Patient', async () => {
       const patientData = await MedicalCaseMetadataRepository.getByMedicalCaseId('0001949132');
 
-      // safeParse für hilfreiche Fehlerausgaben statt harter Zod-Exception
       const check = MedicalCaseMetadataApiResult.safeParse(patientData);
       if (!check.success) {
         throw new Error(

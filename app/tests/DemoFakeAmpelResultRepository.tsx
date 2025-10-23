@@ -94,10 +94,9 @@ const enumToApi = (s: AmpelStatus): ApiStatus =>
   s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
 export async function uiDemoFakesToApi(case_id: string): Promise<ApiResultCollection> {
-  // add a sleep to simulate loading time
   await sleep(1000);
 
-  const rulesets = generateDemoFakeRulesets(); // ← your long list with history
+  const rulesets = generateDemoFakeRulesets();
 
   const scoringSystems: ApiScoringSystemResults[] = rulesets.map((rs, idx) => {
     const hist = [...(rs.history?.data ?? [])].sort((a, b) => a.date.getTime() - b.date.getTime());
@@ -108,10 +107,10 @@ export async function uiDemoFakesToApi(case_id: string): Promise<ApiResultCollec
         : [{ date: rs.resultTime, analyteValue: 0, ampelStatus: rs.ampelStatus }];
 
     const results: ApiResult[] = safeHist.map((h, i, arr) => ({
-      status: enumToApi(h.ampelStatus), // ✅ ApiStatus literal
-      severity: '', // your UI fake has no separate severity
+      status: enumToApi(h.ampelStatus),
+      severity: '',
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
-      analyteName: rs.ruleset, // no analyte in UI fake → reuse ruleset name
+      analyteName: rs.ruleset,
       analyteValue: h.analyteValue,
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),

@@ -45,12 +45,11 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
     if (!el) return;
     // eslint-disable-next-line no-undef
     const id = requestAnimationFrame(() => {
-      el.scrollTo({ left: el.scrollWidth, behavior: 'auto' }); // use 'smooth' if desired
+      el.scrollTo({ left: el.scrollWidth, behavior: 'auto' });
     });
     // eslint-disable-next-line no-undef, @typescript-eslint/explicit-function-return-type
     return () => cancelAnimationFrame(id);
   }, [data.length]);
-  // horizontal scroll: give each point a fixed pixel width
 
   const DateTimeTick: React.FC<TickProps> = ({ x, y, payload }) => {
     const v = payload.value instanceof Date ? payload.value : new Date(payload.value);
@@ -149,13 +148,12 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
 
                 <XAxis
                   dataKey='date'
-                  tick={(props) => <DateTimeTick {...props} />} // pass props through
+                  tick={(props) => <DateTimeTick {...props} />}
                   height={60}
                   tickMargin={8}
                   padding={{ left: 20, right: 40 }}
                   interval={0}
                 />
-                {/* LEFT Y if more than 9 points */}
                 {data.length > 9 && (
                   <YAxis
                     yAxisId='left'
@@ -166,7 +164,6 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                   />
                 )}
 
-                {/* RIGHT Y (mirror scale) */}
                 <YAxis
                   yAxisId='right'
                   orientation='right'

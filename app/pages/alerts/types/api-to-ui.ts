@@ -39,7 +39,6 @@ function pickLatest<T extends { resultCreationTime: string; analyteMeasuringTime
   }, undefined);
 }
 
-/** === API-Validierung + Mapping -> UI.AmpelResult (flach pro ScoringSystem) === */
 export function mapApiToUi(
   payload: unknown,
   opts?: { fallbackPatient?: number; fallbackBirthdate?: string },
@@ -49,8 +48,8 @@ export function mapApiToUi(
   const medicalcaseNumber = Number(api.medicalCaseId);
   const medicalcase = Number.isFinite(medicalcaseNumber) ? medicalcaseNumber : 0;
 
-  const patient = opts?.fallbackPatient ?? 0; // solange Backend noch keinen patient liefert
-  const birthdate = opts?.fallbackBirthdate ?? ''; // ISO, falls vorhanden
+  const patient = opts?.fallbackPatient ?? 0;
+  const birthdate = opts?.fallbackBirthdate ?? '';
 
   const scoringsystems: UiScoringSystem[] = api.scoringSystems.map((ss) => {
     const latest = pickLatest(ss.results);
@@ -87,7 +86,7 @@ export function mapApiToUi(
 
 export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const parsed = ApiResultCollection.safeParse(apiPayload);
-  if (!parsed.success) return []; // no data → no cards
+  if (!parsed.success) return [];
 
   const api = parsed.data;
 

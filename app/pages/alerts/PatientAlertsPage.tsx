@@ -30,7 +30,6 @@ export function PatientAlertsPage({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (rulesetsByStatus.get(status) || []).map((child: any) =>
       child && child.type && child.props && child.props.onClick ? (
-        // inject onClick mit Overlay
         <child.type
           {...child.props}
           onClick={() => displayDetailOverlay(child.props.alertDetails)}

@@ -6,9 +6,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'alert-critical': colors.rose[500], // Rot
-        'alert-warning': colors.amber[300], // Gelb-Orange
-        'alert-success': colors.lime[500], // Limegreen
+        'alert-critical': colors.rose[500],
+        'alert-warning': colors.amber[300],
+        'alert-success': colors.lime[500],
       },
     },
   },

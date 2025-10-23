@@ -13,16 +13,15 @@ export default defineConfig(({ command, mode }) => {
     build: { sourcemap: false },
     plugins: [
       remix({
-        //ssr: false, //dont disable server-side rendering because we will loose the ability to controll the route redicrects (because we dont want to make this with cookies)
+        //ssr: false,
         routes(defineRoutes) {
           return defineRoutes((route) => {
             if (isDev) {
-              route('/', 'routes/root-redirect.tsx'); // only 4 development because this tool gets opened in a route redirect to test medical case 0001949132 ↓
-            } else {
-              route('/', 'routes/init-catchall-redirect.tsx'); // redirect to last route medical case ↓
+              route('/', 'routes/root-redirect.tsx');
+              route('/', 'routes/init-catchall-redirect.tsx');
             }
             route('alerts/cases/:case_id', 'pages/alerts/PatientAlertsPageController.tsx');
-            route('*', 'routes/catchall-redirect.tsx'); // redirect to last route medical case ↑
+            route('*', 'routes/catchall-redirect.tsx');
           });
         },
       }),

@@ -44,9 +44,6 @@ async function loadAlertsForCase(case_id: string): Promise<LoaderData> {
       FakeDemoAmpelResultRepository.generateDemoFakePatientMetaData(),
     ]);
   } else {
-    // NOTE: Must be browser-safe in SPA mode.
-    // If AmpelResultRepository uses fetch/XHR to your API, it’s fine.
-    // If it imports Node-only modules, gate those behind SSR or refactor to HTTP calls.
     [data, medicalCaseMetadata] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
       MedicalCaseMetadataRepository.getByMedicalCaseId(case_id),
@@ -71,7 +68,6 @@ export default function PatientAlertsPageController(): React.ReactNode {
     const rulesets = apiToRulesets(data);
 
     for (const rs of rulesets) {
-      // robust neueste History bestimmen ohne Mutation
       const latest = rs?.history?.data?.length
         ? rs.history.data.reduce((acc, cur) => {
             const a = acc?.date instanceof Date ? acc.date.getTime() : -Infinity;

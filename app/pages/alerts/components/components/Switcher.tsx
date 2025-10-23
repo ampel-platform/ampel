@@ -46,7 +46,6 @@ export function Switcher(props: SwitcherProps): React.ReactNode {
             className='sr-only'
           />
           <div className='block h-8 w-14 rounded-full bg-[#E5E7EB]'></div>
-          {/* Dot */}
           <div
             className={`dot absolute left-1 top-1 h-6 w-6 rounded-full transition-transform duration-200 ${
               isChecked ? 'translate-x-6 bg-white' : 'bg-black'

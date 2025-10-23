@@ -19,7 +19,6 @@ export default [
       },
       globals: {
         Response: 'readonly',
-        // optional weitere Fetch-API globals:
         Request: 'readonly',
         fetch: 'readonly',
         Headers: 'readonly',
@@ -67,7 +66,6 @@ export default [
       import: eslintPluginImport,
     },
     rules: {
-      // TypeScript-spezifisch
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
@@ -78,15 +76,12 @@ export default [
       ],
       'no-unused-vars': 'off',
 
-      // React-spezifisch
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
 
-      // Prettier aktivieren
       'prettier/prettier': 'warn',
       'no-console': 'warn',
 
-      // Sort imports
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
 

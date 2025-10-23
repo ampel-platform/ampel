@@ -31,8 +31,6 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
   return { data };
 }
 
-// für refeding RFS 30%
-
 /**
  * Generates a fake PatientMetaData object using provided patient and case IDs.
  * The function returns a mock patient metadata with a static name, sex, and a random birthdate.
@@ -238,10 +236,9 @@ const enumToApi = (s: AmpelStatus): ApiStatus =>
   s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
 export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
-  // add a sleep to simulate loading time
   await sleep(1000);
 
-  const rulesets = generateFakeRulesets(); // ← your long list with history
+  const rulesets = generateFakeRulesets();
 
   const scoringSystems: ApiScoringSystemResults[] = rulesets.map((rs, idx) => {
     const hist = [...(rs.history?.data ?? [])].sort((a, b) => a.date.getTime() - b.date.getTime());

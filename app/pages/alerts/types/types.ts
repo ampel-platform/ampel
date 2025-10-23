@@ -80,6 +80,6 @@ export interface ScoringSystem {
 export interface AmpelResult {
   medicalcase: number;
   patient: number;
-  birthdate: string; // ISO string
+  birthdate: string;
   scoringsystems: ScoringSystem[];
 }

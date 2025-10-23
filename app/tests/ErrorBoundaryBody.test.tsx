@@ -18,7 +18,7 @@ describe('ErrorBoundaryBody', () => {
   });
 
   it('renders unknown error snapshot', () => {
-    const error = 12345; // beliebiger Wert, der kein Error und kein Remix-Response ist
+    const error = 12345;
     const { container } = render(<>{ErrorBoundaryBody(false, error)}</>);
     expect(container).toMatchSnapshot();
   });
