@@ -11,7 +11,7 @@ import UklLogo from '../assets/UKL_Logo_Vektor.svg';
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-const contactEmail = 'ampel@uniklinik-leipzig.de';
+const contactEmail = 'lampe@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';
 
 export function ErrorBoundaryBody(isRouteErrorResponse: boolean, error: any): JSX.Element {

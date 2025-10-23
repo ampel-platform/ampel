@@ -7,7 +7,7 @@ import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
 
-const contactEmail = 'ampel@uniklinik-leipzig.de';
+const contactEmail = 'lampe@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';
 
 /**

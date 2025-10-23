@@ -27,7 +27,7 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
     <p
       class="whitespace-nowrap"
     >
-      ampel@uniklinik-leipzig.de
+      lampe@uniklinik-leipzig.de
     </p>
     <p
       class="whitespace-nowrap"
@@ -65,7 +65,7 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
     <p
       class="whitespace-nowrap"
     >
-      ampel@uniklinik-leipzig.de
+      lampe@uniklinik-leipzig.de
     </p>
     <p
       class="whitespace-nowrap"
@@ -103,7 +103,7 @@ exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
     <p
       class="whitespace-nowrap"
     >
-      ampel@uniklinik-leipzig.de
+      lampe@uniklinik-leipzig.de
     </p>
     <p
       class="whitespace-nowrap"
