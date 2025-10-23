@@ -1,11 +1,11 @@
 import { BASE_API_URL } from '../../config.server';
-import { PatientApiResult } from './types/types-api';
+import { MedicalCaseMetadataApiResult } from './types/types-api';
 
-const PATH = 'patient';
+const PATH = 'meta';
 const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
 
-export const PatientResultRepository = {
-  async getByMedicalCaseId(caseId: string): Promise<PatientApiResult> {
+export const MedicalCaseMetadataRepository = {
+  async getByMedicalCaseId(caseId: string): Promise<MedicalCaseMetadataApiResult> {
     try {
       if (!caseId) {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
@@ -21,7 +21,7 @@ export const PatientResultRepository = {
       }
       const json = await res.json();
 
-      return PatientApiResult.parse(json);
+      return MedicalCaseMetadataApiResult.parse(json);
     } catch (err) {
       if (err instanceof Response) throw err;
 

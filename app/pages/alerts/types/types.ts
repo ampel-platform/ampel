@@ -14,12 +14,19 @@ export enum AlertType {
   Critical,
 }
 
-export interface PatientMetaData {
-  name: string;
-  patientId: string;
-  caseId: string;
-  sex: 'männlich' | 'weiblich';
-  birthdate: Date;
+export type SexUI = 'männlich' | 'weiblich' | 'unbekannt';
+
+export interface MedicalCasePatientMetadata {
+  id: string;
+  firstname: string | null;
+  lastname: string | null;
+  dateOfBirth: Date | null;
+  sex: SexUI;
+}
+
+export interface MedicalCaseMetadata {
+  id: string;
+  patient?: MedicalCasePatientMetadata;
 }
 
 export interface Link {

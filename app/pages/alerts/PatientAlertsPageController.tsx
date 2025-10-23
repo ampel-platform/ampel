@@ -8,10 +8,11 @@ import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository
 import { AmpelResultRepository } from './AmpelResultRepository';
 import { AlertCard } from './components/AlertCard';
 import { InconspicuousStateCard } from './components/InconspicuousStateCard';
+import { MedicalCaseMetadataRepository } from './MedicalCaseMetadataRepository';
 import { PatientAlertsPage } from './PatientAlertsPage';
-import { apiToRulesets } from './types/api-to-ui';
-import { AlertType, AmpelStatus, type PatientMetaData } from './types/types';
-import { ApiResultCollection, PatientApiResult } from './types/types-api';
+import { apiToRulesets, medicalCaseMetadataApiToUI } from './types/api-to-ui';
+import { AlertType, AmpelStatus } from './types/types';
+import { ApiResultCollection, MedicalCaseMetadataApiResult } from './types/types-api';
 
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
@@ -19,7 +20,7 @@ const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
 interface LoaderData {
   case_id: string;
   data: ApiResultCollection;
-  patientData?: PatientApiResult;
+  medicalCaseMetadata?: MedicalCaseMetadataApiResult;
 }
 
 export async function loader({ params }: LoaderFunctionArgs): Promise<LoaderData> {
@@ -30,15 +31,15 @@ export async function loader({ params }: LoaderFunctionArgs): Promise<LoaderData
 
 async function loadAlertsForCase(case_id: string): Promise<LoaderData> {
   let data: ApiResultCollection;
-  let patientData: PatientApiResult;
+  let medicalCaseMetadata: MedicalCaseMetadataApiResult;
 
   if (isTest) {
-    [data, patientData] = await Promise.all([
+    [data, medicalCaseMetadata] = await Promise.all([
       FakeAmpelResultRepository.uiFakesToApi(case_id),
       FakeAmpelResultRepository.generateFakePatientMetaData(),
     ]);
   } else if (isDemo) {
-    [data, patientData] = await Promise.all([
+    [data, medicalCaseMetadata] = await Promise.all([
       FakeDemoAmpelResultRepository.uiDemoFakesToApi(case_id),
       FakeDemoAmpelResultRepository.generateDemoFakePatientMetaData(),
     ]);
@@ -46,29 +47,19 @@ async function loadAlertsForCase(case_id: string): Promise<LoaderData> {
     // NOTE: Must be browser-safe in SPA mode.
     // If AmpelResultRepository uses fetch/XHR to your API, it’s fine.
     // If it imports Node-only modules, gate those behind SSR or refactor to HTTP calls.
-    [data, patientData] = await Promise.all([
+    [data, medicalCaseMetadata] = await Promise.all([
       AmpelResultRepository.getByMedicalCaseId(case_id),
-      FakeAmpelResultRepository.generateFakePatientMetaData(),
+      MedicalCaseMetadataRepository.getByMedicalCaseId(case_id),
     ]);
   }
-  return { case_id, data, patientData };
+  return { case_id, data, medicalCaseMetadata };
 }
 
 // eslint-disable-next-line no-undef
 export default function PatientAlertsPageController(): React.ReactNode {
-  const { data, patientData, case_id } = useLoaderData<LoaderData>();
+  const { data, medicalCaseMetadata, case_id } = useLoaderData<LoaderData>();
 
-  if (!data || !patientData || !case_id) return null;
-
-  const patientMetaData: PatientMetaData = useMemo(() => {
-    return {
-      name: patientData.name,
-      patientId: patientData.patientId,
-      caseId: case_id,
-      sex: patientData.sex,
-      birthdate: new Date(patientData.birthdate),
-    };
-  }, [patientData, case_id]);
+  if (!data || !medicalCaseMetadata || !case_id) return null;
 
   const rulesetsByStatus = useMemo(() => {
     const grouped = new Map<AmpelStatus, ReactNode[]>([
@@ -156,7 +147,10 @@ export default function PatientAlertsPageController(): React.ReactNode {
           DEMO 09.09.2025
         </div>
       )}
-      <PatientAlertsPage patientMetaData={patientMetaData} rulesetsByStatus={rulesetsByStatus} />
+      <PatientAlertsPage
+        medicalCaseMetadata={medicalCaseMetadataApiToUI(medicalCaseMetadata)}
+        rulesetsByStatus={rulesetsByStatus}
+      />
     </div>
   );
 }

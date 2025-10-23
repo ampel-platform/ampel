@@ -1,9 +1,9 @@
 import { describe, it } from 'vitest';
 
 import { AmpelResultRepository } from '../pages/alerts/AmpelResultRepository';
-import { PatientResultRepository } from '../pages/alerts/PatientRepository';
+import { MedicalCaseMetadataRepository } from '../pages/alerts/MedicalCaseMetadataRepository';
 import { AmpelKisStatus } from '../pages/alerts/types/types';
-import { ApiResultCollection, PatientApiResult } from '../pages/alerts/types/types-api';
+import { ApiResultCollection, MedicalCaseMetadataApiResult } from '../pages/alerts/types/types-api';
 import { AmpelKisStatusRepository } from './AmpelKisStatusRepository';
 
 const isSystemTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'system-test';
@@ -13,10 +13,10 @@ if (!isSystemTest) {
 } else {
   describe('Patient JSON Structure', async () => {
     it('the JSON Structure have all required main sections for Patient', async () => {
-      const patientData = await PatientResultRepository.getByMedicalCaseId('0001949132');
+      const patientData = await MedicalCaseMetadataRepository.getByMedicalCaseId('0001949132');
 
       // safeParse für hilfreiche Fehlerausgaben statt harter Zod-Exception
-      const check = PatientApiResult.safeParse(patientData);
+      const check = MedicalCaseMetadataApiResult.safeParse(patientData);
       if (!check.success) {
         throw new Error(
           `PatientApiResult mismatch: ${JSON.stringify(check.error.format(), null, 2)}`,
