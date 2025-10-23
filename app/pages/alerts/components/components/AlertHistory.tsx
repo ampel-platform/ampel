@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AmpelStatus, RulesetHistory } from '../../types/types';
 import { AlertChart } from './AlertChart';
@@ -52,6 +52,11 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
   const [enabledChart, setEnabledChart] = useState(false);
   const historyHeight = 475;
   const hasMoreThanOneDataPoint = transformedData.length > 1;
+
+  useEffect(() => {
+    setEnabledChart(false);
+  }, [history]);
+
   return (
     <>
       <div className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>

@@ -64,7 +64,11 @@ export function PatientAlertsPage({
           <div
             className={`absolute z-50 h-full w-full transition-all duration-500 ease-in-out ${detailOverlayVisibilityClasses}`}
           >
-            <AlertDetailOverlay data={detailOverlayData} onClose={hideDetailOverlay} />
+            <AlertDetailOverlay
+              data={detailOverlayData}
+              onClose={hideDetailOverlay}
+              key={`${detailOverlayData?.ruleset}-${detailOverlayVisibilityClasses}`}
+            />
           </div>
 
           <div className='ml-2 flex h-full w-full flex-col gap-y-20'>
