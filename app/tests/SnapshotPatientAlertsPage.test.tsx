@@ -5,9 +5,12 @@ import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from 'vites
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'test');
 
 // freeze time for deterministic snapshots
- beforeAll(() => {
-   Object.defineProperty(window.HTMLElement.prototype, 'scrollTo', { value: () => {}, writable: true });
- });
+beforeAll(() => {
+  Object.defineProperty(window.HTMLElement.prototype, 'scrollTo', {
+    value: () => {},
+    writable: true,
+  });
+});
 afterAll(() => {
   vi.useRealTimers();
 });
