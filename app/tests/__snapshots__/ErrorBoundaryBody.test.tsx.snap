@@ -10,6 +10,12 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
+    <br />
+    <img
+      alt="Lampe Logo"
+      src="/assets/Lampe_Logo_Vektor.svg"
+      width="150"
+    />
     <h1>
       Unerwartete Ansicht
     </h1>
@@ -42,6 +48,12 @@ exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
     />
+    <br />
+    <img
+      alt="Lampe Logo"
+      src="/assets/Lampe_Logo_Vektor.svg"
+      width="150"
+    />
     <h1>
       Unerwartete Ansicht
     </h1>
@@ -73,6 +85,12 @@ exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
       alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
       width="300"
+    />
+    <br />
+    <img
+      alt="Lampe Logo"
+      src="/assets/Lampe_Logo_Vektor.svg"
+      width="150"
     />
     <h1>
       Unerwartete Ansicht

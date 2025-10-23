@@ -1,7 +1,8 @@
 import { Mail, Phone } from 'lucide-react';
 import React from 'react';
 
-import Logo from '../../../../assets/UKL_Logo_Vektor.svg';
+import LampeLogo from '../../../../assets/Lampe_Logo_Vektor.svg';
+import UklLogo from '../../../../assets/UKL_Logo_Vektor.svg';
 import { PatientMetaData } from '../types/types';
 
 type PatientMetaDataHeaderProps = PatientMetaData;
@@ -33,11 +34,18 @@ export function PatientMetaDataHeader({
           })}{' '}
           | {sex.charAt(0).toUpperCase()})
         </span>
-        <img
-          src={Logo}
-          alt='UKL Logo'
-          className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
-        />
+        <div className='flex flex-wrap justify-end'>
+          <img
+            src={LampeLogo}
+            alt='UKL Logo'
+            className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
+          />
+          <img
+            src={UklLogo}
+            alt='UKL Logo'
+            className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
+          />
+        </div>
       </span>
 
       <div className='flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1'>

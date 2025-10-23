@@ -26,11 +26,20 @@ exports[`PatientAlertsPage Integration > displays all main sections & patient da
               W
               )
             </span>
-            <img
-              alt="UKL Logo"
-              class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-              src="/assets/UKL_Logo_Vektor.svg"
-            />
+            <div
+              class="flex flex-wrap justify-end"
+            >
+              <img
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+            </div>
           </span>
           <div
             class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -612,11 +621,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -1424,11 +1442,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -2677,11 +2704,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -3489,11 +3525,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -4774,11 +4819,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
@@ -6059,11 +6113,20 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 W
                 )
               </span>
-              <img
-                alt="UKL Logo"
-                class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                src="/assets/UKL_Logo_Vektor.svg"
-              />
+              <div
+                class="flex flex-wrap justify-end"
+              >
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/Lampe_Logo_Vektor.svg"
+                />
+                <img
+                  alt="UKL Logo"
+                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
+                  src="/assets/UKL_Logo_Vektor.svg"
+                />
+              </div>
             </span>
             <div
               class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
