@@ -16,13 +16,13 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -34,25 +34,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -80,68 +62,78 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -616,13 +608,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -634,25 +626,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -680,68 +654,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -1877,13 +1861,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -1895,25 +1879,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -1941,68 +1907,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -2477,13 +2453,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -2495,25 +2471,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -2541,68 +2499,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -3738,13 +3706,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -3756,25 +3724,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -3802,68 +3752,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -4338,13 +4298,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -4356,25 +4316,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -4402,68 +4344,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -5158,13 +5110,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -5176,25 +5128,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -5222,68 +5156,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -5758,13 +5702,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -5776,25 +5720,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -5822,68 +5748,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -7051,13 +6987,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -7069,25 +7005,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -7115,68 +7033,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -7646,13 +7574,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -7664,25 +7592,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -7710,68 +7620,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -8246,13 +8166,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -8264,25 +8184,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -8310,68 +8212,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -9539,13 +9451,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -9557,25 +9469,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -9603,68 +9497,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -10134,13 +10038,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -10152,25 +10056,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -10198,68 +10084,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -10734,13 +10630,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -10752,25 +10648,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -10798,68 +10676,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -11589,13 +11477,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -11607,25 +11495,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -11653,68 +11523,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>
@@ -12184,13 +12064,13 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="flex h-full w-full flex-col gap-y-10"
         >
           <div
-            class="flex flex-col gap-y-2"
+            class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <span
-              class="top-0 flex flex-wrap items-end justify-between gap-3"
+            <div
+              class="min-w-0"
             >
               <span
-                class="break-words text-2xl font-medium text-gray-700 sm:text-3xl"
+                class="break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl"
               >
                 Max
                  
@@ -12202,25 +12082,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 )
               </span>
               <div
-                class="flex flex-wrap justify-end"
-              >
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/Lampe_Logo_Vektor.svg"
-                />
-                <img
-                  alt="UKL Logo"
-                  class="h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14"
-                  src="/assets/UKL_Logo_Vektor.svg"
-                />
-              </div>
-            </span>
-            <div
-              class="flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1"
-            >
-              <span
-                class="flex flex-wrap items-baseline gap-x-14 gap-y-1"
+                class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
               >
                 <span
                   class="whitespace-nowrap"
@@ -12248,68 +12110,78 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     med-123
                   </span>
                 </span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
+            >
+              <img
+                alt="LAMPE Logo"
+                class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/Lampe_Logo_Vektor.svg"
+              />
+              <img
+                alt="UKL Logo"
+                class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+                src="/assets/UKL_Logo_Vektor.svg"
+              />
+              <span
+                class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-mail h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  />
+                  <rect
+                    height="16"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="4"
+                  />
+                </svg>
+                <span
+                  class="whitespace-nowrap"
+                >
+                  lampe@uniklinik-leipzig.de
+                </span>
               </span>
               <span
-                class="flex flex-wrap items-baseline gap-x-1 gap-y-1"
+                class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
               >
-                <span
-                  class="mr-10 flex items-center gap-1 text-gray-600"
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-phone h-5 w-5 shrink-0"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-mail color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                    />
-                    <rect
-                      height="16"
-                      rx="2"
-                      width="20"
-                      x="2"
-                      y="4"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    lampe@uniklinik-leipzig.de
-                  </span>
-                </span>
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  />
+                </svg>
                 <span
-                  class="flex items-center gap-1 text-gray-600"
+                  class="whitespace-nowrap"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="lucide lucide-phone color-gray h-5 w-5 shrink-0"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span
-                    class="whitespace-nowrap"
-                  >
-                    0341 - 97 11342
-                  </span>
+                  0341 - 97 11342
                 </span>
               </span>
             </div>

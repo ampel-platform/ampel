@@ -46,27 +46,13 @@ export function PatientMetaDataHeader({
   const sexLetter = ((sex ?? 'unbekannt') as string).charAt(0).toUpperCase();
 
   return (
-    <div className='flex flex-col gap-y-2'>
-      <span className='top-0 flex flex-wrap items-end justify-between gap-3'>
-        <span className='break-words text-2xl font-medium text-gray-700 sm:text-3xl'>
+    <div className='grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end'>
+      <div className='min-w-0'>
+        <span className='break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl'>
           {safeFirstname} {safeLastname} (*{dobText} | {sexLetter})
         </span>
-        <div className='flex flex-wrap justify-end'>
-          <img
-            src={LampeLogo}
-            alt='UKL Logo'
-            className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
-          />
-          <img
-            src={UklLogo}
-            alt='UKL Logo'
-            className='h-8 max-w-full pr-0 sm:h-10 sm:pr-10 md:h-12 lg:h-14'
-          />
-        </div>
-      </span>
 
-      <div className='flex flex-wrap items-baseline justify-between gap-x-14 gap-y-1'>
-        <span className='flex flex-wrap items-baseline gap-x-14 gap-y-1'>
+        <div className='mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1'>
           <span className='whitespace-nowrap'>
             <span className='mr-2 text-gray-600'>Patientennummer</span>
             <span className='text-violet-800'>{safePatientId}</span>
@@ -75,17 +61,24 @@ export function PatientMetaDataHeader({
             <span className='mr-2 text-gray-600'>Fallnummer</span>
             <span className='text-violet-800'>{safeMedicalCaseId}</span>
           </span>
-        </span>
+        </div>
+      </div>
 
-        <span className='flex flex-wrap items-baseline gap-x-1 gap-y-1'>
-          <span className='mr-10 flex items-center gap-1 text-gray-600'>
-            <Mail className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
-            <span className='whitespace-nowrap'>{contactEmail}</span>
-          </span>
-          <span className='flex items-center gap-1 text-gray-600'>
-            <Phone className='color-gray h-5 w-5 shrink-0' aria-hidden='true' />
-            <span className='whitespace-nowrap'>{contactPhone}</span>
-          </span>
+      <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
+        <img
+          src={LampeLogo}
+          alt='LAMPE Logo'
+          className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
+        />
+        <img src={UklLogo} alt='UKL Logo' className='col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14' />
+
+        <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
+          <Mail className='h-5 w-5 shrink-0' aria-hidden='true' />
+          <span className='whitespace-nowrap'>{contactEmail}</span>
+        </span>
+        <span className='col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
+          <Phone className='h-5 w-5 shrink-0' aria-hidden='true' />
+          <span className='whitespace-nowrap'>{contactPhone}</span>
         </span>
       </div>
     </div>
