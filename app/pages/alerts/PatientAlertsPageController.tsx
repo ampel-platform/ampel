@@ -140,7 +140,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
       )}
       {isDemo && (
         <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
-          DEMO 09.09.2025
+          DEMO 03.11.2025
         </div>
       )}
       <PatientAlertsPage

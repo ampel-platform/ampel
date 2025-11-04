@@ -18,7 +18,7 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
   faker.seed(seed);
   const refDate = new Date('2025-07-30T00:00:00Z');
 
-  const data = Array.from({ length: 8 }, () => ({
+  const data = Array.from({ length: 15 }, () => ({
     date: faker.date.recent({ days: 5, refDate }),
     analyteValue: faker.number.int({ min: 0, max: 50 }),
     ampelStatus: faker.number.int({ min: 1, max: 3 }),
@@ -84,16 +84,16 @@ function generateFakeRulesets(): Ruleset[] {
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
       resultTime: new Date('2025-07-30T15:20:16Z'),
       history: generateFakeHistoryData(AmpelStatus.RED, 1),
-      links: [
-        {
-          displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
-        },
-        {
-          displayText: 'Labor',
-          href: '#',
-        },
-      ],
+      // links: [
+      //   {
+      //     displayText: 'Deximed',
+      //     href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
+      //   },
+      //   {
+      //     displayText: 'Labor',
+      //     href: '#',
+      //   },
+      // ],
     },
     {
       ruleset: 'Anämie',
@@ -252,7 +252,7 @@ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection
       status: enumToApi(h.ampelStatus),
       severity: rs.severity,
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
-      analyteName: rs.ruleset,
+      analyteName: 'LCRE_S',
       analyteValue: h.analyteValue,
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
