@@ -37,7 +37,30 @@ export default function App(): React.ReactNode {
  * In dev, Remix’s error overlay will show because no ErrorBoundary is exported.
  */
 let ErrorBoundaryImpl: undefined | (() => JSX.Element);
-if (import.meta.env.PROD) {
+if (!import.meta.env.PROD) {
+  // TODO: Next Step clean up and add
+  // if (isRouteErrorResponse(err)) {
+  //   switch (err.status) {
+  //     case 400: return <BadRequest/>;
+  //     case 401: return <Unauthorized/>;
+  //     case 403: return <Forbidden/>;
+  //     case 404: return <NotFound/>;            // deine 404-Seite
+  //     case 408: return <Timeout/>;
+  //     case 409: return <Conflict/>;
+  //     case 410: return <Gone/>;
+  //     case 412: return <PreconditionFailed/>;
+  //     case 415: return <UnsupportedMediaType/>;
+  //     case 422: return <Validation data={err.data}/>;
+  //     case 429: return <TooManyRequests retryAfter={err.headers.get("Retry-After")}/>;
+  //     case 500: return <ServerError/>;
+  //     case 502: return <BadGateway/>;
+  //     case 503: return <ServiceUnavailable retryAfter={err.headers.get("Retry-After")}/>;
+  //     case 504: return <GatewayTimeout/>;
+  //     default:  return <HttpError status={err.status}/>;
+  //   }
+  // }
+  // // Nicht-HTTP-Fehler: Netzwerk/CORS/abgebrochene Requests, Programmfehler
+  // return <CrashPage/>;
   ErrorBoundaryImpl = function ErrorBoundary(): JSX.Element {
     const error = useRouteError();
     return ErrorBoundaryBody(isRouteErrorResponse(error), error);

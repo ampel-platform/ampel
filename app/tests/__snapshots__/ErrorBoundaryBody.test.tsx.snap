@@ -17,23 +17,41 @@ exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
       width="150"
     />
     <h1>
-      Unerwartete Ansicht
+      Der Patient wurde nicht gefunden
     </h1>
     <p
       style="max-width: 600px; width: fit-content; margin: auto;"
     >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
+      Bitte gleichen Sie die Fallnummer mit der Zustandsanzeige im KIS ab. Pruefen Sie, ob zu dieser Fallnummer ein Patient gefuehrt wird und ein LAMPE-Ergebnis (gruen, gelb oder rot) vorliegt.
     </p>
-    <p
-      class="whitespace-nowrap"
+    <br />
+    <details
+      class="mt-4"
     >
-      lampe@uniklinik-leipzig.de
-    </p>
-    <p
-      class="whitespace-nowrap"
-    >
-      0341 - 97 11342
-    </p>
+      <summary
+        class="cursor-pointer list-none text-sm underline hover:no-underline"
+      >
+        Kontakt aufnehmen, falls im KIS ein LAMPE-Ergebnis vorliegt.
+      </summary>
+      <div
+        class="mt-3 space-y-1"
+      >
+        <p>
+          Danke das sie uns darauf hinweisen das Problem vorliegt, indem Sie den Vorfall melden:
+           
+        </p>
+        <p
+          class="whitespace-nowrap"
+        >
+          lampe@uniklinik-leipzig.de
+        </p>
+        <p
+          class="whitespace-nowrap"
+        >
+          0341 - 97 11342
+        </p>
+      </div>
+    </details>
   </div>
 </div>
 `;
