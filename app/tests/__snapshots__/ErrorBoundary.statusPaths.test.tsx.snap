@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorBoundary status paths > falls back to DefaultError for non-HTTP errors 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > falls back to DefaultError for unknown values 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 400 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 401 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 403 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 404 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 408 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 429 snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary status paths > renders 503 snapshot 1`] = `<div />`;

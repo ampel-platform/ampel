@@ -1,133 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ErrorBoundaryBody > renders a route error response snapshot 1`] = `
-<div>
-  <div
-    style="text-align: center; padding-top: 4rem;"
-  >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Der Patient wurde nicht gefunden
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
-    >
-      Bitte gleichen Sie die Fallnummer mit der Zustandsanzeige im KIS ab. Pruefen Sie, ob zu dieser Fallnummer ein Patient gefuehrt wird und ein LAMPE-Ergebnis (gruen, gelb oder rot) vorliegt.
-    </p>
-    <br />
-    <details
-      class="mt-4"
-    >
-      <summary
-        class="cursor-pointer list-none text-sm underline hover:no-underline"
-      >
-        Kontakt aufnehmen, falls im KIS ein LAMPE-Ergebnis vorliegt.
-      </summary>
-      <div
-        class="mt-3 space-y-1"
-      >
-        <p>
-          Danke das sie uns darauf hinweisen das Problem vorliegt, indem Sie den Vorfall melden:
-           
-        </p>
-        <p
-          class="whitespace-nowrap"
-        >
-          lampe@uniklinik-leipzig.de
-        </p>
-        <p
-          class="whitespace-nowrap"
-        >
-          0341 - 97 11342
-        </p>
-      </div>
-    </details>
-  </div>
-</div>
-`;
+exports[`ErrorBoundary > renders a bad request response error page snapshot 1`] = `<div />`;
 
-exports[`ErrorBoundaryBody > renders an Error instance snapshot 1`] = `
-<div>
-  <div
-    style="text-align: center; padding-top: 4rem;"
-  >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Unerwartete Ansicht
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
-    >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
-    </p>
-    <p
-      class="whitespace-nowrap"
-    >
-      lampe@uniklinik-leipzig.de
-    </p>
-    <p
-      class="whitespace-nowrap"
-    >
-      0341 - 97 11342
-    </p>
-  </div>
-</div>
-`;
+exports[`ErrorBoundary > renders a route error response error page snapshot 1`] = `<div />`;
 
-exports[`ErrorBoundaryBody > renders unknown error snapshot 1`] = `
-<div>
-  <div
-    style="text-align: center; padding-top: 4rem;"
-  >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Unerwartete Ansicht
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
-    >
-      Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist moeglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
-    </p>
-    <p
-      class="whitespace-nowrap"
-    >
-      lampe@uniklinik-leipzig.de
-    </p>
-    <p
-      class="whitespace-nowrap"
-    >
-      0341 - 97 11342
-    </p>
-  </div>
-</div>
-`;
+exports[`ErrorBoundary > renders a route error response error page snapshot 2`] = `<div />`;
+
+exports[`ErrorBoundary > renders a route error response error page snapshot 3`] = `<div />`;
+
+exports[`ErrorBoundary > renders a timeout response error page snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary > renders a timeout response error page snapshot 2`] = `<div />`;
+
+exports[`ErrorBoundary > renders a timeout response error page snapshot 3`] = `<div />`;
+
+exports[`ErrorBoundary > renders an error instance snapshot 1`] = `<div />`;
+
+exports[`ErrorBoundary > renders unknown error snapshot 1`] = `<div />`;

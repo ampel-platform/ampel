@@ -1,13 +1,20 @@
 import { LinksFunction } from '@remix-run/node';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
-import type { JSX } from 'react';
 import React from 'react';
 
-import { ErrorBoundaryBody } from './ErrorBoundaryBody';
+import { BadRequest } from './error/BadRequest';
+import { DefaultError } from './error/DefaultError';
+import { Forbidden } from './error/Forbidden';
+import { MaintenanceError } from './error/MaintenanceError';
+import { NotFound } from './error/NotFound';
+import { Timeout } from './error/Timeout';
+import { TooManyRequests } from './error/TooManyRequests';
+import { Unauthorized } from './error/Unauthorized';
 import styles from './tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
+const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 
 // eslint-disable-next-line import/no-default-export
 export default function App(): React.ReactNode {
@@ -32,38 +39,34 @@ export default function App(): React.ReactNode {
   );
 }
 
+interface Ctx {
+  retryAfterMs: number | null;
+}
+const byStatus: Partial<Record<number, (ctx: Ctx) => React.ReactNode>> = {
+  400: () => <BadRequest />,
+  401: () => <Unauthorized />,
+  403: () => <Forbidden />,
+  404: () => <NotFound />,
+  408: () => <Timeout />,
+  429: ({ retryAfterMs }) => <TooManyRequests retryAfterMs={retryAfterMs} />,
+  503: ({ retryAfterMs }) => <MaintenanceError retryAfterMs={retryAfterMs} />,
+};
+
 /**
  * Only provide a custom ErrorBoundary in production.
  * In dev, Remix’s error overlay will show because no ErrorBoundary is exported.
  */
-let ErrorBoundaryImpl: undefined | (() => JSX.Element);
-if (!import.meta.env.PROD) {
-  // TODO: Next Step clean up and add
-  // if (isRouteErrorResponse(err)) {
-  //   switch (err.status) {
-  //     case 400: return <BadRequest/>;
-  //     case 401: return <Unauthorized/>;
-  //     case 403: return <Forbidden/>;
-  //     case 404: return <NotFound/>;            // deine 404-Seite
-  //     case 408: return <Timeout/>;
-  //     case 409: return <Conflict/>;
-  //     case 410: return <Gone/>;
-  //     case 412: return <PreconditionFailed/>;
-  //     case 415: return <UnsupportedMediaType/>;
-  //     case 422: return <Validation data={err.data}/>;
-  //     case 429: return <TooManyRequests retryAfter={err.headers.get("Retry-After")}/>;
-  //     case 500: return <ServerError/>;
-  //     case 502: return <BadGateway/>;
-  //     case 503: return <ServiceUnavailable retryAfter={err.headers.get("Retry-After")}/>;
-  //     case 504: return <GatewayTimeout/>;
-  //     default:  return <HttpError status={err.status}/>;
-  //   }
-  // }
-  // // Nicht-HTTP-Fehler: Netzwerk/CORS/abgebrochene Requests, Programmfehler
-  // return <CrashPage/>;
-  ErrorBoundaryImpl = function ErrorBoundary(): JSX.Element {
-    const error = useRouteError();
-    return ErrorBoundaryBody(isRouteErrorResponse(error), error);
-  };
+export function ErrorBoundary(): React.ReactNode {
+  if (import.meta.env.PROD || isTest) {
+    const err = useRouteError();
+
+    if (isRouteErrorResponse(err)) {
+      const retryAfterMs = 300000; //5min
+      const view = byStatus[err.status];
+      return view ? view({ retryAfterMs }) : <DefaultError />;
+    }
+
+    // Nicht-HTTP-Fehler: Netzwerk/CORS/abgebrochene Requests, Programmfehler
+    return <DefaultError />;
+  }
 }
-export { ErrorBoundaryImpl as ErrorBoundary };
