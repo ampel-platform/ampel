@@ -16,7 +16,11 @@ export const AmpelResultRepository = {
       });
 
       if (res.status === 404) {
-        throw new Response('Der Medizinsche Fall wurde nicht gefunden', { status: 404 });
+        //throw new Response('Der Medizinsche Fall wurde nicht gefunden', { status: 404 });
+        return {
+          medicalCaseId: caseId,
+          scoringSystems: [],
+        };
       }
       if (!res.ok) {
         throw new Error(`HTTP Error: ${res.status} ${res.statusText}`);
