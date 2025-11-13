@@ -23,7 +23,6 @@
     "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo remix vite:dev",
     "demo-build": "cross-env VITE_TEST_DATA_VIEW=demo remix vite:build"
   },
-  "prepare": "husky",
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
       "eslint --fix",
