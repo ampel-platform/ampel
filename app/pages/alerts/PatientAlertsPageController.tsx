@@ -1,7 +1,7 @@
 /* eslint-disable import/no-default-export */
-import { LoaderFunctionArgs } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
 import { ReactNode, useMemo } from 'react';
+import { LoaderFunctionArgs } from 'react-router';
+import { useLoaderData } from 'react-router';
 
 import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';

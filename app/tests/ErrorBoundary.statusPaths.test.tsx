@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-vi.mock('@remix-run/react', () => ({
+vi.mock('react-router', () => ({
   useRouteError: vi.fn(),
   isRouteErrorResponse: vi.fn(),
 }));
 
-import { useRouteError, isRouteErrorResponse } from '@remix-run/react';
+import { useRouteError, isRouteErrorResponse } from 'react-router';
 import { ErrorBoundary } from '../root';
 
 describe('ErrorBoundary status paths', () => {

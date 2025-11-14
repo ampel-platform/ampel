@@ -13,8 +13,16 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "types": ["@remix-run/node", "vite/client", "vitest/globals", "@testing-library/jest-dom"]
+    "types": ["@react-router/node", "vite/client", "vitest/globals", "@testing-library/jest-dom"],
+    "rootDirs": [".", "./.react-router/types"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx", "app/tests/AlertCard.test.tsxx"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx",
+    "app/tests/AlertCard.test.tsxx",
+    ".react-router/types/**/*"
+  ],
   "exclude": ["node_modules"]
 }

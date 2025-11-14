@@ -9,7 +9,7 @@ import { AmpelKisStatusRepository } from './AmpelKisStatusRepository';
 const isSystemTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'system-test';
 
 if (!isSystemTest) {
-  describe.skip('JsonIntegration tests skipped in system test mode', () => {});
+  describe.skip('JsonIntegration tests skipped i system test mode', () => {});
 } else {
   describe('Patient JSON Structure', async () => {
     it('the JSON Structure have all required main sections for Patient', async () => {

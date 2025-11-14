@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "remix vite:dev",
-    "test-dev": "cross-env VITE_TEST_DATA_VIEW=test remix vite:dev",
-    "build": "remix vite:build",
-    "start": "remix-serve ./build/server/index.js",
+    "dev": "react-router dev",
+    "test-dev": "cross-env VITE_TEST_DATA_VIEW=test react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
     "lint": "npx eslint --fix",
     "format": "npx prettier --write .",
     "prepare": "husky",
@@ -20,8 +20,8 @@
     "release:lint": "eslint . --ext .ts,.tsx --max-warnings 0 --cache --cache-location .eslintcache",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
-    "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo remix vite:dev",
-    "demo-build": "cross-env VITE_TEST_DATA_VIEW=demo remix vite:build"
+    "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo react-router dev",
+    "demo-build": "cross-env VITE_TEST_DATA_VIEW=demo react-router build"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -30,19 +30,18 @@
     ]
   },
   "dependencies": {
-    "@remix-run/node": "^2.9.2",
-    "@remix-run/react": "^2.9.2",
-    "@remix-run/serve": "^2.9.2",
+    "@react-router/node": "^7.9.6",
+    "@react-router/serve": "^7.9.6",
     "lucide-react": "^0.544.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router": "^7.9.6",
     "recharts": "^2.15.3",
     "zod": "^4.0.15"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.8.0",
-    "eslint-plugin-prettier": "^5.5.0",
-    "@remix-run/dev": "^2.9.2",
+    "@react-router/dev": "^7.9.6",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^20.19.1",
@@ -55,6 +54,7 @@
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",

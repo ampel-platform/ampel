@@ -13,8 +13,8 @@ afterAll(() => {
   vi.useRealTimers();
 });
 
-vi.mock('@remix-run/react', async () => {
-  const actual = await vi.importActual<typeof import('@remix-run/react')>('@remix-run/react');
+vi.mock('react-router', async () => {
+  const actual = await vi.importActual<typeof import('react-router')>('react-router');
   const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository');
   const [data, medicalCaseMetadata] = await Promise.all([
     FakeAmpelResultRepository.uiFakesToApi('CASEID'),
