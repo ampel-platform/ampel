@@ -1,7 +1,7 @@
-import { LinksFunction } from '@remix-run/node';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
 import React from 'react';
+import { LinksFunction } from 'react-router';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import { isRouteErrorResponse, useRouteError } from 'react-router';
 
 import { BadRequest } from './error/BadRequest';
 import { DefaultError } from './error/DefaultError';

@@ -1,5 +1,3 @@
-import { Jsonify } from '@remix-run/server-runtime/dist/jsonify';
-
 import {
   AmpelResult,
   AmpelStatus,
@@ -132,7 +130,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
 }
 
 function medicalCasePatientMetadataApiToUI(
-  apiResponse: Jsonify<PatientMetadataApiResult>,
+  apiResponse: PatientMetadataApiResult,
 ): MedicalCasePatientMetadata {
   return {
     id: apiResponse.id,
@@ -157,7 +155,7 @@ function patientSexApiToUI(sex: SexAPI): SexUI {
 }
 
 export function medicalCaseMetadataApiToUI(
-  apiResponse: Jsonify<MedicalCaseMetadataApiResult>,
+  apiResponse: MedicalCaseMetadataApiResult,
 ): MedicalCaseMetadata {
   return {
     id: apiResponse.id,
