@@ -30,6 +30,7 @@
     ]
   },
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@react-router/node": "^7.9.6",
     "@react-router/serve": "^7.9.6",
     "lucide-react": "^0.544.0",
@@ -40,7 +41,6 @@
     "zod": "4.1.8"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.8.0",
     "@react-router/dev": "^7.9.6",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
