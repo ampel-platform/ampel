@@ -24,11 +24,17 @@ LABEL org.opencontainers.image.vendor="AMPEL CDSS"
 
 RUN apk --no-cache add tzdata
 
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/build /app/build
+RUN addgroup -g 1001 -S nodejs \
+    && adduser -S ampelui -u 1001
 
 WORKDIR /app
+
+COPY ./package.json package-lock.json ./
+COPY --from=production-dependencies-env /app/node_modules ./node_modules
+COPY --from=build-env /app/build ./build
+
+RUN chown -R ampelui:nodejs .
+USER ampelui
 
 ENV LANG=de_DE.UTF-8
 ENV LC_ALL=de_DE.UTF-8
