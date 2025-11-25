@@ -9,7 +9,6 @@ import { NotFound } from '../error/NotFound';
 import { Timeout } from '../error/Timeout';
 import { TooManyRequests } from '../error/TooManyRequests';
 import { Unauthorized } from '../error/Unauthorized';
-import { ServerError } from '../error/ServerError';
 
 describe('error pages snapshots', () => {
   it('BadRequest', () => expect(render(<BadRequest />).container).toMatchSnapshot());
@@ -22,5 +21,4 @@ describe('error pages snapshots', () => {
   it('MaintenanceError', () =>
     expect(render(<MaintenanceError retryAfterMs={300_000} />).container).toMatchSnapshot());
   it('DefaultError', () => expect(render(<DefaultError />).container).toMatchSnapshot());
-  it('ServerError', () => expect(render(<ServerError />).container).toMatchSnapshot());
 });

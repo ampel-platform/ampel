@@ -1,5 +1,4 @@
 import {
-  AmpelResult,
   AmpelStatus,
   MedicalCaseMetadata,
   MedicalCasePatientMetadata,
@@ -10,7 +9,6 @@ import {
 } from './types';
 import {
   ApiResultCollection,
-  type ApiResultCollection as ApiResultCollectionT,
   type ApiStatus,
   MedicalCaseMetadataApiResult,
   PatientMetadataApiResult,
@@ -25,62 +23,6 @@ const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
       : s === 'red'
         ? AmpelStatus.RED
         : AmpelStatus.GREEN;
-
-function pickLatest<T extends { resultCreationTime: string; analyteMeasuringTime: string }>(
-  results: T[],
-): T | undefined {
-  if (results.length === 0) return undefined;
-  return results.reduce<T | undefined>((best, cur) => {
-    const bt = Date.parse((best?.resultCreationTime ?? best?.analyteMeasuringTime) || '');
-    const ct = Date.parse((cur.resultCreationTime ?? cur.analyteMeasuringTime) || '');
-    return !best || ct > bt ? cur : best;
-  }, undefined);
-}
-
-export function mapApiToUi(
-  payload: unknown,
-  opts?: { fallbackPatient?: number; fallbackBirthdate?: string },
-): AmpelResult {
-  const api: ApiResultCollectionT = ApiResultCollection.parse(payload);
-
-  const medicalcaseNumber = Number(api.medicalCaseId);
-  const medicalcase = Number.isFinite(medicalcaseNumber) ? medicalcaseNumber : 0;
-
-  const patient = opts?.fallbackPatient ?? 0;
-  const birthdate = opts?.fallbackBirthdate ?? '';
-
-  const scoringsystems: UiScoringSystem[] = api.scoringSystems.map((ss) => {
-    const latest = pickLatest(ss.results);
-
-    if (!latest) {
-      return {
-        name: ss.scoringSystemName,
-        version: ss.scoringSystemVersion,
-        ampelstatus: AmpelStatus.GREEN,
-        analyte: '',
-        analytevalue: 0,
-        unit: '',
-        severity: '',
-        severityhint: '',
-        meta: {},
-      };
-    }
-
-    return {
-      name: ss.scoringSystemName,
-      version: ss.scoringSystemVersion,
-      ampelstatus: statusToUi(latest.status),
-      analyte: latest.analyteName,
-      analytevalue: latest.analyteValue,
-      unit: latest.analyteValueUnit,
-      severity: latest.severity,
-      severityhint: latest.severityComment ?? '',
-      meta: latest.metaInformation ?? undefined,
-    };
-  });
-
-  return { medicalcase, patient, birthdate, scoringsystems };
-}
 
 export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const parsed = ApiResultCollection.safeParse(apiPayload);

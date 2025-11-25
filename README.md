@@ -33,27 +33,28 @@ You can start editing the pages found in `app/**`. The pages auto-updates as you
 
 ### 🔁 Routing
 
-Routing is managed by Remix using file-based routes under app/routes/.
+Routing is handled by React Router v7.
 
-For Vite-specific configurations like module aliasing or SSR behavior, check:
+The central route configuration lives in:
+app/routes.ts
 
-    vite.config.js
+For Vite-specific configuration such as module aliasing or SSR behavior, see:
 
-We use Remix v2+ with Vite & Flat Routes Mode so we need no remix.config.js file.
+vite.config.js
 
 ### 🗂️ Project Structure (excerpt)
 
 ```bash
 ampel-ui/
-├── app/                          # Remix routes, logic, and components
+├── app/
 │   ├── pages/                    # For pages structured in subfolders, like the alerts page
 │   │   └── alerts/               # Alert-spezifische Seiten & Komponenten
 │   │       ├── components/       # Alert-Komponenten (UI, Logic)
 │   │       ├── PatientAlertsPage.tsx # Alerts page for patient alerts
 │   │       ├── PatientAlertsPageController.tsx # The Alerts controller for loading patient alerts
-│   │       ├── types.ts           # Type definitions for alerts
+│   │       ├── types/            # Type definitions an api to ui mapper for alerts
 │   │       └── AmpelResultRepository.tsx
-│   ├── routes/                   # File-based routing utilities (Remix)
+│   ├── routes/                   # File-based routing utilities
 │   │   └── root-redirect.tsx     # Redirects and similar logic
 │   └── tests/                    # For Testing
 ├── public/                       # Static assets

@@ -76,10 +76,3 @@ export interface ScoringSystem {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: Record<string, any>;
 }
-
-export interface AmpelResult {
-  medicalcase: number;
-  patient: number;
-  birthdate: string;
-  scoringsystems: ScoringSystem[];
-}
