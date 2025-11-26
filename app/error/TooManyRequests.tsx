@@ -36,6 +36,8 @@ export function TooManyRequests({
 
   return (
     <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
+      <title>LAMPE-CDSS</title>
+      <meta charSet='utf-8' />
       <img src={UklLogo} width={300} alt='UKL Logo' />
       <br />
       <img src={LampeLogo} width={150} alt='Lampe Logo' />
