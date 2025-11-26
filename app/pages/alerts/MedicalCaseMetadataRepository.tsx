@@ -3,6 +3,7 @@ import { MedicalCaseMetadataApiResult } from './types/types-api';
 
 const PATH = 'meta';
 const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
+const BASE_URL_WITH_SLASH = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
 export const MedicalCaseMetadataRepository = {
   async getByMedicalCaseId(caseId: string): Promise<MedicalCaseMetadataApiResult> {
@@ -10,7 +11,12 @@ export const MedicalCaseMetadataRepository = {
       if (!caseId) {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
-      const res = await fetch(`${BASE_URL}/v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`, {
+
+      const requestUrl = new URL(
+        `v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
+        BASE_URL_WITH_SLASH,
+      );
+      const res = await fetch(requestUrl, {
         headers: { Accept: 'application/json' },
       });
 
