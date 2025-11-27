@@ -1,9 +1,13 @@
 import { Mail, Phone } from 'lucide-react';
 import React from 'react';
+import { preload } from 'react-dom';
 
 import LampeLogo from '../../../../assets/Lampe_Logo_Vektor.svg';
 import UklLogo from '../../../../assets/UKL_Logo_Vektor.svg';
 import { SexUI } from '../types/types';
+
+preload(LampeLogo, { as: 'image' });
+preload(UklLogo, { as: 'image' });
 
 const contactEmail = 'lampe@uniklinik-leipzig.de';
 const contactPhone = '0341 - 97 11342';

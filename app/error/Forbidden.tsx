@@ -1,7 +1,11 @@
 import React from 'react';
+import { preload } from 'react-dom';
 
 import LampeLogo from '../../assets/Lampe_Logo_Vektor.svg';
 import UklLogo from '../../assets/UKL_Logo_Vektor.svg';
+
+preload(LampeLogo, { as: 'image' });
+preload(UklLogo, { as: 'image' });
 
 export const Forbidden = (): React.ReactNode => (
   <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
