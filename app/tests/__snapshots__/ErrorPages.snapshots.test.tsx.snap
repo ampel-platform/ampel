@@ -5,12 +5,6 @@ exports[`error pages snapshots > BadRequest 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <div
       style="text-align: center; padding-top: 4rem;"
     >
@@ -44,12 +38,6 @@ exports[`error pages snapshots > DefaultError 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <div
       style="text-align: center; padding-top: 4rem;"
     >
@@ -93,12 +81,6 @@ exports[`error pages snapshots > Forbidden 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <div
       style="text-align: center; padding-top: 4rem;"
     >
@@ -132,12 +114,6 @@ exports[`error pages snapshots > MaintenanceError 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <img
       alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
@@ -190,12 +166,6 @@ exports[`error pages snapshots > NotFound 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <img
       alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
@@ -252,12 +222,6 @@ exports[`error pages snapshots > Timeout 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <div
       style="text-align: center; padding-top: 4rem;"
     >
@@ -291,12 +255,6 @@ exports[`error pages snapshots > TooManyRequests 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <img
       alt="UKL Logo"
       src="/assets/UKL_Logo_Vektor.svg"
@@ -348,12 +306,6 @@ exports[`error pages snapshots > Unauthorized 1`] = `
   <div
     style="text-align: center; padding-top: 4rem;"
   >
-    <title>
-      LAMPE-CDSS
-    </title>
-    <meta
-      charset="utf-8"
-    />
     <div
       style="text-align: center; padding-top: 4rem;"
     >
