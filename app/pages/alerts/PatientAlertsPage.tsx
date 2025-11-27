@@ -5,13 +5,15 @@ import { PatientMetaDataHeader } from './components/PatientDataHeader';
 import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
 
 interface PatientAlertsPageProps {
-  medicalCaseMetadata: MedicalCaseMetadata;
+  medicalCaseMetadata?: MedicalCaseMetadata;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
+  showHeader?: boolean;
 }
 
 export function PatientAlertsPage({
   medicalCaseMetadata,
   rulesetsByStatus,
+  showHeader = true,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
   const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] =
@@ -41,23 +43,28 @@ export function PatientAlertsPage({
     );
   }
 
-  if (!medicalCaseMetadata || !rulesetsByStatus) return null;
+  if (!rulesetsByStatus) return null;
+  const hasMetadata = Boolean(medicalCaseMetadata);
 
   return (
     <div className='h-full px-4'>
       <div className='flex h-full w-full flex-col gap-y-10'>
-        <PatientMetaDataHeader
-          medicalCaseId={medicalCaseMetadata.id}
-          patientId={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.id : undefined}
-          firstname={
-            medicalCaseMetadata.patient ? medicalCaseMetadata.patient.firstname : undefined
-          }
-          lastname={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.lastname : undefined}
-          dateOfBirth={
-            medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
-          }
-          sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
-        />
+        {showHeader && hasMetadata && medicalCaseMetadata && (
+          <PatientMetaDataHeader
+            medicalCaseId={medicalCaseMetadata.id}
+            patientId={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.id : undefined}
+            firstname={
+              medicalCaseMetadata.patient ? medicalCaseMetadata.patient.firstname : undefined
+            }
+            lastname={
+              medicalCaseMetadata.patient ? medicalCaseMetadata.patient.lastname : undefined
+            }
+            dateOfBirth={
+              medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
+            }
+            sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
+          />
+        )}
 
         <div className='relative flex h-full w-full flex-col'>
           <div

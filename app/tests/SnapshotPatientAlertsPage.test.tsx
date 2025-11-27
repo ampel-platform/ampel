@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from 'vitest';
+import { Suspense } from 'react';
 
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'test');
+vi.stubEnv('VITE_FAST_FAKE', '1');
 
 beforeAll(() => {
   Object.defineProperty(window.HTMLElement.prototype, 'scrollTo', {
@@ -20,7 +22,14 @@ vi.mock('react-router', async () => {
     FakeAmpelResultRepository.uiFakesToApi('CASEID'),
     FakeAmpelResultRepository.generateFakePatientMetaData(),
   ]);
-  return { ...actual, useLoaderData: () => ({ case_id: 'CASEID', data, medicalCaseMetadata }) };
+  const alertsData = Promise.resolve(data);
+  const metadataData = Promise.resolve(medicalCaseMetadata);
+  return {
+    ...actual,
+    useLoaderData: () => ({
+      case_id: 'CASEID',
+    }),
+  };
 });
 
 const { default: PatientAlertsPageController } = await import(
@@ -28,11 +37,18 @@ const { default: PatientAlertsPageController } = await import(
 );
 
 describe('PatientAlertsPage Integration', () => {
-  beforeEach(() => {
-    render(<PatientAlertsPageController />);
+  beforeEach(async () => {
+    await act(async () => {
+      render(
+        <Suspense fallback={<div />}>
+          <PatientAlertsPageController />
+        </Suspense>,
+      );
+    });
   });
 
   it('displays all main sections & counts (snapshot stable)', async () => {
+    await screen.findAllByTestId('critical-alert-card');
     await screen.findByText(/Kritische Zustände/);
     await screen.findByText(/Warnende Zustände/);
     await screen.findByText(/Unauffällige Zustände/);

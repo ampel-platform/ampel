@@ -9,6 +9,17 @@ import {
   MedicalCaseMetadataApiResult,
 } from '../pages/alerts/types/types-api';
 
+const SKIP_FAKE_DELAY =
+  (typeof globalThis !== 'undefined' &&
+    (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env
+      ?.VITE_FAST_FAKE === '1') ||
+  (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FAST_FAKE === '1');
+const sleep = (ms: number): Promise<void> =>
+  new Promise((r) =>
+    typeof globalThis.setTimeout === 'function' ? globalThis.setTimeout(r, ms) : r(),
+  );
+const maybeSleep = (ms: number): Promise<void> => (SKIP_FAKE_DELAY ? Promise.resolve() : sleep(ms));
+
 /**
  * Generates a fake RulesetHistory object with 8 data points.
  * Each data point has a random date within the last 5 days, a random analyte value between 0 and 50, and a random ampel status between 1 and 3 (inclusive).
@@ -41,7 +52,7 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
  */
 
 async function generateFakePatientMetaData(): Promise<MedicalCaseMetadataApiResult> {
-  await sleep(1000);
+  await maybeSleep(1000);
   return {
     id: 'med-123',
     patient: {
@@ -236,7 +247,7 @@ const enumToApi = (s: AmpelStatus): ApiStatus =>
   s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
 
 export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
-  await sleep(1000);
+  await maybeSleep(3000);
 
   const rulesets = generateFakeRulesets();
 
@@ -280,6 +291,3 @@ export const FakeAmpelResultRepository = {
   uiFakesToApi: uiFakesToApi,
   generateFakePatientMetaData: generateFakePatientMetaData,
 };
-
-// eslint-disable-next-line no-undef
-export const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));

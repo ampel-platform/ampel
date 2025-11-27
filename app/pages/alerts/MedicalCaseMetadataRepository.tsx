@@ -1,8 +1,12 @@
-import { BASE_API_URL } from '../../config.server';
 import { MedicalCaseMetadataApiResult } from './types/types-api';
 
 const PATH = 'meta';
-const BASE_URL = BASE_API_URL ?? import.meta.env.VITE_BASE_API_URL ?? 'http://localhost:8080';
+const BASE_URL =
+  (typeof globalThis !== 'undefined'
+    ? (globalThis as { process?: { env?: Record<string, string> } }).process?.env?.BASE_API_URL
+    : undefined) ??
+  import.meta.env.VITE_BASE_API_URL ??
+  'http://localhost:8080';
 const BASE_URL_WITH_SLASH = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
 export const MedicalCaseMetadataRepository = {
