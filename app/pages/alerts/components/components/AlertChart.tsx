@@ -154,12 +154,7 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                     }
                     return (
                       <g key={`dot-${index}`}>
-                        <StatusIcon
-                          ampelStatus={ampelStatus}
-                          cx={cx}
-                          cy={cy}
-                          index={index}
-                        />
+                        <StatusIcon ampelStatus={ampelStatus} cx={cx} cy={cy} index={index} />
                       </g>
                     );
                   }}
