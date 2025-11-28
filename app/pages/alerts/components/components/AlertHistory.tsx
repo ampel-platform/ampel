@@ -30,7 +30,7 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
     }
   };
 
-  const transformedData = history.data
+  const transformedData = [...history.data]
     .sort((a, b) => {
       if (a.date.getTime() === b.date.getTime()) {
         return 0;
@@ -45,7 +45,7 @@ export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
         analyteValue: h.analyteValue,
         ampelStatus: h.ampelStatus,
         ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus),
-        unit: history.data[0].unit,
+        unit: h.unit,
         analyteName: h.analyteName,
       };
     });

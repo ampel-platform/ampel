@@ -27,8 +27,19 @@ interface AlertTableProps {
  */
 // eslint-disable-next-line no-undef
 export function AlertTable({ transformedData, height }: AlertTableProps): React.ReactNode {
-  const sortedData = transformedData.sort((a, b) => b.date.getTime() - a.date.getTime());
+  const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
   const scroll = sortedData.length > 8;
+
+  if (sortedData.length === 0) {
+    return (
+      <div
+        style={{ height }}
+        className='flex w-full items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-500'
+      >
+        Keine Messwerte vorhanden
+      </div>
+    );
+  }
 
   return (
     <div

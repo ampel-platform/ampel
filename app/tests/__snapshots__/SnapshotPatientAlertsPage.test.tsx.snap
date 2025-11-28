@@ -5189,13 +5189,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[475px] w-full overflow-x-auto"
+                            class="w-full overflow-x-auto"
+                            style="height: 475px;"
                           >
                             <div
                               style="width: 1200px;"
                             >
                               <div
-                                class="h-[475px] w-full overflow-x-auto"
+                                class="w-full overflow-x-auto"
+                                style="height: 475px;"
                               >
                                 <div
                                   style="width: 1200px;"
@@ -5203,7 +5205,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  />
+                                  >
+                                    <div
+                                      style="width: 0px; overflow-x: visible;"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -12268,13 +12274,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="h-[475px] w-full overflow-x-auto"
+                            class="w-full overflow-x-auto"
+                            style="height: 475px;"
                           >
                             <div
                               style="width: 1200px;"
                             >
                               <div
-                                class="h-[475px] w-full overflow-x-auto"
+                                class="w-full overflow-x-auto"
+                                style="height: 475px;"
                               >
                                 <div
                                   style="width: 1200px;"
@@ -12282,7 +12290,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  />
+                                  >
+                                    <div
+                                      style="width: 0px; overflow-x: visible;"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>

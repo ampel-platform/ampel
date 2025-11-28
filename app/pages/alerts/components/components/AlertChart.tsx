@@ -35,7 +35,8 @@ interface TickProps {
 export function AlertChart({ transformedData: data, height }: AlertChartProps): React.ReactNode {
   const pxPerPoint = 80;
   const minWidth = 700;
-  const chartWidth = useMemo(() => Math.max(minWidth, data.length * pxPerPoint), [data.length]);
+  const length = data.length;
+  const chartWidth = useMemo(() => Math.max(minWidth, length * pxPerPoint), [length]);
 
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -68,24 +69,39 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
     );
   };
 
-  const scroll = data.length > 9;
+  const scroll = length > 9;
+
+  if (length === 0) {
+    return (
+      <div
+        style={{ height: height ?? 475 }}
+        className='flex w-full items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-500'
+      >
+        Keine Messwerte vorhanden
+      </div>
+    );
+  }
+
+  const first = data[0];
 
   return (
     // if length of data is over 9 enable horizontal scroll
     <div
       ref={scrollerRef}
-      className={`h-[${height ?? 475}px] w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+      style={{ height: height ?? 475 }}
+      className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
     >
       <div style={{ width: chartWidth }}>
         <div
-          className={`h-[${height ?? 475}px] w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+          style={{ height: height ?? 475 }}
+          className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
         >
           <div style={{ width: chartWidth }}>
             <ResponsiveContainer width='100%' height={height ?? 475}>
               <ComposedChart data={data} margin={{ top: 30, right: 0, bottom: 0, left: 48 }}>
                 <CartesianGrid stroke='#f5f5f5' />
                 <Tooltip
-                  formatter={(v) => [`${v} ${data[0].unit}`, data[0].analyteName]}
+                  formatter={(v) => [`${v} ${first.unit}`, first.analyteName]}
                   labelFormatter={(label, payload) => {
                     const raw = payload?.[0]?.payload?.date ?? label; // robust
                     const d = raw instanceof Date ? raw : new Date(raw);
@@ -100,30 +116,33 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                   dataKey='analyteValue'
                   stroke='rgba(91, 33, 182, 0.7)'
                   dot={(props) => {
-                    const { index } = props;
+                    const { index, cx, cy, points } = props;
+                    const payload = points?.[index]?.payload as AlertChartDataPoint | undefined;
+                    if (cx == null || cy == null || !payload) return null;
+
                     const isLast = index === data.length - 1;
-                    const ampelStatus = props.points[index].payload.ampelStatus;
+                    const ampelStatus = payload.ampelStatus;
 
                     if (isLast) {
                       return (
                         <g key={`dot-${index}`}>
                           <circle
-                            cx={props.cx}
-                            cy={props.cy - 12}
+                            cx={cx}
+                            cy={cy - 12}
                             r={5}
                             fill={ampelStatus === AmpelStatus.RED ? 'red' : 'white'}
                             stroke='black'
                             strokeWidth={1}
                           />
                           <polygon
-                            points={`${props.cx},${props.cy - 5} ${props.cx - 6},${props.cy + 6} ${props.cx + 6},${props.cy + 6}`}
+                            points={`${cx},${cy - 5} ${cx - 6},${cy + 6} ${cx + 6},${cy + 6}`}
                             fill={ampelStatus === AmpelStatus.YELLOW ? 'yellow' : 'white'}
                             stroke='black'
                             strokeWidth={1}
                           />
                           <rect
-                            x={props.cx - 5.5}
-                            y={props.cy + 8}
+                            x={cx - 5.5}
+                            y={cy + 8}
                             width={11}
                             height={11}
                             fill={ampelStatus === AmpelStatus.GREEN ? 'limegreen' : 'white'}
@@ -137,8 +156,8 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                       <g key={`dot-${index}`}>
                         <StatusIcon
                           ampelStatus={ampelStatus}
-                          cx={props.cx}
-                          cy={props.cy}
+                          cx={cx}
+                          cy={cy}
                           index={index}
                         />
                       </g>
@@ -160,7 +179,7 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                     dataKey='analyteValue'
                     domain={['dataMin - 15', 'dataMax + 25']}
                     tickCount={7}
-                    label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
+                    label={{ value: first.unit, angle: 0, position: 'top', offset: 15 }}
                   />
                 )}
 
@@ -169,7 +188,7 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
                   orientation='right'
                   domain={['dataMin - 15', 'dataMax + 25']}
                   tickCount={7}
-                  label={{ value: data[0].unit, angle: 0, position: 'top', offset: 15 }}
+                  label={{ value: first.unit, angle: 0, position: 'top', offset: 15 }}
                 />
               </ComposedChart>
             </ResponsiveContainer>
