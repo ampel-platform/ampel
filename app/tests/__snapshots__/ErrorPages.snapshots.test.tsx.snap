@@ -3,23 +3,14 @@
 exports[`error pages snapshots > BadRequest 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
     <div
-      style="text-align: center; padding-top: 4rem;"
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      <img
-        alt="UKL Logo"
-        src="/assets/UKL_Logo_Vektor.svg"
-        width="300"
-      />
-      <br />
-      <img
-        alt="Lampe Logo"
-        src="/assets/Lampe_Logo_Vektor.svg"
-        width="150"
-      />
-      <h1>
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
         Unter der Fallnummer wurde nichts gefunden
       </h1>
       <p
@@ -36,40 +27,20 @@ exports[`error pages snapshots > BadRequest 1`] = `
 exports[`error pages snapshots > DefaultError 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
     <div
-      style="text-align: center; padding-top: 4rem;"
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      <img
-        alt="UKL Logo"
-        src="/assets/UKL_Logo_Vektor.svg"
-        width="300"
-      />
-      <br />
-      <img
-        alt="Lampe Logo"
-        src="/assets/Lampe_Logo_Vektor.svg"
-        width="150"
-      />
-      <h1>
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
         Unerwartete Ansicht
       </h1>
       <p
         style="max-width: 600px; width: fit-content; margin: auto;"
       >
-        Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist möglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten. Bitte helfen Sie uns, das Problem zu beheben, indem Sie den Vorfall melden:
-      </p>
-      <br />
-      <p
-        class="whitespace-nowrap"
-      >
-        lampe@uniklinik-leipzig.de
-      </p>
-      <p
-        class="whitespace-nowrap"
-      >
-        0341 - 97 11342
+        Diese Seite sollte im regulearen Ablauf nicht erscheinen. Falls Sie diesen Hinweis sehen, ist möglicherweise ein Fehler im Aufruf oder in den Anzeigedaten aufgetreten.
       </p>
     </div>
   </div>
@@ -79,23 +50,14 @@ exports[`error pages snapshots > DefaultError 1`] = `
 exports[`error pages snapshots > Forbidden 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
     <div
-      style="text-align: center; padding-top: 4rem;"
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      <img
-        alt="UKL Logo"
-        src="/assets/UKL_Logo_Vektor.svg"
-        width="300"
-      />
-      <br />
-      <img
-        alt="Lampe Logo"
-        src="/assets/Lampe_Logo_Vektor.svg"
-        width="150"
-      />
-      <h1>
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
         Verboten
       </h1>
       <p
@@ -112,51 +74,30 @@ exports[`error pages snapshots > Forbidden 1`] = `
 exports[`error pages snapshots > MaintenanceError 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Wartungsfenster
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
+    <div
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      Geplante Wartung. Die Anwendung ist vorübergehend nicht verfügbar. Die Seite wird in
-       
-      <span
-        id="reload-countdown"
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
       >
-        300
-      </span>
-      <script>
-        (function(){
-    var end = Date.now() + 300000;
-    var span = document.getElementById("reload-countdown");
-    if(!span) return;
-    
-    function tick(){
-      var rem = Math.max(0, end - Date.now());
-      var sec = Math.ceil(rem / 1000);
-      span.textContent = String(sec);
-      if(rem &lt;= 0) window.location.reload();
-      setTimeout(tick, 250);
-    }
-    tick();
-  })();
-      </script>
-       Sekunden automatisch neu geladen.
-    </p>
-    <br />
+        Wartungsfenster
+      </h1>
+      <p
+        style="max-width: 600px; width: fit-content; margin: auto;"
+      >
+        Geplante Wartung. Die Anwendung ist vorübergehend nicht verfügbar. Die Seite wird in
+         
+        <span
+          id="reload-countdown"
+        >
+          30
+        </span>
+         Sekunden automatisch neu geladen.
+      </p>
+      <br />
+    </div>
   </div>
 </div>
 `;
@@ -164,55 +105,53 @@ exports[`error pages snapshots > MaintenanceError 1`] = `
 exports[`error pages snapshots > NotFound 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Der Patient wurde nicht gefunden
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
+    <div
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      Bitte gleichen Sie die Fallnummer mit der Zustandsanzeige im KIS ab. Prüfen Sie, ob zu dieser Fallnummer ein Patient geführt wird und ein LAMPE-Ergebnis (grün, gelb oder rot) vorliegt.
-    </p>
-    <br />
-    <details
-      class="mt-4"
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
+        Der Patient wurde nicht gefunden
+      </h1>
+      <p
+        style="max-width: 600px; width: fit-content; margin: auto;"
+      >
+        Bitte gleichen Sie die Fallnummer mit der Zustandsanzeige im KIS ab. Prüfen Sie, ob zu dieser Fallnummer ein Patient geführt wird und ein LAMPE-Ergebnis (grün, gelb oder rot) vorliegt. Nehmen sie Kontakt mit uns auf, falls im KIS ein LAMPE-Ergebnis vorliegt.
+      </p>
+      <br />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`error pages snapshots > ServerError 1`] = `
+<div>
+  <div
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
+  >
+    <div
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      <summary
-        class="cursor-pointer list-none text-sm underline hover:no-underline"
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
       >
-        Kontakt aufnehmen, falls im KIS ein LAMPE-Ergebnis vorliegt.
-      </summary>
-      <div
-        class="mt-3 space-y-1"
+        Serverfehler
+      </h1>
+      <p
+        style="max-width: 600px; width: fit-content; margin: auto;"
       >
-        <p>
-          Danke das sie uns darauf hinweisen das Problem vorliegt, indem Sie den Vorfall melden:
-           
-        </p>
-        <p
-          class="whitespace-nowrap"
+        Die Anwendung ist derzeit aufgrund eines technischen Fehlers nicht verfügbar. Die Seite wird in 
+        <span
+          id="reload-countdown"
         >
-          lampe@uniklinik-leipzig.de
-        </p>
-        <p
-          class="whitespace-nowrap"
-        >
-          0341 - 97 11342
-        </p>
-      </div>
-    </details>
+          30
+        </span>
+         Sekunden automatisch neu geladen.
+      </p>
+      <br />
+    </div>
   </div>
 </div>
 `;
@@ -220,23 +159,14 @@ exports[`error pages snapshots > NotFound 1`] = `
 exports[`error pages snapshots > Timeout 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
     <div
-      style="text-align: center; padding-top: 4rem;"
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      <img
-        alt="UKL Logo"
-        src="/assets/UKL_Logo_Vektor.svg"
-        width="300"
-      />
-      <br />
-      <img
-        alt="Lampe Logo"
-        src="/assets/Lampe_Logo_Vektor.svg"
-        width="150"
-      />
-      <h1>
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
         Das hat zu lange gedauert...
       </h1>
       <p
@@ -253,50 +183,30 @@ exports[`error pages snapshots > Timeout 1`] = `
 exports[`error pages snapshots > TooManyRequests 1`] = `
 <div>
   <div
-    style="text-align: center; padding-top: 4rem;"
+    class="relative min-h-screen flex items-start justify-center overflow-hidden mt-16"
   >
-    <img
-      alt="UKL Logo"
-      src="/assets/UKL_Logo_Vektor.svg"
-      width="300"
-    />
-    <br />
-    <img
-      alt="Lampe Logo"
-      src="/assets/Lampe_Logo_Vektor.svg"
-      width="150"
-    />
-    <h1>
-      Die Anfrage hat zu lange gedauert
-    </h1>
-    <p
-      style="max-width: 600px; width: fit-content; margin: auto;"
+    <div
+      class="max-w-[760px] w-[90vw] text-center py-12 px-7 sm:p-0"
     >
-      Anfrage zu langsam oder unterbrochen. Die Seite wird in 
-      <span
-        id="reload-countdown"
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
       >
-        30
-      </span>
-      <script>
-        (function(){
-    var end = Date.now() + 30000;
-    var span = document.getElementById("reload-countdown");
-    if(!span) return;
-    
-    function tick(){
-      var rem = Math.max(0, end - Date.now());
-      var sec = Math.ceil(rem / 1000);
-      span.textContent = String(sec);
-      if(rem &lt;= 0) window.location.reload();
-      setTimeout(tick, 250);
-    }
-    tick();
-  })();
-      </script>
-       Sekunden automatisch neu geladen
-    </p>
-    <br />
+        Die Anfrage hat zu lange gedauert
+      </h1>
+      <p
+        style="max-width: 600px; width: fit-content; margin: auto;"
+      >
+        Anfrage zu langsam oder unterbrochen. Die Seite wird in
+         
+        <span
+          id="reload-countdown"
+        >
+          30
+        </span>
+         Sekunden automatisch neu geladen
+      </p>
+      <br />
+    </div>
   </div>
 </div>
 `;
@@ -309,18 +219,9 @@ exports[`error pages snapshots > Unauthorized 1`] = `
     <div
       style="text-align: center; padding-top: 4rem;"
     >
-      <img
-        alt="UKL Logo"
-        src="/assets/UKL_Logo_Vektor.svg"
-        width="300"
-      />
-      <br />
-      <img
-        alt="Lampe Logo"
-        src="/assets/Lampe_Logo_Vektor.svg"
-        width="150"
-      />
-      <h1>
+      <h1
+        style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;"
+      >
         Fehlende Berechtigungen
       </h1>
       <p

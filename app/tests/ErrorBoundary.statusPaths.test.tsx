@@ -1,14 +1,19 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 
-vi.mock('react-router', () => ({
-  useRouteError: vi.fn(),
-  isRouteErrorResponse: vi.fn(),
-}));
+vi.mock('react-router', async () => {
+  const actual = await vi.importActual<typeof import('react-router')>('react-router');
+  return {
+    ...actual,
+    useRouteError: vi.fn(),
+    isRouteErrorResponse: vi.fn(),
+    useLoaderData: vi.fn(),
+  };
+});
 
 import { useRouteError, isRouteErrorResponse } from 'react-router';
 
-let ErrorBoundary: (typeof import('../root'))['ErrorBoundary'];
+let ErrorBoundary: (typeof import('../pages/alerts/PatientAlertsPageController'))['ErrorBoundary'];
 
 describe('ErrorBoundary status paths', () => {
   beforeEach(async () => {
@@ -17,7 +22,7 @@ describe('ErrorBoundary status paths', () => {
     vi.mocked(useRouteError).mockReset();
     vi.mocked(isRouteErrorResponse).mockReset();
     vi.mocked(isRouteErrorResponse).mockReturnValue(true);
-    ({ ErrorBoundary } = await import('../root'));
+    ({ ErrorBoundary } = await import('../pages/alerts/PatientAlertsPageController'));
   });
 
   afterEach(() => {

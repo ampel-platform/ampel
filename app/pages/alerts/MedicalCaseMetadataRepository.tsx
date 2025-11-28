@@ -12,6 +12,16 @@ const BASE_URL_WITH_SLASH = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 export const MedicalCaseMetadataRepository = {
   async getByMedicalCaseId(caseId: string): Promise<MedicalCaseMetadataApiResult> {
     try {
+      const withStatus = (res: Response): Error & { status: number; headers: Headers } => {
+        const error = new Error(`HTTP Error: ${res.status} ${res.statusText}`) as Error & {
+          status: number;
+          headers: Headers;
+        };
+        error.status = res.status;
+        error.headers = res.headers;
+        return error;
+      };
+
       if (!caseId) {
         throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
       }
@@ -27,7 +37,7 @@ export const MedicalCaseMetadataRepository = {
       if (res.status === 404)
         throw new Response('Der Patient wurde nicht gefunden', { status: 404 });
       if (!res.ok) {
-        throw new Error(`HTTP Error: ${res.status} ${res.statusText}`);
+        throw withStatus(res);
       }
       const json = await res.json();
 

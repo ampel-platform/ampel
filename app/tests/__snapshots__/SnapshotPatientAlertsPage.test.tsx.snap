@@ -68,7 +68,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -660,7 +660,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -2254,7 +2254,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -2846,7 +2846,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -4440,7 +4440,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -5032,7 +5032,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -5205,11 +5205,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  >
-                                    <div
-                                      style="width: 0px; overflow-x: visible;"
-                                    />
-                                  </div>
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -5823,7 +5819,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -6415,7 +6411,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -8056,7 +8052,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -8643,7 +8639,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -9235,7 +9231,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -10876,7 +10872,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -11463,7 +11459,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -12055,7 +12051,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -12290,11 +12286,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  >
-                                    <div
-                                      style="width: 0px; overflow-x: visible;"
-                                    />
-                                  </div>
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -12908,7 +12900,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
@@ -13495,7 +13487,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           />
           <img
             alt="UKL Logo"
-            class="col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
+            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span

@@ -9,13 +9,25 @@ const BASE_URL =
   'http://localhost:8080';
 const BASE_URL_WITH_SLASH = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
-export const AmpelResultRepository = {
-  async getByMedicalCaseId(caseId: string): Promise<ApiT> {
-    try {
-      if (!caseId) {
-        throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
-      }
+type ErrorWithStatus = Error & { status?: number; headers?: Headers };
+export type AmpelResultResponse = ApiT | ErrorWithStatus;
 
+const withStatus = (res: Response): ErrorWithStatus => {
+  const error = new Error(`HTTP Error: ${res.status} ${res.statusText}`) as ErrorWithStatus;
+  error.status = res.status;
+  error.headers = res.headers;
+  return error;
+};
+
+export const AmpelResultRepository = {
+  async getByMedicalCaseId(caseId: string): Promise<AmpelResultResponse> {
+    if (!caseId) {
+      const error = new Error('case_id fehlt') as ErrorWithStatus;
+      error.status = 400;
+      return error;
+    }
+
+    try {
       const requestUrl = new URL(
         `v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
         BASE_URL_WITH_SLASH,
@@ -24,29 +36,31 @@ export const AmpelResultRepository = {
         headers: { Accept: 'application/json' },
       });
 
-      if (res.status === 404) {
-        //throw new Response('Der Medizinsche Fall wurde nicht gefunden', { status: 404 });
-        return {
-          medicalCaseId: caseId,
-          scoringSystems: [],
-        };
-      }
       if (!res.ok) {
-        throw new Error(`HTTP Error: ${res.status} ${res.statusText}`);
+        return withStatus(res);
       }
 
       const json = await res.json();
       return ApiResultCollection.parse(json);
     } catch (err) {
-      if (err instanceof Response) throw err;
+      if (err instanceof Response) return withStatus(err);
 
       if (err instanceof TypeError) {
-        throw new Error(`Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`);
+        const error = new Error(
+          `Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`,
+        ) as ErrorWithStatus;
+        error.status = 503;
+        return error;
       }
 
-      if (err instanceof Error) throw err;
+      if (err instanceof Error) {
+        if (err.status === undefined) (err as ErrorWithStatus).status = 500;
+        return err;
+      }
 
-      throw new Error(String(err));
+      const unknown = new Error(String(err)) as ErrorWithStatus;
+      unknown.status = 500;
+      return unknown;
     }
   },
 };

@@ -74,7 +74,11 @@ export function PatientMetaDataHeader({
           alt='LAMPE Logo'
           className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
         />
-        <img src={UklLogo} alt='UKL Logo' className='col-[2] row-[1] h-8 sm:h-9 md:h-12 lg:h-14' />
+        <img
+          src={UklLogo}
+          alt='UKL Logo'
+          className='col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14'
+        />
 
         <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
           <Mail className='h-5 w-5 shrink-0' aria-hidden='true' />
