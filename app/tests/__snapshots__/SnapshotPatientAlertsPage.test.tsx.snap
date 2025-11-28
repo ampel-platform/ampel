@@ -5205,7 +5205,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  />
+                                  >
+                                    <div
+                                      style="width: 0px; overflow-x: visible;"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -12286,7 +12290,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                                   <div
                                     class="recharts-responsive-container"
                                     style="width: 100%; height: 475px; min-width: 0;"
-                                  />
+                                  >
+                                    <div
+                                      style="width: 0px; overflow-x: visible;"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>

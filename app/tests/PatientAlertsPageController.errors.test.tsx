@@ -23,13 +23,11 @@ vi.mock('../pages/alerts/MedicalCaseMetadataRepository', () => ({
   MedicalCaseMetadataRepository: { getByMedicalCaseId: vi.fn() },
 }));
 
-const { default: PatientAlertsPageController } = await import(
-  '../pages/alerts/PatientAlertsPageController'
-);
+const { default: PatientAlertsPageController } =
+  await import('../pages/alerts/PatientAlertsPageController');
 const { AmpelResultRepository } = await import('../pages/alerts/AmpelResultRepository');
-const { MedicalCaseMetadataRepository } = await import(
-  '../pages/alerts/MedicalCaseMetadataRepository'
-);
+const { MedicalCaseMetadataRepository } =
+  await import('../pages/alerts/MedicalCaseMetadataRepository');
 const buildAlertsSample = (caseId: string) => ({
   medicalCaseId: caseId,
   scoringSystems: [

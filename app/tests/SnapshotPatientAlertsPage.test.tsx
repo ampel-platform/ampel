@@ -32,9 +32,8 @@ vi.mock('react-router', async () => {
   };
 });
 
-const { default: PatientAlertsPageController } = await import(
-  '../pages/alerts/PatientAlertsPageController'
-);
+const { default: PatientAlertsPageController } =
+  await import('../pages/alerts/PatientAlertsPageController');
 
 describe('PatientAlertsPage Integration', () => {
   beforeEach(async () => {

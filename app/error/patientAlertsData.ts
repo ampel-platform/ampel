@@ -13,6 +13,24 @@ export interface DataSourceFlags {
   isDemo: boolean;
 }
 
+function isDevMode(): boolean {
+  if (typeof import.meta !== 'undefined' && import.meta.env?.MODE === 'development') {
+    return true;
+  }
+
+  const nodeEnv = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process
+    ?.env?.NODE_ENV;
+  if (nodeEnv === 'development') return true;
+
+  return false;
+}
+
+function logDevError(source: string, error: unknown): void {
+  if (!isDevMode()) return;
+  const logger = (globalThis as { console?: Console }).console;
+  logger?.error?.(`[dev] ${source} failed`, error);
+}
+
 export async function loadAlertsForCase(
   caseId: string,
   { isTest, isDemo }: DataSourceFlags,
@@ -24,8 +42,13 @@ export async function loadAlertsForCase(
     if (isDemo) {
       return await FakeDemoAmpelResultRepository.uiDemoFakesToApi(caseId);
     }
-    return await AmpelResultRepository.getByMedicalCaseId(caseId);
+    const result = await AmpelResultRepository.getByMedicalCaseId(caseId);
+    if (result instanceof Error) {
+      logDevError('loadAlertsForCase', result);
+    }
+    return result;
   } catch (err) {
+    logDevError('loadAlertsForCase', err);
     if (err instanceof Error) {
       const errorWithStatus = err as StatusError;
       const numericStatus = toNumericStatus(errorWithStatus.status);
@@ -51,6 +74,7 @@ export async function loadMetadataForCase(
     if (isDemo) return FakeDemoAmpelResultRepository.generateDemoFakePatientMetaData();
     return await MedicalCaseMetadataRepository.getByMedicalCaseId(caseId);
   } catch (err) {
+    logDevError('loadMetadataForCase', err);
     if (err instanceof Response) {
       const asError = new Error(err.statusText || 'HTTP Error') as StatusError;
       asError.status = err.status;
