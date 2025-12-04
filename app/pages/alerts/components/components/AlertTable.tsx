@@ -51,7 +51,9 @@ export function AlertTable({ transformedData, height }: AlertTableProps): ReactE
   return (
     <div
       style={{ height: height }}
-      className={`${scroll ? `overflow-y-scroll` : `overflow-y-hidden`} pr-12`}
+      className={`w-full ${
+        scroll ? 'overflow-y-scroll pr-4 sm:pr-6 md:pr-8' : 'overflow-y-hidden pr-0'
+      }`}
     >
       <div
         className={`w-full ${scroll ? `overflow-auto` : `overflow-hidden`} rounded-xl border border-gray-200 shadow-sm`}

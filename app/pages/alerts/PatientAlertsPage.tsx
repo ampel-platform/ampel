@@ -51,8 +51,8 @@ export function PatientAlertsPage({
   const hasMetadata = Boolean(medicalCaseMetadata);
 
   return (
-    <div className='h-full px-4'>
-      <div className='flex h-full w-full flex-col gap-y-10'>
+    <div className='h-full pl-4'>
+      <div className='flex h-full w-full flex-col gap-y-10 pt-4'>
         {showHeader && hasMetadata && medicalCaseMetadata && (
           <PatientMetaDataHeader
             medicalCaseId={medicalCaseMetadata.id}
@@ -81,7 +81,7 @@ export function PatientAlertsPage({
             />
           </div>
 
-          <div className='ml-2 flex h-full w-full flex-col gap-y-20'>
+          <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
             <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
               <div className='order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
                 <div className='flex flex-row items-baseline gap-x-4'>

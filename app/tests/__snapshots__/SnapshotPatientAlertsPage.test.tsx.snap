@@ -133,10 +133,10 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -145,7 +145,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -730,10 +730,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -822,7 +822,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="overflow-y-scroll pr-12"
+                            class="w-full overflow-y-scroll pr-4 sm:pr-6 md:pr-8"
                             style="height: 475px;"
                           >
                             <div
@@ -1719,7 +1719,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -2299,10 +2299,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -2311,7 +2311,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -2896,10 +2896,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -2988,7 +2988,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="overflow-y-scroll pr-12"
+                            class="w-full overflow-y-scroll pr-4 sm:pr-6 md:pr-8"
                             style="height: 475px;"
                           >
                             <div
@@ -3885,7 +3885,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -4465,10 +4465,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -4477,7 +4477,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -5062,10 +5062,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -5278,7 +5278,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -5858,10 +5858,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -5870,7 +5870,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -6455,10 +6455,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -6610,7 +6610,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="overflow-y-scroll pr-12"
+                            class="w-full overflow-y-scroll pr-4 sm:pr-6 md:pr-8"
                             style="height: 475px;"
                           >
                             <div
@@ -7492,7 +7492,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -8072,10 +8072,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -8084,7 +8084,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -8664,10 +8664,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -8676,7 +8676,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -9261,10 +9261,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -9416,7 +9416,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="overflow-y-scroll pr-12"
+                            class="w-full overflow-y-scroll pr-4 sm:pr-6 md:pr-8"
                             style="height: 475px;"
                           >
                             <div
@@ -10298,7 +10298,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -10878,10 +10878,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -10890,7 +10890,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -11470,10 +11470,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -11482,7 +11482,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -12067,10 +12067,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -12346,7 +12346,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </div>
             </div>
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -12926,10 +12926,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -12938,7 +12938,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
@@ -13518,10 +13518,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </div>
       </div>
       <div
-        class="h-full px-4"
+        class="h-full pl-4"
       >
         <div
-          class="flex h-full w-full flex-col gap-y-10"
+          class="flex h-full w-full flex-col gap-y-10 pt-4"
         >
           <div
             class="relative flex h-full w-full flex-col"
@@ -13530,7 +13530,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="absolute z-50 h-full w-full transition-all duration-500 ease-in-out left-full ml-4"
             />
             <div
-              class="ml-2 flex h-full w-full flex-col gap-y-20"
+              class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
             >
               <div
                 class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
