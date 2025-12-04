@@ -32,6 +32,7 @@ export interface MedicalCaseMetadata {
 export interface Link {
   displayText: string;
   href: string;
+  disabled?: boolean;
 }
 
 export interface Ruleset {

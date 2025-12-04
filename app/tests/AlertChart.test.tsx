@@ -61,18 +61,25 @@ vi.mock('recharts', async () => {
           ]
         : null;
       return (
-        <div data-testid='line' data-yaxis={props.yAxisId}>
+        <svg data-testid='line' data-yaxis={props.yAxisId}>
           {dots}
-        </div>
+        </svg>
       );
     },
     XAxis: (props: {
       tick?: (p: { x: number; y: number; payload: { value: Date } }) => React.ReactNode;
-    }) => (
-      <div data-testid='x-axis'>
-        {props.tick?.({ x: 0, y: 0, payload: { value: new Date('2024-03-03T03:00:00Z') } })}
-      </div>
-    ),
+    }) => {
+      const tickContent = props.tick?.({
+        x: 0,
+        y: 0,
+        payload: { value: new Date('2024-03-03T03:00:00Z') },
+      });
+      return (
+        <div data-testid='x-axis'>
+          <svg>{tickContent}</svg>
+        </div>
+      );
+    },
     YAxis: (props: { yAxisId?: string; label?: { value?: string } }) => (
       <div data-testid={`y-axis-${props.yAxisId}`} data-label={props.label?.value} />
     ),

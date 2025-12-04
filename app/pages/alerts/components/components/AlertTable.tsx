@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import { AmpelStatus } from '../../types/types';
 import { formatDeBerlin } from './formatDate';
 import { StatusIcon } from './StatusIcon';
@@ -25,10 +27,15 @@ interface AlertTableProps {
  * @param {{ transformedData: AlertTableDataPoint[] }} props
  * @returns {React.ReactNode }
  */
-// eslint-disable-next-line no-undef
-export function AlertTable({ transformedData, height }: AlertTableProps): React.ReactNode {
+export function AlertTable({ transformedData, height }: AlertTableProps): ReactElement {
   const sortedData = [...transformedData].sort((a, b) => b.date.getTime() - a.date.getTime());
   const scroll = sortedData.length > 8;
+  const unit = transformedData[0]?.unit ?? '';
+  const statusLabel: Record<AmpelStatus, string> = {
+    [AmpelStatus.GREEN]: 'Normal',
+    [AmpelStatus.YELLOW]: 'Warnung',
+    [AmpelStatus.RED]: 'Kritisch',
+  };
 
   if (sortedData.length === 0) {
     return (
@@ -54,15 +61,16 @@ export function AlertTable({ transformedData, height }: AlertTableProps): React.
             <tr>
               <th className='px-6 py-3 font-medium text-gray-700'>Messzeitpunkt</th>
               <th className='px-6 py-3 font-medium text-gray-700'>Analyt</th>
-              <th className='px-6 py-3 font-medium text-gray-700'>
-                Wert ({transformedData[0].unit})
-              </th>
+              <th className='px-6 py-3 font-medium text-gray-700'>Wert ({unit})</th>
               <th className='px-6 py-3 font-medium text-gray-700'>Status</th>
             </tr>
           </thead>
           <tbody className='divide-y divide-gray-100'>
-            {sortedData.map((row, index) => (
-              <tr key={index} className='hover:bg-gray-50'>
+            {sortedData.map((row) => (
+              <tr
+                key={`${row.date.toISOString?.() ?? row.date}-${row.analyteName}`}
+                className='hover:bg-gray-50'
+              >
                 <td className='whitespace-nowrap px-6 py-4 text-gray-900'>
                   {formatDeBerlin(row.date)}
                 </td>
@@ -76,11 +84,7 @@ export function AlertTable({ transformedData, height }: AlertTableProps): React.
                     <svg width={14} height={14}>
                       <StatusIcon ampelStatus={row.ampelStatus} cx={7} cy={7} index={0} />
                     </svg>
-                    <span className='text-gray-700'>
-                      {row.ampelStatus === 1 && <span>Normal</span>}
-                      {row.ampelStatus === 2 && <span>Warnung</span>}
-                      {row.ampelStatus === 3 && <span>Kritisch</span>}
-                    </span>
+                    <span className='text-gray-700'>{statusLabel[row.ampelStatus]}</span>
                   </div>
                 </td>
               </tr>

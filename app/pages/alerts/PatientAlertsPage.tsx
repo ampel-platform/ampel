@@ -28,19 +28,23 @@ export function PatientAlertsPage({
   const hideDetailOverlay = (): void => {
     setDetailOverlayVisibilityClasses('left-full ml-4');
   };
-  function cloneAlertCards(status: AmpelStatus): ReactNode[] {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (rulesetsByStatus.get(status) || []).map((child: any) =>
-      child && child.type && child.props && child.props.onClick ? (
-        <child.type
-          {...child.props}
-          onClick={() => displayDetailOverlay(child.props.alertDetails)}
-          key={child.key}
-        />
-      ) : (
-        child
-      ),
-    );
+
+  function renderAlertCards(status: AmpelStatus): ReactNode[] {
+    const nodes = rulesetsByStatus.get(status) || [];
+
+    return nodes.map((child) => {
+      if (!React.isValidElement(child)) return child;
+
+      const childProps = child.props as { onClick?: () => void; alertDetails?: AlertDetails };
+      const handleClick = (): void => {
+        childProps.onClick?.();
+        if (childProps.alertDetails) displayDetailOverlay(childProps.alertDetails);
+      };
+
+      return React.cloneElement(child, {
+        onClick: handleClick,
+      });
+    });
   }
 
   if (!rulesetsByStatus) return null;
@@ -88,7 +92,7 @@ export function PatientAlertsPage({
                 </div>
 
                 <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
-                  {cloneAlertCards(AmpelStatus.RED)}
+                  {renderAlertCards(AmpelStatus.RED)}
                 </div>
               </div>
               <div className='order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
@@ -100,15 +104,18 @@ export function PatientAlertsPage({
                 </div>
 
                 <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
-                  {cloneAlertCards(AmpelStatus.YELLOW)}
+                  {renderAlertCards(AmpelStatus.YELLOW)}
                 </div>
               </div>
             </div>
 
             <div className='order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2'>
-              <a
-                className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer'
+              <button
+                type='button'
+                className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
                 onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}
+                aria-expanded={inconspicuousStatesVisible}
+                aria-controls='inconspicuous-states-section'
               >
                 <span className='text-lg'>Unauffällige Zustände</span>
                 <span className='rounded-md bg-gray-100 px-3 text-base text-gray-800'>
@@ -120,6 +127,7 @@ export function PatientAlertsPage({
                     viewBox='0 0 16 16'
                     fill='currentColor'
                     className='size-4'
+                    aria-hidden='true'
                   >
                     <path
                       fillRule='evenodd'
@@ -134,6 +142,7 @@ export function PatientAlertsPage({
                     viewBox='0 0 16 16'
                     fill='currentColor'
                     className='size-4'
+                    aria-hidden='true'
                   >
                     <path
                       fillRule='evenodd'
@@ -142,9 +151,10 @@ export function PatientAlertsPage({
                     />
                   </svg>
                 )}
-              </a>
+              </button>
 
               <div
+                id='inconspicuous-states-section'
                 className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
               >
                 {rulesetsByStatus.get(AmpelStatus.GREEN)}

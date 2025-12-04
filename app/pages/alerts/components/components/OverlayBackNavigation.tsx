@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 interface OverlayBackNavigationProps {
   onClick: () => void;
 }
@@ -10,8 +12,7 @@ interface OverlayBackNavigationProps {
  * @prop {() => void} onClick - The click handler to navigate back.
  * @returns {React.ReactNode } The rendered back navigation component.
  */
-// eslint-disable-next-line no-undef
-export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): React.ReactNode {
+export function OverlayBackNavigation({ onClick }: OverlayBackNavigationProps): ReactElement {
   return (
     <div className='flex flex-row'>
       <a

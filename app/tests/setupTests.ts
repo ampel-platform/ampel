@@ -1,4 +1,8 @@
-import { toBeInTheDocument, toHaveTextContent } from '@testing-library/jest-dom/matchers';
+import {
+  toBeInTheDocument,
+  toHaveTextContent,
+  toHaveAttribute,
+} from '@testing-library/jest-dom/matchers';
 import { expect } from 'vitest';
 
 class ResizeObserver {
@@ -12,4 +16,4 @@ class ResizeObserver {
 (globalThis as typeof globalThis & { ResizeObserver?: typeof ResizeObserver }).ResizeObserver =
   ResizeObserver;
 
-expect.extend({ toBeInTheDocument, toHaveTextContent });
+expect.extend({ toBeInTheDocument, toHaveTextContent, toHaveAttribute });

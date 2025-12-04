@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import { AlertType } from '../../types/types';
 import { AlertPing } from './AlertPing';
 
@@ -15,8 +17,7 @@ interface AlertHeaderProps {
  * @prop {AlertType} type - The type of the alert, used to determine the visual indicator.
  * @returns {React.ReactNode } The rendered alert header component.
  */
-// eslint-disable-next-line no-undef
-export function AlertHeader({ name, type, severity }: AlertHeaderProps): React.ReactNode {
+export function AlertHeader({ name, type, severity }: AlertHeaderProps): ReactElement {
   return (
     <div className='flex flex-row items-center gap-x-4'>
       <AlertPing type={type} />

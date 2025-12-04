@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 interface AmpelStatusIconProps {
   ampelStatus: number;
   cx: number;
@@ -23,8 +25,7 @@ interface AmpelStatusIconProps {
  * @returns {React.ReactNode } The rendered icon element.
  */
 
-// eslint-disable-next-line no-undef
-export function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps): React.ReactNode {
+export function StatusIcon({ ampelStatus, cx, cy }: AmpelStatusIconProps): ReactElement {
   switch (ampelStatus) {
     case 3:
       return <circle cx={cx} cy={cy} r={5} fill={'red'} stroke='black' strokeWidth={1} />;

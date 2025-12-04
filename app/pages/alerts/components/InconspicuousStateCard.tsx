@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import { formatDeBerlin } from './components/formatDate';
 
 interface InconspicuousStateProps {
@@ -15,8 +17,7 @@ interface InconspicuousStateProps {
 export function InconspicuousStateCard({
   title,
   creationTime,
-  // eslint-disable-next-line no-undef
-}: InconspicuousStateProps): React.ReactNode {
+}: InconspicuousStateProps): ReactElement {
   return (
     <div
       className='flex flex-col rounded-md border border-solid border-gray-200'

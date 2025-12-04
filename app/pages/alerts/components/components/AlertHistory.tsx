@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { type ReactElement, useEffect, useMemo, useState } from 'react';
 
-import { AmpelStatus, RulesetHistory } from '../../types/types';
+import { RulesetHistory } from '../../types/types';
+import { getAmpelStatusFillColor } from '../utils/history';
 import { AlertChart } from './AlertChart';
 import { AlertTable } from './AlertTable';
 import { StatusLegend } from './StatusLegend';
@@ -17,38 +18,21 @@ interface AlertHistoryProps {
  * @prop {RulesetHistory} history - The history object containing alert data for the ruleset.
  * @returns {React.ReactNode } The rendered alert history component.
  */
-// eslint-disable-next-line no-undef
-export function AlertHistory({ history }: AlertHistoryProps): React.ReactNode {
-  const convertAmpelStatusToFillColor = (status: AmpelStatus): string => {
-    switch (status) {
-      case AmpelStatus.RED:
-        return 'rgba(251, 207, 232, 0.7)';
-      case AmpelStatus.YELLOW:
-        return 'rgba(254, 243, 199, 0.7)';
-      case AmpelStatus.GREEN:
-        return 'rgba(243, 244, 246, 0.7)';
-    }
-  };
-
-  const transformedData = [...history.data]
-    .sort((a, b) => {
-      if (a.date.getTime() === b.date.getTime()) {
-        return 0;
-      } else if (a.date.getTime() < b.date.getTime()) {
-        return -1;
-      }
-      return 1;
-    })
-    .map((h) => {
-      return {
-        date: h.date,
-        analyteValue: h.analyteValue,
-        ampelStatus: h.ampelStatus,
-        ampelStatusFillColor: convertAmpelStatusToFillColor(h.ampelStatus),
-        unit: h.unit,
-        analyteName: h.analyteName,
-      };
-    });
+export function AlertHistory({ history }: AlertHistoryProps): ReactElement {
+  const transformedData = useMemo(
+    () =>
+      [...history.data]
+        .sort((a, b) => a.date.getTime() - b.date.getTime())
+        .map((h) => ({
+          date: h.date,
+          analyteValue: h.analyteValue,
+          ampelStatus: h.ampelStatus,
+          ampelStatusFillColor: getAmpelStatusFillColor(h.ampelStatus),
+          unit: h.unit,
+          analyteName: h.analyteName,
+        })),
+    [history],
+  );
   const [enabledChart, setEnabledChart] = useState(false);
   const historyHeight = 475;
   const hasMoreThanOneDataPoint = transformedData.length > 1;

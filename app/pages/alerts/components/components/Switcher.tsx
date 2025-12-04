@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { type ReactElement, useEffect, useState } from 'react';
 
 interface SwitcherProps {
   initialState?: boolean;
@@ -19,7 +19,7 @@ interface SwitcherProps {
  * @returns {React.ReactNode } The rendered switch component.
  */
 
-export function Switcher(props: SwitcherProps): React.ReactNode {
+export function Switcher(props: SwitcherProps): ReactElement {
   const [isChecked, setIsChecked] = useState(props.initialState);
 
   const handleCheckboxChange = (): void => {

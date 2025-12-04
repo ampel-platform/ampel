@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import { Link } from '../../types/types';
 
 interface AlertLinksProps {
@@ -13,25 +15,33 @@ interface AlertLinksProps {
  * @prop {Link[]} links - The list of links to be rendered.
  * @returns {React.ReactNode } The rendered link list component.
  */
-// eslint-disable-next-line no-undef
-export function AlertLinks({ links }: AlertLinksProps): React.ReactNode {
-  if (!links.length) return <></>;
+export function AlertLinks({ links }: AlertLinksProps): ReactElement | null {
+  if (!links.length) return null;
 
   return (
     <div className='flex flex-col gap-2'>
       <span className='text-muted-foreground text-sm'>Weiterführende Links</span>
       <div className='flex flex-wrap gap-2'>
-        {links.map((link, index) =>
-          link.displayText === 'SOP' || link.displayText === 'Labor' ? (
+        {links.map((link) => {
+          const isDisabled =
+            link.disabled ?? (link.displayText === 'SOP' || link.displayText === 'Labor');
+          const key = `${link.displayText}-${link.href}`;
+
+          if (isDisabled) {
+            return (
+              <span
+                key={key}
+                aria-disabled='true'
+                className='cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400'
+              >
+                {link.displayText}
+              </span>
+            );
+          }
+
+          return (
             <a
-              key={index}
-              className='cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400'
-            >
-              {link.displayText}
-            </a>
-          ) : (
-            <a
-              key={index}
+              key={key}
               href={link.href}
               target='_blank'
               rel='noopener noreferrer'
@@ -39,8 +49,8 @@ export function AlertLinks({ links }: AlertLinksProps): React.ReactNode {
             >
               {link.displayText}
             </a>
-          ),
-        )}
+          );
+        })}
       </div>
     </div>
   );
