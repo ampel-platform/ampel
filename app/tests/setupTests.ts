@@ -1,6 +1,4 @@
-import {
-  toBeInTheDocument /* weitere Matcher falls nötig */,
-} from '@testing-library/jest-dom/matchers';
+import { toBeInTheDocument, toHaveTextContent } from '@testing-library/jest-dom/matchers';
 import { expect } from 'vitest';
 
 class ResizeObserver {
@@ -11,6 +9,7 @@ class ResizeObserver {
 
 // @ts-ignore
 // eslint-disable-next-line no-undef
-global.ResizeObserver = ResizeObserver;
+(globalThis as typeof globalThis & { ResizeObserver?: typeof ResizeObserver }).ResizeObserver =
+  ResizeObserver;
 
-expect.extend({ toBeInTheDocument /* , weitere matcher */ });
+expect.extend({ toBeInTheDocument, toHaveTextContent });

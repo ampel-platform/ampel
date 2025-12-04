@@ -23,6 +23,7 @@ export default defineConfig({
         '**/routes.ts',
         '**/react-router.config.ts',
         '**/.react-router/*',
+        '**/assets/**',
       ],
     },
   },
