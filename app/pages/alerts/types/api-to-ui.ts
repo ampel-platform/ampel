@@ -62,7 +62,7 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
       message: latest?.severityComment ?? latest?.severity ?? '',
       resultTime: new Date(latest?.analyteMeasuringTime),
       history,
-      links: links, 
+      links: links,
     };
   });
 }
