@@ -33,9 +33,13 @@ export function PatientAlertsPage({
     const nodes = rulesetsByStatus.get(status) || [];
 
     return nodes.map((child) => {
-      if (!React.isValidElement(child)) return child;
+      interface AlertCardChildProps {
+        onClick?: () => void;
+        alertDetails?: AlertDetails;
+      }
+      if (!React.isValidElement<AlertCardChildProps>(child)) return child;
 
-      const childProps = child.props as { onClick?: () => void; alertDetails?: AlertDetails };
+      const childProps = child.props;
       const handleClick = (): void => {
         childProps.onClick?.();
         if (childProps.alertDetails) displayDetailOverlay(childProps.alertDetails);
@@ -157,7 +161,7 @@ export function PatientAlertsPage({
                 id='inconspicuous-states-section'
                 className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
               >
-                {rulesetsByStatus.get(AmpelStatus.GREEN)}
+                {renderAlertCards(AmpelStatus.GREEN)}
               </div>
             </div>
           </div>

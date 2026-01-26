@@ -1,10 +1,13 @@
 import type { ReactElement } from 'react';
 
+import { AlertDetails } from '../types/types';
 import { formatDeBerlin } from './components/formatDate';
 
 interface InconspicuousStateProps {
   title: string;
   creationTime: Date;
+  onClick: () => void;
+  alertDetails?: AlertDetails;
 }
 
 /**
@@ -17,11 +20,17 @@ interface InconspicuousStateProps {
 export function InconspicuousStateCard({
   title,
   creationTime,
+  onClick,
 }: InconspicuousStateProps): ReactElement {
   return (
     <div
       className='flex flex-col rounded-md border border-solid border-gray-200'
       data-testid='inconspicuous-state-card'
+      onClick={onClick}
+      role='button'
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') onClick();
+      }}
     >
       <div className='flex w-full flex-col gap-y-2 px-4 py-3'>
         <span className='line-clamp-1 text-lg font-medium text-gray-500'>{title}</span>

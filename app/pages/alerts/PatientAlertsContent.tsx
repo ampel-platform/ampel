@@ -152,15 +152,22 @@ function AlertsSection({ alertsData }: { alertsData: ApiResultCollection }): Rea
           />,
         );
       } else if (rs.ampelStatus === AmpelStatus.GREEN) {
-        grouped
-          .get(AmpelStatus.GREEN)!
-          .push(
-            <InconspicuousStateCard
-              key={rs.ruleset}
-              title={rs.ruleset}
-              creationTime={creationTime}
-            />,
-          );
+        grouped.get(AmpelStatus.GREEN)!.push(
+          <InconspicuousStateCard
+            key={rs.ruleset}
+            title={rs.ruleset}
+            creationTime={creationTime}
+            alertDetails={{
+              ruleset: rs.ruleset,
+              ampelStatus: AlertType.Warning,
+              message: rs.message,
+              resultTime: rs.resultTime,
+              rulesetHistory: rs.history,
+              links: rs.links || [],
+            }}
+            onClick={() => {}}
+          />,
+        );
       }
     }
 
