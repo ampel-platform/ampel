@@ -72,11 +72,11 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -98,18 +98,21 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -127,7 +130,81 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -678,11 +755,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -704,18 +781,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -733,7 +813,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -2256,11 +2410,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -2282,18 +2436,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -2311,7 +2468,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -2862,11 +3093,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -2888,18 +3119,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -2917,7 +3151,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -4440,11 +4748,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -4466,18 +4774,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -4495,7 +4806,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -5046,11 +5431,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -5072,18 +5457,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -5101,7 +5489,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -5851,11 +6313,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -5877,18 +6339,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -5906,7 +6371,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -6457,11 +6996,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -6483,18 +7022,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -6512,7 +7054,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -8083,11 +8699,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -8109,18 +8725,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -8138,7 +8757,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -8684,11 +9377,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -8710,18 +9403,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -8739,7 +9435,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -9290,11 +10060,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -9316,18 +10086,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -9345,7 +10118,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -10916,11 +11763,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -10942,18 +11789,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -10971,7 +11821,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -11517,11 +12441,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -11543,18 +12467,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -11572,7 +12499,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -12123,11 +13124,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -12149,18 +13150,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -12178,7 +13182,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -12991,11 +14069,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -13017,18 +14095,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -13046,7 +14127,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
@@ -13592,11 +14747,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             src="/assets/UKL_Logo_Vektor.svg"
           />
           <span
-            class="col-[1] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-mail h-5 w-5 shrink-0"
+              class="lucide lucide-mail h-4 w-4 text-gray-600"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -13618,18 +14773,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <span
-              class="whitespace-nowrap"
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
+              rel="noreferrer noopener"
+              target="_blank"
             >
-              lampe@uniklinik-leipzig.de
-            </span>
+              Servicedesk Medizintechnik
+            </a>
           </span>
           <span
-            class="col-[2] row-[2] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+            class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-phone h-5 w-5 shrink-0"
+              class="lucide lucide-phone h-4 w-4"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -13647,7 +14805,81 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             <span
               class="whitespace-nowrap"
             >
-              0341 - 97 11342
+              0341 - 97 114
+            </span>
+          </span>
+          <span
+            class="col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-book-open-text h-4 w-4 text-gray-600"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+            <a
+              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
+              href=""
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Gebrauchsanweisung
+            </a>
+          </span>
+          <span
+            class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-signature h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284"
+              />
+              <path
+                d="M3 21h18"
+              />
+            </svg>
+            <span
+              class="whitespace-nowrap"
+            >
+               MT-Nummer: 
+              XXX XXX
             </span>
           </span>
         </div>
