@@ -13,7 +13,8 @@ const ticketLink =
   'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
 const contactPhone = '0341 - 97 114';
 const mtNummer = 'XXX XXX';
-const gebrauchsanweisungLink = '';
+const gebrauchsanweisungLink =
+  'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
 
 interface PatientMetaDataHeaderProps {
   medicalCaseId: string;
