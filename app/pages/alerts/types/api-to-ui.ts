@@ -32,15 +32,13 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
 
   return api.scoringSystems.map((ss) => {
     const sorted = [...ss.results].sort(
-      (a, b) =>
-        Date.parse(a.resultCreationTime ?? a.analyteMeasuringTime) -
-        Date.parse(b.resultCreationTime ?? b.analyteMeasuringTime),
+      (a, b) => Date.parse(a.analyteMeasuringTime) - Date.parse(b.analyteMeasuringTime),
     );
     const latest = sorted[sorted.length - 1];
 
     const history: RulesetHistory = {
       data: ss.results.map((r) => ({
-        date: new Date(r.resultCreationTime ?? r.analyteMeasuringTime),
+        date: new Date(r.analyteMeasuringTime),
         analyteValue: r.analyteValue,
         severity: r.severity,
         ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
@@ -62,11 +60,9 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
         (latest?.status ?? 'green') === 'none' ? 'green' : (latest?.status ?? 'green'),
       ),
       message: latest?.severityComment ?? latest?.severity ?? '',
-      resultTime: new Date(
-        latest?.resultCreationTime ?? latest?.analyteMeasuringTime ?? Date.now(),
-      ),
+      resultTime: new Date(latest?.analyteMeasuringTime),
       history,
-      links: links,
+      links: links, 
     };
   });
 }
