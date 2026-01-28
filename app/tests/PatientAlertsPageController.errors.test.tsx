@@ -5,13 +5,24 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'prod');
 vi.stubEnv('VITE_FAST_FAKE', '1');
 
-const useLoaderDataMock = vi.fn(() => ({ case_id: 'CASE-123' }));
+const useLoaderDataMock = vi.fn(() => ({
+  case_id: 'CASE-123',
+  alertsResult: {
+    medicalCaseId: 'CASE-123',
+    scoringSystems: [],
+  },
+  metadataResult: {
+    id: 'CASE-123',
+    patient: null,
+  },
+}));
 
 vi.mock('react-router', async () => {
   const actual = await vi.importActual<typeof import('react-router')>('react-router');
   return {
     ...actual,
     useLoaderData: useLoaderDataMock,
+    useNavigation: () => ({ state: 'idle' }),
   };
 });
 
@@ -66,7 +77,11 @@ describe('PatientAlertsPageController partial errors', () => {
   beforeEach(() => {
     vi.mocked(AmpelResultRepository.getByMedicalCaseId).mockReset();
     vi.mocked(MedicalCaseMetadataRepository.getByMedicalCaseId).mockReset();
-    useLoaderDataMock.mockReturnValue({ case_id: 'CASE-123' });
+    useLoaderDataMock.mockReturnValue({
+      case_id: 'CASE-123',
+      alertsResult: buildAlertsSample('CASE-123'),
+      metadataResult: buildMetadataSample('CASE-123'),
+    });
   });
 
   afterEach(() => {
@@ -75,13 +90,11 @@ describe('PatientAlertsPageController partial errors', () => {
   });
 
   it('shows server error page when alerts return 502', async () => {
-    const http502 = new Error('HTTP Error: 502 Bad Gateway');
-    // mimic fetch-style extras so our error-mapping picks up the status and headers
-    (http502 as Error & { status?: number; headers?: Headers }).status = 502;
-    vi.mocked(MedicalCaseMetadataRepository.getByMedicalCaseId).mockResolvedValue(
-      buildMetadataSample('CASE-789'),
-    );
-    vi.mocked(AmpelResultRepository.getByMedicalCaseId).mockRejectedValue(http502);
+    useLoaderDataMock.mockReturnValue({
+      case_id: 'CASE-123',
+      alertsResult: { message: 'HTTP Error: 502 Bad Gateway', status: 502 },
+      metadataResult: buildMetadataSample('CASE-789'),
+    });
 
     await act(async () => {
       render(
@@ -96,12 +109,11 @@ describe('PatientAlertsPageController partial errors', () => {
   });
 
   it('shows inline metadata error while alerts still render', async () => {
-    vi.mocked(MedicalCaseMetadataRepository.getByMedicalCaseId).mockRejectedValue(
-      new Response('not found', { status: 404 }),
-    );
-    vi.mocked(AmpelResultRepository.getByMedicalCaseId).mockResolvedValue(
-      buildAlertsSample('CASE-123'),
-    );
+    useLoaderDataMock.mockReturnValue({
+      case_id: 'CASE-123',
+      alertsResult: buildAlertsSample('CASE-123'),
+      metadataResult: { message: 'Not Found', status: 404 },
+    });
 
     await act(async () => {
       render(
@@ -118,12 +130,11 @@ describe('PatientAlertsPageController partial errors', () => {
   });
 
   it('shows metadata server error inline for 502 responses', async () => {
-    const http502 = new Error('HTTP Error: 502 Bad Gateway');
-    (http502 as Error & { status?: number }).status = 502;
-    vi.mocked(MedicalCaseMetadataRepository.getByMedicalCaseId).mockRejectedValue(http502);
-    vi.mocked(AmpelResultRepository.getByMedicalCaseId).mockResolvedValue(
-      buildAlertsSample('CASE-123'),
-    );
+    useLoaderDataMock.mockReturnValue({
+      case_id: 'CASE-123',
+      alertsResult: buildAlertsSample('CASE-123'),
+      metadataResult: { message: 'HTTP Error: 502 Bad Gateway', status: 502 },
+    });
 
     await act(async () => {
       render(
@@ -140,13 +151,11 @@ describe('PatientAlertsPageController partial errors', () => {
   });
 
   it('shows inline alerts error while metadata still renders', async () => {
-    useLoaderDataMock.mockReturnValue({ case_id: 'CASE-456' });
-    vi.mocked(MedicalCaseMetadataRepository.getByMedicalCaseId).mockResolvedValue(
-      buildMetadataSample('CASE-456'),
-    );
-    vi.mocked(AmpelResultRepository.getByMedicalCaseId).mockRejectedValue(
-      new Error('Service offline'),
-    );
+    useLoaderDataMock.mockReturnValue({
+      case_id: 'CASE-456',
+      alertsResult: { message: 'Service offline' },
+      metadataResult: buildMetadataSample('CASE-456'),
+    });
 
     await act(async () => {
       render(

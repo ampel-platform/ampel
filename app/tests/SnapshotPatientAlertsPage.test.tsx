@@ -22,13 +22,14 @@ vi.mock('react-router', async () => {
     FakeAmpelResultRepository.uiFakesToApi('CASEID'),
     FakeAmpelResultRepository.generateFakePatientMetaData(),
   ]);
-  const alertsData = Promise.resolve(data);
-  const metadataData = Promise.resolve(medicalCaseMetadata);
   return {
     ...actual,
     useLoaderData: () => ({
       case_id: 'CASEID',
+      alertsResult: data,
+      metadataResult: medicalCaseMetadata,
     }),
+    useNavigation: () => ({ state: 'idle' }),
   };
 });
 
