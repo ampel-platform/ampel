@@ -1873,7 +1873,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         <div
                           class="pl-3 text-gray-600"
                         >
-                          Als Diagram anzeigen
+                          Als Diagramm anzeigen
                         </div>
                       </label>
                     </div>
@@ -4211,7 +4211,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                         <div
                           class="pl-3 text-gray-600"
                         >
-                          Als Diagram anzeigen
+                          Als Diagramm anzeigen
                         </div>
                       </label>
                     </div>
@@ -8162,7 +8162,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         <div
                           class="pl-3 text-gray-600"
                         >
-                          Als Diagram anzeigen
+                          Als Diagramm anzeigen
                         </div>
                       </label>
                     </div>
@@ -11226,7 +11226,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                         <div
                           class="pl-3 text-gray-600"
                         >
-                          Als Diagram anzeigen
+                          Als Diagramm anzeigen
                         </div>
                       </label>
                     </div>
