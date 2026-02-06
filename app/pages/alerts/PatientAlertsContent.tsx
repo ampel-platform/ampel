@@ -1,5 +1,6 @@
 import React, { ReactNode, use, useMemo } from 'react';
 
+import { NotFound } from '../../error/NotFound';
 import { extractError, pickPrimaryError } from '../../error/patientAlertsData';
 import { SectionErrorPanel } from '../../error/patientAlertsErrors';
 import { StatusError } from '../../error/patientAlertsTypes';
@@ -27,6 +28,7 @@ export function PageContent({ caseId, combinedPromise }: CombinedPromise): React
   const metadataError = extractError(metadataResult);
   const alertsError = extractError(alertsResult);
   const primaryError = pickPrimaryError(alertsError, metadataError);
+  const metadataNotFound = metadataError?.status === 404 || metadataError?.status === 410;
 
   const metadata =
     metadataError || metadataResult.status !== 'fulfilled' || metadataResult.value instanceof Error
@@ -45,9 +47,15 @@ export function PageContent({ caseId, combinedPromise }: CombinedPromise): React
         <div data-testid='metadata-error'>
           <MetadataFallback caseId={caseId} />
           {metadataError && !alertsError ? (
-            <div className='mt-4'>
-              <SectionErrorPanel error={metadataError} />
-            </div>
+            metadataNotFound ? (
+              <div className='mt-4'>
+                <NotFound variant='patient' />
+              </div>
+            ) : (
+              <div className='mt-4'>
+                <SectionErrorPanel error={metadataError} />
+              </div>
+            )
           ) : null}
         </div>
       )}

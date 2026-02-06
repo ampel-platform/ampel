@@ -22,11 +22,12 @@ export function ServerError({
     <ErrorLayout>
       <title>LAMPE-CDSS</title>
       <meta charSet='utf-8' />
-      <h1 style={errorHeadingStyle}>Serverfehler</h1>
+      <h1 style={errorHeadingStyle}>System nicht erreichbar</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
-        Die Anwendung ist derzeit aufgrund eines technischen Fehlers nicht verfügbar. Die Seite wird
-        in <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden
-        automatisch neu geladen.
+        Die LAMPE ist aktuell nicht erreichbar. In{' '}
+        <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden
+        wird eine erneute Verbindung aufgebaut. Nehmen sie Kontakt mit uns auf, falls das Problem
+        weiterhin besteht oder wiederholt auftritt.
       </p>
       <br />
     </ErrorLayout>

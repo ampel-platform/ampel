@@ -8,6 +8,7 @@ import {
   useNavigation,
 } from 'react-router';
 
+import { NotFound } from '../../error/NotFound';
 import { normalizeError } from '../../error/patientAlertsData';
 import { ErrorBoundary, PageSkeleton, SectionErrorPanel } from '../../error/patientAlertsErrors';
 import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
@@ -93,6 +94,11 @@ function loadAlertsForCase(case_id: string): LoaderData {
 }
 
 const isPromise = (value: unknown): value is Promise<unknown> => value instanceof Promise;
+const isUnknownValue = (value: string | null | undefined): boolean => {
+  if (!value) return true;
+  const trimmed = value.trim();
+  return trimmed.length === 0 || trimmed.toLowerCase() === 'unbekannt';
+};
 
 function ResolvedPatientAlertsView({
   caseId,
@@ -108,9 +114,18 @@ function ResolvedPatientAlertsView({
   const metadataError = isSerializableError(metadataResult) ? metadataResult : null;
   const alertsError = isSerializableError(alertsResult) ? alertsResult : null;
   const primaryError = alertsError ?? metadataError;
+  const metadataNotFound = metadataError?.status === 404 || metadataError?.status === 410;
   const metadata = metadataError ? null : (metadataResult as MedicalCaseMetadataApiResult);
   const alerts = alertsError ? null : (alertsResult as ApiResultCollection);
   const mappedMetadata = metadata ? medicalCaseMetadataApiToUI(metadata) : null;
+  const patient = mappedMetadata?.patient;
+  const patientDataMissing =
+    Boolean(mappedMetadata) &&
+    (!patient ||
+      isUnknownValue(patient.id) ||
+      isUnknownValue(patient.firstname) ||
+      isUnknownValue(patient.lastname));
+  const showPatientNotFound = !alertsError && (metadataNotFound || patientDataMissing);
 
   const rulesetsByStatus = useMemo(() => {
     const grouped = new Map<AmpelStatus, ReactNode[]>([
@@ -215,7 +230,11 @@ function ResolvedPatientAlertsView({
           sex={undefined}
         />
       )}
-      {metadataError && !alertsError ? (
+      {showPatientNotFound ? (
+        <div data-testid='metadata-error' className='mt-4'>
+          <NotFound variant='patient' />
+        </div>
+      ) : metadataError && !alertsError ? (
         <SectionErrorPanel error={metadataError} dataTestId='metadata-error' />
       ) : null}
       {isLoading ? (

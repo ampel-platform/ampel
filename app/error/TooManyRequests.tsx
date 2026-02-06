@@ -22,11 +22,11 @@ export function TooManyRequests({
     <ErrorLayout>
       <title>LAMPE-CDSS</title>
       <meta charSet='utf-8' />
-      <h1 style={errorHeadingStyle}>Die Anfrage hat zu lange gedauert</h1>
+      <h1 style={errorHeadingStyle}>Zu viele Anfragen in kurzer Zeit</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
-        Anfrage zu langsam oder unterbrochen. Die Seite wird in{' '}
-        <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden
-        automatisch neu geladen
+        Bitte warten sie{' '}
+        <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden bis
+        sie weitere anfragen stellen.
       </p>
       <br />
     </ErrorLayout>
