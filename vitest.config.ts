@@ -5,7 +5,7 @@ export default defineConfig({
     setupFiles: ['./app/tests/setupTests.ts'],
     environment: 'jsdom',
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html', 'json-summary'],
       exclude: [
         ...configDefaults.exclude,
         '**/index.*',

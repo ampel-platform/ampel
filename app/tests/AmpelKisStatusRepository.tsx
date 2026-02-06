@@ -50,8 +50,7 @@ function parseAmpelKisStatus(payload: unknown): AmpelKisStatus {
     if (v !== null) return v;
   }
   if (payload && typeof payload === 'object') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const v = (payload as any).status;
+    const v = (payload as { status?: unknown }).status;
     if (typeof v === 'number' && isValidEnum(v)) return v;
     if (typeof v === 'string') {
       const s = fromString(v);

@@ -46,6 +46,7 @@ export default [
       'react-router.config.ts',
       'vite.config.ts',
       '**/routes.ts',
+      'scripts/**',
     ],
   },
   js.configs.recommended,

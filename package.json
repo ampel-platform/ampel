@@ -17,6 +17,8 @@
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build",
     "release:lint": "eslint . --ext .ts,.tsx --max-warnings 0 --cache --cache-location .eslintcache",
+    "eslint:check": "eslint . --ext .ts,.tsx --max-warnings 0 --no-cache",
+    "bericht:ci": "node scripts/generate-ci-bericht.mjs",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
     "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo react-router dev",
