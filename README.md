@@ -93,11 +93,21 @@ npm run start
 
 ## 🐳 Docker Setup
 
-This project uses a separate Docker configuration for development and production. All relevant Compose files are located in:
+This project uses a single multi-stage Dockerfile:
 
-- Add/Create the required env files `.env.dev` and `.env.prod`
-- `docker/dev/docker-compose.yml` – for local development
-- `docker/prod/docker-compose.yml` – for production-like builds
+- `docker/Dockerfile`
+
+Build the image:
+
+```bash
+docker build -f docker/Dockerfile -t ampel-ui .
+```
+
+Run the container:
+
+```bash
+docker run --rm -p 3003:3003 ampel-ui
+```
 
 ---
 

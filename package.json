@@ -12,7 +12,6 @@
     "format": "npx prettier --write .",
     "prepare": "husky || true",
     "test": "vitest",
-    "system-test": "cross-env VITE_TEST_DATA_VIEW=system-test vitest",
     "coverage": "vitest run --coverage",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
