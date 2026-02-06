@@ -11,7 +11,7 @@ preload(UklLogo, { as: 'image' });
 
 const ticketLink =
   'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
-const contactPhone = '0341 - 97 114';
+const contactPhone = '114';
 const mtNummer = 'XXX XXX';
 const gebrauchsanweisungLink =
   'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
@@ -92,12 +92,12 @@ export function PatientMetaDataHeader({
             rel='noreferrer noopener'
             className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
           >
-            Servicedesk Medizintechnik
+            Störmeldung Medizintechnik
           </a>
         </span>
         <span className='col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
           <Phone className='h-4 w-4' />
-          <span className='whitespace-nowrap'>{contactPhone}</span>
+          <span className='whitespace-nowrap'>allg. Fragen : {contactPhone}</span>
         </span>
         <span className='col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
           <BookOpenText className='h-4 w-4 text-gray-600' />
