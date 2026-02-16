@@ -1,10 +1,11 @@
 import type { ReactElement } from 'react';
 
-import { AlertDetails } from '../types/types';
+import { AlertDetails, AlertType } from '../types/types';
 import { formatDeBerlin } from './components/formatDate';
 
 interface InconspicuousStateProps {
   title: string;
+  type: AlertType;
   creationTime: Date;
   onClick: () => void;
   alertDetails?: AlertDetails;

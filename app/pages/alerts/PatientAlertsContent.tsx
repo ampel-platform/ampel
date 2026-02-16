@@ -164,10 +164,11 @@ function AlertsSection({ alertsData }: { alertsData: ApiResultCollection }): Rea
           <InconspicuousStateCard
             key={rs.ruleset}
             title={rs.ruleset}
+            type={AlertType.Green}
             creationTime={creationTime}
             alertDetails={{
               ruleset: rs.ruleset,
-              ampelStatus: AlertType.Warning,
+              ampelStatus: AlertType.Green,
               message: rs.message,
               resultTime: rs.resultTime,
               rulesetHistory: rs.history,

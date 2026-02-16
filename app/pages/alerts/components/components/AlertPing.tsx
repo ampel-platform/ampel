@@ -10,12 +10,17 @@ interface AlertPingProps {
  * A small visual indicator that shows the type of an alert.
  *
  * @param {{ type: AlertType }} props
- * @prop {AlertType} type - The type of the alert. Can be either a warning or a critical alert.
+ * @prop {AlertType} type - The type of the alert. Can be warning, critical, or green.
  * @returns {React.ReactNode }
  */
 
 export function AlertPing({ type }: AlertPingProps): React.ReactNode {
-  const color = type === AlertType.Warning ? 'bg-alert-warning' : 'bg-alert-critical';
+  const color =
+    type === AlertType.Warning
+      ? 'bg-alert-warning'
+      : type === AlertType.Critical
+        ? 'bg-alert-critical'
+        : 'bg-alert-success';
 
   return (
     <span className='relative flex h-4 w-4'>

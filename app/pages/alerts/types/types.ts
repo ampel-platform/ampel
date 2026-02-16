@@ -12,6 +12,7 @@ export enum AmpelKisStatus {
 export enum AlertType {
   Warning,
   Critical,
+  Green,
 }
 
 export type SexUI = 'männlich' | 'weiblich' | 'unbekannt';
