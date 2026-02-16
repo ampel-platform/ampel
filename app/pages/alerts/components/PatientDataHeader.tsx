@@ -12,7 +12,7 @@ preload(UklLogo, { as: 'image' });
 const ticketLink =
   'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
 const contactPhone = '114';
-const mtNummer = 'XXX XXX';
+const mtNummer = '74894';
 const gebrauchsanweisungLink =
   'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
 
