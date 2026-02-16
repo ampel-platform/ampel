@@ -11,6 +11,7 @@
 # testing
 /coverage
 /reports
+/app/tests/reports/*.txt
 /app/tests/reports/*.html
 
 # production

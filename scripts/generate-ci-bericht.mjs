@@ -4,7 +4,7 @@ import { spawn } from 'node:child_process';
 import { appendFile, mkdir, readdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+const npmCommand = 'npm';
 const repositoryReportDir = path.join(process.cwd(), 'app', 'tests', 'reports');
 const localHtmlReportDir = path.join(process.cwd(), 'reports', 'ci');
 
@@ -106,11 +106,79 @@ function runCheck(check) {
     const startedAt = new Date();
     const stdoutChunks = [];
     const stderrChunks = [];
+    let child;
 
-    const child = spawn(check.command, check.args, {
-      env: process.env,
-      stdio: ['ignore', 'pipe', 'pipe'],
-    });
+    try {
+      child = spawn(check.command, check.args, {
+        env: process.env,
+        stdio: ['ignore', 'pipe', 'pipe'],
+        shell: process.platform === 'win32',
+      });
+    } catch (spawnError) {
+      const knownLocalSpawnIssue =
+        spawnError instanceof Error &&
+        'code' in spawnError &&
+        ['EPERM', 'EINVAL'].includes(spawnError.code);
+
+      if (!knownLocalSpawnIssue) {
+        const endedAt = new Date();
+        resolve({
+          id: check.id,
+          title: check.title,
+          command: `${check.command} ${check.args.join(' ')}`,
+          startedAt: startedAt.toISOString(),
+          endedAt: endedAt.toISOString(),
+          durationMs: endedAt.getTime() - startedAt.getTime(),
+          exitCode: 1,
+          signal: null,
+          stdout: '',
+          stderr: `Spawn-Fehler: ${spawnError instanceof Error ? spawnError.message : String(spawnError)}`,
+        });
+        return;
+      }
+
+      const fallbackChild = spawn(check.command, check.args, {
+        env: process.env,
+        stdio: 'inherit',
+        shell: process.platform === 'win32',
+      });
+
+      fallbackChild.on('error', (error) => {
+        const endedAt = new Date();
+        resolve({
+          id: check.id,
+          title: check.title,
+          command: `${check.command} ${check.args.join(' ')}`,
+          startedAt: startedAt.toISOString(),
+          endedAt: endedAt.toISOString(),
+          durationMs: endedAt.getTime() - startedAt.getTime(),
+          exitCode: 1,
+          signal: null,
+          stdout: '',
+          stderr:
+            `Spawn-Fehler: ${spawnError.message}\nFallback-Spawn-Fehler: ${error.message}`.trim(),
+        });
+      });
+
+      fallbackChild.on('close', (code, signal) => {
+        const endedAt = new Date();
+        const stderr = `Ausgabe wurde direkt ins Terminal geschrieben (lokale Child-Process-Restriktion: ${spawnError.message}).`;
+
+        resolve({
+          id: check.id,
+          title: check.title,
+          command: `${check.command} ${check.args.join(' ')}`,
+          startedAt: startedAt.toISOString(),
+          endedAt: endedAt.toISOString(),
+          durationMs: endedAt.getTime() - startedAt.getTime(),
+          exitCode: code ?? 1,
+          signal: signal ?? null,
+          stdout: '',
+          stderr,
+        });
+      });
+      return;
+    }
 
     child.stdout.on('data', (chunk) => {
       stdoutChunks.push(Buffer.from(chunk));
@@ -197,7 +265,19 @@ async function removeOldReportsFromDir(reportDir, extensions) {
           entry.name.startsWith('bericht-') &&
           extensions.some((extension) => entry.name.endsWith(extension)),
       )
-      .map((entry) => unlink(path.join(reportDir, entry.name)));
+      .map(async (entry) => {
+        try {
+          await unlink(path.join(reportDir, entry.name));
+        } catch (error) {
+          if (
+            !(error instanceof Error) ||
+            !('code' in error) ||
+            !['ENOENT', 'EPERM', 'EACCES'].includes(error.code)
+          ) {
+            throw error;
+          }
+        }
+      });
 
     await Promise.all(deletions);
   } catch (error) {
@@ -208,97 +288,13 @@ async function removeOldReportsFromDir(reportDir, extensions) {
 }
 
 async function cleanupLocalReports() {
-  await removeOldReportsFromDir(repositoryReportDir, ['.txt', '.html']);
+  await removeOldReportsFromDir(repositoryReportDir, ['.html']);
   await removeOldReportsFromDir(localHtmlReportDir, ['.html']);
 }
 
 function normalizeLogOutput(value, label) {
   const trimmed = value.trim();
   return trimmed.length > 0 ? value : `Keine ${label}-Ausgabe.`;
-}
-
-function buildTextReport({ metadata, results, coverageSummary }) {
-  const hasFailures = results.some((result) => result.exitCode !== 0);
-  const overallStatus = hasFailures ? 'FEHLER' : 'ERFOLG';
-  const totalDurationMs = results.reduce((sum, result) => sum + result.durationMs, 0);
-  const metadataFields = [
-    ['Repository', metadata.repository],
-    ['Version', metadata.version],
-    ['Commit SHA', metadata.sha],
-    ['Ref-Typ', metadata.refType],
-    ['Branch/Tag', metadata.refName],
-    ['Run-ID', metadata.runId],
-    ['Run-Nummer', metadata.runNumber],
-  ];
-
-  const lines = [
-    'CI Bericht: Tests und Code-Review',
-    '================================',
-    '',
-    'Kopfbereich',
-    '----------',
-    ...metadataFields
-      .filter(([, value]) => Boolean(value))
-      .map(([label, value]) => `${label}: ${value}`),
-    `Zeitstempel: ${metadata.generatedAt}`,
-    '',
-    'Zusammenfassung',
-    '--------------',
-    `Gesamtstatus: ${overallStatus}`,
-    `Gesamtdauer: ${formatDuration(totalDurationMs)}`,
-    '',
-    'Pruefungen:',
-  ];
-
-  for (const result of results) {
-    const statusText = result.exitCode === 0 ? 'OK' : 'Fehlgeschlagen';
-    const signalText = result.signal ? `, Signal: ${result.signal}` : '';
-    lines.push(
-      `- ${result.title}: ${statusText} (Exit-Code: ${result.exitCode}${signalText}, Dauer: ${formatDuration(result.durationMs)})`,
-    );
-    lines.push(`  Befehl: ${result.command}`);
-  }
-
-  lines.push('');
-  lines.push('Coverage-Zusammenfassung');
-  lines.push('-----------------------');
-
-  if (coverageSummary.found) {
-    lines.push(`Lines: ${formatPercent(coverageSummary.metrics.lines)}`);
-    lines.push(`Statements: ${formatPercent(coverageSummary.metrics.statements)}`);
-    lines.push(`Functions: ${formatPercent(coverageSummary.metrics.functions)}`);
-    lines.push(`Branches: ${formatPercent(coverageSummary.metrics.branches)}`);
-  } else {
-    lines.push(coverageSummary.warning);
-  }
-
-  lines.push('');
-  lines.push('Detail-Logs');
-  lines.push('-----------');
-
-  for (const result of results) {
-    lines.push('');
-    lines.push(`### ${result.title}`);
-    lines.push(`Status: ${result.exitCode === 0 ? 'OK' : 'Fehlgeschlagen'}`);
-    lines.push(`Befehl: ${result.command}`);
-    lines.push(`Start: ${result.startedAt}`);
-    lines.push(`Ende: ${result.endedAt}`);
-    lines.push(`Dauer: ${formatDuration(result.durationMs)}`);
-    const stdoutText = result.stdout.trim();
-    if (stdoutText.length > 0) {
-      lines.push('');
-      lines.push(result.stdout);
-    }
-
-    const stderrText = result.stderr.trim();
-    if (stderrText.length > 0) {
-      lines.push('');
-      lines.push(result.stderr);
-    }
-  }
-
-  lines.push('');
-  return lines.join('\n');
 }
 
 function buildHtml({ metadata, results, coverageSummary }) {
@@ -341,7 +337,13 @@ function buildHtml({ metadata, results, coverageSummary }) {
     .map((result) => {
       const statusText = result.exitCode === 0 ? 'OK' : 'Fehlgeschlagen';
       const stdoutText = normalizeLogOutput(result.stdout, 'stdout');
-      const stderrText = normalizeLogOutput(result.stderr, 'stderr');
+      const stderrSection =
+        result.exitCode !== 0
+          ? `
+          <h4>stderr</h4>
+          <pre>${escapeHtml(normalizeLogOutput(result.stderr, 'stderr'))}</pre>
+        `
+          : '';
 
       return `
         <details>
@@ -350,8 +352,7 @@ function buildHtml({ metadata, results, coverageSummary }) {
           <p><strong>Start:</strong> ${escapeHtml(result.startedAt)}<br /><strong>Ende:</strong> ${escapeHtml(result.endedAt)}</p>
           <h4>stdout</h4>
           <pre>${escapeHtml(stdoutText)}</pre>
-          <h4>stderr</h4>
-          <pre>${escapeHtml(stderrText)}</pre>
+          ${stderrSection}
         </details>
       `;
     })
@@ -539,29 +540,25 @@ async function writeReportToDir(reportDir, filename, content) {
   return reportPath;
 }
 
-async function writeTextReport(textReport, basename) {
-  return writeReportToDir(repositoryReportDir, `${basename}.txt`, textReport);
+async function writeHtmlReport(htmlReport, basename) {
+  return writeReportToDir(repositoryReportDir, `${basename}.html`, htmlReport);
 }
 
 async function writeLocalHtmlReport(htmlReport, basename) {
   return writeReportToDir(localHtmlReportDir, `${basename}.html`, htmlReport);
 }
 
-async function writeGithubOutputs({ txtReportPath, htmlReportPath }) {
+async function writeGithubOutputs({ htmlReportPath }) {
   const outputFile = process.env.GITHUB_OUTPUT;
   if (!outputFile) {
     return;
   }
 
-  const relativeTxtPath = path.relative(process.cwd(), txtReportPath);
-  const payloadLines = [
-    `report_path=${relativeTxtPath}`,
-    `report_txt_path=${relativeTxtPath}`,
-    `report_txt_filename=${path.basename(txtReportPath)}`,
-  ];
+  const payloadLines = [];
 
   if (htmlReportPath) {
     const relativeHtmlPath = path.relative(process.cwd(), htmlReportPath);
+    payloadLines.push(`report_path=${relativeHtmlPath}`);
     payloadLines.push(`report_html_path=${relativeHtmlPath}`);
     payloadLines.push(`report_html_filename=${path.basename(htmlReportPath)}`);
   }
@@ -589,21 +586,20 @@ async function run() {
 
   const coverageSummary = await readCoverageSummary();
   const basename = determineReportBasename();
-  const textReport = buildTextReport({ metadata, results, coverageSummary });
-  const txtReportPath = await writeTextReport(textReport, basename);
-  let htmlReportPath = null;
+  const htmlReport = buildHtml({ metadata, results, coverageSummary });
+  const htmlReportPath = await writeHtmlReport(htmlReport, basename);
+  let localHtmlReportPath = null;
 
   if (!ciRun) {
-    const htmlReport = buildHtml({ metadata, results, coverageSummary });
-    htmlReportPath = await writeLocalHtmlReport(htmlReport, basename);
+    localHtmlReportPath = await writeLocalHtmlReport(htmlReport, basename);
   }
 
-  await writeGithubOutputs({ txtReportPath, htmlReportPath });
+  await writeGithubOutputs({ htmlReportPath });
 
   const hasFailures = results.some((result) => result.exitCode !== 0);
-  console.log(`\nText-Bericht gespeichert unter: ${txtReportPath}`);
-  if (htmlReportPath) {
-    console.log(`Lokaler HTML-Bericht gespeichert unter: ${htmlReportPath}`);
+  console.log(`\nHTML-Bericht gespeichert unter: ${htmlReportPath}`);
+  if (localHtmlReportPath) {
+    console.log(`Lokaler HTML-Bericht gespeichert unter: ${localHtmlReportPath}`);
   }
 
   process.exit(hasFailures ? 1 : 0);
@@ -639,28 +635,23 @@ run().catch(async (error) => {
     metrics: null,
   };
   const basename = determineReportBasename();
-  const fallbackText = buildTextReport({
+  const fallbackHtml = buildHtml({
     metadata,
     results: fallbackResults,
     coverageSummary: fallbackCoverage,
   });
-  const txtReportPath = await writeTextReport(fallbackText, basename);
-  let htmlReportPath = null;
+  const htmlReportPath = await writeHtmlReport(fallbackHtml, basename);
+  let localHtmlReportPath = null;
 
   if (!ciRun) {
-    const fallbackHtml = buildHtml({
-      metadata,
-      results: fallbackResults,
-      coverageSummary: fallbackCoverage,
-    });
-    htmlReportPath = await writeLocalHtmlReport(fallbackHtml, basename);
+    localHtmlReportPath = await writeLocalHtmlReport(fallbackHtml, basename);
   }
 
-  await writeGithubOutputs({ txtReportPath, htmlReportPath });
+  await writeGithubOutputs({ htmlReportPath });
   console.error(`Interner Fehler bei der Berichtserstellung: ${message}`);
-  console.error(`Fallback-Text-Bericht gespeichert unter: ${txtReportPath}`);
-  if (htmlReportPath) {
-    console.error(`Lokaler HTML-Fallback-Bericht gespeichert unter: ${htmlReportPath}`);
+  console.error(`Fallback-HTML-Bericht gespeichert unter: ${htmlReportPath}`);
+  if (localHtmlReportPath) {
+    console.error(`Lokaler HTML-Fallback-Bericht gespeichert unter: ${localHtmlReportPath}`);
   }
   process.exit(1);
 });
