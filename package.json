@@ -12,7 +12,7 @@
     "format": "npx prettier --write .",
     "prepare": "husky || true",
     "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "coverage": "vitest run --coverage && node scripts/generate-ci-bericht.mjs --coverage-summary",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build",

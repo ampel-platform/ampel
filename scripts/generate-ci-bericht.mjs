@@ -7,6 +7,12 @@ import path from 'node:path';
 const npmCommand = 'npm';
 const repositoryReportDir = path.join(process.cwd(), 'app', 'tests', 'reports');
 const localHtmlReportDir = path.join(process.cwd(), 'reports', 'ci');
+const coverageMetricOrder = [
+  ['lines', 'Lines'],
+  ['statements', 'Statements'],
+  ['functions', 'Functions'],
+  ['branches', 'Branches'],
+];
 
 const checks = [
   {
@@ -56,6 +62,38 @@ function formatPercent(value) {
   }
 
   return `${value.toFixed(2)} %`;
+}
+
+function formatCompactPercent(value) {
+  if (typeof value !== 'number' || Number.isNaN(value)) {
+    return 'n/a';
+  }
+
+  return `${value.toFixed(2)}%`;
+}
+
+function normalizeCoverageMetric(metric) {
+  if (!metric || typeof metric !== 'object') {
+    return { pct: null, covered: null, total: null };
+  }
+
+  const pct = typeof metric.pct === 'number' && !Number.isNaN(metric.pct) ? metric.pct : null;
+  const covered =
+    typeof metric.covered === 'number' && !Number.isNaN(metric.covered) ? metric.covered : null;
+  const total =
+    typeof metric.total === 'number' && !Number.isNaN(metric.total) ? metric.total : null;
+
+  return { pct, covered, total };
+}
+
+function formatCoverageMetric(metric) {
+  const percentText = formatPercent(metric?.pct);
+
+  if (typeof metric?.covered !== 'number' || typeof metric?.total !== 'number') {
+    return percentText;
+  }
+
+  return `${percentText} (${metric.covered}/${metric.total})`;
 }
 
 function determineReportBasename() {
@@ -239,10 +277,10 @@ async function readCoverageSummary() {
       warning: null,
       sourcePath: summaryPath,
       metrics: {
-        lines: total?.lines?.pct,
-        statements: total?.statements?.pct,
-        functions: total?.functions?.pct,
-        branches: total?.branches?.pct,
+        lines: normalizeCoverageMetric(total?.lines),
+        statements: normalizeCoverageMetric(total?.statements),
+        functions: normalizeCoverageMetric(total?.functions),
+        branches: normalizeCoverageMetric(total?.branches),
       },
     };
   } catch (error) {
@@ -253,6 +291,35 @@ async function readCoverageSummary() {
       metrics: null,
     };
   }
+}
+
+function printCoverageSummaryToTerminal(coverageSummary) {
+  if (!coverageSummary.found || !coverageSummary.metrics) {
+    console.error(coverageSummary.warning ?? 'Coverage-Zusammenfassung nicht verfuegbar.');
+    return false;
+  }
+
+  console.log('\nCoverage totals:');
+  for (const [key, label] of coverageMetricOrder) {
+    const metric = coverageSummary.metrics[key];
+
+    if (typeof metric?.covered === 'number' && typeof metric?.total === 'number') {
+      console.log(
+        `${label}: ${formatCompactPercent(metric.pct)} (${metric.covered}/${metric.total})`,
+      );
+      continue;
+    }
+
+    console.log(`${label}: ${formatCompactPercent(metric?.pct)}`);
+  }
+
+  return true;
+}
+
+async function runCoverageSummaryCommand() {
+  const coverageSummary = await readCoverageSummary();
+  const wasPrinted = printCoverageSummaryToTerminal(coverageSummary);
+  process.exit(wasPrinted ? 0 : 1);
 }
 
 async function removeOldReportsFromDir(reportDir, extensions) {
@@ -370,10 +437,10 @@ function buildHtml({ metadata, results, coverageSummary }) {
             </tr>
           </thead>
           <tbody>
-            <tr><td>Lines</td><td>${formatPercent(coverageSummary.metrics.lines)}</td></tr>
-            <tr><td>Statements</td><td>${formatPercent(coverageSummary.metrics.statements)}</td></tr>
-            <tr><td>Functions</td><td>${formatPercent(coverageSummary.metrics.functions)}</td></tr>
-            <tr><td>Branches</td><td>${formatPercent(coverageSummary.metrics.branches)}</td></tr>
+            <tr><td>Lines</td><td>${formatCoverageMetric(coverageSummary.metrics.lines)}</td></tr>
+            <tr><td>Statements</td><td>${formatCoverageMetric(coverageSummary.metrics.statements)}</td></tr>
+            <tr><td>Functions</td><td>${formatCoverageMetric(coverageSummary.metrics.functions)}</td></tr>
+            <tr><td>Branches</td><td>${formatCoverageMetric(coverageSummary.metrics.branches)}</td></tr>
           </tbody>
         </table>
       </section>
@@ -605,53 +672,61 @@ async function run() {
   process.exit(hasFailures ? 1 : 0);
 }
 
-run().catch(async (error) => {
-  const message = error instanceof Error ? (error.stack ?? error.message) : String(error);
-  const projectVersion = await readProjectVersion();
-  const metadata = getMetadata(projectVersion);
-  const ciRun = isCiRun();
-  if (!ciRun) {
-    await cleanupLocalReports();
-  }
-
-  const fallbackResults = [
-    {
-      id: 'bericht-internal-error',
-      title: 'Interner Berichtsfehler',
-      command: 'node scripts/generate-ci-bericht.mjs',
-      startedAt: metadata.generatedAt,
-      endedAt: new Date().toISOString(),
-      durationMs: 0,
-      exitCode: 1,
-      signal: null,
-      stdout: '',
-      stderr: message,
-    },
-  ];
-  const fallbackCoverage = {
-    found: false,
-    warning: 'Coverage-Daten konnten wegen eines internen Fehlers nicht geladen werden.',
-    sourcePath: path.join(process.cwd(), 'coverage', 'coverage-summary.json'),
-    metrics: null,
-  };
-  const basename = determineReportBasename();
-  const fallbackHtml = buildHtml({
-    metadata,
-    results: fallbackResults,
-    coverageSummary: fallbackCoverage,
+if (process.argv.includes('--coverage-summary')) {
+  runCoverageSummaryCommand().catch((error) => {
+    const message = error instanceof Error ? (error.stack ?? error.message) : String(error);
+    console.error(`Interner Fehler bei der Coverage-Ausgabe: ${message}`);
+    process.exit(1);
   });
-  const htmlReportPath = await writeHtmlReport(fallbackHtml, basename);
-  let localHtmlReportPath = null;
+} else {
+  run().catch(async (error) => {
+    const message = error instanceof Error ? (error.stack ?? error.message) : String(error);
+    const projectVersion = await readProjectVersion();
+    const metadata = getMetadata(projectVersion);
+    const ciRun = isCiRun();
+    if (!ciRun) {
+      await cleanupLocalReports();
+    }
 
-  if (!ciRun) {
-    localHtmlReportPath = await writeLocalHtmlReport(fallbackHtml, basename);
-  }
+    const fallbackResults = [
+      {
+        id: 'bericht-internal-error',
+        title: 'Interner Berichtsfehler',
+        command: 'node scripts/generate-ci-bericht.mjs',
+        startedAt: metadata.generatedAt,
+        endedAt: new Date().toISOString(),
+        durationMs: 0,
+        exitCode: 1,
+        signal: null,
+        stdout: '',
+        stderr: message,
+      },
+    ];
+    const fallbackCoverage = {
+      found: false,
+      warning: 'Coverage-Daten konnten wegen eines internen Fehlers nicht geladen werden.',
+      sourcePath: path.join(process.cwd(), 'coverage', 'coverage-summary.json'),
+      metrics: null,
+    };
+    const basename = determineReportBasename();
+    const fallbackHtml = buildHtml({
+      metadata,
+      results: fallbackResults,
+      coverageSummary: fallbackCoverage,
+    });
+    const htmlReportPath = await writeHtmlReport(fallbackHtml, basename);
+    let localHtmlReportPath = null;
 
-  await writeGithubOutputs({ htmlReportPath });
-  console.error(`Interner Fehler bei der Berichtserstellung: ${message}`);
-  console.error(`Fallback-HTML-Bericht gespeichert unter: ${htmlReportPath}`);
-  if (localHtmlReportPath) {
-    console.error(`Lokaler HTML-Fallback-Bericht gespeichert unter: ${localHtmlReportPath}`);
-  }
-  process.exit(1);
-});
+    if (!ciRun) {
+      localHtmlReportPath = await writeLocalHtmlReport(fallbackHtml, basename);
+    }
+
+    await writeGithubOutputs({ htmlReportPath });
+    console.error(`Interner Fehler bei der Berichtserstellung: ${message}`);
+    console.error(`Fallback-HTML-Bericht gespeichert unter: ${htmlReportPath}`);
+    if (localHtmlReportPath) {
+      console.error(`Lokaler HTML-Fallback-Bericht gespeichert unter: ${localHtmlReportPath}`);
+    }
+    process.exit(1);
+  });
+}
