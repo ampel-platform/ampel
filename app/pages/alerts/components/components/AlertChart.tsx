@@ -89,15 +89,19 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
     <div
       ref={scrollerRef}
       style={{ height: height ?? 475 }}
-      className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+      className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'} overflow-y-hidden`}
     >
       <div style={{ width: chartWidth }}>
         <div
           style={{ height: height ?? 475 }}
-          className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'}`}
+          className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'} overflow-y-hidde`}
         >
           <div style={{ width: chartWidth }}>
-            <ResponsiveContainer width='100%' height={height ?? 475}>
+            <ResponsiveContainer
+              width='100%'
+              height={height ?? 475}
+              className={'overflow-y-hidden'}
+            >
               <ComposedChart data={data} margin={{ top: 30, right: 0, bottom: 0, left: 48 }}>
                 <CartesianGrid stroke='#f5f5f5' />
                 <Tooltip

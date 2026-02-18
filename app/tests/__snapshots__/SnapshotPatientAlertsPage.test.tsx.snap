@@ -5667,21 +5667,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           class="lg:col-span-3"
                         >
                           <div
-                            class="w-full overflow-x-auto"
+                            class="w-full overflow-x-auto overflow-y-hidden"
                             style="height: 475px;"
                           >
                             <div
                               style="width: 1200px;"
                             >
                               <div
-                                class="w-full overflow-x-auto"
+                                class="w-full overflow-x-auto overflow-y-hidde"
                                 style="height: 475px;"
                               >
                                 <div
                                   style="width: 1200px;"
                                 >
                                   <div
-                                    class="recharts-responsive-container"
+                                    class="recharts-responsive-container overflow-y-hidden"
                                     style="width: 100%; height: 475px; min-width: 0;"
                                   >
                                     <div
@@ -13431,21 +13431,21 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           class="lg:col-span-3"
                         >
                           <div
-                            class="w-full overflow-x-auto"
+                            class="w-full overflow-x-auto overflow-y-hidden"
                             style="height: 475px;"
                           >
                             <div
                               style="width: 1200px;"
                             >
                               <div
-                                class="w-full overflow-x-auto"
+                                class="w-full overflow-x-auto overflow-y-hidde"
                                 style="height: 475px;"
                               >
                                 <div
                                   style="width: 1200px;"
                                 >
                                   <div
-                                    class="recharts-responsive-container"
+                                    class="recharts-responsive-container overflow-y-hidden"
                                     style="width: 100%; height: 475px; min-width: 0;"
                                   >
                                     <div
