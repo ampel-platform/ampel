@@ -89,6 +89,26 @@ Start the production server
 npm run start
 ```
 
+### Desktop App (Electron)
+
+Run React + Electron in one command for local desktop development:
+
+```bash
+npm run desktop:dev
+```
+
+Build a Windows portable `.exe`:
+
+```bash
+npm run desktop:build
+```
+
+The generated executable will be written to:
+
+```bash
+release/
+```
+
 ---
 
 ## 🐳 Docker Setup
