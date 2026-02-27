@@ -97,11 +97,13 @@ Run React + Electron in one command for local desktop development:
 npm run desktop:dev
 ```
 
-Build a Windows portable `.exe`:
+Build desktop package:
 
 ```bash
 npm run desktop:build
 ```
+
+On Windows/Linux this creates a portable `.exe`; on macOS this creates a `.dmg`.
 
 The generated executable will be written to:
 
