@@ -218,6 +218,24 @@ function generateDemoAkiHistoryData(): RulesetHistory {
   };
 }
 
+function createDemoSingleHistoryData(
+  dateIso: string,
+  analyteValue: number,
+  ampelStatus: AmpelStatus,
+): RulesetHistory {
+  return {
+    data: [
+      {
+        date: new Date(dateIso),
+        analyteValue,
+        ampelStatus,
+        unit: 'µmol/l',
+        analyteName: 'LCRE_S',
+      },
+    ],
+  };
+}
+
 /**
  * Generates a fake PatientMetaData object using provided patient and case IDs.
  * The function returns a mock patient metadata with a static name, sex, and a random birthdate.
@@ -242,15 +260,44 @@ async function generateDemoFakePatientMetaData(): Promise<MedicalCaseMetadataApi
 }
 
 /**
- * Generates an array of fake rulesets with associated metadata (ampel status, message, result time, history, and links).
- * The function returns an array of 11 mock rulesets, each with a different set of properties.
- * The rulesets are:
- * - Akute Nierenschädigung [AKIN 1, Vancomycin]
- * - Hypokaliämie
- *
- * @returns {Ruleset[]} The generated array of fake rulesets.
+ * Generates the demo rulesets used in demo mode.
+ * - AKI remains critical (red)
+ * - Testalarm is a fictive warning (yellow)
+ * - All other rulesets from FakeAmpelResultRepository are green
  */
 function generateDemoFakeRulesets(): Ruleset[] {
+  const demoGreenNames = [
+    'Anämie',
+    'Refeeding Syndrom',
+    'Hyperkalzämie',
+    'Sepsis',
+    'Hypokaliämie',
+    'Hypocalcämie',
+    'Hyponatriämie',
+    'Laktatämie',
+    'Diabetes mellitus',
+    'Fibrinogenmangel',
+    'Hyperglykämie',
+    'Procalcitonin-Monitoring',
+  ] as const;
+  const demoGreenValues = [96, 84, 91, 88, 77, 76, 79, 82, 93, 74, 87, 71] as const;
+  const greenBaseTime = new Date('2023-06-23T10:30:00+02:00').getTime();
+
+  const greenRulesets: Ruleset[] = demoGreenNames.map((ruleset, idx) => {
+    const date = new Date(greenBaseTime - idx * 30 * 60_000);
+    return {
+      ruleset,
+      ampelStatus: AmpelStatus.GREEN,
+      message: 'Unauffällige Konstellation im Demo-Modus.',
+      resultTime: date,
+      history: createDemoSingleHistoryData(
+        date.toISOString(),
+        demoGreenValues[idx],
+        AmpelStatus.GREEN,
+      ),
+    };
+  });
+
   return [
     {
       ruleset: 'AKI',
@@ -259,21 +306,15 @@ function generateDemoFakeRulesets(): Ruleset[] {
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
       resultTime: new Date('2023-06-23T11:57:00+02:00'),
       history: generateDemoAkiHistoryData(),
-      // links: [
-      //   {
-      //     displayText: 'Deximed',
-      //     href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
-      //   },
-      //   {
-      //     displayText: 'SOP',
-      //     href: '#',
-      //   },
-      //   {
-      //     displayText: 'Labor',
-      //     href: '#',
-      //   },
-      // ],
     },
+    {
+      ruleset: 'Testalarm',
+      ampelStatus: AmpelStatus.YELLOW,
+      message: 'Fiktiver Warnhinweis für den Demo-Modus.',
+      resultTime: new Date('2023-06-23T10:45:00+02:00'),
+      history: createDemoSingleHistoryData('2023-06-23T10:45:00+02:00', 134, AmpelStatus.YELLOW),
+    },
+    ...greenRulesets,
   ];
 }
 
