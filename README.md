@@ -97,10 +97,22 @@ Run React + Electron in one command for local desktop development:
 npm run desktop:dev
 ```
 
+Run AMPEL-branded demo locally:
+
+```bash
+npm run desktop:dev:ampel
+```
+
 Build desktop package:
 
 ```bash
 npm run desktop:build
+```
+
+Build AMPEL-branded demo package:
+
+```bash
+npm run desktop:build:ampel
 ```
 
 On Windows/Linux this creates a portable `.exe`; on macOS this creates a `.dmg`.

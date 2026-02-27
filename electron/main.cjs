@@ -82,13 +82,24 @@ function getWindowIconPath() {
   return fs.existsSync(svgPath) ? svgPath : undefined;
 }
 
+function getAppTitlePrefix() {
+  const envBrand = (process.env.ELECTRON_DEMO_BRAND ?? process.env.DEMO_BRAND ?? '').toLowerCase();
+  if (envBrand === 'ampel') {
+    return 'AMPEL-CDSS';
+  }
+
+  const appName = app.getName().toLowerCase();
+  return appName.includes('ampel') ? 'AMPEL-CDSS' : 'LAMPE-CDSS';
+}
+
 function updateWindowTitle(window, urlValue) {
+  const titlePrefix = getAppTitlePrefix();
   try {
     const url = new URL(urlValue);
     const visiblePath = `${url.pathname}${url.search}${url.hash}`;
-    window.setTitle(`LAMPE-CDSS - ${visiblePath}`);
+    window.setTitle(`${titlePrefix} - ${visiblePath}`);
   } catch {
-    window.setTitle('LAMPE-CDSS');
+    window.setTitle(titlePrefix);
   }
 }
 

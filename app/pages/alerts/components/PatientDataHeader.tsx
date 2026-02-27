@@ -2,19 +2,29 @@ import { BookOpenText, Mail, Phone, Signature } from 'lucide-react';
 import React from 'react';
 import { preload } from 'react-dom';
 
+import AmpelLogo from '../../../../assets/Aampel_Logo.png';
 import LampeLogo from '../../../../assets/Lampe_Logo_Vektor.svg';
 import UklLogo from '../../../../assets/UKL_Logo_Vektor.svg';
 import { SexUI } from '../types/types';
 
+const isAmpelDemoBrand =
+  import.meta.env?.VITE_TEST_DATA_VIEW === 'demo' &&
+  String(import.meta.env?.VITE_DEMO_BRAND ?? '').toLowerCase() === 'ampel';
+const primaryLogo = isAmpelDemoBrand ? AmpelLogo : LampeLogo;
+const primaryLogoAlt = isAmpelDemoBrand ? 'AMPEL Logo' : 'LAMPE Logo';
+
+preload(AmpelLogo, { as: 'image' });
 preload(LampeLogo, { as: 'image' });
 preload(UklLogo, { as: 'image' });
 
-const ticketLink =
-  'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
-const contactPhone = '114';
-const mtNummer = '74894';
-const gebrauchsanweisungLink =
-  'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
+const ticketLink = isAmpelDemoBrand
+  ? ''
+  : 'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
+const contactPhone = isAmpelDemoBrand ? '000' : '114';
+const mtNummer = isAmpelDemoBrand ? '00000' : '74894';
+const gebrauchsanweisungLink = isAmpelDemoBrand
+  ? ''
+  : 'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
 
 interface PatientMetaDataHeaderProps {
   medicalCaseId: string;
@@ -74,8 +84,8 @@ export function PatientMetaDataHeader({
 
       <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
         <img
-          src={LampeLogo}
-          alt='LAMPE Logo'
+          src={primaryLogo}
+          alt={primaryLogoAlt}
           className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
         />
         <img

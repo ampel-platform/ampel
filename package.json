@@ -23,10 +23,15 @@
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
     "demo-dev": "cross-env VITE_TEST_DATA_VIEW=demo react-router dev",
+    "demo-dev:ampel": "cross-env VITE_TEST_DATA_VIEW=demo VITE_DEMO_BRAND=ampel react-router dev",
     "demo-build:web": "cross-env VITE_TEST_DATA_VIEW=demo react-router build",
+    "demo-build:web:ampel": "cross-env VITE_TEST_DATA_VIEW=demo VITE_DEMO_BRAND=ampel react-router build",
     "demo-build": "npm run demo-build:web && node scripts/build-desktop-package.mjs",
+    "demo-build:ampel": "npm run demo-build:web:ampel && cross-env DEMO_BRAND=ampel node scripts/build-desktop-package.mjs",
     "desktop:dev": "concurrently -k \"cross-env VITE_TEST_DATA_VIEW=demo react-router dev --host 127.0.0.1 --port 5173\" \"wait-on tcp:5173 && cross-env ELECTRON_RENDERER_URL=http://localhost:5173 electron .\"",
-    "desktop:build": "npm run demo-build"
+    "desktop:dev:ampel": "concurrently -k \"cross-env VITE_TEST_DATA_VIEW=demo VITE_DEMO_BRAND=ampel react-router dev --host 127.0.0.1 --port 5173\" \"wait-on tcp:5173 && cross-env ELECTRON_RENDERER_URL=http://localhost:5173 ELECTRON_DEMO_BRAND=ampel electron .\"",
+    "desktop:build": "npm run demo-build",
+    "desktop:build:ampel": "npm run demo-build:ampel"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -36,8 +41,8 @@
   },
   "build": {
     "appId": "com.ampel.ui",
-    "productName": "LAMPE DEMO",
-    "artifactName": "LAMPE DEMO.${ext}",
+    "productName": "LAMPE UI RELEASE",
+    "artifactName": "LAMPE UI RELEASE.${ext}",
     "asar": false,
     "files": [
       "electron/**/*",
