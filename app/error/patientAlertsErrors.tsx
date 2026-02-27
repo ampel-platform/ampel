@@ -5,6 +5,7 @@ import { BadRequest } from './BadRequest';
 import { DefaultError } from './DefaultError';
 import { Forbidden } from './Forbidden';
 import { MaintenanceError } from './MaintenanceError';
+import { DEFAULT_NO_DATA_VARIANT, type NoDataVariant } from './noDataVariant';
 import { NotFound } from './NotFound';
 import { toNumericStatus } from './patientAlertsData';
 import { StatusError } from './patientAlertsTypes';
@@ -101,15 +102,15 @@ function parseHttpStatus(err: unknown): { status: number; retryAfterMs: number |
 }
 
 const sectionByStatus: Partial<
-  Record<number, (ctx: { retryAfterMs: number | null }) => ReactNode>
+  Record<number, (ctx: { retryAfterMs: number | null; variant: NoDataVariant }) => ReactNode>
 > = {
-  400: () => <BadRequest />,
+  400: ({ variant }) => <BadRequest variant={variant} />,
   401: () => <Unauthorized />,
   403: () => <Forbidden />,
-  404: () => <NotFound />,
+  404: ({ variant }) => <NotFound variant={variant} />,
   408: () => <Timeout />,
-  410: () => <NotFound />,
-  422: () => <BadRequest />,
+  410: ({ variant }) => <NotFound variant={variant} />,
+  422: ({ variant }) => <BadRequest variant={variant} />,
   429: ({ retryAfterMs }) => (
     <TooManyRequests retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
   ),
@@ -127,18 +128,25 @@ const sectionByStatus: Partial<
   ),
 };
 
-function renderHttpError(error: unknown, defaultRetryAfterMs: number): React.ReactNode {
+function renderHttpError(
+  error: unknown,
+  defaultRetryAfterMs: number,
+  variant: NoDataVariant = DEFAULT_NO_DATA_VARIANT,
+): React.ReactNode {
   const ctx = parseHttpStatus(error);
   if (ctx) {
     const view = sectionByStatus[ctx.status];
-    if (view) return view({ retryAfterMs: ctx.retryAfterMs ?? defaultRetryAfterMs });
+    if (view) return view({ retryAfterMs: ctx.retryAfterMs ?? defaultRetryAfterMs, variant });
   }
 
   return <DefaultError />;
 }
 
-export function renderSectionError(error: unknown): React.ReactNode {
-  return renderHttpError(error, SECTION_DEFAULT_RETRY_AFTER_MS);
+export function renderSectionError(
+  error: unknown,
+  variant: NoDataVariant = DEFAULT_NO_DATA_VARIANT,
+): React.ReactNode {
+  return renderHttpError(error, SECTION_DEFAULT_RETRY_AFTER_MS, variant);
 }
 
 export function ErrorBoundary(): React.ReactNode {
@@ -176,13 +184,15 @@ export class SectionErrorBoundary extends React.Component<
 export function SectionErrorPanel({
   error,
   dataTestId,
+  variant = DEFAULT_NO_DATA_VARIANT,
 }: {
   error: unknown;
   dataTestId?: string;
+  variant?: NoDataVariant;
 }): React.ReactNode {
   return (
     <div data-testid={dataTestId} className='mt-4'>
-      {renderSectionError(error)}
+      {renderSectionError(error, variant)}
     </div>
   );
 }

@@ -99,6 +99,19 @@ const isUnknownValue = (value: string | null | undefined): boolean => {
   const trimmed = value.trim();
   return trimmed.length === 0 || trimmed.toLowerCase() === 'unbekannt';
 };
+const NO_DATA_ERROR_STATUSES = new Set([400, 404, 410, 422]);
+
+const toNumericStatus = (status: unknown): number | null => {
+  if (typeof status === 'number' && Number.isFinite(status)) return status;
+  if (typeof status === 'string') {
+    const parsed = Number(status);
+    if (Number.isFinite(parsed)) return parsed;
+  }
+  return null;
+};
+
+const isEmptyAlertsPayload = (value: ApiResultCollection | null): boolean =>
+  Boolean(value) && value.scoringSystems.length === 0;
 
 function ResolvedPatientAlertsView({
   caseId,
@@ -115,8 +128,11 @@ function ResolvedPatientAlertsView({
   const alertsError = isSerializableError(alertsResult) ? alertsResult : null;
   const primaryError = alertsError ?? metadataError;
   const metadataNotFound = metadataError?.status === 404 || metadataError?.status === 410;
+  const alertsStatus = toNumericStatus(alertsError?.status);
+  const alertsNoDataError = alertsStatus !== null && NO_DATA_ERROR_STATUSES.has(alertsStatus);
   const metadata = metadataError ? null : (metadataResult as MedicalCaseMetadataApiResult);
   const alerts = alertsError ? null : (alertsResult as ApiResultCollection);
+  const alertsDataMissing = isEmptyAlertsPayload(alerts);
   const mappedMetadata = metadata ? medicalCaseMetadataApiToUI(metadata) : null;
   const patient = mappedMetadata?.patient;
   const patientDataMissing =
@@ -125,7 +141,9 @@ function ResolvedPatientAlertsView({
       isUnknownValue(patient.id) ||
       isUnknownValue(patient.firstname) ||
       isUnknownValue(patient.lastname));
-  const showPatientNotFound = !alertsError && (metadataNotFound || patientDataMissing);
+  const showPatientNotFound = metadataNotFound || patientDataMissing;
+  const suppressAlertsError = showPatientNotFound && alertsNoDataError;
+  const showCdssNotFound = !showPatientNotFound && alertsDataMissing;
 
   const rulesetsByStatus = useMemo(() => {
     const grouped = new Map<AmpelStatus, ReactNode[]>([
@@ -236,17 +254,22 @@ function ResolvedPatientAlertsView({
           <NotFound variant='patient' />
         </div>
       ) : metadataError && !alertsError ? (
-        <SectionErrorPanel error={metadataError} dataTestId='metadata-error' />
+        <SectionErrorPanel error={metadataError} dataTestId='metadata-error' variant='patient' />
       ) : null}
       {isLoading ? (
         <PageSkeleton />
+      ) : showCdssNotFound ? (
+        <SectionErrorPanel
+          error={{ status: 404, message: 'No CDSS data found for case' }}
+          dataTestId='alerts-error'
+        />
       ) : alerts ? (
         <PatientAlertsPage
           medicalCaseMetadata={undefined}
           rulesetsByStatus={rulesetsByStatus}
           showHeader={false}
         />
-      ) : primaryError ? (
+      ) : primaryError && !suppressAlertsError ? (
         <SectionErrorPanel error={primaryError} dataTestId='alerts-error' />
       ) : null}
     </>
