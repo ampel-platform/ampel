@@ -157,6 +157,7 @@ function ResolvedPatientAlertsView({
             type={AlertType.Critical}
             title={rs.ruleset}
             creationTime={creationTime}
+            disabled={false}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Critical,
@@ -175,6 +176,7 @@ function ResolvedPatientAlertsView({
             type={AlertType.Warning}
             title={rs.ruleset}
             creationTime={creationTime}
+            disabled={isDemo}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Warning,
@@ -193,6 +195,7 @@ function ResolvedPatientAlertsView({
             title={rs.ruleset}
             type={AlertType.Green}
             creationTime={creationTime}
+            disabled={isDemo}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Green,

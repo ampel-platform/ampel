@@ -9,9 +9,16 @@ interface AlertCardProps {
   type: AlertType;
   onClick: () => void;
   alertDetails?: AlertDetails;
+  disabled?: boolean;
 }
 
-export function AlertCard({ title, creationTime, type, onClick }: AlertCardProps): React.ReactNode {
+export function AlertCard({
+  title,
+  creationTime,
+  type,
+  onClick,
+  disabled = false,
+}: AlertCardProps): React.ReactNode {
   const bgClasses =
     type === AlertType.Critical
       ? 'bg-rose-400/90 ring-rose-600/30'
@@ -40,14 +47,17 @@ export function AlertCard({ title, creationTime, type, onClick }: AlertCardProps
 
   return (
     <div
-      className={`group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 ${bgClasses} shadow-sm transition-shadow hover:shadow-md`}
+      className={`group relative flex w-full select-none flex-col overflow-hidden rounded-xl ring-1 ${bgClasses} shadow-sm transition-shadow ${disabled ? 'cursor-default' : 'hover:shadow-md'}`}
       style={{ height: '160px' }}
-      onClick={onClick}
+      onClick={() => {
+        if (!disabled) onClick();
+      }}
       data-testid={type === AlertType.Warning ? 'warning-alert-card' : 'critical-alert-card'}
-      role='button'
-      tabIndex={0}
+      role={disabled ? undefined : 'button'}
+      tabIndex={disabled ? undefined : 0}
+      aria-disabled={disabled || undefined}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') onClick();
+        if (!disabled && (e.key === 'Enter' || e.key === ' ')) onClick();
       }}
     >
       <div className='px-4 pt-3'>

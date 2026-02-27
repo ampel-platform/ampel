@@ -9,12 +9,13 @@ interface InconspicuousStateProps {
   creationTime: Date;
   onClick: () => void;
   alertDetails?: AlertDetails;
+  disabled?: boolean;
 }
 
 /**
  * A visual representation of an inconspicuous state.
- * The component displays a card with a title, an optional description, and the creation time.
- * The component is not clickable and does not call any onClick prop when clicked.
+ * The component displays a card with a title and the creation time.
+ * It can be disabled to suppress click/keyboard interactions.
  * @param {{ title: string, description?: string, creationTime: Date }} props
  * @returns {React.ReactNode }
  */
@@ -22,15 +23,19 @@ export function InconspicuousStateCard({
   title,
   creationTime,
   onClick,
+  disabled = false,
 }: InconspicuousStateProps): ReactElement {
   return (
     <div
       className='flex flex-col rounded-md border border-solid border-gray-200'
       data-testid='inconspicuous-state-card'
-      onClick={onClick}
-      role='button'
+      onClick={() => {
+        if (!disabled) onClick();
+      }}
+      role={disabled ? undefined : 'button'}
+      aria-disabled={disabled || undefined}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') onClick();
+        if (!disabled && (e.key === 'Enter' || e.key === ' ')) onClick();
       }}
     >
       <div className='flex w-full flex-col gap-y-2 px-4 py-3'>

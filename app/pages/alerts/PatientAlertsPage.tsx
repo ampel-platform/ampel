@@ -36,10 +36,13 @@ export function PatientAlertsPage({
       interface AlertCardChildProps {
         onClick?: () => void;
         alertDetails?: AlertDetails;
+        disabled?: boolean;
       }
       if (!React.isValidElement<AlertCardChildProps>(child)) return child;
 
       const childProps = child.props;
+      if (childProps.disabled) return child;
+
       const handleClick = (): void => {
         childProps.onClick?.();
         if (childProps.alertDetails) displayDetailOverlay(childProps.alertDetails);
