@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 
+import { type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
 import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
@@ -8,12 +9,14 @@ interface PatientAlertsPageProps {
   medicalCaseMetadata?: MedicalCaseMetadata;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
   showHeader?: boolean;
+  headerConfig?: PatientHeaderConfig;
 }
 
 export function PatientAlertsPage({
   medicalCaseMetadata,
   rulesetsByStatus,
   showHeader = true,
+  headerConfig,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
   const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] =
@@ -74,6 +77,7 @@ export function PatientAlertsPage({
               medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
             }
             sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
+            headerConfig={headerConfig}
           />
         )}
 

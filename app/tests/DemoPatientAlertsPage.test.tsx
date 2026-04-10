@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'demo');
 vi.stubEnv('VITE_FAST_FAKE', '1');
-vi.stubEnv('VITE_DEMO_BRAND', 'ampel');
 
 beforeAll(() => {
   Object.defineProperty(window.HTMLElement.prototype, 'scrollTo', {
@@ -53,8 +52,9 @@ describe('PatientAlertsPage Demo Mode', () => {
     expect(await screen.findByText('Testalarm')).toBeInTheDocument();
   });
 
-  it('shows AMPEL logo in AMPEL demo mode', async () => {
-    expect((await screen.findAllByAltText('AMPEL Logo')).length).toBeGreaterThan(0);
+  it('shows no primary header logo by default', async () => {
+    expect((await screen.findAllByAltText('Clinical Logo')).length).toBeGreaterThan(0);
+    expect(screen.queryByAltText('Header Logo')).toBeNull();
   });
 
   it('keeps yellow/green cards non-clickable in demo while red stays clickable', async () => {

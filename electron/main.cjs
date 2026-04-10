@@ -83,13 +83,7 @@ function getWindowIconPath() {
 }
 
 function getAppTitlePrefix() {
-  const envBrand = (process.env.ELECTRON_DEMO_BRAND ?? process.env.DEMO_BRAND ?? '').toLowerCase();
-  if (envBrand === 'ampel') {
-    return 'AMPEL-CDSS';
-  }
-
-  const appName = app.getName().toLowerCase();
-  return appName.includes('ampel') ? 'AMPEL-CDSS' : 'LAMPE-CDSS';
+  return 'AMPEL-CDSS';
 }
 
 function updateWindowTitle(window, urlValue) {

@@ -1,0 +1,46 @@
+services:
+  ampel-ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ampel-ui:local
+    ports:
+      - '3003:3003'
+    environment:
+      BASE_API_URL: ${BASE_API_URL:-http://backend:8080}
+      HEADER_PRODUCT_LOGO_URL: ${HEADER_PRODUCT_LOGO_URL:-/assets/brand-logo.svg}
+      HEADER_CLINIC_LOGO_URL: ${HEADER_CLINIC_LOGO_URL:-/assets/clinical-logo.svg}
+      HEADER_TICKET_LINK: ${HEADER_TICKET_LINK:-}
+      HEADER_CONTACT_PHONE: ${HEADER_CONTACT_PHONE:-}
+      HEADER_MT_NUMBER: ${HEADER_MT_NUMBER:-}
+      HEADER_INSTRUCTIONS_LINK: ${HEADER_INSTRUCTIONS_LINK:-}
+
+  ampel-ui-dev:
+    profiles:
+      - dev
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: development-dependencies-env
+    image: ampel-ui:dev
+    working_dir: /app
+    ports:
+      - '5173:5173'
+    environment:
+      BASE_API_URL: ${BASE_API_URL:-http://backend:8080}
+      HEADER_PRODUCT_LOGO_URL: ${HEADER_PRODUCT_LOGO_URL:-/assets/brand-logo.svg}
+      HEADER_CLINIC_LOGO_URL: ${HEADER_CLINIC_LOGO_URL:-/assets/clinical-logo.svg}
+      HEADER_TICKET_LINK: ${HEADER_TICKET_LINK:-}
+      HEADER_CONTACT_PHONE: ${HEADER_CONTACT_PHONE:-}
+      HEADER_MT_NUMBER: ${HEADER_MT_NUMBER:-}
+      HEADER_INSTRUCTIONS_LINK: ${HEADER_INSTRUCTIONS_LINK:-}
+      CHOKIDAR_USEPOLLING: ${CHOKIDAR_USEPOLLING:-true}
+    volumes:
+      - .:/app
+      - ampel_ui_dev_node_modules:/app/node_modules
+    command: >
+      sh -c "npm ci &&
+      npm run dev -- --host 0.0.0.0 --port 5173"
+
+volumes:
+  ampel_ui_dev_node_modules:

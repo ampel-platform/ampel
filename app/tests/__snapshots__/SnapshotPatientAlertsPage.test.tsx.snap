@@ -62,14 +62,9 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -98,14 +93,11 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -131,7 +123,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -169,14 +161,11 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -205,7 +194,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -746,14 +735,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -782,14 +766,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -815,7 +796,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -853,14 +834,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -889,7 +867,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -2402,14 +2380,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -2438,14 +2411,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -2471,7 +2441,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -2509,14 +2479,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -2545,7 +2512,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -3086,14 +3053,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -3122,14 +3084,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -3155,7 +3114,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -3193,14 +3152,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -3229,7 +3185,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -4742,14 +4698,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -4778,14 +4729,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -4811,7 +4759,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -4849,14 +4797,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -4885,7 +4830,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -5426,14 +5371,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -5462,14 +5402,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -5495,7 +5432,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -5533,14 +5470,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -5569,7 +5503,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -6309,14 +6243,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -6345,14 +6274,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -6378,7 +6304,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -6416,14 +6342,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -6452,7 +6375,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -6993,14 +6916,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -7029,14 +6947,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -7062,7 +6977,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -7100,14 +7015,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -7136,7 +7048,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -8697,14 +8609,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -8733,14 +8640,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -8766,7 +8670,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -8804,14 +8708,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -8840,7 +8741,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -9376,14 +9277,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -9412,14 +9308,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -9445,7 +9338,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -9483,14 +9376,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -9519,7 +9409,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -10060,14 +9950,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -10096,14 +9981,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -10129,7 +10011,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -10167,14 +10049,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -10203,7 +10082,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -11764,14 +11643,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -11800,14 +11674,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -11833,7 +11704,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -11871,14 +11742,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -11907,7 +11775,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -12443,14 +12311,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -12479,14 +12342,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -12512,7 +12372,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -12550,14 +12410,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -12586,7 +12443,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -13127,14 +12984,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -13163,14 +13015,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -13196,7 +13045,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -13234,14 +13083,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -13270,7 +13116,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -14073,14 +13919,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -14109,14 +13950,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -14142,7 +13980,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -14180,14 +14018,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -14216,7 +14051,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
@@ -14752,14 +14587,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
           <img
-            alt="LAMPE Logo"
-            class="col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/Lampe_Logo_Vektor.svg"
-          />
-          <img
-            alt="UKL Logo"
-            class="col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="/assets/UKL_Logo_Vektor.svg"
+            alt="Clinical Logo"
+            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
+            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
           />
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
@@ -14788,14 +14618,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 y="4"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Störmeldung Medizintechnik
-            </a>
+            </span>
           </span>
           <span
             class="col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -14821,7 +14648,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
               allg. Fragen : 
-              114
+              -
             </span>
           </span>
           <span
@@ -14859,14 +14686,11 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                 d="M6 8h2"
               />
             </svg>
-            <a
-              class="whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800"
-              href="https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688"
-              rel="noreferrer noopener"
-              target="_blank"
+            <span
+              class="whitespace-nowrap text-gray-500"
             >
               Gebrauchsanweisung
-            </a>
+            </span>
           </span>
           <span
             class="col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base"
@@ -14895,7 +14719,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               class="whitespace-nowrap"
             >
                MT-Nummer: 
-              74894
+              -
             </span>
           </span>
         </div>
