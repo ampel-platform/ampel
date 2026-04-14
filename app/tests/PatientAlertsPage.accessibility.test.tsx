@@ -21,12 +21,16 @@ describe('PatientAlertsPage accessibility', () => {
     const section = container.querySelector('#inconspicuous-states-section');
 
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
-    expect(section?.classList.contains('hidden')).toBe(true);
+    expect(section?.classList.contains('invisible')).toBe(true);
+    expect(section?.classList.contains('pointer-events-none')).toBe(true);
 
     fireEvent.click(toggle);
 
     expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    expect(section?.classList.contains('inline-grid')).toBe(true);
-    expect(section?.classList.contains('hidden')).toBe(false);
+    expect(section?.classList.contains('visible')).toBe(true);
+    expect(section?.classList.contains('translate-x-0')).toBe(true);
+    expect(section?.classList.contains('opacity-100')).toBe(true);
+    expect(section?.classList.contains('invisible')).toBe(false);
+    expect(section?.classList.contains('pointer-events-none')).toBe(false);
   });
 });

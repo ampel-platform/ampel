@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
@@ -15,18 +15,38 @@ export function PatientAlertsPage({
   rulesetsByStatus,
   showHeader = true,
 }: PatientAlertsPageProps): React.ReactNode {
-  const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
-  const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] =
-    useState('left-full ml-4');
+  const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
+  const [isDetailOverlayVisible, setIsDetailOverlayVisible] = useState(false);
   const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
+  const overlayAnimationFrameRef = useRef<number | null>(null);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
-    setDetailOverlayVisibilityClasses('left-0');
   };
 
   const hideDetailOverlay = (): void => {
-    setDetailOverlayVisibilityClasses('left-full ml-4');
+    setIsDetailOverlayVisible(false);
+  };
+
+  useEffect(() => {
+    if (!detailOverlayData) return;
+
+    overlayAnimationFrameRef.current = (globalThis.window as Window).requestAnimationFrame(() => {
+      setIsDetailOverlayVisible(true);
+      overlayAnimationFrameRef.current = null;
+    });
+
+    return function (): void {
+      if (overlayAnimationFrameRef.current !== null) {
+        (globalThis.window as Window).cancelAnimationFrame(overlayAnimationFrameRef.current);
+        overlayAnimationFrameRef.current = null;
+      }
+    };
+  }, [detailOverlayData]);
+
+  const handleDetailOverlayTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>): void => {
+    if (event.target !== event.currentTarget || isDetailOverlayVisible) return;
+    setDetailOverlayData(null);
   };
 
   function renderAlertCards(status: AmpelStatus): ReactNode[] {
@@ -74,16 +94,25 @@ export function PatientAlertsPage({
           />
         )}
 
-        <div className='relative flex h-full w-full flex-col'>
-          <div
-            className={`absolute z-50 h-full w-full transition-all duration-500 ease-in-out ${detailOverlayVisibilityClasses}`}
-          >
-            <AlertDetailOverlay
-              data={detailOverlayData}
-              onClose={hideDetailOverlay}
-              key={`${detailOverlayData?.ruleset}-${detailOverlayVisibilityClasses}`}
-            />
-          </div>
+        <div className='relative flex h-full w-full flex-col overflow-x-hidden'>
+          {detailOverlayData && (
+            <div
+              className={`absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out ${
+                isDetailOverlayVisible
+                  ? 'visible translate-x-0 opacity-100'
+                  : 'pointer-events-none invisible translate-x-full opacity-0'
+              }`}
+              onTransitionEnd={handleDetailOverlayTransitionEnd}
+              aria-hidden={!isDetailOverlayVisible}
+              data-testid='alert-detail-overlay-panel'
+            >
+              <AlertDetailOverlay
+                data={detailOverlayData}
+                onClose={hideDetailOverlay}
+                key={detailOverlayData.ruleset}
+              />
+            </div>
+          )}
 
           <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
             <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
@@ -159,7 +188,11 @@ export function PatientAlertsPage({
 
               <div
                 id='inconspicuous-states-section'
-                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
+                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${
+                  inconspicuousStatesVisible
+                    ? 'visible translate-x-0 opacity-100'
+                    : 'pointer-events-none invisible translate-x-full opacity-0'
+                }`}
               >
                 {renderAlertCards(AmpelStatus.GREEN)}
               </div>
