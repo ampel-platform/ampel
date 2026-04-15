@@ -41,7 +41,7 @@
     "asar": false,
     "files": [
       "electron/**/*",
-      "assets/Lampe_Logo_Vektor.ico",
+      "assets/favicon.ico",
       "build/**/*",
       "node_modules/**/*",
       "package.json"
@@ -50,7 +50,7 @@
       "output": "release"
     },
     "win": {
-      "icon": "assets/Lampe_Logo_Vektor.ico",
+      "icon": "assets/favicon.ico",
       "signAndEditExecutable": false,
       "target": [
         "portable"

@@ -73,12 +73,12 @@ function getStartUrl(baseUrl) {
 }
 
 function getWindowIconPath() {
-  const icoPath = path.join(app.getAppPath(), 'assets', 'Lampe_Logo_Vektor.ico');
+  const icoPath = path.join(app.getAppPath(), 'assets', 'favicon.ico');
   if (fs.existsSync(icoPath)) {
     return icoPath;
   }
 
-  const svgPath = path.join(app.getAppPath(), 'assets', 'Lampe_Logo_Vektor.svg');
+  const svgPath = path.join(app.getAppPath(), 'assets', 'favicon.svg');
   return fs.existsSync(svgPath) ? svgPath : undefined;
 }
 
