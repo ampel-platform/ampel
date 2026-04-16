@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
@@ -18,31 +18,19 @@ export function PatientAlertsPage({
   const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
   const [isDetailOverlayVisible, setIsDetailOverlayVisible] = useState(false);
   const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
-  const overlayAnimationFrameRef = useRef<number | null>(null);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
+    openDetailOverlay();
   };
 
   const hideDetailOverlay = (): void => {
     setIsDetailOverlayVisible(false);
   };
 
-  useEffect(() => {
-    if (!detailOverlayData) return;
-
-    overlayAnimationFrameRef.current = (globalThis.window as Window).requestAnimationFrame(() => {
-      setIsDetailOverlayVisible(true);
-      overlayAnimationFrameRef.current = null;
-    });
-
-    return function (): void {
-      if (overlayAnimationFrameRef.current !== null) {
-        (globalThis.window as Window).cancelAnimationFrame(overlayAnimationFrameRef.current);
-        overlayAnimationFrameRef.current = null;
-      }
-    };
-  }, [detailOverlayData]);
+  const openDetailOverlay = (): void => {
+    setIsDetailOverlayVisible(true);
+  };
 
   const handleDetailOverlayTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>): void => {
     if (event.target !== event.currentTarget || isDetailOverlayVisible) return;
@@ -99,7 +87,7 @@ export function PatientAlertsPage({
             <div
               className={`absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out ${
                 isDetailOverlayVisible
-                  ? 'visible translate-x-0 opacity-100'
+                  ? 'visible translate-x-0 animate-alert-detail-overlay-open opacity-100'
                   : 'pointer-events-none invisible translate-x-full opacity-0'
               }`}
               onTransitionEnd={handleDetailOverlayTransitionEnd}

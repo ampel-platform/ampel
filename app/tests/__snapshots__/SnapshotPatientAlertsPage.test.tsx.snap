@@ -2476,7 +2476,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           >
             <div
               aria-hidden="false"
-              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 opacity-100"
+              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 animate-alert-detail-overlay-open opacity-100"
               data-testid="alert-detail-overlay-panel"
             >
               <div
@@ -4819,7 +4819,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           >
             <div
               aria-hidden="false"
-              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 opacity-100"
+              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 animate-alert-detail-overlay-open opacity-100"
               data-testid="alert-detail-overlay-panel"
             >
               <div
@@ -8700,7 +8700,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           >
             <div
               aria-hidden="false"
-              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 opacity-100"
+              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 animate-alert-detail-overlay-open opacity-100"
               data-testid="alert-detail-overlay-panel"
             >
               <div
@@ -11769,7 +11769,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           >
             <div
               aria-hidden="false"
-              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 opacity-100"
+              class="absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out visible translate-x-0 animate-alert-detail-overlay-open opacity-100"
               data-testid="alert-detail-overlay-panel"
             >
               <div
