@@ -3,7 +3,9 @@
 exports[`PatientAlertsPage Integration > displays all main sections & counts (snapshot stable) > page-initial 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -684,7 +686,9 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
 exports[`PatientAlertsPage Integration > opens & closes the detail view of critical alerts (snapshots) > alert-overlay-closed 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -1569,7 +1573,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -2250,7 +2256,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 exports[`PatientAlertsPage Integration > opens & closes the detail view of critical alerts (snapshots) > alert-overlay-open 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -3908,7 +3916,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -4589,7 +4599,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 exports[`PatientAlertsPage Integration > opens & closes the detail view of critical alerts (snapshots) > alert-overlay-open-diagramm 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -5474,7 +5486,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -6155,7 +6169,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 exports[`PatientAlertsPage Integration > opens & closes the detail view of warning alerts (snapshots) > warning-overlay-closed 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -7103,7 +7119,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -7779,7 +7797,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -8460,7 +8480,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
 exports[`PatientAlertsPage Integration > opens & closes the detail view of warning alerts (snapshots) > warning-overlay-open 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -10166,7 +10188,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -10842,7 +10866,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -11523,7 +11549,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
 exports[`PatientAlertsPage Integration > opens & closes the detail view of warning alerts (snapshots) > warning-overlay-open-diagramm 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -12471,7 +12499,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >
@@ -13147,7 +13177,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
     </div>
   </div>
   <div>
-    <div>
+    <div
+      class="h-full"
+    >
       <div
         class="mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900"
       >

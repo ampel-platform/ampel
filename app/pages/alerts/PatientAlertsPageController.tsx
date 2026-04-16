@@ -260,7 +260,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
   const hasAsyncData = isPromise(alertsResult) || isPromise(metadataResult);
 
   return (
-    <div>
+    <div className='h-full'>
       {isTest && (
         <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
           TEST
