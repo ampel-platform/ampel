@@ -11,6 +11,7 @@ import {
 import { NotFound } from '../../error/NotFound';
 import { normalizeError } from '../../error/patientAlertsData';
 import { ErrorBoundary, PageSkeleton, SectionErrorPanel } from '../../error/patientAlertsErrors';
+import { getPatientHeaderConfig, type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';
 import { AmpelResultRepository } from './AmpelResultRepository';
@@ -32,6 +33,7 @@ type MetadataResultValue = MedicalCaseMetadataApiResult | SerializableStatusErro
 
 interface LoaderData {
   case_id: string;
+  headerConfig: PatientHeaderConfig;
   alertsResult: AlertsResultValue | Promise<AlertsResultValue>;
   metadataResult: MetadataResultValue | Promise<MetadataResultValue>;
 }
@@ -90,7 +92,12 @@ function loadAlertsForCase(case_id: string): LoaderData {
     metadataResult = toResultPromise(MedicalCaseMetadataRepository.getByMedicalCaseId(case_id));
   }
 
-  return { case_id, alertsResult, metadataResult };
+  return {
+    case_id,
+    headerConfig: getPatientHeaderConfig(),
+    alertsResult,
+    metadataResult,
+  };
 }
 
 const isPromise = (value: unknown): value is Promise<unknown> => value instanceof Promise;
@@ -102,11 +109,13 @@ const isUnknownValue = (value: string | null | undefined): boolean => {
 
 function ResolvedPatientAlertsView({
   caseId,
+  headerConfig,
   alertsResult,
   metadataResult,
   isLoading,
 }: {
   caseId: string;
+  headerConfig: PatientHeaderConfig;
   alertsResult: AlertsResultValue;
   metadataResult: MetadataResultValue;
   isLoading: boolean;
@@ -157,6 +166,7 @@ function ResolvedPatientAlertsView({
             type={AlertType.Critical}
             title={rs.ruleset}
             creationTime={creationTime}
+            disabled={false}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Critical,
@@ -175,6 +185,7 @@ function ResolvedPatientAlertsView({
             type={AlertType.Warning}
             title={rs.ruleset}
             creationTime={creationTime}
+            disabled={isDemo}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Warning,
@@ -193,6 +204,7 @@ function ResolvedPatientAlertsView({
             title={rs.ruleset}
             type={AlertType.Green}
             creationTime={creationTime}
+            disabled={isDemo}
             alertDetails={{
               ruleset: rs.ruleset,
               ampelStatus: AlertType.Green,
@@ -220,6 +232,7 @@ function ResolvedPatientAlertsView({
           lastname={mappedMetadata.patient ? mappedMetadata.patient.lastname : undefined}
           dateOfBirth={mappedMetadata.patient ? mappedMetadata.patient.dateOfBirth : undefined}
           sex={mappedMetadata.patient ? mappedMetadata.patient.sex : 'unbekannt'}
+          headerConfig={headerConfig}
         />
       ) : (
         <PatientMetaDataHeader
@@ -229,6 +242,7 @@ function ResolvedPatientAlertsView({
           lastname={undefined}
           dateOfBirth={undefined}
           sex={undefined}
+          headerConfig={headerConfig}
         />
       )}
       {showPatientNotFound ? (
@@ -254,7 +268,7 @@ function ResolvedPatientAlertsView({
 }
 
 export default function PatientAlertsPageController(): React.ReactNode {
-  const { case_id, alertsResult, metadataResult } = useLoaderData<LoaderData>();
+  const { case_id, headerConfig, alertsResult, metadataResult } = useLoaderData<LoaderData>();
   const navigation = useNavigation();
   const isLoading = navigation.state !== 'idle';
   const hasAsyncData = isPromise(alertsResult) || isPromise(metadataResult);
@@ -284,6 +298,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
                 {(resolvedMetadata) => (
                   <ResolvedPatientAlertsView
                     caseId={case_id}
+                    headerConfig={headerConfig}
                     alertsResult={resolvedAlerts as AlertsResultValue}
                     metadataResult={resolvedMetadata as MetadataResultValue}
                     isLoading={isLoading}
@@ -296,6 +311,7 @@ export default function PatientAlertsPageController(): React.ReactNode {
       ) : (
         <ResolvedPatientAlertsView
           caseId={case_id}
+          headerConfig={headerConfig}
           alertsResult={alertsResult as AlertsResultValue}
           metadataResult={metadataResult as MetadataResultValue}
           isLoading={isLoading}

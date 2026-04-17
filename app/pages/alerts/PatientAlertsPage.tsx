@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 
+import { type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
 import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
@@ -8,12 +9,14 @@ interface PatientAlertsPageProps {
   medicalCaseMetadata?: MedicalCaseMetadata;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
   showHeader?: boolean;
+  headerConfig?: PatientHeaderConfig;
 }
 
 export function PatientAlertsPage({
   medicalCaseMetadata,
   rulesetsByStatus,
   showHeader = true,
+  headerConfig,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
   const [isDetailOverlayVisible, setIsDetailOverlayVisible] = useState(false);
@@ -44,10 +47,13 @@ export function PatientAlertsPage({
       interface AlertCardChildProps {
         onClick?: () => void;
         alertDetails?: AlertDetails;
+        disabled?: boolean;
       }
       if (!React.isValidElement<AlertCardChildProps>(child)) return child;
 
       const childProps = child.props;
+      if (childProps.disabled) return child;
+
       const handleClick = (): void => {
         childProps.onClick?.();
         if (childProps.alertDetails) displayDetailOverlay(childProps.alertDetails);
@@ -79,6 +85,7 @@ export function PatientAlertsPage({
               medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
             }
             sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
+            headerConfig={headerConfig}
           />
         )}
 

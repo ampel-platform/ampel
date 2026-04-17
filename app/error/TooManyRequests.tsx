@@ -20,7 +20,7 @@ export function TooManyRequests({
 }: CountdownProps): React.ReactNode {
   return (
     <ErrorLayout>
-      <title>LAMPE-CDSS</title>
+      <title>AMPEL-CDSS</title>
       <meta charSet='utf-8' />
       <h1 style={errorHeadingStyle}>Zu viele Anfragen in kurzer Zeit</h1>
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>

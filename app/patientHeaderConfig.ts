@@ -1,0 +1,87 @@
+type EnvRecord = Record<string, string | undefined>;
+
+export interface PatientHeaderConfig {
+  productLogoUrl: string;
+  clinicLogoUrl: string;
+  ticketLink: string;
+  contactPhone: string;
+  mtNumber: string;
+  instructionsLink: string;
+}
+
+const DEFAULTS: PatientHeaderConfig = {
+  productLogoUrl: '',
+  clinicLogoUrl: '',
+  ticketLink: '',
+  contactPhone: '',
+  mtNumber: '',
+  instructionsLink: '',
+};
+
+const PUBLIC_RUNTIME_ASSETS_PREFIX = '/runtime-assets/';
+const CONTAINER_RUNTIME_ASSETS_PREFIX = '/app/public/runtime-assets/';
+
+function readNodeEnv(): EnvRecord | undefined {
+  if (typeof globalThis === 'undefined') return undefined;
+  const maybeProcess = globalThis as { process?: { env?: EnvRecord } };
+  return maybeProcess.process?.env;
+}
+
+function readBuildEnv(): EnvRecord | undefined {
+  if (typeof import.meta === 'undefined') return undefined;
+  return import.meta.env as EnvRecord | undefined;
+}
+
+function readEnvValue(runtimeName: string, buildName: string): string | undefined {
+  const runtimeEnv = readNodeEnv();
+  if (runtimeEnv && runtimeName in runtimeEnv) {
+    return runtimeEnv[runtimeName];
+  }
+
+  const buildEnv = readBuildEnv();
+  if (buildEnv && buildName in buildEnv) {
+    return buildEnv[buildName];
+  }
+
+  return undefined;
+}
+
+function normalizeRuntimeLogoUrl(value: string | undefined): string {
+  const trimmed = value?.trim() ?? '';
+  if (!trimmed) return '';
+
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed;
+  }
+
+  if (trimmed.startsWith(CONTAINER_RUNTIME_ASSETS_PREFIX)) {
+    return `${PUBLIC_RUNTIME_ASSETS_PREFIX}${trimmed.slice(CONTAINER_RUNTIME_ASSETS_PREFIX.length)}`;
+  }
+
+  if (trimmed.startsWith(PUBLIC_RUNTIME_ASSETS_PREFIX) || trimmed.startsWith('/')) {
+    return trimmed;
+  }
+
+  return `${PUBLIC_RUNTIME_ASSETS_PREFIX}${trimmed.replace(/^\.?\/*/, '')}`;
+}
+
+export function getPatientHeaderConfig(): PatientHeaderConfig {
+  return {
+    productLogoUrl: normalizeRuntimeLogoUrl(
+      readEnvValue('HEADER_PRODUCT_LOGO_URL', 'VITE_HEADER_PRODUCT_LOGO_URL') ??
+        DEFAULTS.productLogoUrl,
+    ),
+    clinicLogoUrl: normalizeRuntimeLogoUrl(
+      readEnvValue('HEADER_CLINIC_LOGO_URL', 'VITE_HEADER_CLINIC_LOGO_URL') ??
+        DEFAULTS.clinicLogoUrl,
+    ),
+    ticketLink:
+      readEnvValue('HEADER_TICKET_LINK', 'VITE_HEADER_TICKET_LINK') ?? DEFAULTS.ticketLink,
+    contactPhone:
+      readEnvValue('HEADER_CONTACT_PHONE', 'VITE_HEADER_CONTACT_PHONE') ?? DEFAULTS.contactPhone,
+    mtNumber: readEnvValue('HEADER_MT_NUMBER', 'VITE_HEADER_MT_NUMBER') ?? DEFAULTS.mtNumber,
+    instructionsLink:
+      readEnvValue('HEADER_INSTRUCTIONS_LINK', 'VITE_HEADER_INSTRUCTIONS_LINK') ??
+      DEFAULTS.instructionsLink,
+  };
+}

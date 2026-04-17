@@ -78,7 +78,7 @@ async function generateFakePatientMetaData(): Promise<MedicalCaseMetadataApiResu
  * - Hypocalcämie
  * - Hyponatriämie
  * - Laktatämie
- * - Diabetes
+ * - Diabetes mellitus
  * - Fibrinogenmangel
  * - Hyperglykämie
  * - Procalcitonin-Monitoring
@@ -208,7 +208,7 @@ function generateFakeRulesets(): Ruleset[] {
       history: generateFakeHistoryData(AmpelStatus.GREEN, 9),
     },
     {
-      ruleset: 'Diabetes',
+      ruleset: 'Diabetes mellitus',
       severity: 'ANAKIN SKYWALKER',
       ampelStatus: AmpelStatus.GREEN,
       message: 'Detektion von bisher nicht kodiertem Diabetes mellitus',

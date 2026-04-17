@@ -5,7 +5,7 @@ import { errorHeadingStyle } from './errorStyles';
 
 export const Timeout = (): React.ReactNode => (
   <ErrorLayout>
-    <title>LAMPE-CDSS</title>
+    <title>AMPEL-CDSS</title>
     <meta charSet='utf-8' />
     <h1 style={errorHeadingStyle}>Das hat zu lange gedauert...</h1>
     <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>

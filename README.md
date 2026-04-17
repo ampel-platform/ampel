@@ -89,6 +89,28 @@ Start the production server
 npm run start
 ```
 
+### Desktop App (Electron)
+
+Run React + Electron in one command for local desktop development:
+
+```bash
+npm run desktop:dev
+```
+
+Build desktop package:
+
+```bash
+npm run desktop:build
+```
+
+On Windows/Linux this creates a portable `.exe`; on macOS this creates a `.dmg`.
+
+The generated executable will be written to:
+
+```bash
+release/
+```
+
 ---
 
 ## 🐳 Docker Setup
@@ -108,6 +130,97 @@ Run the container:
 ```bash
 docker run --rm -p 3003:3003 ampel-ui
 ```
+
+### Docker Dev Mode
+
+You can also run the React Router dev server through Docker Compose with live source mounting:
+
+```bash
+docker compose --profile dev up ampel-ui-dev
+```
+
+The dev server is then available at:
+
+```bash
+http://localhost:5173
+```
+
+This service mounts the repo into the container and runs:
+
+```bash
+npm run dev -- --host 0.0.0.0 --port 5173
+```
+
+If your backend is in the same larger Compose stack, set `BASE_API_URL` to the backend service URL,
+for example `http://backend:8080`.
+
+### Runtime Header Configuration
+
+The patient header values are now read at runtime by the server, so you can change them in Docker
+or Docker Compose without rebuilding the image:
+
+- `HEADER_PRODUCT_LOGO_URL`
+- `HEADER_CLINIC_LOGO_URL`
+- `HEADER_TICKET_LINK`
+- `HEADER_CONTACT_PHONE`
+- `HEADER_MT_NUMBER`
+- `HEADER_INSTRUCTIONS_LINK`
+
+If you leave them unset, the UI uses neutral defaults:
+
+- no primary logo is shown
+- the clinical logo falls back to the bundled placeholder
+- links stay visible but are not clickable
+- phone and MT number render as `-`
+
+Example with Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+The repo contains a ready-to-use [`docker-compose.yml`](./docker-compose.yml) that passes these
+values from the outside:
+
+```yaml
+services:
+  ampel-ui:
+    volumes:
+      - ./assets:/app/public/runtime-assets:ro
+    environment:
+      BASE_API_URL: http://backend:8080
+      HEADER_PRODUCT_LOGO_URL: brand-logo.svg
+      HEADER_CLINIC_LOGO_URL: clinical-logo.svg
+      HEADER_TICKET_LINK: ${HEADER_TICKET_LINK:-}
+      HEADER_CONTACT_PHONE: ${HEADER_CONTACT_PHONE:-}
+      HEADER_MT_NUMBER: ${HEADER_MT_NUMBER:-}
+      HEADER_INSTRUCTIONS_LINK: ${HEADER_INSTRUCTIONS_LINK:-}
+```
+
+There is also a development service in the same compose file:
+
+```yaml
+services:
+  ampel-ui-dev:
+    profiles: [dev]
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/app
+      - ampel_ui_dev_node_modules:/app/node_modules
+```
+
+The repo now ships with two placeholders:
+
+- `assets/brand-logo.svg` for the configurable primary brand logo
+- `assets/clinical-logo.svg` as an empty secondary clinical placeholder logo
+
+For local mounted logos, put the file into the mounted host folder and point
+`HEADER_PRODUCT_LOGO_URL` and `HEADER_CLINIC_LOGO_URL` to either:
+
+- the file name only, for example `brand-logo.svg`
+- the public path, for example `/runtime-assets/brand-logo.svg`
+- or the container path `/app/public/runtime-assets/brand-logo.svg`
 
 ---
 
