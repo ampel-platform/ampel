@@ -10,6 +10,15 @@ const config: Config = {
         'alert-warning': colors.amber[300],
         'alert-success': colors.lime[500],
       },
+      keyframes: {
+        'alert-detail-overlay-open': {
+          from: { transform: 'translateX(100%)', opacity: '0' },
+          to: { transform: 'translateX(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        'alert-detail-overlay-open': 'alert-detail-overlay-open 300ms ease-in-out',
+      },
     },
   },
   plugins: [],
