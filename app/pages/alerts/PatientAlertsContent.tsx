@@ -38,6 +38,7 @@ export function PageContent({ caseId, combinedPromise }: CombinedPromise): React
     alertsError || alertsResult.status !== 'fulfilled' || alertsResult.value instanceof Error
       ? null
       : (alertsResult.value as ApiResultCollection);
+  const alertsDataMissing = Boolean(alerts) && alerts.scoringSystems.length === 0;
 
   return (
     <>
@@ -53,13 +54,18 @@ export function PageContent({ caseId, combinedPromise }: CombinedPromise): React
               </div>
             ) : (
               <div className='mt-4'>
-                <SectionErrorPanel error={metadataError} />
+                <SectionErrorPanel error={metadataError} variant='patient' />
               </div>
             )
           ) : null}
         </div>
       )}
-      {alerts ? (
+      {alertsDataMissing ? (
+        <SectionErrorPanel
+          error={{ status: 404, message: 'No CDSS data found for case' }}
+          dataTestId='alerts-error'
+        />
+      ) : alerts ? (
         <AlertsSection alertsData={alerts} />
       ) : primaryError ? (
         <SectionErrorPanel error={primaryError} dataTestId='alerts-error' />

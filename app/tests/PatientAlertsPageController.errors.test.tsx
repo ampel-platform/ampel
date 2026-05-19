@@ -140,6 +140,24 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(await screen.findAllByTestId('critical-alert-card')).not.toHaveLength(0);
   });
 
+  it('shows patient data heading for metadata bad request errors', async () => {
+    setLoaderData({
+      alertsResult: buildAlertsSample('CASE-123'),
+      metadataResult: { message: 'Bad Request', status: 400 },
+    });
+
+    await renderController();
+
+    expect(await screen.findByTestId('metadata-error')).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', {
+        level: 1,
+        name: /Keine Patientendaten zur Fallnummer vorhanden/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.queryByTestId('alerts-error')).toBeNull();
+  });
+
   it('shows inline alerts error while metadata still renders', async () => {
     setLoaderData({
       case_id: 'CASE-456',
@@ -175,5 +193,39 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(await screen.findByText(/P-1/i)).toBeInTheDocument();
     expect(screen.queryByText(/Unbekannt Unbekannt/i)).toBeNull();
     expect(screen.queryByTestId('metadata-error')).toBeNull();
+  });
+
+  it('prefers patient not found when patient metadata is unknown and alerts are no-data', async () => {
+    setLoaderData({
+      case_id: 'CASE-404',
+      alertsResult: { message: 'Not Found', status: 404 },
+      metadataResult: {
+        id: 'CASE-404',
+        patient: {
+          id: 'Unbekannt',
+          firstname: 'Unbekannt',
+          lastname: 'Unbekannt',
+          dateOfBirth: '1990-01-01T00:00:00Z',
+          sex: 'female',
+        },
+      },
+    });
+
+    await renderController();
+
+    expect(await screen.findByTestId('metadata-error')).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', {
+        level: 1,
+        name: /Keine Patientendaten zur Fallnummer vorhanden/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.queryByTestId('alerts-error')).toBeNull();
+    expect(
+      screen.queryByRole('heading', {
+        level: 1,
+        name: /Keine CDSS-Daten zur Fallnummer vorhanden/i,
+      }),
+    ).toBeNull();
   });
 });

@@ -49,7 +49,9 @@ export const MedicalCaseMetadataRepository = {
         throw new Error(`Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`);
       }
 
-      if (err instanceof Error) throw err;
+      if (err instanceof Error) {
+        throw err;
+      }
 
       throw new Error(String(err));
     }

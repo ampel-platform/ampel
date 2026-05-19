@@ -36,8 +36,8 @@ describe('ErrorBoundary status paths', () => {
   });
 
   const cases: Array<[number, any, RegExp]> = [
-    [400, { status: 400, statusText: 'Bad Request' }, /Keine CDSS-Daten für diese Fallnummer/],
-    [422, { status: 422, statusText: 'Bad Request' }, /Keine CDSS-Daten für diese Fallnummer/],
+    [400, { status: 400, statusText: 'Bad Request' }, /Keine CDSS-Daten zur Fallnummer/],
+    [422, { status: 422, statusText: 'Bad Request' }, /Keine CDSS-Daten zur Fallnummer/],
     [401, { status: 401, statusText: 'Unauthorized' }, /Fehlende Berechtigungen/],
     [403, { status: 403, statusText: 'Forbidden' }, /Verboten/],
     [404, { status: 404, statusText: 'Not Found' }, /Keine CDSS-Daten zur Fallnummer/],

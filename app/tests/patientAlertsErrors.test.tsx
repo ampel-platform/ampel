@@ -68,6 +68,11 @@ describe('patientAlertsErrors', () => {
     expect(retryAfterMs).toBe(SECTION_DEFAULT_RETRY_AFTER_MS);
   });
 
+  it('renders patient specific no-data text when requested', () => {
+    render(<>{renderSectionError({ status: 404 }, 'patient')}</>);
+    expect(screen.getByText(/Keine Patientendaten zur Fallnummer vorhanden/i)).toBeInTheDocument();
+  });
+
   it('extracts status codes from error messages and causes', () => {
     render(<>{renderSectionError(new Error('HTTP Error: 504 Gateway Timeout'))}</>);
     expect(serverErrorSpy).toHaveBeenCalled();

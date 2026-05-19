@@ -53,6 +53,7 @@ function generateFakeHistoryData(ampelStatus: AmpelStatus, seed: number): Rulese
 
 async function generateFakePatientMetaData(): Promise<MedicalCaseMetadataApiResult> {
   await maybeSleep(1000);
+
   return {
     id: 'med-123',
     patient: {
