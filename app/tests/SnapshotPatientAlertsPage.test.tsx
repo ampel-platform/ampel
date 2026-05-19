@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from 'vitest';
 import { Suspense } from 'react';
 
@@ -65,6 +65,12 @@ describe('PatientAlertsPage Integration', () => {
     await btn.click();
 
     const close = await screen.findByTestId('overlay-back-navigation');
+    await waitFor(() =>
+      expect(screen.getByTestId('alert-detail-overlay-panel')).toHaveAttribute(
+        'aria-hidden',
+        'false',
+      ),
+    );
     expect(close).toBeInTheDocument();
 
     expect(document.body).toMatchSnapshot('alert-overlay-open');
@@ -84,6 +90,12 @@ describe('PatientAlertsPage Integration', () => {
     await btn.click();
 
     const close = await screen.findByTestId('overlay-back-navigation');
+    await waitFor(() =>
+      expect(screen.getByTestId('alert-detail-overlay-panel')).toHaveAttribute(
+        'aria-hidden',
+        'false',
+      ),
+    );
     expect(close).toBeInTheDocument();
 
     expect(document.body).toMatchSnapshot('warning-overlay-open');
@@ -96,5 +108,23 @@ describe('PatientAlertsPage Integration', () => {
     await close.click();
 
     expect(document.body).toMatchSnapshot('warning-overlay-closed');
+  });
+
+  it('keeps the detail overlay hidden after closing it', async () => {
+    const btn = (await screen.findAllByTestId('critical-alert-card'))[0];
+    await btn.click();
+
+    const overlay = await screen.findByTestId('alert-detail-overlay-panel');
+    await waitFor(() => {
+      expect(overlay).toHaveAttribute('aria-hidden', 'false');
+      expect(overlay.className).toContain('translate-x-0');
+    });
+
+    const close = await screen.findByTestId('overlay-back-navigation');
+    await close.click();
+
+    expect(overlay).toHaveAttribute('aria-hidden', 'true');
+    expect(overlay.className).toContain('translate-x-full');
+    expect(overlay.className).toContain('invisible');
   });
 });

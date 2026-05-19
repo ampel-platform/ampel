@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 
+import { type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
 import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
@@ -8,25 +9,35 @@ interface PatientAlertsPageProps {
   medicalCaseMetadata?: MedicalCaseMetadata;
   rulesetsByStatus: Map<AmpelStatus, ReactNode[]>;
   showHeader?: boolean;
+  headerConfig?: PatientHeaderConfig;
 }
 
 export function PatientAlertsPage({
   medicalCaseMetadata,
   rulesetsByStatus,
   showHeader = true,
+  headerConfig,
 }: PatientAlertsPageProps): React.ReactNode {
-  const [detailOverlayData, setDetailOverlayData] = useState(null as unknown as AlertDetails);
-  const [detailOverlayVisibilityClasses, setDetailOverlayVisibilityClasses] =
-    useState('left-full ml-4');
+  const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
+  const [isDetailOverlayVisible, setIsDetailOverlayVisible] = useState(false);
   const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
-    setDetailOverlayVisibilityClasses('left-0');
+    openDetailOverlay();
   };
 
   const hideDetailOverlay = (): void => {
-    setDetailOverlayVisibilityClasses('left-full ml-4');
+    setIsDetailOverlayVisible(false);
+  };
+
+  const openDetailOverlay = (): void => {
+    setIsDetailOverlayVisible(true);
+  };
+
+  const handleDetailOverlayTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>): void => {
+    if (event.target !== event.currentTarget || isDetailOverlayVisible) return;
+    setDetailOverlayData(null);
   };
 
   function renderAlertCards(status: AmpelStatus): ReactNode[] {
@@ -36,10 +47,13 @@ export function PatientAlertsPage({
       interface AlertCardChildProps {
         onClick?: () => void;
         alertDetails?: AlertDetails;
+        disabled?: boolean;
       }
       if (!React.isValidElement<AlertCardChildProps>(child)) return child;
 
       const childProps = child.props;
+      if (childProps.disabled) return child;
+
       const handleClick = (): void => {
         childProps.onClick?.();
         if (childProps.alertDetails) displayDetailOverlay(childProps.alertDetails);
@@ -71,19 +85,29 @@ export function PatientAlertsPage({
               medicalCaseMetadata.patient ? medicalCaseMetadata.patient.dateOfBirth : undefined
             }
             sex={medicalCaseMetadata.patient ? medicalCaseMetadata.patient.sex : 'unbekannt'}
+            headerConfig={headerConfig}
           />
         )}
 
-        <div className='relative flex h-full w-full flex-col'>
-          <div
-            className={`absolute z-50 h-full w-full transition-all duration-500 ease-in-out ${detailOverlayVisibilityClasses}`}
-          >
-            <AlertDetailOverlay
-              data={detailOverlayData}
-              onClose={hideDetailOverlay}
-              key={`${detailOverlayData?.ruleset}-${detailOverlayVisibilityClasses}`}
-            />
-          </div>
+        <div className='relative flex h-full w-full flex-col overflow-x-hidden'>
+          {detailOverlayData && (
+            <div
+              className={`absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out ${
+                isDetailOverlayVisible
+                  ? 'visible translate-x-0 animate-alert-detail-overlay-open opacity-100'
+                  : 'pointer-events-none invisible translate-x-full opacity-0'
+              }`}
+              onTransitionEnd={handleDetailOverlayTransitionEnd}
+              aria-hidden={!isDetailOverlayVisible}
+              data-testid='alert-detail-overlay-panel'
+            >
+              <AlertDetailOverlay
+                data={detailOverlayData}
+                onClose={hideDetailOverlay}
+                key={detailOverlayData.ruleset}
+              />
+            </div>
+          )}
 
           <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
             <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
@@ -159,7 +183,11 @@ export function PatientAlertsPage({
 
               <div
                 id='inconspicuous-states-section'
-                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${inconspicuousStatesVisible ? 'inline-grid' : 'hidden'}`}
+                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${
+                  inconspicuousStatesVisible
+                    ? 'visible translate-x-0 opacity-100'
+                    : 'pointer-events-none invisible translate-x-full opacity-0'
+                }`}
               >
                 {renderAlertCards(AmpelStatus.GREEN)}
               </div>

@@ -2,19 +2,11 @@ import { BookOpenText, Mail, Phone, Signature } from 'lucide-react';
 import React from 'react';
 import { preload } from 'react-dom';
 
-import LampeLogo from '../../../../assets/Lampe_Logo_Vektor.svg';
-import UklLogo from '../../../../assets/UKL_Logo_Vektor.svg';
+import ClinicalLogo from '../../../../assets/clinical-logo.svg';
+import { getPatientHeaderConfig, type PatientHeaderConfig } from '../../../patientHeaderConfig';
 import { SexUI } from '../types/types';
 
-preload(LampeLogo, { as: 'image' });
-preload(UklLogo, { as: 'image' });
-
-const ticketLink =
-  'http://s070000010.medizin.uni-leipzig.de:8020/sap/bc/webdynpro/sap/zpm_meldung?sap-client=100';
-const contactPhone = '114';
-const mtNummer = '74894';
-const gebrauchsanweisungLink =
-  'https://roxtra.medizin.uni-leipzig.de/Roxtra/doc/showfile.aspx?FileID=140688';
+preload(ClinicalLogo, { as: 'image' });
 
 interface PatientMetaDataHeaderProps {
   medicalCaseId: string;
@@ -23,6 +15,7 @@ interface PatientMetaDataHeaderProps {
   lastname?: string | null;
   dateOfBirth?: Date | string | null;
   sex?: SexUI | null;
+  headerConfig?: PatientHeaderConfig;
 }
 
 function formatDob(d: Date | string | null | undefined): string {
@@ -30,6 +23,10 @@ function formatDob(d: Date | string | null | undefined): string {
   const date = d instanceof Date ? d : new Date(d);
   if (Number.isNaN(date.getTime())) return 'kein Geburtsdatum';
   return date.toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' });
+}
+
+function formatHeaderValue(value: string): string {
+  return value.trim() ? value : '-';
 }
 
 /**
@@ -45,13 +42,38 @@ export function PatientMetaDataHeader({
   medicalCaseId,
   sex,
   dateOfBirth,
+  headerConfig,
 }: PatientMetaDataHeaderProps): React.ReactNode {
+  const resolvedHeaderConfig = headerConfig ?? getPatientHeaderConfig();
   const safeFirstname = firstname || 'Unbekannt';
   const safeLastname = lastname || 'Unbekannt';
   const safePatientId = patientId || 'Unbekannt';
   const safeMedicalCaseId = medicalCaseId || 'Unbekannt';
   const dobText = formatDob(dateOfBirth);
   const sexLetter = ((sex ?? 'unbekannt') as string).charAt(0).toUpperCase();
+  const { productLogoUrl, clinicLogoUrl, ticketLink, contactPhone, mtNumber, instructionsLink } =
+    resolvedHeaderConfig;
+  const contactPhoneText = formatHeaderValue(contactPhone);
+  const mtNumberText = formatHeaderValue(mtNumber);
+  const hasProductLogo = Boolean(productLogoUrl);
+  const resolvedClinicLogoUrl = clinicLogoUrl || ClinicalLogo;
+
+  const renderExternalLink = (href: string, label: string): React.ReactNode => {
+    if (!href) {
+      return <span className='whitespace-nowrap text-gray-500'>{label}</span>;
+    }
+
+    return (
+      <a
+        href={href}
+        target='_blank'
+        rel='noreferrer noopener'
+        className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
+      >
+        {label}
+      </a>
+    );
+  };
 
   return (
     <div className='grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end'>
@@ -73,46 +95,34 @@ export function PatientMetaDataHeader({
       </div>
 
       <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
+        {hasProductLogo ? (
+          <img
+            src={productLogoUrl}
+            alt='Header Logo'
+            className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
+          />
+        ) : null}
         <img
-          src={LampeLogo}
-          alt='LAMPE Logo'
-          className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
-        />
-        <img
-          src={UklLogo}
-          alt='UKL Logo'
-          className='col-[2] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14'
+          src={resolvedClinicLogoUrl}
+          alt='Clinical Logo'
+          className={`${hasProductLogo ? 'col-[2]' : 'col-[1]'} row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14`}
         />
 
         <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
           <Mail className='h-4 w-4 text-gray-600' />
-          <a
-            href={ticketLink}
-            target='_blank'
-            rel='noreferrer noopener'
-            className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
-          >
-            Störmeldung Medizintechnik
-          </a>
+          {renderExternalLink(ticketLink, 'Störmeldung Medizintechnik')}
         </span>
         <span className='col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
           <Phone className='h-4 w-4' />
-          <span className='whitespace-nowrap'>allg. Fragen : {contactPhone}</span>
+          <span className='whitespace-nowrap'>allg. Fragen : {contactPhoneText}</span>
         </span>
         <span className='col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
           <BookOpenText className='h-4 w-4 text-gray-600' />
-          <a
-            href={gebrauchsanweisungLink}
-            target='_blank'
-            rel='noreferrer noopener'
-            className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
-          >
-            Gebrauchsanweisung
-          </a>
+          {renderExternalLink(instructionsLink, 'Gebrauchsanweisung')}
         </span>
         <span className='col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
           <Signature className='h-4 w-4' />
-          <span className='whitespace-nowrap'> MT-Nummer: {mtNummer}</span>
+          <span className='whitespace-nowrap'> MT-Nummer: {mtNumberText}</span>
         </span>
       </div>
     </div>

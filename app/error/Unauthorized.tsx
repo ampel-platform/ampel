@@ -4,7 +4,7 @@ import { errorHeadingStyle } from './errorStyles';
 
 export const Unauthorized = (): React.ReactNode => (
   <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-    <title>LAMPE-CDSS</title>
+    <title>AMPEL-CDSS</title>
     <meta charSet='utf-8' />
     <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
       <h1 style={errorHeadingStyle}>Fehlende Berechtigungen</h1>

@@ -47,6 +47,7 @@ export default [
       'vite.config.ts',
       '**/routes.ts',
       'scripts/**',
+      '**/electron/**',
     ],
   },
   js.configs.recommended,

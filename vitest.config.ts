@@ -24,6 +24,7 @@ export default defineConfig({
         '**/react-router.config.ts',
         '**/.react-router/*',
         '**/assets/**',
+        '**/electron/**',
       ],
     },
   },
