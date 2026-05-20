@@ -200,6 +200,8 @@ jobs:
     env:
       TZ: Europe/Berlin
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download digests
         uses: actions/download-artifact@v4
         with:
@@ -260,6 +262,31 @@ jobs:
 
       - name: Inspect Docker manifest
         run: docker buildx imagetools inspect "${{ needs.prepare-release.outputs.image }}:${{ needs.prepare-release.outputs.version }}"
+
+      - name: Create release branch
+        shell: bash
+        env:
+          RELEASE_VERSION: ${{ needs.prepare-release.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          release_branch="releases/${RELEASE_VERSION}"
+          git check-ref-format --branch "$release_branch" >/dev/null
+
+          expected_sha="$(git rev-parse HEAD)"
+          remote_sha="$(git ls-remote --heads origin "refs/heads/${release_branch}" | awk '{print $1}')"
+
+          if [[ -n "$remote_sha" ]]; then
+            if [[ "$remote_sha" != "$expected_sha" ]]; then
+              echo "Release branch ${release_branch} already exists at ${remote_sha}, expected ${expected_sha}." >&2
+              exit 1
+            fi
+
+            echo "Release branch ${release_branch} already exists at ${remote_sha}."
+            exit 0
+          fi
+
+          git push origin "HEAD:refs/heads/${release_branch}"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
