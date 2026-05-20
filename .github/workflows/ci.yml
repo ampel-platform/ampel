@@ -32,6 +32,7 @@ jobs:
 
       - name: ESLint (no warnings allowed)
         run: npm run release:lint
+
   test:
     needs: quality-check
     runs-on: ubuntu-latest
@@ -48,22 +49,26 @@ jobs:
       - run: npm ci
       - run: npm run coverage
 
-  release:
+  prepare-release:
     if: ${{ github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v') }}
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.prep.outputs.image }}
+      version: ${{ steps.prep.outputs.version }}
+      tags: ${{ steps.prep.outputs.tags }}
+      prerelease: ${{ steps.prep.outputs.prerelease }}
+      make_latest: ${{ steps.prep.outputs.make_latest }}
     env:
       TZ: Europe/Berlin
     steps:
-      - uses: actions/checkout@v4
-
       - name: Prepare image name and tags
         id: prep
         shell: bash
         run: |
-          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"     
-          TAG="${GITHUB_REF#refs/tags/}"             
-          VERSION="${TAG#v}"                         
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
+          TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG#v}"
           echo "image=$IMAGE" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
@@ -76,6 +81,16 @@ jobs:
             echo "tags=$IMAGE:$VERSION,$IMAGE:latest" >> $GITHUB_OUTPUT
             echo "make_latest=true" >> $GITHUB_OUTPUT
           fi
+
+  release-report:
+    needs: prepare-release
+    runs-on: ubuntu-latest
+    outputs:
+      report_filename: ${{ steps.qm_report.outputs.report_html_filename }}
+    env:
+      TZ: Europe/Berlin
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -90,8 +105,45 @@ jobs:
         id: qm_report
         run: npm run bericht:ci
 
-      - uses: docker/setup-qemu-action@v4
-      - uses: docker/setup-buildx-action@v4
+      - name: Upload QM report
+        uses: actions/upload-artifact@v4
+        with:
+          name: qm-report
+          path: ${{ steps.qm_report.outputs.report_path }}
+          if-no-files-found: error
+          retention-days: 1
+
+  build-image:
+    name: Build Docker image (${{ matrix.platform }})
+    needs:
+      - prepare-release
+      - release-report
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - linux/amd64
+          - linux/arm64
+    env:
+      TZ: Europe/Berlin
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare platform name
+        id: platform
+        shell: bash
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: echo "pair=${PLATFORM//\//-}" >> $GITHUB_OUTPUT
+
+      - name: Set up QEMU
+        if: ${{ matrix.platform != 'linux/amd64' }}
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
 
       - name: Login to GHCR
         uses: docker/login-action@v4
@@ -104,25 +156,116 @@ jobs:
         id: meta
         uses: docker/metadata-action@v6
         with:
-          images: ${{ steps.prep.outputs.image }}
+          images: ${{ needs.prepare-release.outputs.image }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
 
-      - name: Build and push Docker image (multi-arch)
+      - name: Build and push Docker image by digest
+        id: build
         uses: docker/build-push-action@v7
         with:
           context: .
           file: ./docker/Dockerfile
-          platforms: linux/amd64,linux/arm64
-          tags: ${{ steps.prep.outputs.tags }}
+          platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          push: true
+          outputs: type=image,name=${{ needs.prepare-release.outputs.image }},push-by-digest=true,name-canonical=true,push=true
+
+      - name: Export digest
+        shell: bash
+        run: |
+          mkdir -p "${RUNNER_TEMP}/digests"
+          digest="${{ steps.build.outputs.digest }}"
+          if [[ -z "$digest" ]]; then
+            echo "Docker build did not return an image digest." >&2
+            exit 1
+          fi
+          touch "${RUNNER_TEMP}/digests/${digest#sha256:}"
+
+      - name: Upload digest
+        uses: actions/upload-artifact@v4
+        with:
+          name: digests-${{ steps.platform.outputs.pair }}
+          path: ${{ runner.temp }}/digests/*
+          if-no-files-found: error
+          retention-days: 1
+
+  publish-release:
+    name: Merge Docker manifest and publish release
+    needs:
+      - prepare-release
+      - release-report
+      - build-image
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Europe/Berlin
+    steps:
+      - name: Download digests
+        uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/digests
+          pattern: digests-*
+          merge-multiple: true
+
+      - name: Download QM report
+        uses: actions/download-artifact@v4
+        with:
+          name: qm-report
+          path: ${{ runner.temp }}/qm-report
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create and push Docker manifest
+        shell: bash
+        working-directory: ${{ runner.temp }}/digests
+        env:
+          EXPECTED_DIGESTS: 2
+          IMAGE: ${{ needs.prepare-release.outputs.image }}
+          TAGS: ${{ needs.prepare-release.outputs.tags }}
+        run: |
+          set -euo pipefail
+
+          shopt -s nullglob
+          digest_files=(*)
+          if (( ${#digest_files[@]} != EXPECTED_DIGESTS )); then
+            echo "Expected ${EXPECTED_DIGESTS} Docker image digests, got ${#digest_files[@]}." >&2
+            exit 1
+          fi
+
+          if [[ -z "$TAGS" ]]; then
+            echo "No Docker tags were prepared for the manifest." >&2
+            exit 1
+          fi
+
+          tag_args=()
+          IFS=',' read -r -a tags <<< "$TAGS"
+          for tag in "${tags[@]}"; do
+            tag_args+=("-t" "$tag")
+          done
+
+          sources=()
+          for digest in "${digest_files[@]}"; do
+            sources+=("${IMAGE}@sha256:${digest}")
+          done
+
+          docker buildx imagetools create "${tag_args[@]}" "${sources[@]}"
+
+      - name: Inspect Docker manifest
+        run: docker buildx imagetools inspect "${{ needs.prepare-release.outputs.image }}:${{ needs.prepare-release.outputs.version }}"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name }} # v0.1.4…
-          prerelease: ${{ steps.prep.outputs.prerelease == 'true' }}
-          make_latest: ${{ steps.prep.outputs.make_latest == 'true' }}
+          tag_name: ${{ github.ref_name }} # v0.1.4...
+          prerelease: ${{ needs.prepare-release.outputs.prerelease == 'true' }}
+          make_latest: ${{ needs.prepare-release.outputs.make_latest == 'true' }}
           generate_release_notes: true
-          files: ${{ steps.qm_report.outputs.report_path }}
+          files: ${{ runner.temp }}/qm-report/${{ needs.release-report.outputs.report_filename }}
