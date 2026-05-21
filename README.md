@@ -193,7 +193,7 @@ services:
     environment:
       BASE_API_URL: http://backend:8080
       HEADER_PRODUCT_LOGO_URL: brand-default-logo.svg
-      HEADER_CLINIC_LOGO_URL: clinical-default-logo.svg
+      HEADER_CLINIC_LOGO_URL: clinic-logo.svg
       HEADER_TICKET_LINK: ${HEADER_TICKET_LINK:-}
       HEADER_CONTACT_PHONE: ${HEADER_CONTACT_PHONE:-}
       HEADER_MT_NUMBER: ${HEADER_MT_NUMBER:-}
@@ -213,9 +213,9 @@ services:
       - ampel_ui_dev_node_modules:/app/node_modules
 ```
 
-The repo now ships with bundled SVG logo assets:
+The repo ships with a bundled product logo:
 
-- `assets/brand-default-logo.svg` for the default brand logo
+- `assets/brand-default-logo.svg` for the configurable primary brand logo
 
 For local mounted logos, put the file into the mounted host folder and point
 `HEADER_PRODUCT_LOGO_URL` and `HEADER_CLINIC_LOGO_URL` to either:
@@ -224,8 +224,8 @@ For local mounted logos, put the file into the mounted host folder and point
 - the public path, for example `/runtime-assets/brand-default-logo.svg`
 - or the container path `/app/public/runtime-assets/brand-default-logo.svg`
 
-To explicitly use one of the bundled repo logos, use the source assets path, for example
-`assets/brand-default-logo.svg` or `assets/clinical-default-logo.svg`.
+To explicitly use a bundled repo logo, use the source assets path, for example
+`assets/brand-default-logo.svg`. Other bundled SVGs in `assets/` can be referenced the same way.
 
 ---
 

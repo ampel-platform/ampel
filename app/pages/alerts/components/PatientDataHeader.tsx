@@ -44,7 +44,7 @@ function formatHeaderValue(value: string): string {
 
 function resolveLogoUrl(src: string): string {
   if (!src) return '';
-  return BUNDLED_LOGO_URLS[src] ?? src;
+  return BUNDLED_LOGO_URLS[src] ?? BUNDLED_LOGO_URLS[`${src}.svg`] ?? src;
 }
 
 interface HeaderLogoImageProps {
@@ -154,7 +154,7 @@ export function PatientMetaDataHeader({
   };
 
   return (
-    <div className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4'>
+    <div className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6'>
       <div className='min-w-0'>
         <span className='break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl'>
           {safeFirstname} {safeLastname} (*{dobText} | {sexLetter})
@@ -173,7 +173,7 @@ export function PatientMetaDataHeader({
       </div>
 
       <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
-        <div className={`col-span-2 row-[1] flex items-start ${logoRowJustifyClass} gap-x-6`}>
+        <div className={`col-span-2 row-[1] flex items-start ${logoRowJustifyClass} gap-x-6 pl-4`}>
           <HeaderLogoImage
             src={resolvedProductLogoUrl}
             fallbackSrc={BrandLogo}

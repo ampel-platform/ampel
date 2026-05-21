@@ -36,7 +36,6 @@ export default [
       'vite.config.js',
       'vitest.config.ts',
       '**/setupTests.ts',
-      '**/init-catchall-redirect.tsx',
       '**/**.test.tsx',
       '**/catchall-redirect.tsx',
       '**/entry.server.tsx',
