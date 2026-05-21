@@ -2,11 +2,24 @@ import { BookOpenText, Mail, Phone, Signature } from 'lucide-react';
 import React from 'react';
 import { preload } from 'react-dom';
 
-import ClinicalLogo from '../../../../assets/clinical-logo.svg';
+import BrandLogo from '../../../../assets/brand-default-logo.svg';
 import { getPatientHeaderConfig, type PatientHeaderConfig } from '../../../patientHeaderConfig';
 import { SexUI } from '../types/types';
 
-preload(ClinicalLogo, { as: 'image' });
+preload(BrandLogo, { as: 'image' });
+
+const BUNDLED_LOGO_MODULES = import.meta.glob('../../../../assets/*.svg', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+}) as Record<string, string>;
+
+const BUNDLED_LOGO_URLS: Record<string, string> = Object.fromEntries(
+  Object.entries(BUNDLED_LOGO_MODULES).map(([path, url]) => [
+    `assets/${path.split('/').pop()}`,
+    url,
+  ]),
+);
 
 interface PatientMetaDataHeaderProps {
   medicalCaseId: string;
@@ -27,6 +40,63 @@ function formatDob(d: Date | string | null | undefined): string {
 
 function formatHeaderValue(value: string): string {
   return value.trim() ? value : '-';
+}
+
+function resolveLogoUrl(src: string): string {
+  if (!src) return '';
+  return BUNDLED_LOGO_URLS[src] ?? src;
+}
+
+interface HeaderLogoImageProps {
+  src: string;
+  fallbackSrc?: string;
+  alt: string;
+  className: string;
+  onHidden?: () => void;
+}
+
+function HeaderLogoImage({
+  src,
+  fallbackSrc,
+  alt,
+  className,
+  onHidden,
+}: HeaderLogoImageProps): React.ReactNode {
+  const imgRef = React.useRef<HTMLImageElement | null>(null);
+  const [resolvedSrc, setResolvedSrc] = React.useState(src || fallbackSrc || '');
+  const [isHidden, setIsHidden] = React.useState(!resolvedSrc);
+
+  React.useEffect(() => {
+    const nextSrc = src || fallbackSrc || '';
+    setResolvedSrc(nextSrc);
+    setIsHidden(!nextSrc);
+  }, [fallbackSrc, src]);
+
+  const handleLoadError = React.useCallback((): void => {
+    if (fallbackSrc && resolvedSrc !== fallbackSrc) {
+      setResolvedSrc(fallbackSrc);
+      setIsHidden(false);
+      return;
+    }
+
+    setIsHidden(true);
+    onHidden?.();
+  }, [fallbackSrc, onHidden, resolvedSrc]);
+
+  React.useEffect(() => {
+    const image = imgRef.current;
+    if (!image || isHidden) return;
+
+    if (image.complete && image.naturalWidth === 0) {
+      handleLoadError();
+    }
+  }, [handleLoadError, isHidden]);
+
+  if (isHidden || !resolvedSrc) return null;
+
+  return (
+    <img ref={imgRef} src={resolvedSrc} alt={alt} className={className} onError={handleLoadError} />
+  );
 }
 
 /**
@@ -55,8 +125,16 @@ export function PatientMetaDataHeader({
     resolvedHeaderConfig;
   const contactPhoneText = formatHeaderValue(contactPhone);
   const mtNumberText = formatHeaderValue(mtNumber);
-  const hasProductLogo = Boolean(productLogoUrl);
-  const resolvedClinicLogoUrl = clinicLogoUrl || ClinicalLogo;
+  const resolvedProductLogoUrl = resolveLogoUrl(productLogoUrl) || BrandLogo;
+  const resolvedClinicLogoUrl = clinicLogoUrl ? resolveLogoUrl(clinicLogoUrl) : '';
+  const [isClinicLogoVisible, setIsClinicLogoVisible] = React.useState(
+    Boolean(resolvedClinicLogoUrl),
+  );
+  const logoRowJustifyClass = isClinicLogoVisible ? 'justify-start' : 'justify-end';
+
+  React.useEffect(() => {
+    setIsClinicLogoVisible(Boolean(resolvedClinicLogoUrl));
+  }, [resolvedClinicLogoUrl]);
 
   const renderExternalLink = (href: string, label: string): React.ReactNode => {
     if (!href) {
@@ -76,7 +154,7 @@ export function PatientMetaDataHeader({
   };
 
   return (
-    <div className='grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end'>
+    <div className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4'>
       <div className='min-w-0'>
         <span className='break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl'>
           {safeFirstname} {safeLastname} (*{dobText} | {sexLetter})
@@ -95,18 +173,22 @@ export function PatientMetaDataHeader({
       </div>
 
       <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
-        {hasProductLogo ? (
-          <img
-            src={productLogoUrl}
+        <div className={`col-span-2 row-[1] flex items-start ${logoRowJustifyClass} gap-x-6`}>
+          <HeaderLogoImage
+            src={resolvedProductLogoUrl}
+            fallbackSrc={BrandLogo}
             alt='Header Logo'
-            className='col-[1] row-[1] h-8 sm:h-9 md:h-12 lg:h-14'
+            className='h-8 sm:h-9 md:h-12 lg:h-14'
           />
-        ) : null}
-        <img
-          src={resolvedClinicLogoUrl}
-          alt='Clinical Logo'
-          className={`${hasProductLogo ? 'col-[2]' : 'col-[1]'} row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14`}
-        />
+          {resolvedClinicLogoUrl ? (
+            <HeaderLogoImage
+              src={resolvedClinicLogoUrl}
+              alt='Clinical Logo'
+              className='h-8 sm:h-9 md:h-12 lg:h-14'
+              onHidden={() => setIsClinicLogoVisible(false)}
+            />
+          ) : null}
+        </div>
 
         <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
           <Mail className='h-4 w-4 text-gray-600' />

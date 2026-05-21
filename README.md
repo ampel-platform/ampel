@@ -168,10 +168,13 @@ or Docker Compose without rebuilding the image:
 
 If you leave them unset, the UI uses neutral defaults:
 
-- no primary logo is shown
-- the clinical logo falls back to the bundled placeholder
+- the product logo falls back to the bundled `assets/brand-default-logo.svg`
+- no clinical logo is shown unless `HEADER_CLINIC_LOGO_URL` is configured
 - links stay visible but are not clickable
 - phone and MT number render as `-`
+
+If a configured product logo URL cannot be loaded by the browser, the UI falls back to the bundled
+product logo. If a configured clinical logo URL cannot be loaded, the clinical logo is hidden.
 
 Example with Docker Compose:
 
@@ -189,8 +192,8 @@ services:
       - ./assets:/app/public/runtime-assets:ro
     environment:
       BASE_API_URL: http://backend:8080
-      HEADER_PRODUCT_LOGO_URL: brand-logo.svg
-      HEADER_CLINIC_LOGO_URL: clinical-logo.svg
+      HEADER_PRODUCT_LOGO_URL: brand-default-logo.svg
+      HEADER_CLINIC_LOGO_URL: clinical-default-logo.svg
       HEADER_TICKET_LINK: ${HEADER_TICKET_LINK:-}
       HEADER_CONTACT_PHONE: ${HEADER_CONTACT_PHONE:-}
       HEADER_MT_NUMBER: ${HEADER_MT_NUMBER:-}
@@ -210,17 +213,19 @@ services:
       - ampel_ui_dev_node_modules:/app/node_modules
 ```
 
-The repo now ships with two placeholders:
+The repo now ships with bundled SVG logo assets:
 
-- `assets/brand-logo.svg` for the configurable primary brand logo
-- `assets/clinical-logo.svg` as an empty secondary clinical placeholder logo
+- `assets/brand-default-logo.svg` for the default brand logo
 
 For local mounted logos, put the file into the mounted host folder and point
 `HEADER_PRODUCT_LOGO_URL` and `HEADER_CLINIC_LOGO_URL` to either:
 
-- the file name only, for example `brand-logo.svg`
-- the public path, for example `/runtime-assets/brand-logo.svg`
-- or the container path `/app/public/runtime-assets/brand-logo.svg`
+- the file name only, for example `brand-default-logo.svg`
+- the public path, for example `/runtime-assets/brand-default-logo.svg`
+- or the container path `/app/public/runtime-assets/brand-default-logo.svg`
+
+To explicitly use one of the bundled repo logos, use the source assets path, for example
+`assets/brand-default-logo.svg` or `assets/clinical-default-logo.svg`.
 
 ---
 

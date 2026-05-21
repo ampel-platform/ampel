@@ -1,6 +1,6 @@
 {
   "name": "ampel-ui",
-  "version": "1.1.2",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,7 +9,7 @@
   "main": "electron/main.cjs",
   "scripts": {
     "dev": "react-router dev",
-    "test-dev": "cross-env VITE_TEST_DATA_VIEW=test VITE_HEADER_PRODUCT_LOGO_URL=/assets/brand-logo.svg VITE_HEADER_CLINIC_LOGO_URL=/assets/clinical-logo.svg react-router dev",
+    "test-dev": "cross-env VITE_TEST_DATA_VIEW=test react-router dev",
     "build": "react-router build",
     "start": "react-router-serve ./build/server/index.js",
     "lint": "npx eslint --fix",

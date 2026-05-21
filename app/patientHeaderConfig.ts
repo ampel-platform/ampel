@@ -20,6 +20,7 @@ const DEFAULTS: PatientHeaderConfig = {
 
 const PUBLIC_RUNTIME_ASSETS_PREFIX = '/runtime-assets/';
 const CONTAINER_RUNTIME_ASSETS_PREFIX = '/app/public/runtime-assets/';
+const SOURCE_ASSETS_PREFIX = 'assets/';
 
 function readNodeEnv(): EnvRecord | undefined {
   if (typeof globalThis === 'undefined') return undefined;
@@ -39,6 +40,10 @@ function readEnvValue(runtimeName: string, buildName: string): string | undefine
   }
 
   const buildEnv = readBuildEnv();
+  if (buildEnv && runtimeName in buildEnv) {
+    return buildEnv[runtimeName];
+  }
+
   if (buildEnv && buildName in buildEnv) {
     return buildEnv[buildName];
   }
@@ -47,7 +52,7 @@ function readEnvValue(runtimeName: string, buildName: string): string | undefine
 }
 
 function normalizeRuntimeLogoUrl(value: string | undefined): string {
-  const trimmed = value?.trim() ?? '';
+  const trimmed = value?.trim().replace(/^(['"])(.*)\1$/, '$2') ?? '';
   if (!trimmed) return '';
 
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
@@ -62,7 +67,12 @@ function normalizeRuntimeLogoUrl(value: string | undefined): string {
     return trimmed;
   }
 
-  return `${PUBLIC_RUNTIME_ASSETS_PREFIX}${trimmed.replace(/^\.?\/*/, '')}`;
+  const relativePath = trimmed.replace(/^\.?\/*/, '');
+  if (relativePath.startsWith(SOURCE_ASSETS_PREFIX)) {
+    return relativePath;
+  }
+
+  return `${PUBLIC_RUNTIME_ASSETS_PREFIX}${relativePath}`;
 }
 
 export function getPatientHeaderConfig(): PatientHeaderConfig {

@@ -12,7 +12,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -63,11 +63,15 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -684,7 +688,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -735,11 +739,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -1560,7 +1568,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -1611,11 +1619,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -2232,7 +2244,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -2283,11 +2295,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -3881,7 +3897,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -3932,11 +3948,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -4553,7 +4573,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -4604,11 +4624,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -5429,7 +5453,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -5480,11 +5504,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -6101,7 +6129,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -6152,11 +6180,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -7040,7 +7072,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -7091,11 +7123,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -7707,7 +7743,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -7758,11 +7794,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -8379,7 +8419,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -8430,11 +8470,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -10076,7 +10120,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -10127,11 +10171,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -10743,7 +10791,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -10794,11 +10842,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -11415,7 +11467,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -11466,11 +11518,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -12354,7 +12410,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -12405,11 +12461,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >
@@ -13021,7 +13081,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         TEST
       </div>
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-4"
       >
         <div
           class="min-w-0"
@@ -13072,11 +13132,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         <div
           class="grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end"
         >
-          <img
-            alt="Clinical Logo"
-            class="col-[1] row-[1] mr-4 h-8 sm:h-9 md:h-12 lg:h-14"
-            src="data:image/svg+xml,%3csvg%20width='240'%20height='72'%20viewBox='0%200%20240%2072'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20%3e%3c/svg%3e"
-          />
+          <div
+            class="col-span-2 row-[1] flex items-start justify-end gap-x-6"
+          >
+            <img
+              alt="Header Logo"
+              class="h-8 sm:h-9 md:h-12 lg:h-14"
+              src="/assets/brand-default-logo.svg"
+            />
+          </div>
           <span
             class="col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base"
           >

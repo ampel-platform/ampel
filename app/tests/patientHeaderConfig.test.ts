@@ -15,15 +15,27 @@ describe('patientHeaderConfig', () => {
   });
 
   it('maps the product logo filename to a public URL', () => {
-    vi.stubEnv('HEADER_PRODUCT_LOGO_URL', 'brand-logo.svg');
+    vi.stubEnv('HEADER_PRODUCT_LOGO_URL', 'brand-default-logo.svg');
 
-    expect(getPatientHeaderConfig().productLogoUrl).toBe('/runtime-assets/brand-logo.svg');
+    expect(getPatientHeaderConfig().productLogoUrl).toBe('/runtime-assets/brand-default-logo.svg');
+  });
+
+  it('keeps a source assets logo path for bundled logo resolution', () => {
+    vi.stubEnv('HEADER_PRODUCT_LOGO_URL', 'assets/brand-default-logo.svg');
+
+    expect(getPatientHeaderConfig().productLogoUrl).toBe('assets/brand-default-logo.svg');
+  });
+
+  it('strips wrapping quotes from logo env values', () => {
+    vi.stubEnv('HEADER_PRODUCT_LOGO_URL', '"assets/brand-default-logo.svg"');
+
+    expect(getPatientHeaderConfig().productLogoUrl).toBe('assets/brand-default-logo.svg');
   });
 
   it('maps the clinic logo container path to a public URL', () => {
-    vi.stubEnv('HEADER_CLINIC_LOGO_URL', '/app/public/runtime-assets/clinical-logo.svg');
+    vi.stubEnv('HEADER_CLINIC_LOGO_URL', '/app/public/runtime-assets/clinic-logo.svg');
 
-    expect(getPatientHeaderConfig().clinicLogoUrl).toBe('/runtime-assets/clinical-logo.svg');
+    expect(getPatientHeaderConfig().clinicLogoUrl).toBe('/runtime-assets/clinic-logo.svg');
   });
 
   it('reads the renamed header metadata env vars', () => {

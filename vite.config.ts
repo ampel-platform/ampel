@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [reactRouter()],
+  envPrefix: ['VITE_', 'HEADER_'],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './app'),

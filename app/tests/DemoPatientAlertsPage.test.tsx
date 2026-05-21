@@ -52,9 +52,9 @@ describe('PatientAlertsPage Demo Mode', () => {
     expect(await screen.findByText('Testalarm')).toBeInTheDocument();
   });
 
-  it('shows no primary header logo by default', async () => {
-    expect((await screen.findAllByAltText('Clinical Logo')).length).toBeGreaterThan(0);
-    expect(screen.queryByAltText('Header Logo')).toBeNull();
+  it('shows the default product logo without a clinic logo', async () => {
+    expect((await screen.findAllByAltText('Header Logo')).length).toBeGreaterThan(0);
+    expect(screen.queryByAltText('Clinical Logo')).toBeNull();
   });
 
   it('keeps yellow/green cards non-clickable in demo while red stays clickable', async () => {
