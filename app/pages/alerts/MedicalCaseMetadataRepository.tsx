@@ -1,13 +1,9 @@
+import { fetchBackend, isBackendUnavailableError } from '../../backendRequest';
+import { BASE_API_URL, BASE_API_URL_WITH_SLASH } from '../../baseApiUrl';
 import { MedicalCaseMetadataApiResult } from './types/types-api';
 
 const PATH = 'meta';
-const BASE_URL =
-  (typeof globalThis !== 'undefined'
-    ? (globalThis as { process?: { env?: Record<string, string> } }).process?.env?.BASE_API_URL
-    : undefined) ??
-  import.meta.env.VITE_BASE_API_URL ??
-  'http://localhost:8080';
-const BASE_URL_WITH_SLASH = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
+type ErrorWithStatus = Error & { status?: number; headers?: Headers };
 
 export const MedicalCaseMetadataRepository = {
   async getByMedicalCaseId(caseId: string): Promise<MedicalCaseMetadataApiResult> {
@@ -28,9 +24,9 @@ export const MedicalCaseMetadataRepository = {
 
       const requestUrl = new URL(
         `v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
-        BASE_URL_WITH_SLASH,
+        BASE_API_URL_WITH_SLASH,
       );
-      const res = await fetch(requestUrl, {
+      const res = await fetchBackend(requestUrl, {
         headers: { Accept: 'application/json' },
       });
 
@@ -45,15 +41,26 @@ export const MedicalCaseMetadataRepository = {
     } catch (err) {
       if (err instanceof Response) throw err;
 
-      if (err instanceof TypeError) {
-        throw new Error(`Netzwerkfehler beim Abruf von ${BASE_URL}: ${err.message}`);
+      if (isBackendUnavailableError(err)) {
+        const error = new Error(
+          `Netzwerkfehler beim Abruf von ${BASE_API_URL}: ${
+            err instanceof Error ? err.message : String(err)
+          }`,
+        ) as ErrorWithStatus;
+        error.status = 503;
+        throw error;
       }
 
       if (err instanceof Error) {
+        if ((err as ErrorWithStatus).status === undefined) {
+          (err as ErrorWithStatus).status = 500;
+        }
         throw err;
       }
 
-      throw new Error(String(err));
+      const unknown = new Error(String(err)) as ErrorWithStatus;
+      unknown.status = 500;
+      throw unknown;
     }
   },
 };

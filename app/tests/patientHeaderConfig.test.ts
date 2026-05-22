@@ -1,10 +1,11 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { getPatientHeaderConfig } from '../patientHeaderConfig';
+import { getPatientHeaderConfig, getPatientHeaderConfigScript } from '../patientHeaderConfig';
 
 describe('patientHeaderConfig', () => {
   afterEach(() => {
     vi.unstubAllEnvs();
+    delete globalThis.window.__AMPEL_HEADER_CONFIG__;
   });
 
   it('uses no runtime logos by default', () => {
@@ -50,5 +51,40 @@ describe('patientHeaderConfig', () => {
       mtNumber: 'MT-42',
       instructionsLink: 'https://example.test/instructions',
     });
+  });
+
+  it('uses the browser runtime header config after hydration', () => {
+    globalThis.window.__AMPEL_HEADER_CONFIG__ = {
+      productLogoUrl: 'assets/brand-default-logo.svg',
+      clinicLogoUrl: 'assets/clinical-default-logo.svg',
+      ticketLink: 'https://example.test/runtime-ticket',
+      contactPhone: '54321',
+      mtNumber: 'MT-runtime',
+      instructionsLink: 'https://example.test/runtime-instructions',
+    };
+
+    expect(getPatientHeaderConfig()).toMatchObject({
+      productLogoUrl: 'assets/brand-default-logo.svg',
+      clinicLogoUrl: 'assets/clinical-default-logo.svg',
+      ticketLink: 'https://example.test/runtime-ticket',
+      contactPhone: '54321',
+      mtNumber: 'MT-runtime',
+      instructionsLink: 'https://example.test/runtime-instructions',
+    });
+  });
+
+  it('serializes the browser runtime config safely', () => {
+    const script = getPatientHeaderConfigScript({
+      productLogoUrl: '</script><script>alert(1)</script>',
+      clinicLogoUrl: '',
+      ticketLink: '',
+      contactPhone: '',
+      mtNumber: '',
+      instructionsLink: '',
+    });
+
+    expect(script).toContain('window.__AMPEL_HEADER_CONFIG__');
+    expect(script).not.toContain('</script>');
+    expect(script).toContain('\\u003c/script>');
   });
 });

@@ -21,6 +21,13 @@ const DEFAULTS: PatientHeaderConfig = {
 const PUBLIC_RUNTIME_ASSETS_PREFIX = '/runtime-assets/';
 const CONTAINER_RUNTIME_ASSETS_PREFIX = '/app/public/runtime-assets/';
 const SOURCE_ASSETS_PREFIX = 'assets/';
+const HEADER_CONFIG_GLOBAL = '__AMPEL_HEADER_CONFIG__';
+
+declare global {
+  interface Window {
+    __AMPEL_HEADER_CONFIG__?: Partial<PatientHeaderConfig>;
+  }
+}
 
 function readNodeEnv(): EnvRecord | undefined {
   if (typeof globalThis === 'undefined') return undefined;
@@ -51,6 +58,16 @@ function readEnvValue(runtimeName: string, buildName: string): string | undefine
   return undefined;
 }
 
+function readBrowserHeaderConfig(): Partial<PatientHeaderConfig> | undefined {
+  if (typeof globalThis === 'undefined') return undefined;
+  const maybeGlobal = globalThis as typeof globalThis & {
+    window?: Window;
+    __AMPEL_HEADER_CONFIG__?: Partial<PatientHeaderConfig>;
+  };
+
+  return maybeGlobal.window?.[HEADER_CONFIG_GLOBAL] ?? maybeGlobal[HEADER_CONFIG_GLOBAL];
+}
+
 function normalizeRuntimeLogoUrl(value: string | undefined): string {
   const trimmed = value?.trim().replace(/^(['"])(.*)\1$/, '$2') ?? '';
   if (!trimmed) return '';
@@ -75,16 +92,30 @@ function normalizeRuntimeLogoUrl(value: string | undefined): string {
   return `${PUBLIC_RUNTIME_ASSETS_PREFIX}${relativePath}`;
 }
 
-export function getPatientHeaderConfig(): PatientHeaderConfig {
+function withDefaults(config: Partial<PatientHeaderConfig>): PatientHeaderConfig {
   return {
-    productLogoUrl: normalizeRuntimeLogoUrl(
+    productLogoUrl: normalizeRuntimeLogoUrl(config.productLogoUrl ?? DEFAULTS.productLogoUrl),
+    clinicLogoUrl: normalizeRuntimeLogoUrl(config.clinicLogoUrl ?? DEFAULTS.clinicLogoUrl),
+    ticketLink: config.ticketLink ?? DEFAULTS.ticketLink,
+    contactPhone: config.contactPhone ?? DEFAULTS.contactPhone,
+    mtNumber: config.mtNumber ?? DEFAULTS.mtNumber,
+    instructionsLink: config.instructionsLink ?? DEFAULTS.instructionsLink,
+  };
+}
+
+export function getPatientHeaderConfig(): PatientHeaderConfig {
+  const browserHeaderConfig = readBrowserHeaderConfig();
+  if (browserHeaderConfig) {
+    return withDefaults(browserHeaderConfig);
+  }
+
+  return withDefaults({
+    productLogoUrl:
       readEnvValue('HEADER_PRODUCT_LOGO_URL', 'VITE_HEADER_PRODUCT_LOGO_URL') ??
-        DEFAULTS.productLogoUrl,
-    ),
-    clinicLogoUrl: normalizeRuntimeLogoUrl(
+      DEFAULTS.productLogoUrl,
+    clinicLogoUrl:
       readEnvValue('HEADER_CLINIC_LOGO_URL', 'VITE_HEADER_CLINIC_LOGO_URL') ??
-        DEFAULTS.clinicLogoUrl,
-    ),
+      DEFAULTS.clinicLogoUrl,
     ticketLink:
       readEnvValue('HEADER_TICKET_LINK', 'VITE_HEADER_TICKET_LINK') ?? DEFAULTS.ticketLink,
     contactPhone:
@@ -93,5 +124,14 @@ export function getPatientHeaderConfig(): PatientHeaderConfig {
     instructionsLink:
       readEnvValue('HEADER_INSTRUCTIONS_LINK', 'VITE_HEADER_INSTRUCTIONS_LINK') ??
       DEFAULTS.instructionsLink,
-  };
+  });
+}
+
+export function getPatientHeaderConfigScript(config: PatientHeaderConfig): string {
+  const serializedConfig = JSON.stringify(config)
+    .replace(/</g, '\\u003c')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+
+  return `window.${HEADER_CONFIG_GLOBAL} = ${serializedConfig};`;
 }

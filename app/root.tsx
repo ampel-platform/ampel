@@ -1,13 +1,30 @@
 import React, { Suspense } from 'react';
-import { LinksFunction } from 'react-router';
+import { LinksFunction, useLoaderData } from 'react-router';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
+import {
+  getPatientHeaderConfig,
+  getPatientHeaderConfigScript,
+  type PatientHeaderConfig,
+} from './patientHeaderConfig';
 import styles from './tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
+interface RootLoaderData {
+  headerConfig: PatientHeaderConfig;
+}
+
+export function loader(): RootLoaderData {
+  return {
+    headerConfig: getPatientHeaderConfig(),
+  };
+}
+
 // eslint-disable-next-line import/no-default-export
 export default function App(): React.ReactNode {
+  const { headerConfig } = useLoaderData<RootLoaderData>();
+
   return (
     <html lang='de'>
       <head>
@@ -25,6 +42,11 @@ export default function App(): React.ReactNode {
             </Suspense>
           </div>
         </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: getPatientHeaderConfigScript(headerConfig),
+          }}
+        />
         <Scripts />
       </body>
     </html>

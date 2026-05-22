@@ -17,12 +17,14 @@ function isDevMode(): boolean {
 function readRuntimeBaseApiUrl(): string | undefined {
   if (typeof globalThis === 'undefined') return undefined;
   const maybeProcess = globalThis as { process?: { env?: EnvRecord } };
-  return maybeProcess.process?.env?.BASE_API_URL;
+  const value = maybeProcess.process?.env?.BASE_API_URL;
+  return value?.trim() ? value : undefined;
 }
 
 function readBuildTimeBaseApiUrl(): string | undefined {
   if (typeof import.meta === 'undefined') return undefined;
-  return import.meta.env?.VITE_BASE_API_URL;
+  const value = import.meta.env?.BASE_API_URL ?? import.meta.env?.VITE_BASE_API_URL;
+  return value?.trim() ? value : undefined;
 }
 
 function readWindowOrigin(): string | undefined {
