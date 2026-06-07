@@ -1,0 +1,10 @@
+edition = "2024";
+
+// Representation of a UUID version 4.
+message UUID4 {
+  // String representation of the UUID.
+  //
+  // NOTE:
+  // This has NOT been made a byte array since reconstructing the UUID with missing hyphens would be cumbersome.
+  string value = 1;
+}

@@ -1,0 +1,17 @@
+edition = "2024";
+
+import "base_event.proto";
+
+package influx;
+
+// Indicates that a specific medical case has been closed.
+message MedicalCaseClosedEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of this medical case.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string medical_case_id = 2; // required
+}

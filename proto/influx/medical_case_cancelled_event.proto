@@ -1,0 +1,26 @@
+edition = "2024";
+
+import "base_event.proto";
+
+package influx;
+
+// Indicates that a medical case has been cancelled. Cancellation must not be confused with closing a medical case as
+// the latter one is seen as a normal process once the patient has been dismissed. Cancellation on the other hand is a
+// forced action.
+message MedicalCaseCancelledEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of the medical case.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string medical_case_id = 2; // required
+
+  // Optional field for tracking why the medical case has been cancelled.
+  //
+  // NOTE:
+  // This is kept as a string and not made an enum in order to be as flexible as possible when it comes to different
+  // upstream systems that may use completely different information models. Mapping them would otherwise be hard or even impossible.
+  string reason = 3;
+}

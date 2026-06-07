@@ -1,0 +1,24 @@
+edition = "2024";
+
+import "base_event.proto";
+
+package influx;
+
+// Indicates that the linkage between a medical case and a patient has been established.
+message MedicalCasePatientAssignedEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of the medical case.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string medical_case_id = 2; // required
+
+  // Unique identifier of the patient that has been associated with the medical case.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string patient_id = 3; // required
+}

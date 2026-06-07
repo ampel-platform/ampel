@@ -1,0 +1,39 @@
+edition = "2024";
+
+import "base_event.proto";
+import "google/protobuf/timestamp.proto";
+
+package influx;
+
+// Indicates that a medical case has been created.
+message MedicalCaseCreatedEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of the medical case.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string medical_case_id = 2; // required
+
+  // Denotes when the medical case has been created in the source system.
+  //
+  // NOTE:
+  // This is different from the event timestamp as the event time does not necessarily coincide with the creation
+  // timestamp of the medical case. E.g. this can happen during an initial bulk load of existing data that is being fed
+  // into the platform.
+  google.protobuf.Timestamp created_at = 3; // required
+
+  // Unique identifier of the patient associated with the medical case.
+  // This is an optional field, as a medical case can be opened without a patient
+  // associated with it. This is mainly the case in emergency situations when
+  // patients are getting admitted to the hospital and there's no time to get
+  // their personal information. However, the medical case is important for
+  // tracking what is being done to the patient. The personal information can
+  // be associated with the medical case later on.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string patient_id = 4;
+}
