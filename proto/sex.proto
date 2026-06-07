@@ -1,0 +1,8 @@
+edition = "2024";
+
+// Defines a closed set of possible sex values supported by the platform.
+enum Sex {
+  SEX_UNKNOWN = 0;
+  SEX_FEMALE = 1;
+  SEX_MALE = 2;
+}
