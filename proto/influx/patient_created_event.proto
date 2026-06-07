@@ -23,7 +23,7 @@ message PatientCreatedEvent {
   // This is different from the event timestamp as the event time does not necessarily coincide with the creation
   // timestamp of the patient. E.g. this can happen during an initial bulk load of existing data that is being fed
   // into the platform.
-  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp created_at = 3; // required
 
   // Patient's firstname.
   string firstname = 4;

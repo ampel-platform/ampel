@@ -22,7 +22,7 @@ message PatientCancelledEvent {
   // NOTE:
   // This is different from the event timestamp as the event time does not necessarily coincide with the cancellation of
   // a patient. E.g. this can happen during an initial bulk load of existing data that is being fed into the platform.
-  google.protobuf.Timestamp cancelled_at = 3;
+  google.protobuf.Timestamp cancelled_at = 3; // required
 
   // Optional field for tracking why the patient has been cancelled.
   //
