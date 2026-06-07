@@ -1,0 +1,25 @@
+edition = "2024";
+
+import "base_event.proto";
+import "google/protobuf/timestamp.proto";
+
+package influx;
+
+// Indicates that a patient has died.
+message PatientDiedEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of the patient.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string patient_id = 2; // required
+
+  // Denotes when the patient has died according to the source system.
+  //
+  // NOTE:
+  // This is different from the event timestamp as the event time does not necessarily coincide with the death of a
+  // patient. E.g. this can happen during an initial bulk load of existing data that is being fed into the platform.
+  google.protobuf.Timestamp died_at = 3; // required
+}

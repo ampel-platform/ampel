@@ -1,0 +1,18 @@
+edition = "2024";
+
+// Representation of a whole calendar date.
+// This does not include any time zone as it is insignificant for its purpose. If necessary the application using this
+// message can translate it into an appropriate time zone.
+message Date {
+  // Year of the date.
+  int32 year = 1; // required
+
+  // Month of the date in the range [1,12].
+  int32 month = 2; // required
+
+  // Day of the date in the range of [1,31].
+  //
+  // NOTE:
+  // This needs to be valid for the given year and month.
+  int32 day = 3; // required
+}
