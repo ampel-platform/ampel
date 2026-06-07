@@ -1,0 +1,36 @@
+edition = "2024";
+
+import "base_event.proto";
+import "google/protobuf/timestamp.proto";
+
+package influx;
+
+// Indicates that a procedure has been cancelled.
+// This can happen if e.g. a procedure has been associated with a wrong medical case in the source system and thus needs
+// to be removed from the patient's medical case record.
+message ProcedureCancelledEvent {
+  BaseEvent event = 1;
+
+  // Unique identifier of the procedure. This must not be confused with the procedure code as the latter describes the
+  // procedure using a standard and this ID simply identifies the very procedure.
+  //
+  // NOTE:
+  // This is kept as a string because some upstream systems may not use UUIDs.
+  // In order to stay compatible with them, a generic string field is being used.
+  string procedure_id = 2; // required
+
+  // Denotes when the procedure has been cancelled in the source system.
+  //
+  // NOTE:
+  // This is different from the event timestamp as the event time does not necessarily coincide with the cancellation of
+  // a procedure. E.g. this can happen during an initial bulk load of existing data that is being fed into the platform.
+  google.protobuf.Timestamp cancelled_at = 3; // required
+
+  // Optional field for tracking why the procedure has been cancelled.
+  //
+  // NOTE:
+  // This is kept as a string and not made an enum in order to be as flexible as possible when it comes to different
+  // upstream systems that may use completely different information models. Mapping them would otherwise be hard or even
+  // impossible.
+  string reason = 4;
+}
