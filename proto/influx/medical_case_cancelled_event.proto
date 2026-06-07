@@ -21,6 +21,7 @@ message MedicalCaseCancelledEvent {
   //
   // NOTE:
   // This is kept as a string and not made an enum in order to be as flexible as possible when it comes to different
-  // upstream systems that may use completely different information models. Mapping them would otherwise be hard or even impossible.
+  // upstream systems that may use completely different information models. Mapping them would otherwise be hard or even
+  // impossible.
   string reason = 3;
 }
