@@ -23,13 +23,13 @@ message LaboratoryValueCreatedEvent {
   // In order to stay compatible with them, a generic string field is being used.
   string laboratory_value_id = 3; // required
 
-  // Denotes when the laboratory value has been created in the source system.
+  // Denotes when the sample associated with the laboratory value has been gathered.
   //
   // NOTE:
   // This is different from the event timestamp as the event time does not necessarily coincide with the time something
   // has been created within the source system. E.g. this can happen during an initial bulk load of existing data that
   // is being fed into the platform.
-  google.protobuf.Timestamp created_at = 4; // required
+  google.protobuf.Timestamp sample_gathered_at = 4; // required
 
   // The source system the laboratory value stems from.
   // Think of it as a certain medical device that a patient is hooked up to for example.
