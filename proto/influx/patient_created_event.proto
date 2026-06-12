@@ -41,5 +41,5 @@ message PatientCreatedEvent {
   Date birth_date = 6;
 
   // Patient's sex.
-  Sex sex = 7;
+  Sex sex = 7; // required (default: unknown)
 }
