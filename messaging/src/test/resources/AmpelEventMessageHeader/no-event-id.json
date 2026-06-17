@@ -1,0 +1,7 @@
+{
+  "timestamp":1782138036.699881735,
+  "source_system":"test-system",
+  "correlation_id":"1635d38d-0ab7-42ed-b0db-afa467539dea",
+  "event_type":"procedure.created",
+  "event_version":1
+}
