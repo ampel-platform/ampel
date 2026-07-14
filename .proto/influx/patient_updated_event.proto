@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "common/event_name_option.proto";
+import "common/sex.proto";
+import "common/vital_state.proto";
+
+option java_multiple_files = true;
+option java_package = "eu.ampel_platform.messaging.events.influx";
+
+package ampel;
+
+message PatientUpdatedEvent {
+  option (ampel.event_name) = "patient.updated";
+
+  string patient_id = 1;
+  optional string firstname = 2;
+  optional string lastname = 3;
+  Sex sex = 4;
+  VitalState vital_state = 5;
+  optional google.protobuf.Timestamp date_of_birth = 6;
+}

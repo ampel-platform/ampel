@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "common/event_name_option.proto";
+
+option java_multiple_files = true;
+option java_package = "eu.ampel_platform.messaging.events.influx";
+
+package ampel;
+
+message PatientDeletedEvent {
+  option (ampel.event_name) = "patient.deleted";
+
+  string patient_id = 1;
+}
