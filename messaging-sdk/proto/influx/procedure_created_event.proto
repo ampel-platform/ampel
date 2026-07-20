@@ -1,0 +1,15 @@
+edition = "2024";
+
+import "google/protobuf/timestamp.proto";
+
+//option java_multiple_files = true;
+option java_package = "eu.ampel_platform.messaging_sdk.generated.events.influx";
+
+package ampel.influx.v1;
+
+message AmpelProcedureCreatedEvent {
+  string medical_case_id = 1;
+  string procedure_id = 2;
+  string procedure_code = 3;
+  google.protobuf.Timestamp conducted_at = 4;
+}

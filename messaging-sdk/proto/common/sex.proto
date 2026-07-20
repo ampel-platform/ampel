@@ -1,0 +1,12 @@
+edition = "2024";
+
+//option java_multiple_files = true;
+option java_package = "eu.ampel_platform.messaging_sdk.generated.common";
+
+package ampel.v1;
+
+enum AmpelSex {
+  UNKNOWN = 0;
+  FEMALE = 1;
+  MALE = 2;
+}
