@@ -31,17 +31,17 @@ public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScore
                 analyte_measured_at,
                 score_calculated_at
             ) VALUES (
-                :#{#laboratoryScore.scoreId()},
-                :#{#laboratoryScore.scoringSystemName()},
-                :#{#laboratoryScore.scoringSystemVersion()},
-                :#{#laboratoryScore.medicalCaseId()},
-                :#{#laboratoryScore.score().name().toUpperCase()},
-                :#{#laboratoryScore.scoringSystemSeverityCode()},
-                :#{#laboratoryScore.analyteName()},
-                :#{#laboratoryScore.analyteValue()},
-                :#{#laboratoryScore.analyteUnit()},
-                :#{#laboratoryScore.analyteMeasuredAt()},
-                :#{#laboratoryScore.scoreCalculatedAt()}
+                :#{#laboratoryScore.getScoreId()},
+                :#{#laboratoryScore.getScoringSystemName()},
+                :#{#laboratoryScore.getScoringSystemVersion()},
+                :#{#laboratoryScore.getMedicalCaseId()},
+                :#{#laboratoryScore.getScore().name().toUpperCase()},
+                :#{#laboratoryScore.getScoringSystemSeverityCode()},
+                :#{#laboratoryScore.getAnalyteName()},
+                :#{#laboratoryScore.getAnalyteValue()},
+                :#{#laboratoryScore.getAnalyteUnit()},
+                :#{#laboratoryScore.getAnalyteMeasuredAt()},
+                :#{#laboratoryScore.getScoreCalculatedAt()}
             )
             ON CONFLICT (score_id) DO NOTHING;
             """, nativeQuery = true)

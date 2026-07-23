@@ -55,19 +55,19 @@ public class LaboratoryScoreIngestionServiceImpl implements LaboratoryScoreInges
     }
 
     private LaboratoryScoreEntity convertToInternalModel(AmpelLaboratoryScoreCalculatedEvent laboratoryScore) {
-        return new LaboratoryScoreEntity(
-                laboratoryScore.getScoreId(),
-                laboratoryScore.getScoringSystemName(),
-                laboratoryScore.getScoringSystemVersion(),
-                laboratoryScore.getMedicalCaseId(),
-                convertToInternalModel(laboratoryScore.getScore()),
-                laboratoryScore.getScoringSystemSeverityCode(),
-                laboratoryScore.getAnalyteName(),
-                laboratoryScore.getAnalyteValue(),
-                laboratoryScore.getAnalyteUnit(),
-                convertToInternalModel(laboratoryScore.getAnalyteMeasuredAt()),
-                convertToInternalModel(laboratoryScore.getCalculatedAt())
-        );
+        return LaboratoryScoreEntity.builder()
+                .scoreId(laboratoryScore.getScoreId())
+                .scoringSystemName(laboratoryScore.getScoringSystemName())
+                .scoringSystemVersion(laboratoryScore.getScoringSystemVersion())
+                .medicalCaseId(laboratoryScore.getMedicalCaseId())
+                .score(convertToInternalModel(laboratoryScore.getScore()))
+                .scoringSystemSeverityCode(laboratoryScore.getScoringSystemSeverityCode())
+                .analyteName(laboratoryScore.getAnalyteName())
+                .analyteValue(laboratoryScore.getAnalyteValue())
+                .analyteUnit(laboratoryScore.getAnalyteUnit())
+                .analyteMeasuredAt(convertToInternalModel(laboratoryScore.getAnalyteMeasuredAt()))
+                .scoreCalculatedAt(convertToInternalModel(laboratoryScore.getCalculatedAt()))
+                .build();
     }
 
     private Score convertToInternalModel(AmpelScore ampelScore) {
