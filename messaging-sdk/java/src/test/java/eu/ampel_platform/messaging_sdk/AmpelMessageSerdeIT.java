@@ -41,6 +41,7 @@ final class AmpelMessageSerdeIT {
         assertEquals(ampelMessage.getEventId(), deserializedAmpelMessage.getEventId());
         assertEquals(ampelMessage.getTimestamp(), deserializedAmpelMessage.getTimestamp());
         assertEquals(ampelMessage.getEmitter(), deserializedAmpelMessage.getEmitter());
+        assertEquals(ampelMessage.getEventType(), deserializedAmpelMessage.getEventType());
         assertInstanceOf(AmpelPatientDiedEvent.class, unpackedEvent);
 
         AmpelPatientDiedEvent castEvent = (AmpelPatientDiedEvent) unpackedEvent;

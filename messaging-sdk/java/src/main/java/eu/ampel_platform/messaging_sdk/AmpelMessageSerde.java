@@ -65,6 +65,7 @@ public final class AmpelMessageSerde {
                         .build())
                 .setPartitioningKey(partitioningKey)
                 .setEmitter(applicationIdentifier)
+                .setEventType(event.getDescriptorForType().getFullName())
                 .setPayload(Any.pack(event))
                 .build();
     }
