@@ -1,0 +1,11 @@
+edition = "2024";
+
+option java_package = "eu.ampel_platform.messaging_sdk.generated";
+
+package ampel.scoring_system.v1;
+
+enum AmpelScore {
+  AMPEL_GREEN = 0;
+  AMPEL_YELLOW = 1;
+  AMPEL_RED = 2;
+}

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: "ampel-result-service"
+
+  datasource:
+    url: "jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT:5432}/${DATABASE_NAME}"
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    bootstrap-servers:
+      - ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    client-id: ${KAFKA_CLIENT_ID:scoring-service}
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_ID:scoring-service-1}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: earliest
+      max-poll-records: 1000
+    listener:
+      concurrency: 1
+      type: batch
+    security:
+      protocol: "PLAINTEXT"
