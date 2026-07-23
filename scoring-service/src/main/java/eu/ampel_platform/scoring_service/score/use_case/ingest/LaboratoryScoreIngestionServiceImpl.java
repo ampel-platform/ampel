@@ -6,9 +6,11 @@ import eu.ampel_platform.messaging_sdk.generated.AmpelScore;
 import eu.ampel_platform.scoring_service.score.common.persistence.LaboratoryScoreEntity;
 import eu.ampel_platform.scoring_service.score.common.persistence.LaboratoryScoreRepository;
 import eu.ampel_platform.scoring_service.score.common.persistence.Score;
+import io.namastack.outbox.Outbox;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -22,15 +24,21 @@ import static java.util.Objects.requireNonNull;
  *
  * @since 1.0.0
  */
+@Qualifier("ingestion")
 @Service
 public class LaboratoryScoreIngestionServiceImpl implements LaboratoryScoreIngestionService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LaboratoryScoreIngestionServiceImpl.class);
 
-    private final LaboratoryScoreRepository laboratoryScoreRepository;
+    private static final String OUTBOX_PARTITIONING_KEY = "DLQ";
 
-    LaboratoryScoreIngestionServiceImpl(LaboratoryScoreRepository laboratoryScoreRepository) {
+    private final LaboratoryScoreRepository laboratoryScoreRepository;
+    private final Outbox outbox;
+
+    LaboratoryScoreIngestionServiceImpl(LaboratoryScoreRepository laboratoryScoreRepository,
+                                        Outbox outbox) {
         this.laboratoryScoreRepository = requireNonNull(laboratoryScoreRepository, "repository must not be null");
+        this.outbox = requireNonNull(outbox, "outbox must not be null");
     }
 
     /**
@@ -47,11 +55,22 @@ public class LaboratoryScoreIngestionServiceImpl implements LaboratoryScoreInges
     public void handleLaboratoryScoreCalculatedMessages(
             List<AmpelLaboratoryScoreCalculatedEvent> messages,
             List<DeadMessage> deadMessages) {
-        for (AmpelLaboratoryScoreCalculatedEvent message : messages) {
-            laboratoryScoreRepository.saveIgnoreConflict(convertToInternalModel(message));
+        if (!messages.isEmpty()) {
+            for (AmpelLaboratoryScoreCalculatedEvent message : messages) {
+                laboratoryScoreRepository.saveIgnoreConflict(convertToInternalModel(message));
+            }
+            LOGGER.info("ingested #{} laboratory score(s)", messages.size());
         }
-        // TODO: write DLQ entries here (using outbox pattern)
-        LOGGER.info("ingested #{} laboratory score(s)", messages.size());
+
+        if (!deadMessages.isEmpty()) {
+            for (DeadMessage deadMessage : deadMessages) {
+                // We are reusing the same partitioning key for all dead messages so that their original influx ordering is
+                // retained. This is important for subsequent investigations, retries or different DLQ handling strategies
+                // alltogether.
+                outbox.schedule(deadMessage, OUTBOX_PARTITIONING_KEY);
+            }
+            LOGGER.warn("sent #{} messages to DLQ", deadMessages.size());
+        }
     }
 
     private LaboratoryScoreEntity convertToInternalModel(AmpelLaboratoryScoreCalculatedEvent laboratoryScore) {

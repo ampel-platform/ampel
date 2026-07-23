@@ -2,8 +2,10 @@ package eu.ampel_platform.scoring_service.score.use_case.ingest;
 
 import eu.ampel_platform.messaging_sdk.AmpelEventTypeRegistry;
 import eu.ampel_platform.messaging_sdk.AmpelMessageSerde;
-import eu.ampel_platform.scoring_service.score.common.persistence.LaboratoryScoreRepository;
+import io.namastack.outbox.kafka.KafkaOutboxRouting;
+import io.namastack.outbox.routing.selector.OutboxPayloadSelector;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.ConsumerFactory;
@@ -16,6 +18,9 @@ public class Config {
 
     private static final String AMPEL_MESSAGE_KAFKA_TOPIC = "ampel";
 
+    @Value("${application.messages.dlq.topic-name}")
+    private String dlqTopicName;
+
     @Bean
     public AmpelEventTypeRegistry eventTypeRegistry() {
         var discoveredTypes = AmpelEventTypeRegistry.discoverParsersByEventUrl();
@@ -25,12 +30,6 @@ public class Config {
     @Bean
     public AmpelMessageSerde eventSerde(AmpelEventTypeRegistry registry) {
         return new AmpelMessageSerde("scoring-service", registry);
-    }
-
-    @Qualifier("ingestion")
-    @Bean
-    public LaboratoryScoreIngestionServiceImpl laboratoryScoreIngestionService(LaboratoryScoreRepository repo) {
-        return new LaboratoryScoreIngestionServiceImpl(repo);
     }
 
     @Bean
@@ -53,5 +52,16 @@ public class Config {
         props.setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 
         return new KafkaMessageListenerContainer<>(cf, props);
+    }
+
+    // OUTBOX
+    @Bean
+    public KafkaOutboxRouting deadMessageKafkaOutboxRouting() {
+        return KafkaOutboxRouting.builder()
+                .route(OutboxPayloadSelector.type(DeadMessage.class), route -> {
+                    // The key used for the outbox event message will simply be reused for Kafka.
+                    route.target(dlqTopicName);
+                })
+                .build();
     }
 }

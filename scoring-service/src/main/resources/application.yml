@@ -30,3 +30,8 @@ spring:
       type: batch
     security:
       protocol: "PLAINTEXT"
+
+application:
+  messages:
+    dlq:
+      topic-name: ${MESSAGES_DLQ_TOPIC_NAME:scoring-service-dlq}

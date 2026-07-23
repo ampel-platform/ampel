@@ -11,8 +11,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.listener.BatchAcknowledgingMessageListener;
 import org.springframework.kafka.support.Acknowledgment;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import static java.util.Objects.requireNonNull;
 
@@ -72,12 +75,21 @@ final class AmpelLaboratoryScoreCalculatedEventListener implements BatchAcknowle
         int offsetIndex = -1;
 
         for (ConsumerRecord<String, byte[]> record : data) {
+            offsetIndex++;
+
             AmpelMessage message;
             try {
                 message = messageSerde.deserialize(record.value());
             } catch (InvalidAmpelMessage e) {
                 LOGGER.warn("failed deserializing incoming message - will be moved to DLQ", e);
-                // TODO: convert to DeadMessage
+                unserializableMessages.add(
+                        new DeadMessage(
+                                UUID.randomUUID(),
+                                e.getClass().getCanonicalName(),
+                                e.getMessage(),
+                                Instant.now(),
+                                record.value(),
+                                Map.of()));
                 continue;
             }
 
@@ -91,10 +103,22 @@ final class AmpelLaboratoryScoreCalculatedEventListener implements BatchAcknowle
                 deserializedMessages.add((AmpelLaboratoryScoreCalculatedEvent) messageSerde.unwrapEvent(message));
             } catch (AmpelEventReconstructionException e) {
                 LOGGER.warn("failed unwrapping Ampel event from message - will be moved to DLQ", e);
-                // TODO: convert to DeadMessage
+                unserializableMessages.add(
+                        new DeadMessage(
+                                UUID.randomUUID(),
+                                e.getClass().getCanonicalName(),
+                                e.getMessage(),
+                                Instant.now(),
+                                record.value(),
+                                Map.of(
+                                        "event-id", message.getEventId(),
+                                        "event-type", message.getEventType(),
+                                        "event-time", Instant.ofEpochSecond(
+                                                message.getTimestamp().getSeconds(),
+                                                message.getTimestamp().getNanos()),
+                                        "partitioning-key", message.getPartitioningKey(),
+                                        "emitter", message.getEmitter())));
             }
-
-            offsetIndex++;
         }
 
         return new MessageBatch(

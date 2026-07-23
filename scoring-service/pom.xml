@@ -26,6 +26,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>io.namastack</groupId>
+                <artifactId>namastack-outbox-bom</artifactId>
+                <version>1.7.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -98,6 +105,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.namastack</groupId>
+            <artifactId>namastack-outbox-starter-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.namastack</groupId>
+            <artifactId>namastack-outbox-kafka</artifactId>
         </dependency>
     </dependencies>
 </project>

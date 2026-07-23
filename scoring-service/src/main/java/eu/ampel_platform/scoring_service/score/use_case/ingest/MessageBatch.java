@@ -25,8 +25,8 @@ record MessageBatch(
         requireNonNull(unserializableMessages, "unserializable messages must not be null");
 
         if (latestOffsetIndex < 0 || latestOffsetIndex > (messages.size() + unserializableMessages.size())) {
-            throw new IllegalArgumentException("offset index has to be in [%d, %d]"
-                    .formatted(0, (messages.size() + unserializableMessages.size() - 1)));
+            throw new IllegalArgumentException("offset index is %d but has to be in [%d, %d]"
+                    .formatted(latestOffsetIndex, 0, (messages.size() + unserializableMessages.size() - 1)));
         }
     }
 
