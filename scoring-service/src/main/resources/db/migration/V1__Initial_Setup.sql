@@ -22,6 +22,9 @@ CREATE TABLE IF NOT EXISTS laboratory_scores
     SCORE_CALCULATED_AT          TIMESTAMP        NOT NULL
 );
 
+CREATE INDEX IF NOT EXISTS idx_laboratory_scores_medical_case
+    ON laboratory_scores (MEDICAL_CASE_ID);
+
 ------------------------------------------------------------------------------------------------------------------------
 -- OUTBOX                                                                                                             --
 ------------------------------------------------------------------------------------------------------------------------

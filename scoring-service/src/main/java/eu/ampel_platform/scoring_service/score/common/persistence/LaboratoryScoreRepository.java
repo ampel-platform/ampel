@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Repository to store and retrieve {@link LaboratoryScoreEntity} information.
  *
@@ -48,4 +50,12 @@ public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScore
         // Unfortunately the custom converter is not being used here automatically. Thus, we're going to translate the
         // score ourselves (according to the converter logic).
     void saveIgnoreConflict(@Param("laboratoryScore") LaboratoryScoreEntity entity);
+
+    /**
+     * Finds all laboratory scores of all scoring systems within a medical case.
+     *
+     * @param medicalCaseId identifier of the medical case.
+     * @return All scores within the medical case.
+     */
+    List<LaboratoryScoreEntity> findAllByMedicalCaseId(String medicalCaseId);
 }
