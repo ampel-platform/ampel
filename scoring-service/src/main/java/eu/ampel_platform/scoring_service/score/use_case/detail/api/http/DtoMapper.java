@@ -3,7 +3,7 @@ package eu.ampel_platform.scoring_service.score.use_case.detail.api.http;
 import eu.ampel_platform.scoring_service.score.common.persistence.LaboratoryScoreEntity;
 import eu.ampel_platform.scoring_service.score.common.persistence.Score;
 import eu.ampel_platform.scoring_service.score.use_case.detail.ScoringSystemLaboratoryScores;
-import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.AmpelScoreResponsePart;
+import eu.ampel_platform.scoring_service.score.common.api.http.dto.AmpelScoreResponsePart;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.LaboratoryScoreDetailResponse;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.LaboratoryScoreResponsePart;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.ScoringSystemLaboratoryScoresResponsePart;

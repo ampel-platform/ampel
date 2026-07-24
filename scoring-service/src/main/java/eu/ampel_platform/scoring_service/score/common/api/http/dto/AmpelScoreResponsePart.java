@@ -1,4 +1,4 @@
-package eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto;
+package eu.ampel_platform.scoring_service.score.common.api.http.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,5 +15,8 @@ public enum AmpelScoreResponsePart {
     YELLOW,
 
     @JsonProperty("red")
-    RED
+    RED,
+
+    @JsonProperty("none")
+    NONE
 }

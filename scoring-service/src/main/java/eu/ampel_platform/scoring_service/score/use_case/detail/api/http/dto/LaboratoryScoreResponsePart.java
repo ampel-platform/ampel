@@ -1,5 +1,7 @@
 package eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto;
 
+import eu.ampel_platform.scoring_service.score.common.api.http.dto.AmpelScoreResponsePart;
+
 import java.time.Instant;
 
 /**
