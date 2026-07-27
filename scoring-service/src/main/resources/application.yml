@@ -16,6 +16,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   kafka:
+    admin:
+      auto-create: false
     bootstrap-servers:
       - ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     client-id: scoring-service
@@ -25,6 +27,11 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
       auto-offset-reset: earliest
       max-poll-records: 1000
+      properties:
+        allow.auto.create.topics: false
+    producer:
+      properties:
+        allow.auto.create.topics: false
     listener:
       concurrency: 1
       type: batch
