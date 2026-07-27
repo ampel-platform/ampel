@@ -5,6 +5,8 @@ LABEL org.opencontainers.image.description="Scoring ingestion and retrieval serv
 LABEL org.opencontainers.image.authors="Ampel CDSS Team <ampel@medizin.uni-leipzig.de>"
 LABEL org.opencontainers.image.vendor="Ampel CDSS"
 
+RUN apk add --no-cache curl
+
 WORKDIR /opt/app
 COPY ./target/*.jar ./scoring-service.jar
 
@@ -13,5 +15,8 @@ RUN chown -R ampel:ampel /opt/app/
 
 USER ampel:ampel
 
-# TODO: add health check later on
+
+ENV SERVER_PORT=8080
+HEALTHCHECK --interval=5s --start-period=10s CMD curl -s -f http://localhost:${SERVER_PORT}/actuator/health || exit 1
+
 ENTRYPOINT ["java", "-jar", "/opt/app/scoring-service.jar"]
