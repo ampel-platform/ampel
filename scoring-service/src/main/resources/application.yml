@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "ampel-result-service"
+    name: "ampel-scoring-service"
 
   datasource:
     url: "jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT:5432}/${DATABASE_NAME}"
