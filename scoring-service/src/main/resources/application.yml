@@ -18,9 +18,9 @@ spring:
   kafka:
     bootstrap-servers:
       - ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
-    client-id: ${KAFKA_CLIENT_ID:scoring-service}
+    client-id: scoring-service
     consumer:
-      group-id: ${KAFKA_CONSUMER_GROUP_ID:scoring-service-1}
+      group-id: scoring-service
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
       auto-offset-reset: earliest
