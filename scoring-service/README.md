@@ -20,6 +20,7 @@ Use the following environment variables in order to adjust this service:
 | DATABASE_PASSWORD       | Password for authenticating against the database.                              |                       |
 | KAFKA_BOOTSTRAP_SERVERS | List of servers (comma separated) for connecting to a Kafka cluster.           | `localhost:9092`      |
 | MESSAGES_DLQ_TOPIC_NAME | Name of a Kafka topic that acts as a DLQ (Dead Letter Queue) for this service. | `scoring-service-dlq` |
+| SERVER_PORT             | Port to use for the web server.                                                | `8080`                |
 
 > [!IMPORTANT]
 > Make sure that the DLQ topic already exists within the used Kafka cluster as this service does __not__ attempt to
