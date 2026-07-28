@@ -13,6 +13,7 @@ message AmpelMessage {
   google.protobuf.Timestamp timestamp = 2;
   string partitioning_key = 3;
   string emitter = 4;
+  string event_type = 5;
 
-  google.protobuf.Any payload = 5;
+  google.protobuf.Any payload = 10;
 }

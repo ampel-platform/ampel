@@ -3,12 +3,6 @@
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 cd "$BASE_DIR"
 
-## Leaving out IPATH since it resolves to the current directory anyway (and we switched to it already!)
-#protoc \
-#  --java_out="/home/atwrdik/Development/AMPEL/ampel/messaging-sdk/java/src/main/java" \
-#  $(find . -name "*.proto" -type f | tr '\n' ' ')
-
-
 # Takes the exit code as a single argument - if not set it's 0
 display_help_and_exit() {
   echo "Usage: helper.sh <command>"
