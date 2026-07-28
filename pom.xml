@@ -19,6 +19,7 @@
 
     <modules>
         <module>messaging-sdk/java</module>
+        <module>notification-service</module>
         <module>scoring-service</module>
     </modules>
 
