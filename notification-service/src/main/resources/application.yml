@@ -4,3 +4,72 @@ server:
 spring:
   application:
     name: "ampel-notification-service"
+
+  datasource:
+    url: "jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT:5432}/${DATABASE_NAME}"
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    admin:
+      auto-create: false
+    bootstrap-servers:
+      - ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    client-id: notification-service
+    consumer:
+      group-id: notification-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: earliest
+      max-poll-records: 1000
+      properties:
+        allow.auto.create.topics: false
+    producer:
+      properties:
+        allow.auto.create.topics: false
+    listener:
+      concurrency: 1
+      type: batch
+    security:
+      protocol: "PLAINTEXT"
+
+application:
+  inbox:
+    cleanup:
+      cleanup-rate-ms: ${INBOX_CLEANUP_RATE_MS:60000}
+      cleanup-max-items: ${INBOX_CLEANUP_MAX_ITEMS:1000}
+      cleanup-item-age-threshold-ms: ${INBOX_CLEANUP_ITEM_AGE_THRESHOLD_MS:900000}
+    staleness-resolver:
+      staleness-resolver-rate-ms: ${INBOX_STALENESS_RESOLVER_RATE_MS:60000}
+      staleness-resolver-max-items: ${INBOX_STALENESS_RESOLVER_MAX_ITEMS:1000}
+      staleness-resolver-item-processing-age-threshold-ms: ${INBOX_STALENESS_RESOLVER_ITEM_PROCESSING_AGE_THRESHOLD:300000}
+    processing:
+      processing-rate-ms: ${INBOX_PROCESSING_RATE_MS:2000}
+      processing-max-items: ${INBOX_PROCESSING_MAX_ITEMS:50}
+      processing-retry-base-interval-ms: ${INBOX_PROCESSING_RETRY_BASE_INTERVAL_MS:1000}
+      processing-max-retries: ${INBOX_PROCESSING_MAX_RETRIES:5}
+  mail:
+    host: ${MAIL_BASE_HOST}
+    port: ${MAIL_BASE_PORT}
+    username: ${MAIL_BASE_USERNAME}
+    password: ${MAIL_BASE_PASSWORD}
+    protocol: ${MAIL_BASE_PROTOCOL:smtp}
+    sender-address: ${MAIL_BASE_SENDER_ADDRESS}
+    recipient-address: ${MAIL_BASE_RECIPIENT_ADDRESS}
+  #    additional-properties: ${MAIL_ADDITIONAL_PROPERTIES}
+  templating:
+    teamplte-location-root-dir: ${TEMPLATE_LOCATION_ROOT_DIR}
+  laboratory-score:
+    mail-notifier:
+      laboratory-score:
+        # The following paths are relative to `application.templating.template-location-root-dir`
+        subject-template-path: ${LABORATORY_SCORE_MAIL_SUBJECT_TEMPLATE_PATH}
+        body-template-path: ${LABORATORY_SCORE_MAIL_BODY_TEMPLATE_PATH}

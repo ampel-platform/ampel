@@ -1,0 +1,1 @@
+org.springframework.boot.EnvironmentPostProcessor=eu.ampel_platform.notification_service.config.mail.MailEnvironmentVariableEnvironmentPostProcessor
