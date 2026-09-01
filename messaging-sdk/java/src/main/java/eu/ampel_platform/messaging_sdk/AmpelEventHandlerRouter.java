@@ -44,9 +44,10 @@ public final class AmpelEventHandlerRouter {
      *
      * @param event The event to route.
      * @param <M>   Message type to route.
+     * @throws AmpelEventHandlerException If an error occurs while handling the event.
      */
     @SuppressWarnings("unchecked")
-    public <M extends Message> void routeEvent(M event) {
+    public <M extends Message> void routeEvent(M event) throws AmpelEventHandlerException {
         var handler = eventHandlers.get(event.getClass());
         if (handler == null) {
             defaultEventHandler.accept(event);
@@ -75,7 +76,7 @@ public final class AmpelEventHandlerRouter {
          * @param handlers Handlers to be registered.
          * @return Instance of this builder.
          */
-        public <M extends Message> AmpelEventHandlerRouterBuilder withEventHandlers(List<AmpelEventHandler<M>> handlers) {
+        public AmpelEventHandlerRouterBuilder withEventHandlers(List<AmpelEventHandler<? extends Message>> handlers) {
             handlers.forEach(this::withEventHandler);
             return this;
         }
@@ -86,7 +87,7 @@ public final class AmpelEventHandlerRouter {
          * @param handler Handler to be registered.
          * @return Instance of this builder.
          */
-        public <M extends Message> AmpelEventHandlerRouterBuilder withEventHandler(AmpelEventHandler<M> handler) {
+        public AmpelEventHandlerRouterBuilder withEventHandler(AmpelEventHandler<? extends Message> handler) {
             eventHandlers.put(handler.getHandledEventType(), handler);
             return this;
         }

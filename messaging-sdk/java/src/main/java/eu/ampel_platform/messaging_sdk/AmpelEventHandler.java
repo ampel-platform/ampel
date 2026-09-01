@@ -13,8 +13,9 @@ public interface AmpelEventHandler<M extends Message> {
      * Handles the given event.
      *
      * @param event The event to handle.
+     * @throws AmpelEventHandlerException If an error occurs while handling the event.
      */
-    void handleEvent(M event);
+    void handleEvent(M event) throws AmpelEventHandlerException;
 
     /**
      * Returns class information of the event that this handler is capable of handling.

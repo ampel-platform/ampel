@@ -2,6 +2,7 @@ package eu.ampel_platform.messaging_sdk;
 
 import com.google.protobuf.Message;
 import eu.ampel_platform.messaging_sdk.generated.events.influx.AmpelPatientDiedEvent;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -21,7 +22,7 @@ final class AmpelEventHandlerRouterTest {
     private Consumer<Message> defaultEventHandler;
 
     @Test
-    public void shouldSucceed_CallingFallbackHandlerOnUnknownEvent() {
+    public void shouldSucceed_CallingFallbackHandlerOnUnknownEvent() throws AmpelEventHandlerException {
         var router = AmpelEventHandlerRouter.newBuilder(defaultEventHandler)
                 .build();
 
@@ -32,7 +33,8 @@ final class AmpelEventHandlerRouterTest {
     }
 
     @Test
-    public void shouldSucceed_CallingAppropriateRegisteredEventHandler() throws InterruptedException {
+    public void shouldSucceed_CallingAppropriateRegisteredEventHandler() throws InterruptedException,
+            AmpelEventHandlerException {
         var latch = new CountDownLatch(1);
         var patientDiedEventHandler = new AmpelEventHandler<AmpelPatientDiedEvent>() {
             @Override
@@ -57,5 +59,30 @@ final class AmpelEventHandlerRouterTest {
 
         assertTrue(latch.await(5000, TimeUnit.SECONDS));
         Mockito.verify(defaultEventHandler, Mockito.never()).accept(patientDiedEvent);
+    }
+
+    @Test
+    public void shouldThrow_CallingFailingEventHandler() {
+        var patientDiedEventHandler = new AmpelEventHandler<AmpelPatientDiedEvent>() {
+            @Override
+            public void handleEvent(AmpelPatientDiedEvent event) throws AmpelEventHandlerException {
+                throw new AmpelEventHandlerException("something went wrong");
+            }
+
+            @Override
+            public Class<AmpelPatientDiedEvent> getHandledEventType() {
+                return AmpelPatientDiedEvent.class;
+            }
+        };
+
+        var router = AmpelEventHandlerRouter.newBuilder(defaultEventHandler)
+                .withEventHandler(patientDiedEventHandler)
+                .build();
+
+        var patientDiedEvent = AmpelPatientDiedEvent.newBuilder()
+                .setPatientId("pat-1")
+                .build();
+
+        Assertions.assertThrows(AmpelEventHandlerException.class, () -> router.routeEvent(patientDiedEvent));
     }
 }
