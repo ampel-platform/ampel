@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "eu.ampel_platform.messaging_sdk.inbox.generated";
+
+import "google/protobuf/any.proto";
+
+package TestOnly;
+
+message AnyMessage {
+  google.protobuf.Any data = 1;
+}
