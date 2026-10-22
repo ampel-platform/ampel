@@ -12,11 +12,14 @@ message  AmpelLaboratoryScoreCalculatedEvent {
   string scoring_system_name = 2;
   string scoring_system_version = 3;
   string medical_case_id = 4;
-  AmpelScore score = 5;
-  string scoring_system_severity_code = 6;
-  string analyte_name = 7;
-  double analyte_value = 8;
-  string analyte_unit = 9;
-  google.protobuf.Timestamp analyte_measured_at = 10;
-  google.protobuf.Timestamp calculated_at = 11;
+  string laboratory_order_id = 5;
+  AmpelScore score = 6;
+  string scoring_system_severity_code = 7;
+  string scoring_system_comment = 8;
+  string analyte_name = 9;
+  double analyte_value = 10;
+  string analyte_unit = 11;
+  string measuring_system = 12;
+  google.protobuf.Timestamp analyte_measured_at = 13;
+  google.protobuf.Timestamp calculated_at = 14;
 }

@@ -1,0 +1,10 @@
+edition = "2024";
+
+option java_package = "eu.ampel_platform.messaging_sdk.generated.events.influx";
+
+package ampel.influx.v1;
+
+message AmpelPatientAssignedMedicalCase {
+  string patient_id = 1;
+  string medical_case_id = 2;
+}

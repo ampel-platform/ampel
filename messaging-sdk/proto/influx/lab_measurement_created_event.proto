@@ -2,7 +2,6 @@ edition = "2024";
 
 import "google/protobuf/timestamp.proto";
 
-//option java_multiple_files = true;
 option java_package = "eu.ampel_platform.messaging_sdk.generated.events.influx";
 
 package ampel.influx.v1;
@@ -15,4 +14,5 @@ message AmpelLabMeasurementCreatedEvent {
   float lab_measuring_value = 5;
   string lab_measuring_unit = 6;
   google.protobuf.Timestamp measured_at = 7;
+  string lab_measuring_system = 8;
 }
