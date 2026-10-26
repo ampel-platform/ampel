@@ -1,7 +1,7 @@
 services:
   ampel-ui:
     build:
-      context: .
+      context: ..
       dockerfile: docker/Dockerfile
     image: ampel-ui:local
     ports:
@@ -20,11 +20,11 @@ services:
     profiles:
       - dev
     build:
-      context: .
+      context: ..
       dockerfile: docker/Dockerfile
       target: development-dependencies-env
     image: ampel-ui:dev
-    working_dir: /app
+    working_dir: /ui/app
     ports:
       - '5173:5173'
     environment:

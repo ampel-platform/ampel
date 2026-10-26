@@ -14,7 +14,8 @@
     "jsx": "react-jsx",
     "incremental": true,
     "types": ["@react-router/node", "vite/client", "vitest/globals", "@testing-library/jest-dom"],
-    "rootDirs": [".", "./.react-router/types"]
+    "rootDirs": [
+      "..", "./.react-router/types"]
   },
   "include": [
     "**/*.ts",

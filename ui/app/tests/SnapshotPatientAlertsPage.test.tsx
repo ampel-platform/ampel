@@ -17,7 +17,7 @@ afterAll(() => {
 
 vi.mock('react-router', async () => {
   const actual = await vi.importActual<typeof import('react-router')>('react-router');
-  const { FakeAmpelResultRepository } = await import('../tests/FakeAmpelResultRepository');
+  const { FakeAmpelResultRepository } = await import('./FakeAmpelResultRepository');
   const [data, medicalCaseMetadata] = await Promise.all([
     FakeAmpelResultRepository.uiFakesToApi('CASEID'),
     FakeAmpelResultRepository.generateFakePatientMetaData(),

@@ -182,7 +182,7 @@ Example with Docker Compose:
 docker compose up --build
 ```
 
-The repo contains a ready-to-use [`docker-compose.yml`](./docker-compose.yml) that passes these
+The repo contains a ready-to-use [`docker-compose.yml`](docker-compose.yml) that passes these
 values from the outside:
 
 ```yaml
@@ -232,7 +232,7 @@ To explicitly use a bundled repo logo, use the source assets path, for example
 ## 🧪 Testing
 
 This project uses **[Vitest](https://vitest.dev/)** for testing React components and application logic.  
-All test files are located in the `app/tests/` directory and follow the naming convention `*.test.tsx` or `*.test.ts`.
+All test files are located in the `app/tests` directory and follow the naming convention `*.test.tsx` or `*.test.ts`.
 
 ### Test Types
 
@@ -284,4 +284,4 @@ The configuration is already set up – affected files are automatically formatt
 
 This Project uses the best practises from the [google style guide](https://google.github.io/styleguide/tsguide.html).
 
-👉 See [`.eslint.config.ts`](./eslint.config.ts), [`.prettierrc`](./.prettierrc).
+👉 See [`.eslint.config.ts`](eslint.config.ts), [`.prettierrc`](.prettierrc).
