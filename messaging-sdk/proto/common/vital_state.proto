@@ -1,11 +1,11 @@
 edition = "2024";
 
-//option java_multiple_files = true;
 option java_package = "eu.ampel_platform.messaging_sdk.generated.common";
 
 package ampel.v1;
 
 enum AmpelVitalState {
-  ALIVE = 0;
-  DEAD = 1;
+  AMPEL_VITAL_STATE_UNKNOWN = 0;
+  AMPEL_VITAL_STATE_ALIVE = 1;
+  AMPEL_VITAL_STATE_DEAD = 2;
 }
