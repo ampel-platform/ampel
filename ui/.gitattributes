@@ -1,0 +1,6 @@
+* text eol=lf
+# Binär-Dateien schützen
+*.png -text
+*.jpg -text
+*.ico -text
+*.pdf -text
