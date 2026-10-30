@@ -240,7 +240,7 @@ function ResolvedPatientAlertsView({
     <>
       {mappedMetadata ? (
         <PatientMetaDataHeader
-          medicalCaseId={mappedMetadata.id}
+          medicalCaseId={mappedMetadata.medicalCaseId}
           patientId={mappedMetadata.id}
           firstname={mappedMetadata.firstname ?? undefined}
           lastname={mappedMetadata.lastname ?? undefined}
