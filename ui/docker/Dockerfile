@@ -19,7 +19,7 @@ FROM node:24-alpine
 # Other labels will be set by the CI pipeline
 LABEL org.opencontainers.image.title="AMPEL UI"
 LABEL org.opencontainers.image.description="Default UI for the AMPEL platform."
-LABEL org.opencontainers.image.authors="AMPEL CDSS Team <clemens.malkawi@medizin.uni-leipzig.de>"
+LABEL org.opencontainers.image.authors="AMPEL CDSS Team <ampel@medizin.uni-leipzig.de>"
 LABEL org.opencontainers.image.vendor="AMPEL CDSS"
 
 RUN apk --no-cache add tzdata
