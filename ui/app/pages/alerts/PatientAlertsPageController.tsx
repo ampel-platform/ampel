@@ -190,7 +190,6 @@ function ResolvedPatientAlertsView({
               message: rs.message,
               resultTime: rs.resultTime,
               rulesetHistory: rs.history,
-              links: rs.links || [],
             }}
             onClick={() => {}}
           />,
@@ -209,7 +208,6 @@ function ResolvedPatientAlertsView({
               message: rs.message,
               resultTime: rs.resultTime,
               rulesetHistory: rs.history,
-              links: rs.links || [],
             }}
             onClick={() => {}}
           />,
@@ -228,7 +226,6 @@ function ResolvedPatientAlertsView({
               message: rs.message,
               resultTime: rs.resultTime,
               rulesetHistory: rs.history,
-              links: rs.links || [],
             }}
             onClick={() => {}}
           />,

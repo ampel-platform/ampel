@@ -3,7 +3,6 @@ import React from 'react';
 import { AlertDetails } from '../types/types';
 import { AlertHeader } from './components/AlertHeader';
 import { AlertHistory } from './components/AlertHistory';
-import { AlertLinks } from './components/AlertLinks';
 import { HintMessage } from './components/HintMessage';
 import { OverlayBackNavigation } from './components/OverlayBackNavigation';
 import { getLatestSeverity } from './utils/history';
@@ -39,9 +38,6 @@ export function AlertDetailOverlay({ data, onClose }: OverlayProps): React.React
             <div className='grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-12'>
               <div className='lg:col-span-3'>
                 <HintMessage message={data.message} />
-              </div>
-              <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
-                <AlertLinks links={data.links} />
               </div>
             </div>
             <AlertHistory history={data.rulesetHistory} />

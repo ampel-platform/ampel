@@ -38,7 +38,6 @@ export interface Ruleset {
   message?: string;
   resultTime: Date;
   history: RulesetHistory;
-  links?: Link[];
   severity?: string | null | undefined;
 }
 
@@ -59,7 +58,6 @@ export interface AlertDetails {
   message?: string;
   resultTime: Date;
   rulesetHistory: RulesetHistory;
-  links: Link[];
 }
 
 export interface ScoringSystem {
@@ -71,6 +69,4 @@ export interface ScoringSystem {
   unit: string;
   severity?: string | null | undefined;
   severityhint: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  meta?: Record<string, any>;
 }

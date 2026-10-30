@@ -1,21 +1,18 @@
-import {
-  AmpelStatus,
-  MedicalCaseMetadata,
-  Ruleset,
-  RulesetHistory,
-  ScoringSystem as UiScoringSystem,
-  SexUI,
-} from './types';
+import {AmpelStatus, MedicalCaseMetadata, Ruleset, RulesetHistory, SexUI,} from './types';
 import {ApiResultCollection, type ApiStatus, MedicalCaseMetadataApiResult, SexAPI,} from './types-api';
 
-const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
-  s === 'green'
-    ? AmpelStatus.GREEN
-    : s === 'yellow'
-      ? AmpelStatus.YELLOW
-      : s === 'red'
-        ? AmpelStatus.RED
-        : AmpelStatus.GREEN;
+function statusToUi(status: ApiStatus): AmpelStatus {
+  switch (status) {
+    case "green":
+      return AmpelStatus.GREEN;
+    case "yellow":
+      return AmpelStatus.YELLOW;
+    case "red":
+      return AmpelStatus.RED;
+    default:
+      return AmpelStatus.GREEN;
+  }
+}
 
 export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const parsed = ApiResultCollection.safeParse(apiPayload);
@@ -24,38 +21,30 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   const api = parsed.data;
 
   return api.scoringSystems.map((ss) => {
-    const sorted = [...ss.results].sort(
+    const sorted = [...ss.scores].sort(
       (a, b) => Date.parse(a.analyteMeasuringTime) - Date.parse(b.analyteMeasuringTime),
     );
     const latest = sorted[sorted.length - 1];
 
     const history: RulesetHistory = {
-      data: ss.results.map((r) => ({
+      data: ss.scores.map((r) => ({
         date: new Date(r.analyteMeasuringTime),
         analyteValue: r.analyteValue,
         severity: r.severity,
-        ampelStatus: statusToUi(r.status === 'none' ? 'green' : r.status),
+        ampelStatus: statusToUi(r.score === 'none' ? 'green' : r.score),
         unit: r.analyteValueUnit,
         analyteName: r.analyteName,
       })),
     };
 
-    const links =
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      latest?.metaInformation && Array.isArray((latest.metaInformation as any).links)
-        ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          ((latest.metaInformation as any).links as { displayText: string; href: string }[])
-        : [];
-
     return {
       ruleset: ss.scoringSystemName,
       ampelStatus: statusToUi(
-        (latest?.status ?? 'green') === 'none' ? 'green' : (latest?.status ?? 'green'),
+        (latest?.score ?? 'green') === 'none' ? 'green' : (latest?.score ?? 'green'),
       ),
       message: latest?.severityComment ?? latest?.severity ?? '',
       resultTime: new Date(latest?.analyteMeasuringTime),
-      history,
-      links: links,
+      history
     };
   });
 }

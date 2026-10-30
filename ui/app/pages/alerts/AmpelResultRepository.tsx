@@ -2,29 +2,28 @@ import { fetchBackend, isBackendUnavailableError } from '../../backendRequest';
 import { BASE_API_URL, BASE_API_URL_WITH_SLASH } from '../../baseApiUrl';
 import { ApiResultCollection, type ApiResultCollection as ApiT } from './types/types-api';
 
-const PATH = 'ampelresults';
-
 type ErrorWithStatus = Error & { status?: number; headers?: Headers };
 export type AmpelResultResponse = ApiT | ErrorWithStatus;
 
-const withStatus = (res: Response): ErrorWithStatus => {
-  const error = new Error(`HTTP Error: ${res.status} ${res.statusText}`) as ErrorWithStatus;
-  error.status = res.status;
-  error.headers = res.headers;
-  return error;
-};
-
 export const AmpelResultRepository = {
   async getByMedicalCaseId(caseId: string): Promise<AmpelResultResponse> {
-    if (!caseId) {
-      const error = new Error('case_id fehlt') as ErrorWithStatus;
-      error.status = 400;
-      return error;
-    }
-
     try {
+      const withStatus = (res: Response): Error & { status: number; headers: Headers } => {
+        const error = new Error(`HTTP Error: ${res.status} ${res.statusText}`) as Error & {
+          status: number;
+          headers: Headers;
+        };
+        error.status = res.status;
+        error.headers = res.headers;
+        return error;
+      };
+
+      if (!caseId) {
+        throw new Response('case_id fehlt', { status: 400, statusText: 'Bad Request' });
+      }
+
       const requestUrl = new URL(
-        `v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
+        `medicalcases/${encodeURIComponent(caseId)}/scores/history`,
         BASE_API_URL_WITH_SLASH,
       );
       const res = await fetchBackend(requestUrl, {
@@ -38,7 +37,7 @@ export const AmpelResultRepository = {
       const json = await res.json();
       return ApiResultCollection.parse(json);
     } catch (err) {
-      if (err instanceof Response) return withStatus(err);
+      if (err instanceof Response) throw err;
 
       if (isBackendUnavailableError(err)) {
         const error = new Error(
@@ -51,8 +50,10 @@ export const AmpelResultRepository = {
       }
 
       if (err instanceof Error) {
-        if (err.status === undefined) (err as ErrorWithStatus).status = 500;
-        return err;
+        if ((err as ErrorWithStatus).status === undefined) {
+          (err as ErrorWithStatus).status = 500;
+        }
+        throw err;
       }
 
       const unknown = new Error(String(err)) as ErrorWithStatus;

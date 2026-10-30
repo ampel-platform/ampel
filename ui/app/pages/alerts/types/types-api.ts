@@ -7,15 +7,14 @@ export type ApiStatus = z.infer<typeof ApiStatus>;
 
 /** Ein Result innerhalb eines Scoring-Systems */
 export const ApiResult = z.object({
-  status: ApiStatus,
+  score: ApiStatus,
   severity: z.string().nullable().optional(),
   severityComment: z.string().nullable().optional(),
   analyteName: z.string(),
   analyteValue: z.number(),
   analyteValueUnit: z.string(),
   analyteMeasuringTime: z.string(),
-  resultCreationTime: z.string(),
-  metaInformation: z.record(z.string(), z.unknown()).nullable().optional(),
+  resultCreationTime: z.string()
 });
 export type ApiResult = z.infer<typeof ApiResult>;
 
@@ -23,7 +22,7 @@ export type ApiResult = z.infer<typeof ApiResult>;
 export const ApiScoringSystemResults = z.object({
   scoringSystemName: z.string(),
   scoringSystemVersion: z.string(),
-  results: z.array(ApiResult),
+  scores: z.array(ApiResult),
 });
 export type ApiScoringSystemResults = z.infer<typeof ApiScoringSystemResults>;
 
