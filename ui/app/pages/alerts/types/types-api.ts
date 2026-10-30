@@ -36,17 +36,12 @@ export type ApiResultCollection = z.infer<typeof ApiResultCollection>;
 export const SexAPI = z.enum(['male', 'female', 'unknown']);
 export type SexAPI = z.infer<typeof SexAPI>;
 
-export const PatientMetadataApiResult = z.object({
+export const MedicalCaseMetadataApiResult = z.object({
   id: z.string(),
+  medicalCaseId: z.string(),
   firstname: z.string().nullable(),
   lastname: z.string().nullable(),
   dateOfBirth: z.string().nullable(),
   sex: SexAPI,
-});
-export type PatientMetadataApiResult = z.infer<typeof PatientMetadataApiResult>;
-
-export const MedicalCaseMetadataApiResult = z.object({
-  id: z.string(),
-  patient: z.nullable(PatientMetadataApiResult),
 });
 export type MedicalCaseMetadataApiResult = z.infer<typeof MedicalCaseMetadataApiResult>;

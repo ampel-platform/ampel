@@ -143,13 +143,12 @@ function ResolvedPatientAlertsView({
   const alerts = alertsError ? null : (alertsResult as ApiResultCollection);
   const alertsDataMissing = isEmptyAlertsPayload(alerts);
   const mappedMetadata = metadata ? medicalCaseMetadataApiToUI(metadata) : null;
-  const patient = mappedMetadata?.patient;
   const patientDataMissing =
     Boolean(mappedMetadata) &&
-    (!patient ||
-      isUnknownValue(patient.id) ||
-      isUnknownValue(patient.firstname) ||
-      isUnknownValue(patient.lastname));
+    (!mappedMetadata ||
+      isUnknownValue(mappedMetadata.id) ||
+      isUnknownValue(mappedMetadata.firstname) ||
+      isUnknownValue(mappedMetadata.lastname));
   const showPatientNotFound = metadataNotFound || patientDataMissing;
   const suppressAlertsError = showPatientNotFound && alertsNoDataError;
   const showCdssNotFound = !showPatientNotFound && alertsDataMissing;
@@ -245,11 +244,11 @@ function ResolvedPatientAlertsView({
       {mappedMetadata ? (
         <PatientMetaDataHeader
           medicalCaseId={mappedMetadata.id}
-          patientId={mappedMetadata.patient ? mappedMetadata.patient.id : undefined}
-          firstname={mappedMetadata.patient ? mappedMetadata.patient.firstname : undefined}
-          lastname={mappedMetadata.patient ? mappedMetadata.patient.lastname : undefined}
-          dateOfBirth={mappedMetadata.patient ? mappedMetadata.patient.dateOfBirth : undefined}
-          sex={mappedMetadata.patient ? mappedMetadata.patient.sex : 'unbekannt'}
+          patientId={mappedMetadata.id}
+          firstname={mappedMetadata.firstname ?? undefined}
+          lastname={mappedMetadata.lastname ?? undefined}
+          dateOfBirth={mappedMetadata.dateOfBirth ?? undefined}
+          sex={mappedMetadata.sex ?? 'unbekannt'}
           headerConfig={headerConfig}
         />
       ) : (

@@ -2,7 +2,6 @@ import { fetchBackend, isBackendUnavailableError } from '../../backendRequest';
 import { BASE_API_URL, BASE_API_URL_WITH_SLASH } from '../../baseApiUrl';
 import { MedicalCaseMetadataApiResult } from './types/types-api';
 
-const PATH = 'meta';
 type ErrorWithStatus = Error & { status?: number; headers?: Headers };
 
 export const MedicalCaseMetadataRepository = {
@@ -23,7 +22,7 @@ export const MedicalCaseMetadataRepository = {
       }
 
       const requestUrl = new URL(
-        `v1/medicalcases/${encodeURIComponent(caseId)}/${PATH}`,
+        `medicalcases/${encodeURIComponent(caseId)}/metainformation/patient`,
         BASE_API_URL_WITH_SLASH,
       );
       const res = await fetchBackend(requestUrl, {

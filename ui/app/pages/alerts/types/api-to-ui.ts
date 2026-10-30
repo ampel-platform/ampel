@@ -1,19 +1,12 @@
 import {
   AmpelStatus,
   MedicalCaseMetadata,
-  MedicalCasePatientMetadata,
   Ruleset,
   RulesetHistory,
   ScoringSystem as UiScoringSystem,
   SexUI,
 } from './types';
-import {
-  ApiResultCollection,
-  type ApiStatus,
-  MedicalCaseMetadataApiResult,
-  PatientMetadataApiResult,
-  SexAPI,
-} from './types-api';
+import {ApiResultCollection, type ApiStatus, MedicalCaseMetadataApiResult, SexAPI,} from './types-api';
 
 const statusToUi = (s: ApiStatus): UiScoringSystem['ampelstatus'] =>
   s === 'green'
@@ -67,18 +60,6 @@ export function apiToRulesets(apiPayload: unknown): Ruleset[] {
   });
 }
 
-function medicalCasePatientMetadataApiToUI(
-  apiResponse: PatientMetadataApiResult,
-): MedicalCasePatientMetadata {
-  return {
-    id: apiResponse.id,
-    firstname: apiResponse.firstname,
-    lastname: apiResponse.lastname,
-    dateOfBirth: !apiResponse.dateOfBirth ? null : new Date(apiResponse.dateOfBirth),
-    sex: patientSexApiToUI(apiResponse.sex),
-  };
-}
-
 function patientSexApiToUI(sex: SexAPI): SexUI {
   switch (sex) {
     case 'male':
@@ -97,8 +78,10 @@ export function medicalCaseMetadataApiToUI(
 ): MedicalCaseMetadata {
   return {
     id: apiResponse.id,
-    patient: apiResponse.patient
-      ? medicalCasePatientMetadataApiToUI(apiResponse.patient)
-      : undefined,
+    medicalCaseId: apiResponse.medicalCaseId,
+    firstname: apiResponse.firstname,
+    lastname: apiResponse.lastname,
+    dateOfBirth: !apiResponse.dateOfBirth ? null : new Date(apiResponse.dateOfBirth),
+    sex: patientSexApiToUI(apiResponse.sex),
   };
 }

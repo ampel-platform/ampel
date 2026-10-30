@@ -17,17 +17,13 @@ export enum AlertType {
 
 export type SexUI = 'männlich' | 'weiblich' | 'unbekannt';
 
-export interface MedicalCasePatientMetadata {
+export interface MedicalCaseMetadata {
   id: string;
+  medicalCaseId: string;
   firstname: string | null;
   lastname: string | null;
   dateOfBirth: Date | null;
   sex: SexUI;
-}
-
-export interface MedicalCaseMetadata {
-  id: string;
-  patient?: MedicalCasePatientMetadata;
 }
 
 export interface Link {
