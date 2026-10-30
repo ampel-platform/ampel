@@ -40,18 +40,21 @@ public class PatientMetainformationHttpController {
             return ResponseEntity.badRequest().build();
         }
 
+        var medCaseId = new MedicalCaseId(medicalCaseId);
         return patientMetainformationService.findPatientMetainformationByMedicalCaseId(
-                        new MedicalCaseId(medicalCaseId))
+                        medCaseId)
                 .map(pmi -> ResponseEntity.ok(
-                        convertToResponseModel(pmi)))
-                .orElseThrow(() -> new MedicalCaseNotFoundException(new MedicalCaseId(medicalCaseId)));
+                        convertToResponseModel(pmi, medCaseId)))
+                .orElseThrow(() -> new MedicalCaseNotFoundException(medCaseId));
     }
 
     private PatientMetainformationResource convertToResponseModel(
-            @NotNull PatientMetainformation patientMetainformation) {
+            @NotNull PatientMetainformation patientMetainformation,
+            @NotNull MedicalCaseId medicalCaseId) {
 
         return new PatientMetainformationResource(
                 patientMetainformation.getId().id(),
+                medicalCaseId.id(),
                 patientMetainformation.getName()
                         .map(PatientName::firstname)
                         .orElse(null),
