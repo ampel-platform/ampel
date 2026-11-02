@@ -1,6 +1,7 @@
-import { act, cleanup, render, screen } from '@testing-library/react';
-import React, { Suspense } from 'react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import {act, cleanup, render, screen} from '@testing-library/react';
+import React, {Suspense} from 'react';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
+import {ApiResultCollection, MedicalCaseMetadataApiResult} from "../pages/alerts/types/types-api";
 
 vi.stubEnv('VITE_TEST_DATA_VIEW', 'prod');
 vi.stubEnv('VITE_FAST_FAKE', '1');
@@ -12,11 +13,11 @@ vi.mock('react-router', async () => {
   return {
     ...actual,
     useLoaderData: useLoaderDataMock,
-    useNavigation: () => ({ state: 'idle' }),
+    useNavigation: () => ({state: 'idle'}),
   };
 });
 
-const { default: PatientAlertsPageController } =
+const {default: PatientAlertsPageController} =
   await import('../pages/alerts/PatientAlertsPageController');
 
 type SerializableError = {
@@ -25,15 +26,15 @@ type SerializableError = {
   headers?: Record<string, string>;
 };
 
-const buildAlertsSample = (caseId: string) => ({
+const buildAlertsSample = (caseId: string): ApiResultCollection => ({
   medicalCaseId: caseId,
   scoringSystems: [
     {
       scoringSystemName: 'Probe',
       scoringSystemVersion: '1.0',
-      results: [
+      scores: [
         {
-          status: 'red' as const,
+          score: 'red' as const,
           severity: 'hoch',
           severityComment: 'Achtung',
           analyteName: 'Na',
@@ -41,22 +42,19 @@ const buildAlertsSample = (caseId: string) => ({
           analyteValueUnit: 'mmol/l',
           analyteMeasuringTime: new Date('2025-01-01T00:00:00Z').toISOString(),
           resultCreationTime: new Date('2025-01-01T00:05:00Z').toISOString(),
-          metaInformation: null,
         },
       ],
     },
   ],
 });
 
-const buildMetadataSample = (caseId: string) => ({
-  id: caseId,
-  patient: {
-    id: 'P-1',
-    firstname: 'Max',
-    lastname: 'Mustermann',
-    dateOfBirth: '1990-01-01T00:00:00Z',
-    sex: 'female' as const,
-  },
+const buildMetadataSample = (caseId: string): MedicalCaseMetadataApiResult => ({
+  medicalCaseId: caseId,
+  id: 'P-1',
+  firstname: 'Max',
+  lastname: 'Mustermann',
+  dateOfBirth: '1990-01-01T00:00:00Z',
+  sex: 'female' as const,
 });
 
 type LoaderDataValue = {
@@ -72,14 +70,14 @@ const buildLoaderData = (): LoaderDataValue => ({
 });
 
 const setLoaderData = (overrides: Partial<LoaderDataValue> = {}): void => {
-  useLoaderDataMock.mockReturnValue({ ...buildLoaderData(), ...overrides });
+  useLoaderDataMock.mockReturnValue({...buildLoaderData(), ...overrides});
 };
 
 const renderController = async (): Promise<void> => {
   await act(async () => {
     render(
-      <Suspense fallback={<div data-testid='loader' />}>
-        <PatientAlertsPageController />
+      <Suspense fallback={<div data-testid='loader'/>}>
+        <PatientAlertsPageController/>
       </Suspense>,
     );
   });
@@ -97,7 +95,7 @@ describe('PatientAlertsPageController partial errors', () => {
 
   it('shows server error page when alerts return 502', async () => {
     setLoaderData({
-      alertsResult: { message: 'HTTP Error: 502 Bad Gateway', status: 502 },
+      alertsResult: {message: 'HTTP Error: 502 Bad Gateway', status: 502},
       metadataResult: buildMetadataSample('CASE-789'),
     });
 
@@ -110,7 +108,7 @@ describe('PatientAlertsPageController partial errors', () => {
   it('shows inline metadata error while alerts still render', async () => {
     setLoaderData({
       alertsResult: buildAlertsSample('CASE-123'),
-      metadataResult: { message: 'Not Found', status: 404 },
+      metadataResult: {message: 'Not Found', status: 404},
     });
 
     await renderController();
@@ -129,7 +127,7 @@ describe('PatientAlertsPageController partial errors', () => {
   it('shows metadata server error inline for 502 responses', async () => {
     setLoaderData({
       alertsResult: buildAlertsSample('CASE-123'),
-      metadataResult: { message: 'HTTP Error: 502 Bad Gateway', status: 502 },
+      metadataResult: {message: 'HTTP Error: 502 Bad Gateway', status: 502},
     });
 
     await renderController();
@@ -143,7 +141,7 @@ describe('PatientAlertsPageController partial errors', () => {
   it('shows patient data heading for metadata bad request errors', async () => {
     setLoaderData({
       alertsResult: buildAlertsSample('CASE-123'),
-      metadataResult: { message: 'Bad Request', status: 400 },
+      metadataResult: {message: 'Bad Request', status: 400},
     });
 
     await renderController();
@@ -161,7 +159,7 @@ describe('PatientAlertsPageController partial errors', () => {
   it('shows inline alerts error while metadata still renders', async () => {
     setLoaderData({
       case_id: 'CASE-456',
-      alertsResult: { message: 'Service offline' },
+      alertsResult: {message: 'Service offline'},
       metadataResult: buildMetadataSample('CASE-456'),
     });
 
@@ -176,7 +174,7 @@ describe('PatientAlertsPageController partial errors', () => {
   it('shows CDSS NotFound while patient metadata header remains populated', async () => {
     setLoaderData({
       case_id: 'CASE-999',
-      alertsResult: { message: 'Not Found', status: 404 },
+      alertsResult: {message: 'Not Found', status: 404},
       metadataResult: buildMetadataSample('CASE-999'),
     });
 
@@ -198,16 +196,14 @@ describe('PatientAlertsPageController partial errors', () => {
   it('prefers patient not found when patient metadata is unknown and alerts are no-data', async () => {
     setLoaderData({
       case_id: 'CASE-404',
-      alertsResult: { message: 'Not Found', status: 404 },
+      alertsResult: {message: 'Not Found', status: 404},
       metadataResult: {
-        id: 'CASE-404',
-        patient: {
-          id: 'Unbekannt',
-          firstname: 'Unbekannt',
-          lastname: 'Unbekannt',
-          dateOfBirth: '1990-01-01T00:00:00Z',
-          sex: 'female',
-        },
+        medicalCaseId: 'CASE-404',
+        id: 'Unbekannt',
+        firstname: 'Unbekannt',
+        lastname: 'Unbekannt',
+        dateOfBirth: '1990-01-01T00:00:00Z',
+        sex: 'female',
       },
     });
 

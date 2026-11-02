@@ -965,9 +965,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        />
                       </div>
                       <div
                         class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
@@ -2521,9 +2518,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        />
                       </div>
                       <div
                         class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
@@ -4850,9 +4844,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        />
                       </div>
                       <div
                         class="grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12"
@@ -6438,37 +6429,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               </p>
                               <br />
                               Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div
-                            class="flex flex-col gap-2"
-                          >
-                            <span
-                              class="text-muted-foreground text-sm"
-                            >
-                              Weiterführende Links
-                            </span>
-                            <div
-                              class="flex flex-wrap gap-2"
-                            >
-                              <a
-                                class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                                href="https://deximed.de/home/klinische-themen/blut/symptome/anaemie-bei-erwachsenen"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Deximed
-                              </a>
-                              <span
-                                aria-disabled="true"
-                                class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
-                              >
-                                Labor
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -8728,37 +8688,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               </p>
                               <br />
                               Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div
-                            class="flex flex-col gap-2"
-                          >
-                            <span
-                              class="text-muted-foreground text-sm"
-                            >
-                              Weiterführende Links
-                            </span>
-                            <div
-                              class="flex flex-wrap gap-2"
-                            >
-                              <a
-                                class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                                href="https://deximed.de/home/klinische-themen/blut/symptome/anaemie-bei-erwachsenen"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Deximed
-                              </a>
-                              <span
-                                aria-disabled="true"
-                                class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
-                              >
-                                Labor
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -11776,37 +11705,6 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                               </p>
                               <br />
                               Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden."
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div
-                            class="flex flex-col gap-2"
-                          >
-                            <span
-                              class="text-muted-foreground text-sm"
-                            >
-                              Weiterführende Links
-                            </span>
-                            <div
-                              class="flex flex-wrap gap-2"
-                            >
-                              <a
-                                class="rounded-full border border-violet-300 bg-white px-3 py-1 text-sm text-violet-800 transition-colors hover:bg-violet-100"
-                                href="https://deximed.de/home/klinische-themen/blut/symptome/anaemie-bei-erwachsenen"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Deximed
-                              </a>
-                              <span
-                                aria-disabled="true"
-                                class="cursor-not-allowed rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-sm text-gray-400"
-                              >
-                                Labor
-                              </span>
                             </div>
                           </div>
                         </div>

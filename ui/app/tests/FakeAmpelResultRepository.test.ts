@@ -19,8 +19,8 @@ describe('FakeAmpelResultRepository', () => {
 
     const metadata = await FakeAmpelResultRepository.generateFakePatientMetaData();
 
-    expect(metadata.id).toBe('med-123');
-    expect(metadata.patient?.firstname).toBe('Max');
-    expect(metadata.patient?.lastname).toBe('Musterfrau');
+    expect(metadata.medicalCaseId).toBe('med-123');
+    expect(metadata.firstname).toBe('Max');
+    expect(metadata.lastname).toBe('Musterfrau');
   });
 });

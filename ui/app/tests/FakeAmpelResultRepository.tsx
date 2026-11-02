@@ -1,6 +1,6 @@
-import { faker } from '@faker-js/faker';
+import {faker} from '@faker-js/faker';
 
-import { AmpelStatus, Ruleset, RulesetHistory } from '../pages/alerts/types/types';
+import {AmpelStatus, Ruleset, RulesetHistory} from '../pages/alerts/types/types';
 import {
   ApiResult,
   ApiResultCollection,
@@ -55,14 +55,12 @@ async function generateFakePatientMetaData(): Promise<MedicalCaseMetadataApiResu
   await maybeSleep(1000);
 
   return {
-    id: 'med-123',
-    patient: {
-      id: '123456',
-      firstname: 'Max',
-      lastname: 'Musterfrau',
-      dateOfBirth: '1991-07-30T15:20:16Z',
-      sex: 'female',
-    },
+    medicalCaseId: 'med-123',
+    id: '123456',
+    firstname: 'Max',
+    lastname: 'Musterfrau',
+    dateOfBirth: '1991-07-30T15:20:16Z',
+    sex: 'female',
   };
 }
 
@@ -96,16 +94,6 @@ function generateFakeRulesets(): Ruleset[] {
         'Der Kreatininanstieg weist auf eine akute Nierenschädigung im Zusammenhang mit einer Vancomycintherapie hin (AKIN-Stadium 1 nach KDIGO-Kriterien). Weiterführende Diagnostik- und Therapiemaßnahmen (KDIGO-Bundle) empfohlen.',
       resultTime: new Date('2025-07-30T15:20:16Z'),
       history: generateFakeHistoryData(AmpelStatus.RED, 1),
-      // links: [
-      //   {
-      //     displayText: 'Deximed',
-      //     href: 'https://deximed.de/home/klinische-themen/niere-harnwege/krankheiten/nierenerkrankungen/nierenfunktionseinschraenkung-akute-aki',
-      //   },
-      //   {
-      //     displayText: 'Labor',
-      //     href: '#',
-      //   },
-      // ],
     },
     {
       ruleset: 'Anämie',
@@ -115,16 +103,6 @@ function generateFakeRulesets(): Ruleset[] {
         "<p>Laut Querschnittsleitlinie der BÄK (2020) ist die Transfusion eines Blutbeutels bei Hb < 4,3 mmol/l dringend zu erwägen.</p><br>Bitte reflektieren Sie patientenspezifisch:<br><p style='margin-left: 10px'>- <b>allg. Risikofaktoren,</b><br>- <b>Klinik</b><br>- <b>Ischämietypische EKG</b>-Veränderungen<br>- <b>Labor</b> und betreiben Sie ggf. <b>weitere Diagnostik.</b></p><br>Bei Transfusion denken Sie bitte frühzeitig an Kreuzblut. Ein Transfusionserfolg sollte innerhalb von 24h überprüft werden.\"",
       resultTime: new Date('2025-07-30T15:20:16Z'),
       history: generateFakeHistoryData(AmpelStatus.YELLOW, 2),
-      links: [
-        {
-          displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/blut/symptome/anaemie-bei-erwachsenen',
-        },
-        {
-          displayText: 'Labor',
-          href: '#',
-        },
-      ],
     },
     {
       ruleset: 'Refeeding Syndrom',
@@ -134,20 +112,6 @@ function generateFakeRulesets(): Ruleset[] {
         'Laborchemische Diagnose eines Refeedingsyndroms. Es wird empfohlen tägliche Kontrollen von Kalium, Magnesium und Phosphat bis zum Elektrolytausgleich vorzunehmen und das Ernährungsteam zu involvieren. Einem RFS ähnelnde Elektrolytentgleisungen sind auch bei Hirntraumata und nach Leberoperationen beschrieben. Bitte prüfen Sie die Indikation.',
       resultTime: new Date('2025-07-30T15:20:16Z'),
       history: generateFakeHistoryData(AmpelStatus.RED, 3),
-      links: [
-        {
-          displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/geriatrie/krankheiten/stoffwechsel-ernaehrung/mangelernaehrung#verlauf-komplikationen-und-prognose-komplikationen',
-        },
-        {
-          displayText: 'SOP',
-          href: 'http://roxtra.medizin.uni-leipzig.de/Roxtra/index.aspx?FileID=82421',
-        },
-        {
-          displayText: 'Labor',
-          href: '#',
-        },
-      ],
     },
     {
       ruleset: 'Hyperkalzämie',
@@ -156,16 +120,6 @@ function generateFakeRulesets(): Ruleset[] {
         'Bei lebensbedrohlich erhöhtem Kalzium wurde bislang keine Therapiekontrolle durchgeführt. Die Diagnostik der Ursache sowie Therapie wird empfohlen. Die Kontrolle des Behandlungserfolgs nach spätestens 12 Stunden wurde überschritten.',
       resultTime: new Date('2025-07-30T15:20:16Z'),
       history: generateFakeHistoryData(AmpelStatus.RED, 4),
-      links: [
-        {
-          displayText: 'Deximed',
-          href: 'https://deximed.de/home/klinische-themen/endokrinologie-stoffwechsel/symptome/hyperkalzaemie#diagnostik-diagnostische-uberlegungen',
-        },
-        {
-          displayText: 'Labor',
-          href: '#',
-        },
-      ],
     },
     {
       ruleset: 'Sepsis',
@@ -244,8 +198,18 @@ function generateFakeRulesets(): Ruleset[] {
   ];
 }
 
-const enumToApi = (s: AmpelStatus): ApiStatus =>
-  s === AmpelStatus.RED ? 'red' : s === AmpelStatus.YELLOW ? 'yellow' : 'green';
+const enumToApi = (s: AmpelStatus): ApiStatus => {
+  switch (s) {
+    case AmpelStatus.GREEN:
+      return "green";
+    case AmpelStatus.YELLOW:
+      return "yellow";
+    case AmpelStatus.RED:
+      return "red";
+    default:
+      return "green";
+  }
+};
 
 export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection> {
   await maybeSleep(3000);
@@ -261,7 +225,7 @@ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection
         : [{ date: rs.resultTime, analyteValue: NaN, ampelStatus: rs.ampelStatus }];
 
     const results: ApiResult[] = safeHist.map((h, i, arr) => ({
-      status: enumToApi(h.ampelStatus),
+      score: enumToApi(h.ampelStatus),
       severity: rs.severity,
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
       analyteName: 'LCRE_S',
@@ -269,16 +233,12 @@ export async function uiFakesToApi(case_id: string): Promise<ApiResultCollection
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
       resultCreationTime: new Date(h.date.getTime() + 60_000).toISOString(),
-      metaInformation:
-        i === arr.length - 1
-          ? { fake: true, seedIndex: idx, point: i, links: rs.links ?? [] }
-          : { fake: true, seedIndex: idx, point: i },
     }));
 
     return {
       scoringSystemName: rs.ruleset,
       scoringSystemVersion: 'v0',
-      results,
+      scores: results,
     } satisfies ApiScoringSystemResults;
   });
 

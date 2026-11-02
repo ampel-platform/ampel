@@ -248,14 +248,12 @@ function createDemoSingleHistoryData(
 async function generateDemoFakePatientMetaData(): Promise<MedicalCaseMetadataApiResult> {
   await maybeSleep(1000);
   return {
-    id: 'med-123',
-    patient: {
-      id: '123456',
-      firstname: 'Max',
-      lastname: 'Musterfrau',
-      dateOfBirth: '1991-07-30T15:20:16Z',
-      sex: 'female',
-    },
+    medicalCaseId: 'med-123',
+    id: '123456',
+    firstname: 'Max',
+    lastname: 'Musterfrau',
+    dateOfBirth: '1991-07-30T15:20:16Z',
+    sex: 'female',
   };
 }
 
@@ -335,7 +333,7 @@ export async function uiDemoFakesToApi(case_id: string): Promise<ApiResultCollec
         : [{ date: rs.resultTime, analyteValue: 0, ampelStatus: rs.ampelStatus }];
 
     const results: ApiResult[] = safeHist.map((h, i, arr) => ({
-      status: enumToApi(h.ampelStatus),
+      score: enumToApi(h.ampelStatus),
       severity: '',
       severityComment: i === arr.length - 1 ? (rs.message ?? '') : null,
       analyteName: 'LCRE_S',
@@ -343,16 +341,12 @@ export async function uiDemoFakesToApi(case_id: string): Promise<ApiResultCollec
       analyteValueUnit: 'µmol/l',
       analyteMeasuringTime: h.date.toISOString(),
       resultCreationTime: new Date(h.date.getTime() + 60_000).toISOString(),
-      metaInformation:
-        i === arr.length - 1
-          ? { fake: true, seedIndex: idx, point: i, links: rs.links ?? [] }
-          : { fake: true, seedIndex: idx, point: i },
     }));
 
     return {
       scoringSystemName: rs.ruleset,
       scoringSystemVersion: 'v0',
-      results,
+      scores: results,
     } satisfies ApiScoringSystemResults;
   });
 
