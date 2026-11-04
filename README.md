@@ -1,13 +1,7 @@
-# 🚧 Work in Progress Disclaimer
+# AMPEL
 
-This repository mainly contains work that is still in heavy development, not meant to be used in any production
-environment. Doing so happens at your own risk!
-
-It's supposed to bring together several applications, libraries etc. and make them reside within a single repository for
-ease of use.
-
-# AMPEL CDSS
-
-# Roadmap
-
-- [ ] add ProtoBuf validation
+> [!CAUTION]
+> This software is __NOT__ intended for medical purposes.
+>
+> Please read the _[NOTICE](NOTICE)_ file for complete disclaimers. Integrating the software as SOUP into an (in-house)
+> medical device software places all liability on the manufacturer of that medical device.
