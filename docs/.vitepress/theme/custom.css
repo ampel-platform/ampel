@@ -1,0 +1,692 @@
+:root {
+  --vp-nav-height: 64px;
+  --ampel-sidebar-brand-height: 116px;
+  --vp-c-brand-1: #005ea8;
+  --vp-c-brand-2: #004f8f;
+  --vp-c-brand-3: #003f73;
+  --vp-c-brand-soft: rgba(0, 94, 168, 0.12);
+  --vp-c-bg-alt: #f7f9fb;
+  --vp-c-text-1: #1f2933;
+  --vp-c-text-2: #52606d;
+  --vp-home-hero-name-color: #102a43;
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(155, 0, 13, 0.16), rgba(0, 94, 168, 0.18));
+  --vp-home-hero-image-filter: blur(46px);
+}
+
+@media (max-width: 959px) {
+  :root {
+    --vp-nav-height: 86px;
+  }
+}
+
+.home-background {
+  --vp-nav-height: 116px;
+  --ampel-home-gutter: 24px;
+  --ampel-home-max-width: 1152px;
+  --ampel-home-search-width: 188px;
+  /* Subtle overlay for readability. */
+  background: rgba(0, 0, 0, 0.35);
+  /* Transparent navigation above the background image. */
+  --vp-nav-home-bg-color: transparent;
+  background-image: url('/home-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.dark {
+  --vp-c-brand-1: #63b3ed;
+  --vp-c-brand-2: #90cdf4;
+  --vp-c-brand-3: #003f73;
+  --vp-c-brand-soft: rgba(99, 179, 237, 0.16);
+  /* Match the default theme's softer text and distinct dark surfaces. */
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-text-1: #dfdfd6;
+  --vp-c-text-2: #98989f;
+  --vp-home-hero-name-color: #f7fafc;
+}
+
+.VPNavBarTitle .logo {
+  height: 100px;
+  padding: 4px 8px;
+}
+
+@media (min-width: 960px) {
+  .home-background .VPNavBar .content-body {
+    transform: translateY(-26px);
+  }
+
+  /* The search is rendered in the sidebar instead of the navbar. */
+  .VPNavBar .VPNavBarSearch {
+    display: none !important;
+  }
+}
+
+/* Share the compact article header row with the main navigation. The sidebar
+   keeps its larger logo area independently of the article header height. */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .Layout:not(.home-background) .VPLocalNav.has-sidebar {
+    position: fixed;
+    top: var(--vp-layout-top-height, 0px);
+    left: var(--vp-sidebar-width);
+    z-index: calc(var(--vp-z-index-nav) + 1);
+    width: auto;
+    padding-left: 0;
+  }
+
+  .Layout .VPLocalNav .VPLocalNavOutlineDropdown {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .Layout .VPLocalNav .items {
+    top: var(--vp-nav-height);
+    left: 32px;
+  }
+}
+
+.VPSidebar .VPNavBarSearch {
+  display: block;
+  padding: 0 0 18px;
+}
+
+.VPSidebar .DocSearch-Button,
+.VPSidebar .DocSearch-Button:hover {
+  background-color: var(--vp-c-bg) !important;
+  border-color: var(--vp-c-divider);
+}
+
+/* Leave the local outline toolbar above the article at intermediate widths. */
+.VPDoc {
+  padding-top: 20px !important;
+  margin-top: 0 !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+.VPDoc .content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: none !important;
+}
+
+/* Add a little breathing room between the outline divider and its links. */
+.VPDocAsideOutline .content {
+  padding-left: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+@media (max-width: 959px) {
+  .home-background {
+    --vp-nav-height: 86px;
+  }
+
+  .VPNavBarTitle .logo {
+    height: 72px;
+    padding: 2px 6px;
+  }
+}
+
+/* The landing page already presents the AMPEL brand in the hero. Keep its
+   navbar focused on search, without changing article-page navigation. */
+.home-background .VPNavBarTitle {
+  width: 0;
+  min-width: 0;
+  margin-right: 0;
+}
+
+.home-background .VPNavBarTitle .logo {
+  display: none;
+}
+
+.home-background .VPNavBar .VPNavBarSearch {
+  display: block !important;
+  position: static;
+  flex: 0 1 var(--ampel-home-search-width);
+  width: var(--ampel-home-search-width);
+  max-width: calc(100% - 56px);
+  min-width: 0;
+  margin: 0 auto 0 0;
+  padding: 0;
+  transform: translateY(-7px);
+}
+
+/* Give the search and feature cards the same responsive content bounds. */
+.home-background .VPNavBar .wrapper,
+.home-background .VPHomeFeatures {
+  padding-inline: var(--ampel-home-gutter);
+}
+
+.home-background .VPNavBar > .wrapper > .container,
+.home-background .VPHomeFeatures > .container {
+  max-width: var(--ampel-home-max-width);
+}
+
+.home-background .VPNavBar > .wrapper > .container > .content {
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .home-background {
+    --ampel-home-gutter: 48px;
+  }
+}
+
+.home-background .VPNavBar .DocSearch-Button-Keys {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .home-background {
+    --ampel-home-gutter: 64px;
+  }
+
+  .home-background .VPNavBar .VPNavBarSearch {
+    transform: translateY(6px);
+  }
+
+  .home-background .VPNavBar .DocSearch-Button-Keys {
+    display: flex;
+  }
+}
+
+/* Keep the button compact at every width, including between breakpoints. */
+.home-background .VPNavBar .DocSearch-Button,
+.home-background .VPNavBar .DocSearch-Button:hover {
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px 0 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-alt);
+}
+
+/* Use the desktop icon size and text spacing on small screens too. */
+.home-background .VPNavBar .DocSearch-Search-Icon {
+  top: 1px;
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  color: var(--vp-c-text-2);
+}
+
+.home-background .VPNavBar .DocSearch-Button:hover .DocSearch-Search-Icon {
+  color: var(--vp-c-text-1);
+}
+
+.home-background .VPNavBar .DocSearch-Button-Placeholder {
+  display: block;
+}
+
+/* Keep the home page dark without changing the reader's saved theme. */
+.home-background {
+  color-scheme: dark;
+  color: var(--vp-c-text-1);
+  --vp-nav-bg-color: transparent;
+  --vp-nav-screen-bg-color: var(--vp-c-bg);
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-hover-text: var(--vp-c-text-1);
+  --vp-button-alt-active-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: var(--vp-c-default-3);
+  --vp-button-alt-hover-bg: var(--vp-c-default-2);
+  --vp-button-alt-active-bg: var(--vp-c-default-1);
+}
+
+/* Local search is teleported to body, outside the dark home-page layout. */
+body:has(.home-background) .VPLocalSearchBox {
+  color-scheme: dark;
+  color: #dfdfd6;
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-soft: #202127;
+  --vp-c-text-1: #dfdfd6;
+  --vp-c-text-2: #98989f;
+  --vp-c-text-3: #6a6a71;
+  --vp-c-divider: #2e2e32;
+  --vp-c-brand-1: #63b3ed;
+  --vp-local-search-bg: var(--vp-c-bg);
+  --vp-local-search-result-bg: var(--vp-c-bg);
+  --vp-local-search-result-border: var(--vp-c-divider);
+  --vp-local-search-result-selected-bg: var(--vp-c-bg);
+  --vp-local-search-result-selected-border: var(--vp-c-brand-1);
+  --vp-local-search-highlight-bg: var(--vp-c-brand-1);
+  --vp-local-search-highlight-text: #000;
+}
+
+/* Keep the transparent landing-page header transparent after scrolling too. */
+.home-background .VPNavBar,
+.home-background .VPNavBar .content-body {
+  background-color: transparent !important;
+}
+
+@media (max-width: 767px) {
+  /* Give the open mobile menu and its header one opaque dark surface. */
+  .home-background .VPNavBar.screen-open {
+    background-color: var(--vp-nav-screen-bg-color) !important;
+  }
+}
+
+.home-background .VPNavBar .divider,
+.home-background .VPNavBar .divider-line {
+  display: none !important;
+}
+
+/* Keep the article header and its local navigation visually continuous. */
+.VPNavBar,
+.VPLocalNav {
+  border-bottom: 0 !important;
+}
+
+/* Keep article content behind the fixed navigation while scrolling. */
+.VPNavBar {
+  z-index: 30;
+  background-color: var(--vp-nav-bg-color) !important;
+  backdrop-filter: none;
+}
+
+.VPNavBar .divider,
+.VPNavBar .divider-line {
+  display: none !important;
+}
+
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom-color: transparent !important;
+}
+
+@media (min-width: 960px) {
+  /* The fixed header covers the sidebar, so its logo block needs the same gray. */
+  .VPNavBar.has-sidebar .container > .title {
+    --vp-nav-height: var(--ampel-sidebar-brand-height);
+    background-color: var(--vp-sidebar-bg-color) !important;
+  }
+
+  .VPSidebar {
+    --vp-nav-height: var(--ampel-sidebar-brand-height);
+    padding-top: calc(var(--vp-nav-height) + 16px) !important;
+    background-color: var(--vp-c-bg-alt) !important;
+  }
+
+  .VPSidebar .curtain {
+    top: calc(-1 * var(--vp-nav-height)) !important;
+    background-color: var(--vp-c-bg-alt) !important;
+  }
+
+  /* Keep the compact, text-first sidebar used by the previous wiki layout. */
+  .VPSidebarItem.level-1 > .item {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .VPSidebarItem.level-1 > .item .text {
+    font-weight: 600;
+  }
+
+  .VPSidebarItem.level-1 + .VPSidebarItem.level-1 {
+    border-top: 1px solid var(--vp-c-divider);
+  }
+
+  .VPSidebarItem.is-active > .item .text {
+    color: var(--vp-c-brand-1);
+  }
+
+  .VPSidebarItem.level-2 > .item,
+  .VPSidebarItem.level-3 > .item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+  }
+}
+
+.home-background .VPNavBarAppearance,
+.home-background .VPNavScreenAppearance,
+.home-background .VPNavBarExtra .appearance,
+.home-background .ampel-footer__ampel-logo--dark {
+  display: none !important;
+}
+
+.home-background .VPNavBarMenuLink[href="/"],
+.home-background .VPNavScreenMenuLink[href="/"] {
+  display: none;
+}
+
+/* VitePress normally selects these images using the theme on <html>. */
+html .home-background .VPImage.dark,
+html .home-background .ampel-footer__ampel-logo--light {
+  display: block !important;
+}
+
+.home-background .VPHomeHero .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  margin: 0;
+  min-height: 0;
+}
+
+.home-background .VPHomeHero.has-image .container {
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.home-background .VPHomeHero .main {
+  order: 1;
+  width: 100%;
+}
+
+.home-background .VPHomeHero {
+  --ampel-hero-font-family: Arial, Helvetica, sans-serif;
+  --ampel-hero-font-weight: 600;
+  --ampel-hero-line-height: 1.08;
+}
+
+.home-background .VPHomeHero.has-image .main .text {
+  color: #fff;
+  font-family: var(--ampel-hero-font-family);
+  font-weight: var(--ampel-hero-font-weight);
+  line-height: var(--ampel-hero-line-height);
+  letter-spacing: normal;
+  margin: 0;
+  text-align: left;
+  transform: translateX(-2px);
+}
+
+.home-background .VPHomeHero .image-container {
+  width: 280px;
+  height: auto;
+  transform: none;
+}
+
+.home-background .VPHomeHero .image-bg {
+  display: none;
+}
+
+.home-background .VPHomeHero .image-src {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: none;
+  transform: none;
+}
+
+@media (min-width: 960px) {
+  .home-background .VPHomeHero {
+    --ampel-hero-font-size: clamp(46px, 4.375vw, 56px);
+  }
+
+  .home-background .VPHomeHero.has-image .container {
+    align-items: last baseline;
+  }
+
+  .home-background .VPHomeHero .main {
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  .home-background .VPHomeHero .text {
+    font-size: var(--ampel-hero-font-size);
+  }
+
+  .home-background .VPHomeHero .image {
+    flex: 1 0 auto;
+  }
+
+  .home-background .VPHomeHero .image-container {
+    /* From the first line's capital height to the last line's baseline.
+       Descenders do not extend the logo below the writing line. */
+    font-family: var(--ampel-hero-font-family);
+    font-size: var(--ampel-hero-font-size);
+    font-weight: var(--ampel-hero-font-weight);
+    height: calc(3 * var(--ampel-hero-line-height) * 1em + 1cap);
+    width: auto;
+  }
+
+  .home-background .VPHomeHero .image-src {
+    height: 100%;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .home-background .VPHomeHero {
+    --ampel-hero-font-weight: 700;
+  }
+
+  .home-background .VPHomeHero.has-image .main .text {
+    font-weight: 700;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .home-background .VPHomeHero .text {
+    font-size: clamp(28px, 9vw, 32px);
+  }
+
+  .home-background .VPHomeHero .image-container {
+    width: 220px;
+  }
+}
+
+.dark .VPNavBarTitle .logo,
+.dark .VPHomeHero .image-src,
+.dark .ampel-footer {
+  background: transparent;
+}
+
+/* Keep card headings and descriptions white in either theme. */
+.home-background .VPFeature .title,
+.home-background .VPFeature .details {
+  color: #fff;
+}
+
+.VPFeature {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--vp-c-divider);
+  box-shadow: 0 12px 30px rgba(16, 42, 67, 0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.VPFeature::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  content: "";
+}
+
+.VPFeature:first-child::before {
+  background: #9b9800;
+}
+
+/* Card 1 */
+.VPFeatures .item:nth-child(1) .VPFeature::before {
+  background: #C44747;
+}
+
+/* Card 2 */
+.VPFeatures .item:nth-child(2) .VPFeature::before {
+  background: #D6A928;
+}
+
+/* Card 3 */
+.VPFeatures .item:nth-child(3) .VPFeature::before {
+  background: #4F8A5B;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 18px 40px rgba(16, 42, 67, 0.11);
+  transform: translateY(-2px);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  color: var(--vp-c-text-1);
+}
+
+.ampel-example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.ampel-media-example {
+  display: flex;
+  min-height: 14rem;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+}
+
+.ampel-media-example img {
+  display: block;
+  width: 100%;
+  max-height: 15rem;
+  object-fit: contain;
+}
+
+.ampel-media-example figcaption {
+  margin-top: 0.75rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+}
+
+.ampel-video-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1rem 0 2rem;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: #102a43;
+}
+
+.ampel-video-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* Keep footer links above the fixed article outline and its empty spacer. */
+.ampel-footer {
+  position: relative;
+  z-index: var(--vp-z-index-footer);
+}
+
+.ampel-footer__inner {
+  display: flex;
+  max-width: 1152px;
+  min-height: 104px;
+  /* Align the logo's bottom edge with the legal links' text baseline. */
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.ampel-footer__projects,
+.ampel-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ampel-footer a {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-background .ampel-footer__legal a,
+  .home-background .ampel-footer__legal a:hover,
+  .home-background .ampel-footer__legal a:focus-visible {
+  color: #faf8f8;
+}
+
+.ampel-footer img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.ampel-footer__ampel-logo {
+  height: 38px;
+}
+
+html:not(.dark) .ampel-footer__ampel-logo--dark,
+.dark .ampel-footer__ampel-logo--light {
+  display: none;
+}
+
+.ampel-footer__github-logo {
+  height: 26px;
+}
+
+.dark .ampel-footer__github-logo {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Match VitePress content offsets so the fixed sidebar cannot cover the footer. */
+@media (min-width: 960px) {
+  .ampel-footer.has-sidebar {
+    padding-left: var(--vp-sidebar-width);
+  }
+}
+
+@media (min-width: 1440px) {
+  .ampel-footer.has-sidebar {
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2);
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  }
+}
+
+@media (max-width: 640px) {
+  .ampel-footer__inner,
+  .ampel-footer__projects,
+  .ampel-footer__legal {
+    align-items: flex-start;
+  }
+
+  .ampel-footer__inner {
+    flex-direction: column;
+  }
+
+  .ampel-footer__projects {
+    flex-wrap: wrap;
+  }
+
+}
+
+img.ampel-footer__ampel-logo,
+img.ampel-footer__ampel-logo--dark {
+  background: transparent !important;
+}
