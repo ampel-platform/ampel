@@ -1,0 +1,33 @@
+<script setup lang="ts">
+import { withBase } from "vitepress";
+import { useSidebar } from "vitepress/theme";
+
+const { hasSidebar } = useSidebar();
+</script>
+
+<template>
+  <footer class="ampel-footer" :class="{ 'has-sidebar': hasSidebar }">
+    <div class="ampel-footer__inner">
+      <div class="ampel-footer__projects">
+        <a
+          href="https://www.uniklinikum-leipzig.de/einrichtungen/ampel"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="AMPEL project page of University Hospital Leipzig"
+        >
+          <img
+            class="ampel-footer__ampel-logo ampel-footer__ampel-logo--light"
+            :src="withBase('/ampel-logo.svg')"
+            alt="AMPEL"
+          />
+          <img
+            class="ampel-footer__ampel-logo ampel-footer__ampel-logo--dark"
+            :src="withBase('/ampel-logo-dark.svg')"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+    </div>
+  </footer>
+</template>
