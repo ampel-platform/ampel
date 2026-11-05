@@ -12,14 +12,14 @@ hero:
 features:
   - title: "Technical manual"
     details: "Architecture, modules, interfaces, and installation for technical implementation."
-    link: /1-bauanleitung.md
+    link: /technical-manual/overview.md
     linkText: Technical section
   - title: "Regulatory manual"
     details: "In-house medical devices, interventional studies, and open-source publication."
-    link: /Open-Source-BA/overview.md
+    link: /regulatory-manual/overview.md
     linkText: Regulatory section
   - title: "Evidence Repository"
     details: "Medical and scientific documentation, algorithms, and study results."
-    link: /2-evidenzsammlung
+    link: /evidence-repository/overview.md
     linkText: Evidence section
 ---

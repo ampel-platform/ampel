@@ -33,6 +33,33 @@ export default defineConfig({
         ],
       },
     ],
+    sidebar: [
+      {
+        text: "Technical implementation guide",
+        collapsed: true,
+        items: [
+          {
+            text: "Overview",
+            link: "/technical-manual/overview.md",
+            collapsed: true,
+          },
+        ],
+      },
+      {
+        text: "Regulatory implementation guide",
+        collapsed: true,
+        items: [
+          { text: "Overview", link: "/regulatory-manual/overview.md"},
+        ],
+      },
+      {
+        text: "Evidence",
+        collapsed: true,
+        items: [
+          { text: "Overview", link : "/evidence-repository/overview.md"},
+        ],
+      },
+    ],
     search: {
       provider: "local",
       options: {
