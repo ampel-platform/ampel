@@ -1,0 +1,8 @@
+* @DiCanio
+
+*.proto @DiCanio
+*.java @DiCanio
+
+/ui/ @Cl3m3-ns
+/docs/ @Steinbach-D
+/docs/evidence-repository/ @SchmidtMaria
