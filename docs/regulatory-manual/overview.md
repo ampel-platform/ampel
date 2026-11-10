@@ -1,7 +1,7 @@
 # Overview: The Regulatory Implementation Guide
 
 Welcome! This regulatory implementation guide helps you to build your own MDR-compliant in-house Clinical Decision Support System. It starts with some basic knowledge you need. By the end, you'll know how to handle most of the pitfalls and how to use your new in-house medical device software in studies to generate more evidence.
-![509](Images/Overview_AMPEL_Wiki_RF.png)
+![509](assets/Overview_AMPEL_Wiki_RF.png)
 
 **Table of Contents:**
 1. [Medical devices (MDR)](mdr-medical-devices.md)
