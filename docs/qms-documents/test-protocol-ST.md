@@ -170,4 +170,4 @@ None.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[test-specifications]] | *local ID* |
+| [test-specifications](test-specifications) | *local ID* |

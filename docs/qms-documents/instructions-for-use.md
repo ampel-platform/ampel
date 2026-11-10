@@ -142,10 +142,10 @@ Table 1. Possible states of the *product name* CDSS column.
 
 | Symbol                                                                                            | Description | Interpretation                                                                             |
 | ------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------ |
-| *local green-status symbol*<br><br>![Pasted image 20260730095136](assets/Indicator-SAP-green.png) | Green       | *Product name* has not detected a notifiable condition.                                    |
-| *local yellow-status symbol*<br><br>![Indicator-SAP-yellow](assets/Indicator-SAP-yellow.png)      | Yellow      | *Product name* has detected a warning condition.                                           |
-| *local red-status symbol*<br><br>![Indicator-SAP-red](assets/Indicator-SAP-red.png)               | Red         | *Product name* has detected a critical condition.                                          |
-| *local no-data symbol*<br><br>![Indicator-SAP-gray](assets/Indicator-SAP-grey.png)                | Grey        | *Product name* recognizes the person. No relevant data for decision support are available. |
+| *local green-status symbol*<br><br>![](assets/Indicator-SAP-green.png) | Green       | *Product name* has not detected a notifiable condition.                                    |
+| *local yellow-status symbol*<br><br>![](assets/Indicator-SAP-yellow.png)      | Yellow      | *Product name* has detected a warning condition.                                           |
+| *local red-status symbol*<br><br>![](assets/Indicator-SAP-red.png)               | Red         | *Product name* has detected a critical condition.                                          |
+| *local no-data symbol*<br><br>![](assets/Indicator-SAP-grey.png)                | Grey        | *Product name* recognizes the person. No relevant data for decision support are available. |
 |                                                                                                   | Empty       | *Product name* does not recognize a person in this bed on the ward.                        |
 
 ## 6.5 Use: User Interface
@@ -225,7 +225,7 @@ Example email:
 ### 6.7.1 AKI - Acute Kidney Injury
 
 Acute kidney injury, abbreviated AKI, is a form of renal insufficiency characterized by a rapid decrease in kidney function with the kidney injury being potentially reversible. The duration of acute kidney injury ranges from a few hours to several weeks. The algorithm evaluates serum creatinine according to KDIGO guidelines without considering urine output. Determination of the serum level of the potentially nephrotoxic antibiotic vancomycin is also included when determining severity. The calculated end states (severity levels), input data, and a technical overview of the algorithm are provided in the appendix. Figure 8 provides a simplified overview of the algorithm.
-![[AKI-screening-flow-en.drawio.svg]]
+![](assets/AKI-screening-flow-en.drawio.svg)
 Figure 8: Simplified overview of the AKI algorithm.
 
 # 7. Support

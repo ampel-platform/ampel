@@ -41,7 +41,7 @@
 
 ## 4.1 Test Steps
 
-As described in [[test-specifications]].
+As described in [test-specifications](test-specifications).
 
 Report output, not yet integrated into automated report output:
 
@@ -61,4 +61,4 @@ None.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[test-specifications]] | *local ID* |
+| [test-specifications](test-specifications) | *local ID* |

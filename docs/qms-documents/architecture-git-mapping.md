@@ -12,7 +12,7 @@
 | **Product name** | **Version** |
 | *Product name*   | *1.0*       |
 
-This accompanying document maps components of the CDSS architecture described in [[architecture]] to elements in the CDSS Git repositories.
+This accompanying document maps components of the CDSS architecture described in [architecture](architecture) to elements in the CDSS Git repositories.
 
 
 | **Component**      | **Link (code)**                                                                                                                                                                                                                                                                                                                                                                      | **Comment**                                                               |

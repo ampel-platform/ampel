@@ -50,4 +50,4 @@ The architecture and design are fulfilled.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[architecture]] | *local ID* |
+| [architecture](architecture) | *local ID* |

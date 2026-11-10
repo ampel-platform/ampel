@@ -22,7 +22,7 @@
 
 # 2. Review Process
 
-The first draft and every change to the requirements documents ([[stakeholder-requirements]], [[system-requirements]], and [[architecture]]) lead to a review of the respective documents by inspection and, where required, revision. At least the project lead, responsible developers, and one staff member not involved in the drafting process must participate.
+The first draft and every change to the requirements documents ([stakeholder-requirements](stakeholder-requirements), [system-requirements](system-requirements), and [architecture](architecture)) lead to a review of the respective documents by inspection and, where required, revision. At least the project lead, responsible developers, and one staff member not involved in the drafting process must participate.
 
 ## 2.1 Stakeholder Requirements Review
 
@@ -110,94 +110,94 @@ Handling failed test cases:
 
 ## 4.1 Acceptance Tests
 
-The requirements in [[stakeholder-requirements]] are covered by the following tests:
+The requirements in [stakeholder-requirements](stakeholder-requirements) are covered by the following tests:
 
 | Test object ID | Test object name | Test specification | Risk control measure? | Priority | Date |
 |---|---|---|---|---|---|
-| StA_NA_001 | Aggregated LAMPE status (overall CDSS status in HIS) | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_002 | Transition to LAMPE detail information | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_003 | CDSS overview | [[test-specifications]] | Yes | Medium | Day-Month-Year |
-| StA_NA_004 | Notification text (detail view) | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_005 | Contributing data (detail view) | [[test-specifications]] | No | Low | Day-Month-Year |
-| StA_NA_006 | Further information (detail view) | [[test-specifications]] | No | Low | Day-Month-Year |
-| StA_NA_007 | Traceability (detail view) | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_008 | Feedback (detail view) | [[test-specifications]] | No | Low | Day-Month-Year |
-| StA_NA_009 | Email alert | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_010 | Email attribution | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_011 | Email traceability | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_016 | Near-real-time processing | [[test-specifications]] | No | Medium | Day-Month-Year |
-| StA_NA_017 | AKI scoring algorithm | [[test-specifications]] | No | High | Day-Month-Year |
+| StA_NA_001 | Aggregated LAMPE status (overall CDSS status in HIS) | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_002 | Transition to LAMPE detail information | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_003 | CDSS overview | [test-specifications](test-specifications) | Yes | Medium | Day-Month-Year |
+| StA_NA_004 | Notification text (detail view) | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_005 | Contributing data (detail view) | [test-specifications](test-specifications) | No | Low | Day-Month-Year |
+| StA_NA_006 | Further information (detail view) | [test-specifications](test-specifications) | No | Low | Day-Month-Year |
+| StA_NA_007 | Traceability (detail view) | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_008 | Feedback (detail view) | [test-specifications](test-specifications) | No | Low | Day-Month-Year |
+| StA_NA_009 | Email alert | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_010 | Email attribution | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_011 | Email traceability | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_016 | Near-real-time processing | [test-specifications](test-specifications) | No | Medium | Day-Month-Year |
+| StA_NA_017 | AKI scoring algorithm | [test-specifications](test-specifications) | No | High | Day-Month-Year |
 
 ## 4.2 System Tests
 
-The requirements in [[system-requirements]] are covered by the following tests:
+The requirements in [system-requirements](system-requirements) are covered by the following tests:
 
 | Test object ID      | Test object name                            | Test specification      | Risk control measure? | Priority | Date           |
 | ------------------- | ------------------------------------------- | ----------------------- | --------------------- | -------- | -------------- |
-| SyA_ES_NS_UI        | User interface                              | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_ES_HS_PC        | local standard PC hardware                  | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_ES_HS_VM        | Linux virtual machine                       | [[test-specifications]] | No                    | High     | Day-Month-Year |
-| SyA_ES_SS_DB        | Database interface (input)                  | [[test-specifications]] | No                    | High     | Day-Month-Year |
-| SyA_ES_SS_PC        | local standard PC software                  | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_ES_SS_KAS       | CDSS interface to the CWS                   | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_ES_SS_MAIL      | CDSS interface for email dispatch           | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_BU_INST_SPALTE  | Displaying the CDSS column                  | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_BU_INST_DOCKER  | System startup                              | [[test-specifications]] | Yes                   | Low      | Day-Month-Year |
-| SyA_ES_IFU          | [[instructions-for-use]]                    | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_FA_UI_STAMM     | Patient master data                         | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_FA_UI_FB        | Feedback                                    | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_UI_START     | Start view (overview)                       | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_UI_DETAIL    | Transition to detail view                   | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_UI_HINWEIS   | Notification text (detail view)             | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_UI_DATEN     | Contributing data (detail view)             | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_UI_LINK      | Access to further information (detail view) | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_MAIL_VERS    | Email dispatch conditions                   | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_FA_MAIL_STAMM   | Patient master data in email                | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_FA_MAIL_INH     | Email content                               | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_FA_SCORE_STATUS | CDSS status                                 | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_FA_SCORE_SCHWER | CDSS severity                               | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_FA_SCORE_AGGR   | Aggregated CDSS status                      | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_FA_SCORE_AKI    | Detection of AKI and VA-AKI                 | [[test-specifications]] | No                    | High     | Day-Month-Year |
-| SyA_NFA_L_EV        | Real-time processing                        | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_NFA_SA_CONT     | Container                                   | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_NFA_SA_SAND     | Sandboxing                                  | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_NFA_SA_AUI      | UI authentication                           | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_NFA_SA_AVM      | VM authentication                           | [[test-specifications]] | Yes                   | High     | Day-Month-Year |
-| SyA_NFA_SA_MINI     | Data minimization                           | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_NFA_SQ_SUI      | Static UI                                   | [[test-specifications]] | Yes                   | Low      | Day-Month-Year |
-| SyA_NFA_SQ_MINI     | Minimal interaction                         | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_NFA_SQ_UEB      | Clarity                                     | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_NFA_SQ_SL       | System uptime                               | [[test-specifications]] | No                    | Medium   | Day-Month-Year |
-| SyA_NFA_SQ_DD       | Defective data input                        | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_NFA_SQ_W        | Maintenance                                 | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
-| SyA_NFA_SQ_MOD      | Modularity                                  | [[test-specifications]] | No                    | Low      | Day-Month-Year |
-| SyA_NFA_SQ_KONF     | Configuration (authorization)               | [[test-specifications]] | Yes                   | Medium   | Day-Month-Year |
+| SyA_ES_NS_UI        | User interface                              | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_ES_HS_PC        | local standard PC hardware                  | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_ES_HS_VM        | Linux virtual machine                       | [test-specifications](test-specifications) | No                    | High     | Day-Month-Year |
+| SyA_ES_SS_DB        | Database interface (input)                  | [test-specifications](test-specifications) | No                    | High     | Day-Month-Year |
+| SyA_ES_SS_PC        | local standard PC software                  | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_ES_SS_KAS       | CDSS interface to the CWS                   | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_ES_SS_MAIL      | CDSS interface for email dispatch           | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_BU_INST_SPALTE  | Displaying the CDSS column                  | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_BU_INST_DOCKER  | System startup                              | [test-specifications](test-specifications) | Yes                   | Low      | Day-Month-Year |
+| SyA_ES_IFU          | [instructions-for-use](instructions-for-use)                    | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_FA_UI_STAMM     | Patient master data                         | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_FA_UI_FB        | Feedback                                    | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_UI_START     | Start view (overview)                       | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_UI_DETAIL    | Transition to detail view                   | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_UI_HINWEIS   | Notification text (detail view)             | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_UI_DATEN     | Contributing data (detail view)             | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_UI_LINK      | Access to further information (detail view) | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_MAIL_VERS    | Email dispatch conditions                   | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_FA_MAIL_STAMM   | Patient master data in email                | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_FA_MAIL_INH     | Email content                               | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_FA_SCORE_STATUS | CDSS status                                 | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_FA_SCORE_SCHWER | CDSS severity                               | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_FA_SCORE_AGGR   | Aggregated CDSS status                      | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_FA_SCORE_AKI    | Detection of AKI and VA-AKI                 | [test-specifications](test-specifications) | No                    | High     | Day-Month-Year |
+| SyA_NFA_L_EV        | Real-time processing                        | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_NFA_SA_CONT     | Container                                   | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_NFA_SA_SAND     | Sandboxing                                  | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_NFA_SA_AUI      | UI authentication                           | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_NFA_SA_AVM      | VM authentication                           | [test-specifications](test-specifications) | Yes                   | High     | Day-Month-Year |
+| SyA_NFA_SA_MINI     | Data minimization                           | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_NFA_SQ_SUI      | Static UI                                   | [test-specifications](test-specifications) | Yes                   | Low      | Day-Month-Year |
+| SyA_NFA_SQ_MINI     | Minimal interaction                         | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_NFA_SQ_UEB      | Clarity                                     | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_NFA_SQ_SL       | System uptime                               | [test-specifications](test-specifications) | No                    | Medium   | Day-Month-Year |
+| SyA_NFA_SQ_DD       | Defective data input                        | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_NFA_SQ_W        | Maintenance                                 | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
+| SyA_NFA_SQ_MOD      | Modularity                                  | [test-specifications](test-specifications) | No                    | Low      | Day-Month-Year |
+| SyA_NFA_SQ_KONF     | Configuration (authorization)               | [test-specifications](test-specifications) | Yes                   | Medium   | Day-Month-Year |
 
 ## 4.3 Unit and Integration Tests
 
-The components in [[architecture]] are covered by the following tests:
+The components in [architecture](architecture) are covered by the following tests:
 
 | Test object ID | Test object name | Test specification | Risk control measure? | Priority | Date |
 |---|---|---|---|---|---|
-| ETL_PROCESS | Stream processing component | [[test-specifications]] | No | High | Day-Month-Year |
-| ETL_PAT | Patient component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| ETL_LAB | Laboratory component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| ETL_PROZ | Procedure component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| ETL_FALL | Case component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| DS_STREAM | Streaming component | [[test-specifications]] | No | High | Day-Month-Year |
-| SCO_FRAME_KAFKA_R | Kafka reader of the scoring framework | [[test-specifications]] | Yes | High | Day-Month-Year |
-| SCO_FRAME_KAFKA_W | Kafka writer of the scoring framework | [[test-specifications]] | Yes | High | Day-Month-Year |
-| SCO_FRAME_WORK_DSG | Workflow designer of the scoring framework | [[test-specifications]] | Yes | High | Day-Month-Year |
-| SCO_FRAME_WORK_SCH | Workflow scheduler of the scoring framework | [[test-specifications]] | Yes | High | Day-Month-Year |
-| SCO_AKI | AKI component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| SCO_AKI-DB | AKI DB component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| BACK_SER | Result web server component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| BACK_DB | Backend DB component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| BACK_ERG | Result component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| BACK_META | Metadata component | [[test-specifications]] | Yes | High | Day-Month-Year |
-| BACK_ORC | Workflow orchestration component | [[test-specifications]] | No | High | Day-Month-Year |
-| BACK_MAIL | Mail client component | [[test-specifications]] | Yes | Medium | Day-Month-Year |
-| FRONT_CASE | Case dashboard component | [[test-specifications]] | Yes | Medium | Day-Month-Year |
+| ETL_PROCESS | Stream processing component | [test-specifications](test-specifications) | No | High | Day-Month-Year |
+| ETL_PAT | Patient component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| ETL_LAB | Laboratory component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| ETL_PROZ | Procedure component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| ETL_FALL | Case component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| DS_STREAM | Streaming component | [test-specifications](test-specifications) | No | High | Day-Month-Year |
+| SCO_FRAME_KAFKA_R | Kafka reader of the scoring framework | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| SCO_FRAME_KAFKA_W | Kafka writer of the scoring framework | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| SCO_FRAME_WORK_DSG | Workflow designer of the scoring framework | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| SCO_FRAME_WORK_SCH | Workflow scheduler of the scoring framework | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| SCO_AKI | AKI component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| SCO_AKI-DB | AKI DB component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| BACK_SER | Result web server component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| BACK_DB | Backend DB component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| BACK_ERG | Result component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| BACK_META | Metadata component | [test-specifications](test-specifications) | Yes | High | Day-Month-Year |
+| BACK_ORC | Workflow orchestration component | [test-specifications](test-specifications) | No | High | Day-Month-Year |
+| BACK_MAIL | Mail client component | [test-specifications](test-specifications) | Yes | Medium | Day-Month-Year |
+| FRONT_CASE | Case dashboard component | [test-specifications](test-specifications) | Yes | Medium | Day-Month-Year |
 
 # 5. Test Team Members
 
@@ -214,11 +214,11 @@ The components in [[architecture]] are covered by the following tests:
 
 | ID      | Name                                         | Description                                                                                                                                                                                                                             | Sufficient | Needs improvement | Insufficient |
 | ------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------- | ------------ |
-| UBM_StA | Stakeholder requirement coverage             | Percentage of requirements in [[stakeholder-requirements]] that could be considered fulfilled by at least one test.                                                                                                                     | 100%       | >=90%             | <90%         |
-| UBM_SyA | System requirement coverage                  | Percentage of requirements in [[system-requirements]] that could be considered fulfilled by at least one test.                                                                                                                          | 100%       | >=90%             | <90%         |
-| UBM_ADA | Architecture and design requirement coverage | Percentage of requirements in [[architecture]] that could be considered fulfilled by at least one test.                                                                                                                                 | 100%       | >=90%             | <90%         |
+| UBM_StA | Stakeholder requirement coverage             | Percentage of requirements in [stakeholder-requirements](stakeholder-requirements) that could be considered fulfilled by at least one test.                                                                                                                     | 100%       | >=90%             | <90%         |
+| UBM_SyA | System requirement coverage                  | Percentage of requirements in [system-requirements](system-requirements) that could be considered fulfilled by at least one test.                                                                                                                          | 100%       | >=90%             | <90%         |
+| UBM_ADA | Architecture and design requirement coverage | Percentage of requirements in [architecture](architecture) that could be considered fulfilled by at least one test.                                                                                                                                 | 100%       | >=90%             | <90%         |
 | UBM_COV | Code coverage                                | The percentage of all “instructions” (also called “statements”) in the code that were covered by a test case. The framework, config modules, SOUPs, and the scoring component, which is tested without automation, were not considered. | >=60%      | >=50%             | <50%         |
-| UBM_RIS | Tests per risk control measure               | Average number of tests per risk control measure from the requirements in [[architecture]].                                                                                                                                             | >=1.5      | >=1               | <1           |
+| UBM_RIS | Tests per risk control measure               | Average number of tests per risk control measure from the requirements in [architecture](architecture).                                                                                                                                             | >=1.5      | >=1               | <1           |
 | UBM_ABN | Number of acceptance testers                 | Number of users who accepted the acceptance test as stakeholders.                                                                                                                                                                       | >=5        | >=3               | <3           |
 
 # 7. Test Resources
@@ -266,7 +266,7 @@ No standards are specified.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[test-specifications]] | *local ID* |
-| [[stakeholder-requirements-review]] | *local ID* |
-| [[system-requirements-review]] | *local ID* |
-| [[architecture-review]] | *local ID* |
+| [test-specifications](test-specifications) | *local ID* |
+| [stakeholder-requirements-review](stakeholder-requirements-review) | *local ID* |
+| [system-requirements-review](system-requirements-review) | *local ID* |
+| [architecture-review](architecture-review) | *local ID* |

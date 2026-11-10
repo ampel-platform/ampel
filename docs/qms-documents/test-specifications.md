@@ -26,7 +26,7 @@
 | ETL           | Extract, transform, load; data processing that reads source data, filters/transforms it, and provides it in AMPEL format.                                                                                                                                                                                                                                                                                                                                                                              |
 | HIS           | Hospital Information System.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ID            | The selected test-case ID follows the QM logic. For unit and integration tests, the final concatenated part of the ID (suffix) is also the ID in the code logic. This suffix can be used to find the respective test case in the source code.<br><br>Example:<br>`UITF_BACK_META_SVC__ScoringSystemResultLookupServiceTest`<br>`UITF` = unit/integration test case<br>`BACK_META` = architecture component<br>`ScoringSystemResultLookupServiceTest` = unique ID used to find the test in source code. |
-| IFU           | [[instructions-for-use\|Instructions for Use]]; user-facing instructions for operating *product name* and interpreting its recommendations.                                                                                                                                                                                                                                                                                                                                                            |
+| IFU           | [instructions-for-use\|Instructions for Use](instructions-for-use%5C%7CInstructions%20for%20Use); user-facing instructions for operating *product name* and interpreting its recommendations.                                                                                                                                                                                                                                                                                                                                                            |
 | LIS           | Local laboratory information system                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Local mailbox | Email mailbox used for email notifications.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | SOUP          | Software of unknown provenance                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -132,7 +132,7 @@
 | Priority                  | High                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Test basis                | The following stakeholder requirements:<br>StA_NA_001 - Aggregated *Product Name* status (overall CDSS status in HIS)<br>StA_NA_002 - Transition to *Product Name* detail information<br>StA_NA_003 - *Product Name* scores overview<br>StA_NA_004 - Support notifications<br>StA_NA_005 - Contributing data (detail view)<br>StA_NA_006 - Further information (detail view)<br>StA_NA_007 - Traceability (detail view)<br>StA_NA_008 - Feedback (detail view)<br>StA_NA_009 - Email notification<br>StA_NA_010 - Email attribution<br>StA_NA_011 - Email traceability<br>StA_NA_016 - Near-real-time processing<br>StA_NA_017 - AKI score |
 | Description and goals     | The test checks whether the aggregated CDSS status of the AKI scoring system is displayed correctly, consistently, and in accordance with the rule set in all relevant output channels: <br>- HIS (*Product Name* column)<br>- Case Dashboard component<br>- Email notifications<br>- *local laboratory information system's* raw data.<br><br>At a clinical workstation, a physician acting as test person checks end-to-end data flow and traceability of notifications for case IDs with green, yellow, and red CDSS status.                                                                                                            |
-| Features to be tested     | Acceptance criteria of the listed requirements in [[stakeholder-requirements]]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Features to be tested     | Acceptance criteria of the listed requirements in [stakeholder-requirements](stakeholder-requirements)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Features not to be tested |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ### 3.1.1 ATF_01 - *Product Name* User Test
@@ -152,7 +152,7 @@
 **Test input:**
 
 - Selection of concrete case IDs, one per CDSS status (green/yellow/red), according to the HIS ward overview and the *local mailbox*.
-	- Missing individual colors, e.g. no red case available, are documented as limitations but do not automatically fail the test if accepted in [[test-plan]].
+	- Missing individual colors, e.g. no red case available, are documented as limitations but do not automatically fail the test if accepted in [test-plan](test-plan).
 - Test steps are repeated analogously for each available CDSS status.
 - Manual operation of the software in the test system.
 
@@ -160,10 +160,10 @@ Note: Red cases exist only if a vancomycin level determination (*using the confi
 
 **Test steps:**
 
-For each CDSS status to be checked (green, yellow, red), the following steps are performed. Each run is documented separately in [[test-protocol-AT]].
+For each CDSS status to be checked (green, yellow, red), the following steps are performed. Each run is documented separately in [test-protocol-AT](test-protocol-AT).
 
 1. Visibility of the *product name* column
-   The test person ensures that the *product name* column (aggregated *product name* status) is displayed in the patient/case overview in the HIS ward overview; if not, it is displayed according to the [[instructions-for-use|IFU]].
+   The test person ensures that the *product name* column (aggregated *product name* status) is displayed in the patient/case overview in the HIS ward overview; if not, it is displayed according to the [instructions-for-use|IFU](instructions-for-use%7CIFU).
    - Verifies: StA_NA_001 (*product name* status at a glance).
 
    The test person selects a case ID with the expected CDSS status (green/yellow/red) in the ward overview.
@@ -175,7 +175,7 @@ For each CDSS status to be checked (green, yellow, red), the following steps are
 
 3. Checking the raw data in the *local laboratory information system*
    The test person checks the relevant creatinine values and vancomycin level determinations of the medical case ID in the *local laboratory information system*.
-   Comparison with the AKI decision tree using the [[instructions-for-use|IFU]].
+   Comparison with the AKI decision tree using the [instructions-for-use|IFU](instructions-for-use%7CIFU).
    - Verifies: StA_NA_017 (AKI score), supports StA_NA_001, StA_NA_016.
 
 4. Transition to the Case Dashboard
@@ -212,7 +212,7 @@ For each CDSS status to be checked (green, yellow, red), the following steps are
    - Assessment of the run (passed / not passed).
 
 8. Repetition for further CDSS statuses
-   Steps 1-8 are repeated for all available CDSS statuses, each with its own medical case ID. If cases for one color are missing, this is noted in [[test-protocol-AT]].
+   Steps 1-8 are repeated for all available CDSS statuses, each with its own medical case ID. If cases for one color are missing, this is noted in [test-protocol-AT](test-protocol-AT).
 
 **Expected results:**
 
@@ -241,7 +241,7 @@ For each CDSS status checked (green/yellow/red):
 
 **Acceptance criterion:** successful confirmation of all checklist points.
 
-**Test execution:** [[test-protocol-AT]]
+**Test execution:** [test-protocol-AT](test-protocol-AT)
 
 # 4. System Tests
 
@@ -363,7 +363,7 @@ There is one result for each checklist item (pass/fail)
 
 Successful confirmation of all checklist points.
 
-**Test execution:** [[test-protocol-ST]]
+**Test execution:** [test-protocol-ST](test-protocol-ST)
 
 # 5. Unit and Integration Tests
 
@@ -374,7 +374,7 @@ Successful confirmation of all checklist points.
 | ID                        | UIT_ETL_LAB_FILTERS                                                                                                                                                                                                                                                         |
 | Name                      | ETL laboratory filter                                                                                                                                                                                                                                                       |
 | Priority                  | High                                                                                                                                                                                                                                                                        |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_LAB`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/laboratory.                                        |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_LAB`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/laboratory.                                        |
 | Description and goals     | The test ensures the correct operation of the various filters involved in the ETL process for laboratory values. These include:<br>• Time-based filtering of laboratory data<br>• Time-based filtering of laboratory metadata<br>• Value-based filtering of laboratory data |
 | Features to be tested     | • Filtering of laboratory data<br>• Filtering of laboratory metadata                                                                                                                                                                                                        |
 | Features not to be tested |                                                                                                                                                                                                                                                                             |
@@ -514,7 +514,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_LAB_TRANS                                                                                                                                                                                                                                                              |
 | Name                      | ETL laboratory transformation                                                                                                                                                                                                                                                  |
 | Priority                  | High                                                                                                                                                                                                                                                                           |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_LAB`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/laboratory. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_LAB`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/laboratory. |
 | Description and goals     | The test ensures the correct operation of the ETL pipeline for processing laboratory data and the associated laboratory metadata. Its primary focus is the correct joining of both data pools while taking the filters configured for the pipeline into account.               |
 | Features to be tested     | • Joining laboratory data and laboratory metadata<br>• Integration with the data-stream component for reading                                                                                                                                                                  |
 | Features not to be tested |                                                                                                                                                                                                                                                                                |
@@ -577,7 +577,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_PROC_FILTERS                                                                                                                                                                                                                 |
 | Name                      | ETL procedure filters                                                                                                                                                                                                                |
 | Priority                  | High                                                                                                                                                                                                                                 |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_PROZ`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/procedure. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_PROZ`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/procedure. |
 | Description and goals     | The test ensures the correct operation of the various filters involved in the ETL process for procedures. These include:<br>- Value-based filter relating to whether a procedure was performed.                                      |
 | Features to be tested     | • Filtering of procedures                                                                                                                                                                                                            |
 | Features not to be tested |                                                                                                                                                                                                                                      |
@@ -641,7 +641,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_PROC_TRANS                                                                                                                                                                                                                                                             |
 | Name                      | ETL procedure transformation                                                                                                                                                                                                                                                   |
 | Priority                  | High                                                                                                                                                                                                                                                                           |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_PROZ`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/procedure. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_PROZ`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/procedure. |
 | Description and goals     | The test ensures the correct transformation of procedure data into the associated AMPEL format while including upstream systems such as Kafka.                                                                                                                                 |
 | Features to be tested     | • Conversion of procedures<br>• Stability of conversions at increased parallelism                                                                                                                                                                                              |
 | Features not to be tested |                                                                                                                                                                                                                                                                                |
@@ -790,7 +790,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_PAT_TRANS                                                                                                                                                                                                                                                           |
 | Name                      | ETL patient transformation                                                                                                                                                                                                                                                  |
 | Priority                  | High                                                                                                                                                                                                                                                                        |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_PAT`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/patient. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_PAT`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/patient. |
 | Description and goals     | The test ensures the correct transformation of patient data into the associated AMPEL format while including upstream systems such as Kafka.                                                                                                                                |
 | Features to be tested     | • Conversion of patients<br>• Stability of conversions at increased parallelism                                                                                                                                                                                             |
 | Features not to be tested |                                                                                                                                                                                                                                                                             |
@@ -932,7 +932,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_MC_FILTERS                                                                                                                                                                                                                       |
 | Name                      | ETL medical case filters                                                                                                                                                                                                                 |
 | Priority                  | High                                                                                                                                                                                                                                     |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_FALL`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/medical-cases. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_FALL`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/medical-cases. |
 | Description and goals     | The test ensures the correct operation of the various filters involved in the ETL process for medical cases. These include:<br>• Time-based filter<br>• Status filter                                                                    |
 | Features to be tested     | • Filtering of medical cases                                                                                                                                                                                                             |
 | Features not to be tested |                                                                                                                                                                                                                                          |
@@ -1028,7 +1028,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_ETL_MC_TRANS                                                                                                                                                                                                                                                                   |
 | Name                      | ETL medical case transformation                                                                                                                                                                                                                                                    |
 | Priority                  | High                                                                                                                                                                                                                                                                               |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `ETL_PROCESS`<br>• `ETL_FALL`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/medical-cases. |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `ETL_PROCESS`<br>• `ETL_FALL`<br>• `DS_STREAM`<br>• `SCO_FRAME_KAFKA_R`<br><br>The code for the component under test can be viewed at https://github.com/AMPEL-CDSS-ORG/etl/tree/v0.4.0/medical-cases. |
 | Description and goals     | The test ensures the correct transformation of medical case data into the associated AMPEL format while including upstream systems such as Kafka.                                                                                                                                  |
 | Features to be tested     | • Conversion of medical case data<br>• Stability of conversions at increased parallelism                                                                                                                                                                                           |
 | Features not to be tested |                                                                                                                                                                                                                                                                                    |
@@ -1176,7 +1176,7 @@ https://github.com/AMPEL-CDSS-ORG/etl/releases/download/v0.4.0/etl-jobs-test-rep
 | ID                        | UIT_BACK_PERS_MC                                                                                       |
 | Name                      | Persistence and provision of medical case data                                                         |
 | Priority                  | High                                                                                                   |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `BACK_DB`<br>• `BACK_META` |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `BACK_DB`<br>• `BACK_META` |
 | Description and goals     | Checks whether the backend can correctly persist medical case data in the system and provide it again. |
 | Features to be tested     | • Store and provide medical case data                                                                  |
 | Features not to be tested |                                                                                                        |
@@ -1368,7 +1368,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_PERS_RES                                                                                     |
 | Name                      | Persistence and provision of result data                                                              |
 | Priority                  | High                                                                                                  |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `BACK_DB`<br>• `BACK_ERG` |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `BACK_DB`<br>• `BACK_ERG` |
 | Description and goals     | Checks whether the backend can correctly persist result data in the system and provide it again.      |
 | Features to be tested     | • Store and provide result data from scoring systems                                                  |
 | Features not to be tested |                                                                                                       |
@@ -1423,7 +1423,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_ING                                                                                                          |
 | Name                      | Ingestion of result data                                                                                              |
 | Priority                  | High                                                                                                                  |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `BACK_DB`<br>• `BACK_ERG`<br>• `BACK_ORC` |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `BACK_DB`<br>• `BACK_ERG`<br>• `BACK_ORC` |
 | Description and goals     | Checks whether the backend can correctly ingest result data by using an external orchestration component.             |
 | Features to be tested     | • Ingestion of result data from scoring systems                                                                       |
 | Features not to be tested |                                                                                                                       |
@@ -1477,7 +1477,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_API_HTTP                                                                                                       |
 | Name                      | Retrieval of information via the HTTP interface                                                                         |
 | Priority                  | High                                                                                                                    |
-| Test basis                | The following test objects, described in [[architecture]], are tested:<br>• `BACK_SER`<br>• `BACK_ERG`<br>• `BACK_META` |
+| Test basis                | The following test objects, described in [architecture](architecture), are tested:<br>• `BACK_SER`<br>• `BACK_ERG`<br>• `BACK_META` |
 | Description and goals     | Checks whether the backend can correctly output information when it is requested through the HTTP interface.            |
 | Features to be tested     | • Output of information through the HTTP interface                                                                      |
 | Features not to be tested |                                                                                                                         |
@@ -1610,7 +1610,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_META_SVC                                                                                                                          |
 | Name                      | Retrieval of medical case metadata                                                                                                         |
 | Priority                  | High                                                                                                                                       |
-| Test basis                | The following test object, described in [[architecture]], is tested:<br>• `BACK_META`                                                      |
+| Test basis                | The following test object, described in [architecture](architecture), is tested:<br>• `BACK_META`                                                      |
 | Description and goals     | Checks whether the service layer between the backend's application layer and infrastructure layer can retrieve metadata for medical cases. |
 | Features to be tested     | • Retrieval of metadata for a medical case                                                                                                 |
 | Features not to be tested |                                                                                                                                            |
@@ -1672,7 +1672,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_RES_SVC                                                                                                                                                          |
 | Name                      | Processing of result data                                                                                                                                                 |
 | Priority                  | High                                                                                                                                                                      |
-| Test basis                | The following test object, described in [[architecture]], is tested:<br>• `BACK_ERG`                                                                                      |
+| Test basis                | The following test object, described in [architecture](architecture), is tested:<br>• `BACK_ERG`                                                                                      |
 | Description and goals     | Checks whether the service layer between the backend's application layer and infrastructure layer can process result data from various scoring systems for medical cases. |
 | Features to be tested     | • Processing of result data from various scoring systems within a medical case                                                                                            |
 | Features not to be tested |                                                                                                                                                                           |
@@ -1856,7 +1856,7 @@ https://github.com/AMPEL-CDSS-ORG/central-ampel-service/releases/download/v0.2.0
 | ID                        | UIT_BACK_MAIL_LIST                                                                                      |
 | Name                      | Email recipient test                                                                                    |
 | Priority                  | Medium                                                                                                  |
-| Test basis                | The following test object, described in [[architecture]], is tested:<br>• `BACK_MAIL`                   |
+| Test basis                | The following test object, described in [architecture](architecture), is tested:<br>• `BACK_MAIL`                   |
 | Description and goals     | Checks whether the recipients of the emails are exclusively within the configured *local email domain*. |
 | Features to be tested     | Source code that specifies the email addresses to which messages are sent                               |
 | Features not to be tested |                                                                                                         |
@@ -1972,7 +1972,7 @@ All expected values match the result values.
 
 **Test execution:**
 
-See [[test-protocol-UIT]].
+See [test-protocol-UIT](test-protocol-UIT).
 
 ## 5.16 UIT_DET_VIS_STATE_01 - Visualization of Medical Case Using Artificially Generated Status Data and History
 
@@ -2138,7 +2138,7 @@ https://github.com/AMPEL-CDSS-ORG/ampel-ui/releases/download/v1.0.0/bericht-v1.0
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[stakeholder-requirements]] | *local ID* |
-| [[system-requirements]] | *local ID* |
-| [[architecture]] | *local ID* |
-| [[algorithm-aki]] | *local ID* |
+| [stakeholder-requirements](stakeholder-requirements) | *local ID* |
+| [system-requirements](system-requirements) | *local ID* |
+| [architecture](architecture) | *local ID* |
+| [algorithm-aki](algorithm-aki) | *local ID* |

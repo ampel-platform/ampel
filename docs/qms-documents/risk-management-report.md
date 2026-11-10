@@ -22,15 +22,15 @@
 
 # 2. Risk Management Process
 
-This risk management report was prepared according to the *local SOP for risk management of in-house software*. It follows the requirements of ISO 14971:2019 with particular consideration of the additional requirements from Regulation (EU) 2017/745. The criteria for acceptance of risks are listed in [[risk-table]].
+This risk management report was prepared according to the *local SOP for risk management of in-house software*. It follows the requirements of ISO 14971:2019 with particular consideration of the additional requirements from Regulation (EU) 2017/745. The criteria for acceptance of risks are listed in [risk-table](risk-table).
 
 | Risk management activity                                                                                                                                                      | Evidence of completion                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Risk management plan**: Risk management was planned according to ISO 14971:2019 with particular consideration of the additional requirements from Regulation (EU) 2017/745. | See [[risk-management-plan]] (*local ID*)                   |
-| **Product-level risk analysis**: A product-level risk analysis was created.                                                                                                   | See [[risk-table]] (*local ID*)                             |
-| **Process-level risk analysis**: A process-level risk analysis was created.                                                                                                   | See [[risk-table]] (*local ID*)                             |
+| **Risk management plan**: Risk management was planned according to ISO 14971:2019 with particular consideration of the additional requirements from Regulation (EU) 2017/745. | See [risk-management-plan](risk-management-plan) (*local ID*)                   |
+| **Product-level risk analysis**: A product-level risk analysis was created.                                                                                                   | See [risk-table](risk-table) (*local ID*)                             |
+| **Process-level risk analysis**: A process-level risk analysis was created.                                                                                                   | See [risk-table](risk-table) (*local ID*)                             |
 | **Verification of risk control measures**: It was verified that all risk control measures resulting from the risk analysis were implemented and shown to be effective.        | See *local checklist of risk control measures* (*local ID*) |
-| **Risk management review**: Review of risk management was performed and documented.                                                                                           | See [[risk-management-protocol]] (*local ID*)               |
+| **Risk management review**: Review of risk management was performed and documented.                                                                                           | See [risk-management-protocol](risk-management-protocol) (*local ID*)               |
 
 # 3. Summary
 
@@ -68,7 +68,7 @@ Conclusion: The risk-benefit assessment supports the use of the *Product Name* p
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[risk-management-plan]] | *local ID* |
-| [[risk-table]] | *local ID* |
+| [risk-management-plan](risk-management-plan) | *local ID* |
+| [risk-table](risk-table) | *local ID* |
 | *local risk control checklist* | *local ID* |
-| [[risk-management-protocol]] | *local ID* |
+| [risk-management-protocol](risk-management-protocol) | *local ID* |

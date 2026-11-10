@@ -55,7 +55,7 @@ Procedure activities differ for each product and are described in a product-spec
 
 ### 2.2.2 Description
 
-The integration requirements that arose during development of the in-house software (especially interface definitions) are already described in [[system-requirements]] and finally assessed as fulfilled in [[test-report]]. The final product version also results in a *product name startup checklist* that is stored centrally.
+The integration requirements that arose during development of the in-house software (especially interface definitions) are already described in [system-requirements](system-requirements) and finally assessed as fulfilled in [test-report](test-report). The final product version also results in a *product name startup checklist* that is stored centrally.
 
 ### 2.2.3 Participants
 
@@ -77,11 +77,11 @@ The integration requirements that arose during development of the in-house softw
 
 ### 2.3.2 Description
 
-Installation is performed by the development team according to the startup checklist. Technical information is provided to users by handing over [[instructions-for-use]], including communication channels for problems.
+Installation is performed by the development team according to the startup checklist. Technical information is provided to users by handing over [instructions-for-use](instructions-for-use), including communication channels for problems.
 
 If integration problems occur:
 
-- [[system-requirements]] is updated to avoid similar problems for future users;
+- [system-requirements](system-requirements) is updated to avoid similar problems for future users;
 - the *local SOP for change management of in-house software* is initiated with a change request if the medical device itself must be changed.
 
 Successful integration is documented through the acceptance test.
@@ -111,7 +111,7 @@ The date and version of the deployed product and the user information are docume
 
 ### 2.4.2 Description
 
-No additional user accounts are required within the in-house software as defined by [[system-requirements]].
+No additional user accounts are required within the in-house software as defined by [system-requirements](system-requirements).
 
 ### 2.4.3 Participants
 
@@ -131,7 +131,7 @@ None.
 
 ### 2.5.2 Description
 
-All steps necessary for safe operation of the product are included in [[instructions-for-use]]. Introduction is performed through the medical device officers established at *Hospital Name*. A person from the *local medical technology department* is available through the contact options listed in [[instructions-for-use]] for questions and forwards them to project staff where required (see also "Handling Feedback").
+All steps necessary for safe operation of the product are included in [instructions-for-use](instructions-for-use). Introduction is performed through the medical device officers established at *Hospital Name*. A person from the *local medical technology department* is available through the contact options listed in [instructions-for-use](instructions-for-use) for questions and forwards them to project staff where required (see also "Handling Feedback").
 
 ### 2.5.3 Participants
 
@@ -155,7 +155,7 @@ All steps necessary for safe operation of the product are included in [[instruct
 
 ### 2.6.2 Description
 
-The communication channel for customer feedback and complaints is specified in [[instructions-for-use]]. All incoming input is processed according to the *local SOP for feedback and complaint management*.
+The communication channel for customer feedback and complaints is specified in [instructions-for-use](instructions-for-use). All incoming input is processed according to the *local SOP for feedback and complaint management*.
 
 ### 2.6.3 Participants
 

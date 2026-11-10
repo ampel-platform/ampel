@@ -272,7 +272,7 @@ Possible states, from least severe to most severe:
 
 | ID               | Name                                                                           | Priority | Traceability                  | Risk control measure? | Dependencies                             |
 | ---------------- | ------------------------------------------------------------------------------ | -------- | ----------------------------- | --------------------- | ---------------------------------------- |
-| SyA_FA_SCORE_AKI | Detection of acute kidney injury and vancomycin-associated acute kidney injury | High     | StA_NA_017; [[algorithm-aki]] | No                    | SyA_FA_SCORE_SCHWER; SyA_FA_SCORE_STATUS |
+| SyA_FA_SCORE_AKI | Detection of acute kidney injury and vancomycin-associated acute kidney injury | High     | StA_NA_017; [algorithm-aki](algorithm-aki) | No                    | SyA_FA_SCORE_SCHWER; SyA_FA_SCORE_STATUS |
 
 When a new serum creatinine value is available for this patient, the system calculates the presence of acute kidney injury (AKI) according to the KDIGO guideline (Kidney Disease: Improving Global & Outcomes (KDIGO) Acute Kidney Injury Work Group. (2012). KDIGO Clinical Practice Guideline for Acute Kidney Injury. Kidney International Supplements, 2(1), 124–138. https://doi.org/10.1038/kisup.2012.1).
 
@@ -283,7 +283,7 @@ As an adaptation of the guideline:
 
 The detection of AKI results in the CDSS status (SyA_FA_SCORE_STATUS) “warning”; VA-AKI results in the CDSS status “critical.” The CDSS severity levels (SA_FA_SCORE_SCHWER) for this score correspond to the AKI stages according to the guideline.
 
-Furthermore, the logic of the decision tree corresponds to that of the score established in the research context (see Thea Sophie Kister, Johannes Remmler, Maria Schmidt, et al. “Acute Kidney Injury and Its Progression in Hospitalized Patients—Results from a Retrospective Multicentre Cohort Study with a Digital Decision Support System.” PLOS ONE 16, no. 7 (2021): e0254608. https://doi.org/10.1371/journal.pone.0254608.) and can be found in [[algorithm-aki]].
+Furthermore, the logic of the decision tree corresponds to that of the score established in the research context (see Thea Sophie Kister, Johannes Remmler, Maria Schmidt, et al. “Acute Kidney Injury and Its Progression in Hospitalized Patients—Results from a Retrospective Multicentre Cohort Study with a Digital Decision Support System.” PLOS ONE 16, no. 7 (2021): e0254608. https://doi.org/10.1371/journal.pone.0254608.) and can be found in [algorithm-aki](algorithm-aki).
 
 **Acceptance criteria:** Validation of the scoring algorithm (SCO_AKI) with a test data set is successful.
 
@@ -422,6 +422,6 @@ The system receives changes under SyA_NFA_SQ_W exclusively through the developme
 | *local data mapping*                              | *local ID*           |
 | *local CWS integration specification*             | *local ID*           |
 | *local SOP for feedback and complaint management* | *local ID*           |
-| [[algorithm-aki]]                                 | *local ID*           |
+| [algorithm-aki](algorithm-aki)                                 | *local ID*           |
 | *local infrastructure specification*              | *local ID*           |
 | *local SOP for development of in-house software*  | *local ID*           |

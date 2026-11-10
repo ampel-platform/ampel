@@ -55,28 +55,28 @@ The following documents are up to date, complete, and approved:
 
 | Document name | Yes/No | Comment / open activities |
 | --- | --- | --- |
-| Product specification | Yes | [[intended-use]] |
-| Product classification | Yes | [[mdr-classification]] |
-| Development plan | Yes | [[development-plan]]<br>Additional development schedule: [[development-chart]] |
-| Stakeholder requirements | Yes | [[stakeholder-requirements]] |
-| Stakeholder requirements review | Yes | [[stakeholder-requirements-review]] |
-| System requirements | Yes | [[system-requirements]] |
-| System requirements review | Yes | [[system-requirements-review]] |
-| Architecture and design | Yes | [[architecture]] |
-| SOUP list | Yes | [[soup-list]] |
-| Architecture and design review | Yes | [[architecture-review]] |
-| Test plan | Yes | [[test-plan]] |
-| Test specification | Yes | [[test-specifications]] |
-| Test protocol(s) | Yes | [[test-protocol-UIT]]<br>[[test-protocol-ST]]<br>[[test-protocol-AT]] |
-| Test report(s) | Yes | [[test-report]] |
-| Deployment procedure | Yes | [[deployment]] |
-| Instructions for use | Yes | [[instructions-for-use]] |
+| Product specification | Yes | [intended-use](intended-use) |
+| Product classification | Yes | [mdr-classification](mdr-classification) |
+| Development plan | Yes | [development-plan](development-plan)<br>Additional development schedule: [development-chart](development-chart) |
+| Stakeholder requirements | Yes | [stakeholder-requirements](stakeholder-requirements) |
+| Stakeholder requirements review | Yes | [stakeholder-requirements-review](stakeholder-requirements-review) |
+| System requirements | Yes | [system-requirements](system-requirements) |
+| System requirements review | Yes | [system-requirements-review](system-requirements-review) |
+| Architecture and design | Yes | [architecture](architecture) |
+| SOUP list | Yes | [soup-list](soup-list) |
+| Architecture and design review | Yes | [architecture-review](architecture-review) |
+| Test plan | Yes | [test-plan](test-plan) |
+| Test specification | Yes | [test-specifications](test-specifications) |
+| Test protocol(s) | Yes | [test-protocol-UIT](test-protocol-UIT)<br>[test-protocol-ST](test-protocol-ST)<br>[test-protocol-AT](test-protocol-AT) |
+| Test report(s) | Yes | [test-report](test-report) |
+| Deployment procedure | Yes | [deployment](deployment) |
+| Instructions for use | Yes | [instructions-for-use](instructions-for-use) |
 | Bug-fix list | No | First product version, not applicable |
 | List of known anomalies | No | First product version, not applicable |
-| Risk management plan | Yes | [[risk-management-plan]] |
-| Risk analysis table | Yes | [[risk-table]] |
-| Risk management report | Yes | [[risk-management-report]] |
-| Market analysis | Yes | [[market-analysis]] |
+| Risk management plan | Yes | [risk-management-plan](risk-management-plan) |
+| Risk analysis table | Yes | [risk-table](risk-table) |
+| Risk management report | Yes | [risk-management-report](risk-management-report) |
+| Market analysis | Yes | [market-analysis](market-analysis) |
 | Public declaration for in-house software | No | Not applicable. The central hospital document is not part of this local publication. |
 | Medical device inventory for in-house software | No | Not applicable. Replaced by activity "Entry in the local medical device inventory" in section 5 |
 | Release notes | No | First product version, not applicable |

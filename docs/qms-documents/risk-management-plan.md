@@ -45,12 +45,12 @@ Schedule and responsible team members for the risk management activities:
 | **Product-level risk analysis**: risk analysis for the product design, including packaging and labeling                                                                                                                                                                                                                | RTM_2, RTM_4, RTM_5                           | Day-Month-Year                                     |
 | **Process-level risk analysis**: risk analysis for manufacturing processes including shipping and storage                                                                                                                                                                                                              | RTM_2, RTM_5                                  | Day-Month-Year                                     |
 | **Verification of risk control measures**: check whether all risk control measures resulting from the risk analysis have been implemented and are effective                                                                                                                                                            | RTM_1, RTM_2, RTM_3, RTM_5                    | Day-Month-Year                                     |
-| **Risk management review**: review of risk management activities and documentation as part of [[risk-management-report]]                                                                                                                                                                                               | RTM_6                                         | Day-Month-Year; *interval of the recurring review* |
+| **Risk management review**: review of risk management activities and documentation as part of [risk-management-report](risk-management-report)                                                                                                                                                                                               | RTM_6                                         | Day-Month-Year; *interval of the recurring review* |
 | **Collection and review of relevant production and post-production information**: collection and evaluation of data from the architecture and design review, unit and integration tests, process validation, and the phase after deployment; documentation as part of continuous updates to the risk management report | Evaluation: RTM_1, RTM_2, RTM_3, RTM_4, RTM_5 | At least once per year                             |
 
 # 4. Risk Management Acceptance Criteria: Individual Risks
 
-The acceptance criteria for individual risks are used as specified in the risk acceptance matrix in [[risk-table]]. The following adjustments were made compared with the *local SOP for risk management of in-house software*:
+The acceptance criteria for individual risks are used as specified in the risk acceptance matrix in [risk-table](risk-table). The following adjustments were made compared with the *local SOP for risk management of in-house software*:
 
 - The yellow risk acceptance level AL2 was removed because it would otherwise remain without consequences in the further process.
 - The probabilities in the process risk acceptance matrix and the product risk acceptance matrix were specified for the use case. For the latter and for the product hazard analysis, possible harms were considered from a minimum occurrence probability of 1 per 1,000,000 user sessions.
@@ -64,5 +64,5 @@ The methods for evaluating the overall residual risk and the monitoring after de
 | Document name                                        | Reference (local ID) |
 | ---------------------------------------------------- | -------------------- |
 | *local SOP for risk management of in-house software* | *local ID*           |
-| [[risk-table]]                                       | *local ID*           |
-| [[risk-management-report]]                           | *local ID*           |
+| [risk-table](risk-table)                                       | *local ID*           |
+| [risk-management-report](risk-management-report)                           | *local ID*           |

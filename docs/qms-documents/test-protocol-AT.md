@@ -42,7 +42,7 @@
 | Test case ID          | ATF_01                                                                                                                                                                                                                                 |
 | Testers               | TTM_3, TTM_4                                                                                                                                                                                                                           |
 | Date                  | Day-Month-Year                                                                                                                                                                                                                         |
-| Description and goals | A successful test result ensures that all requirements in [[stakeholder-requirements]] are fulfilled. The CDS functions are tested at a CWS so that at least 2 medically active persons can confirm fulfillment of those requirements. |
+| Description and goals | A successful test result ensures that all requirements in [stakeholder-requirements](stakeholder-requirements) are fulfilled. The CDS functions are tested at a CWS so that at least 2 medically active persons can confirm fulfillment of those requirements. |
 | Test environment      | *local hospital workstation* with an account that has access to the patient overview in the CWS, the CDSS column, *local recipient mailbox*, and *local laboratory information system*                                                 |
 | Result (error class)  | None                                                                                                                                                                                                                                   |
 
@@ -115,4 +115,4 @@ None.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[test-specifications]] | *local ID* |
+| [test-specifications](test-specifications) | *local ID* |

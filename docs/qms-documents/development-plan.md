@@ -38,7 +38,7 @@
 
 # 3. Development Phases
 
-The [[development-chart]] contains the development schedule, including milestones, deadlines, and responsibilities.
+The [development-chart](development-chart) contains the development schedule, including milestones, deadlines, and responsibilities.
 
 # 4. Development Environment
 
@@ -317,4 +317,4 @@ The system is checked for updates by the developers at regular intervals. Update
 | Document name | Reference |
 |---|---|
 | *local information security manual* | *local ID* |
-| [[development-chart]] | *local ID* |
+| [development-chart](development-chart) | *local ID* |

@@ -6,7 +6,7 @@
 | **Template Version** | *Version*       |
 | **Approval**         | *Approver name* |
 
-Responsibilities are defined in [[development-plan]]. Bold responsibility IDs identify the lead.
+Responsibilities are defined in [development-plan](development-plan). Bold responsibility IDs identify the lead.
 
 # Definitions
 
@@ -45,7 +45,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones                                                                                                                | Deadline       | Date Achieved  | Comment |
 | ------------------------------------------------------------------------------------------------------------------------- | -------------- | -------------- | ------- |
-| M2 Product specification documented in [[intended-use]]<br>M3 Product classification documented in [[mdr-classification]] | Day-Month-Year | Day-Month-Year | —       |
+| M2 Product specification documented in [intended-use](intended-use)<br>M3 Product classification documented in [mdr-classification](mdr-classification) | Day-Month-Year | Day-Month-Year | —       |
 
 ## 1.3 Market analysis
 
@@ -60,7 +60,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones                                           | Deadline       | Date Achieved  | Comment |
 | ---------------------------------------------------- | -------------- | -------------- | ------- |
-| M4 Market analysis documented in [[market-analysis]] | Day-Month-Year | Day-Month-Year | —       |
+| M4 Market analysis documented in [market-analysis](market-analysis) | Day-Month-Year | Day-Month-Year | —       |
 
 ## 1.4 Risk management planning
 
@@ -75,7 +75,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones                                                                                                                                                                                                                                                                                                                                           | Deadline       | Date Achieved  | Comment |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | -------------- | ------- |
-| M5 Risk management plan documented in [[risk-management-plan]]<br>M6 schedule for risk management activities<br>M7 risk acceptance matrix documented in [[risk-table]]<br>M8 initial preliminary hazard analysis documented in [[risk-table]] according to [[risk-management-plan]]<br>M9 initial process risk analysis documented in [[risk-table]] | Day-Month-Year | Day-Month-Year | —       |
+| M5 Risk management plan documented in [risk-management-plan](risk-management-plan)<br>M6 schedule for risk management activities<br>M7 risk acceptance matrix documented in [risk-table](risk-table)<br>M8 initial preliminary hazard analysis documented in [risk-table](risk-table) according to [risk-management-plan](risk-management-plan)<br>M9 initial process risk analysis documented in [risk-table](risk-table) | Day-Month-Year | Day-Month-Year | —       |
 
 ## 1.5 Development planning
 
@@ -90,7 +90,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M10 Development plan documented in [[development-plan]]<br>M11 Test plan documented in [[test-plan]] | Day-Month-Year | Day-Month-Year | — |
+| M10 Development plan documented in [development-plan](development-plan)<br>M11 Test plan documented in [test-plan](test-plan) | Day-Month-Year | Day-Month-Year | — |
 
 ## 1.6 Notification of in-house software
 
@@ -122,7 +122,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M13 Stakeholder requirements documented in [[stakeholder-requirements]] | Day-Month-Year | Day-Month-Year | — |
+| M13 Stakeholder requirements documented in [stakeholder-requirements](stakeholder-requirements) | Day-Month-Year | Day-Month-Year | — |
 
 ## 2.2 Failure mode and effects analysis (FMEA)
 
@@ -137,7 +137,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M14 FMEA documented in [[risk-table]] based on PHA | Day-Month-Year | Day-Month-Year | — |
+| M14 FMEA documented in [risk-table](risk-table) based on PHA | Day-Month-Year | Day-Month-Year | — |
 
 ## 2.3 Update test plan
 
@@ -152,7 +152,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M15 Updated [[test-plan]]<br>M16 Acceptance-test specifications documented in [[test-specifications]] | Day-Month-Year | Day-Month-Year | — |
+| M15 Updated [test-plan](test-plan)<br>M16 Acceptance-test specifications documented in [test-specifications](test-specifications) | Day-Month-Year | Day-Month-Year | — |
 
 ## 2.4 Review stakeholder requirements
 
@@ -167,7 +167,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M17 Stakeholder requirements review documented in [[stakeholder-requirements-review]] | Day-Month-Year | Day-Month-Year | — |
+| M17 Stakeholder requirements review documented in [stakeholder-requirements-review](stakeholder-requirements-review) | Day-Month-Year | Day-Month-Year | — |
 
 # 3. System requirements
 
@@ -184,7 +184,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M18 System requirements documented in [[system-requirements]] | Day-Month-Year | Day-Month-Year | — |
+| M18 System requirements documented in [system-requirements](system-requirements) | Day-Month-Year | Day-Month-Year | — |
 
 ## 3.2 Update FMEA
 
@@ -199,7 +199,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M19 Updated FMEA documented in [[risk-table]] | Day-Month-Year | Day-Month-Year | — |
+| M19 Updated FMEA documented in [risk-table](risk-table) | Day-Month-Year | Day-Month-Year | — |
 
 ## 3.3 Update test plan
 
@@ -214,7 +214,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M20 Updated [[test-plan]]<br>M21 System-test specifications documented in [[test-specifications]] | Day-Month-Year | Day-Month-Year | — |
+| M20 Updated [test-plan](test-plan)<br>M21 System-test specifications documented in [test-specifications](test-specifications) | Day-Month-Year | Day-Month-Year | — |
 
 ## 3.4 Review system requirements
 
@@ -229,7 +229,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M22 System requirements review documented in [[system-requirements-review]] | Day-Month-Year | Day-Month-Year | — |
+| M22 System requirements review documented in [system-requirements-review](system-requirements-review) | Day-Month-Year | Day-Month-Year | — |
 
 # 4. Architecture and design
 
@@ -246,7 +246,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M23 Architecture and design documented in [[architecture]] | Day-Month-Year | Day-Month-Year | — |
+| M23 Architecture and design documented in [architecture](architecture) | Day-Month-Year | Day-Month-Year | — |
 
 ## 4.2 SOUP
 
@@ -261,7 +261,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M24 SOUP list documented in [[soup-list]] | Day-Month-Year | Day-Month-Year | — |
+| M24 SOUP list documented in [soup-list](soup-list) | Day-Month-Year | Day-Month-Year | — |
 
 ## 4.3 Update FMEA
 
@@ -276,7 +276,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M25 Updated FMEA documented in [[risk-table]] | Day-Month-Year | Day-Month-Year | — |
+| M25 Updated FMEA documented in [risk-table](risk-table) | Day-Month-Year | Day-Month-Year | — |
 
 ## 4.4 Update test plan
 
@@ -291,7 +291,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M26 Updated [[test-plan]]<br>M27 Integration- and unit-test specifications documented in [[test-specifications]] | Day-Month-Year | Day-Month-Year | — |
+| M26 Updated [test-plan](test-plan)<br>M27 Integration- and unit-test specifications documented in [test-specifications](test-specifications) | Day-Month-Year | Day-Month-Year | — |
 
 ## 4.5 Review architecture and design
 
@@ -306,7 +306,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M28 Architecture and design review documented in [[architecture-review]] | Day-Month-Year | Day-Month-Year | — |
+| M28 Architecture and design review documented in [architecture-review](architecture-review) | Day-Month-Year | Day-Month-Year | — |
 
 # 5. Implementation
 
@@ -323,7 +323,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M29 Software units according to [[development-plan]] | Day-Month-Year | Day-Month-Year | — |
+| M29 Software units according to [development-plan](development-plan) | Day-Month-Year | Day-Month-Year | — |
 
 # 6. Unit and integration tests
 
@@ -340,7 +340,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M30 Unit-test protocol documented in [[test-protocol-UIT]]<br>M31 Test report documented in [[test-report]] | Day-Month-Year | Day-Month-Year | — |
+| M30 Unit-test protocol documented in [test-protocol-UIT](test-protocol-UIT)<br>M31 Test report documented in [test-report](test-report) | Day-Month-Year | Day-Month-Year | — |
 
 ## 6.2 Integration of verified software units
 
@@ -355,7 +355,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M32 Work step "All verified software units are integrated into the code base according to [[development-plan]]" completed | Day-Month-Year | Day-Month-Year | — |
+| M32 Work step "All verified software units are integrated into the code base according to [development-plan](development-plan)" completed | Day-Month-Year | Day-Month-Year | — |
 
 ## 6.3 Verification of system integration
 
@@ -370,7 +370,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M33 Integration-test protocol documented in [[test-protocol-UIT]]<br>M34 Updated [[test-report]]<br>M35 Integrated system | Day-Month-Year | Day-Month-Year | — |
+| M33 Integration-test protocol documented in [test-protocol-UIT](test-protocol-UIT)<br>M34 Updated [test-report](test-report)<br>M35 Integrated system | Day-Month-Year | Day-Month-Year | — |
 
 # 7. System tests
 
@@ -387,7 +387,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M36 System-test protocol documented in [[test-protocol-ST]]<br>M37 Updated [[test-report]]<br>M38 Verified integrated system | Day-Month-Year | Day-Month-Year | — |
+| M36 System-test protocol documented in [test-protocol-ST](test-protocol-ST)<br>M37 Updated [test-report](test-report)<br>M38 Verified integrated system | Day-Month-Year | Day-Month-Year | — |
 
 # 8. Acceptance tests
 
@@ -404,7 +404,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M39 Acceptance-test protocol documented in [[test-protocol-AT]]<br>M40 Finalized [[test-report]]<br>M41 Release candidate | Day-Month-Year | Day-Month-Year | — |
+| M39 Acceptance-test protocol documented in [test-protocol-AT](test-protocol-AT)<br>M40 Finalized [test-report](test-report)<br>M41 Release candidate | Day-Month-Year | Day-Month-Year | — |
 
 # 9. Product release
 
@@ -421,7 +421,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M42 Risk management report documented in [[risk-management-report]] | Day-Month-Year | Day-Month-Year | — |
+| M42 Risk management report documented in [risk-management-report](risk-management-report) | Day-Month-Year | Day-Month-Year | — |
 
 ## 9.2 Instructions for use
 
@@ -436,7 +436,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M43 Preparation and provision of [[instructions-for-use]] | Day-Month-Year | Day-Month-Year | — |
+| M43 Preparation and provision of [instructions-for-use](instructions-for-use) | Day-Month-Year | Day-Month-Year | — |
 
 ## 9.3 Release checklist
 
@@ -451,7 +451,7 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones | Deadline | Date Achieved | Comment |
 |---|---|---|---|
-| M44 Release checklist documented in [[checklist-release]] | Day-Month-Year | Day-Month-Year | — |
+| M44 Release checklist documented in [checklist-release](checklist-release) | Day-Month-Year | Day-Month-Year | — |
 
 ## 9.4 Internal information
 
@@ -526,4 +526,4 @@ Responsibilities are defined in [[development-plan]]. Bold responsibility IDs id
 
 | Milestones                                                                                                    | Deadline       | Date Achieved  | Comment |
 | ------------------------------------------------------------------------------------------------------------- | -------------- | -------------- | ------- |
-| M49 Deployment procedure as documented in [[deployment]]<br>M50 In-house medical device software in operation | Day-Month-Year | Day-Month-Year | —       |
+| M49 Deployment procedure as documented in [deployment](deployment)<br>M50 In-house medical device software in operation | Day-Month-Year | Day-Month-Year | —       |

@@ -32,7 +32,7 @@
 # 2. System Specification
 
 The system consists of six high-level components (Figure 1). How these components interact in detail is shown in Figure 2.
-![[architecture.png]]
+![](assets/architecture.png)
 Figure 1. Global overview of system components in *product name*.
 
 
@@ -90,7 +90,7 @@ Figure 2. Overview of the interactions between all system components in *product
 
 ## 2.2 Data Source Component
 
-![[LAMPE-data-source-component-en.drawio.svg]]
+![](assets/LAMPE-data-source-component-en.drawio.svg)
 
 | ID | Name | Priority | Traceability | Risk control measure? | SOUP? | Dependencies |
 |---|---|---|---|---|---|---|
@@ -102,7 +102,7 @@ The component consists of a Debezium instance (see SOUP) that monitors the trans
 
 ## 2.3 Data Stream Component
 
-![[LAMPE-data-stream-component-en.drawio.svg|243]]
+![](assets/LAMPE-data-stream-component-en.drawio.svg)
 
 
 | ID | Name | Priority | Traceability | Risk control measure? | SOUP? | Dependencies |
@@ -115,7 +115,7 @@ The component consists of a single-node Apache Kafka instance and receives JSON 
 
 ## 2.4 ETL Component
 
-![[LAMPE-etl-components-en.drawio.svg|454]]
+![](assets/LAMPE-etl-components-en.drawio.svg)
 
 | ID | Name | Priority | Traceability | Risk control measure? | SOUP? | Dependencies |
 |---|---|---|---|---|---|---|
@@ -159,7 +159,7 @@ Raw messages for the case data stream (raw topic) from the streaming component a
 
 ## 2.5 Scoring Components
 
-![[LAMPE-scoring-components-en.drawio.svg|403]]
+![](assets/LAMPE-scoring-components-en.drawio.svg)
 
 
 | ID | Name | Priority | Traceability | Risk control measure? | SOUP? | Dependencies |
@@ -214,9 +214,9 @@ Allows execution planning of workflows based on key information (medical case ID
 
 | ID      | Name          | Priority | Traceability                                                                                                                                                                       | Risk control measure? | SOUP?                                                | Dependencies                                                                             |
 | ------- | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| SCO_AKI | AKI component | High     | SyA_ES_HS_VM; SyA_BU_INST_DOCKER; SyA_NFA_SA_SAND; SyA_NFA_SA_CONT; SyA_NFA_L_EV; SyA_FA_SCORE_SCHWER; SyA_FA_SCORE_STATUS; SyA_FA_SCORE_AKI; FMEA_PD_R005.1;<br>[[algorithm-aki]] | Yes                   | Yes, SOUP_LOMBOK, SOUP_LOGBACK, SOUP_VAVR, SOUP_C3P0 | SCO_FRAME_WORK_SCH; SCO_FRAME_WORK_DSG; SCO_FRAME_KAFKA_W; SCO_FRAME_KAFKA_R; SCO_AKI-DB |
+| SCO_AKI | AKI component | High     | SyA_ES_HS_VM; SyA_BU_INST_DOCKER; SyA_NFA_SA_SAND; SyA_NFA_SA_CONT; SyA_NFA_L_EV; SyA_FA_SCORE_SCHWER; SyA_FA_SCORE_STATUS; SyA_FA_SCORE_AKI; FMEA_PD_R005.1;<br>[algorithm-aki](algorithm-aki) | Yes                   | Yes, SOUP_LOMBOK, SOUP_LOGBACK, SOUP_VAVR, SOUP_C3P0 | SCO_FRAME_WORK_SCH; SCO_FRAME_WORK_DSG; SCO_FRAME_KAFKA_W; SCO_FRAME_KAFKA_R; SCO_AKI-DB |
 
-Reads AMPEL-compliant streams (AMPEL_PATIENTS, AMPEL_CASES, AMPEL_LABORATORY, AMPEL_PROCEDURES) from the streaming component. It filters relevant contents (AMPEL_LABORATORY: serum creatinine values, vancomycin values; AMPEL_PROCEDURES: dialysis procedures) and stores them case-centrically in a separate AKI DB component. Each incoming serum creatinine message triggers processing according to the workflow defined in [[algorithm-aki]], including relevant information from the AKI DB. Workflow output messages are returned to AMPEL_RESULTS in DS_STREAM and contain the CDSS result (red, yellow, green) plus metadata from relevant AKI algorithm inputs.
+Reads AMPEL-compliant streams (AMPEL_PATIENTS, AMPEL_CASES, AMPEL_LABORATORY, AMPEL_PROCEDURES) from the streaming component. It filters relevant contents (AMPEL_LABORATORY: serum creatinine values, vancomycin values; AMPEL_PROCEDURES: dialysis procedures) and stores them case-centrically in a separate AKI DB component. Each incoming serum creatinine message triggers processing according to the workflow defined in [algorithm-aki](algorithm-aki), including relevant information from the AKI DB. Workflow output messages are returned to AMPEL_RESULTS in DS_STREAM and contain the CDSS result (red, yellow, green) plus metadata from relevant AKI algorithm inputs.
 
 **Acceptance criteria:** Incoming AMPEL-compliant topics (case, patient, laboratory, procedure) in the streaming component lead to the expected result. Correct calculation and persistence of all possible *product name* states for the AKI scoring system are performed.
 
@@ -261,7 +261,7 @@ measuringTime (DateTime)
 
 ## 2.6 Backend Components
 
-![[LAMPE-backend-components-en.drawio.svg|529]]
+![](assets/LAMPE-backend-components-en.drawio.svg)
 
 | ID | Name | Priority | Traceability | Risk control measure? | SOUP? | Dependencies |
 |---|---|---|---|---|---|---|
@@ -365,22 +365,22 @@ Receives an order from BACK_MAIL to send an email that was predefined in BACK_MA
 
 ## 2.7 Frontend Component
 
-![[LAMPE-frontend-component-en.drawio.svg|276]]
+![](assets/LAMPE-frontend-component-en.drawio.svg)
 
 | ID         | Name                     | Priority | Traceability                                                                                                                                                                                                                                                                                                                                                                                                                       | Risk control measure? | SOUP?                                                                                          | Dependencies |
 | ---------- | ------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------- | ------------ |
-| FRONT_CASE | Case dashboard component | Medium   | SyA_ES_HS_VM; SyA_BU_INST_DOCKER; SyA_NFA_SA_SAND; SyA_NFA_SA_CONT; SyA_ES_SS_PC; SyA_ES_HS_PC; SyA_ES_NS_UI;<br><br>SA_FA_UI_STAMM; SA_FA_UI_FB; SA_FA_UI_START; SA_FA_UI_DETAIL; SA_FA_UI_HINWEIS; SA_FA_UI_DATEN; SA_FA_UI_LINK;<br><br>SyA_NFA_SA_AUI; SyA_NFA_SQ_SUI; SyA_NFA_SQ_MINI; SyA_NFA_SQ_UEB;<br><br>PHA_PD_R001.1; PHA_PD_R002.1; PHA_PD_R003.1; PHA_PD_R004.1; PHA_PD_R005.1; FMEA_PD_R002.1;<br>[[algorithm-aki]] | Yes                   | Yes, SOUP_FAKER, SOUP_LUCIDE_REACT, SOUP_REACT_ROUTER, SOUP_REACT_DOM, SOUP_RECHARTS, SOUP_ZOD | BACK_SER     |
+| FRONT_CASE | Case dashboard component | Medium   | SyA_ES_HS_VM; SyA_BU_INST_DOCKER; SyA_NFA_SA_SAND; SyA_NFA_SA_CONT; SyA_ES_SS_PC; SyA_ES_HS_PC; SyA_ES_NS_UI;<br><br>SA_FA_UI_STAMM; SA_FA_UI_FB; SA_FA_UI_START; SA_FA_UI_DETAIL; SA_FA_UI_HINWEIS; SA_FA_UI_DATEN; SA_FA_UI_LINK;<br><br>SyA_NFA_SA_AUI; SyA_NFA_SQ_SUI; SyA_NFA_SQ_MINI; SyA_NFA_SQ_UEB;<br><br>PHA_PD_R001.1; PHA_PD_R002.1; PHA_PD_R003.1; PHA_PD_R004.1; PHA_PD_R005.1; FMEA_PD_R002.1;<br>[algorithm-aki](algorithm-aki) | Yes                   | Yes, SOUP_FAKER, SOUP_LUCIDE_REACT, SOUP_REACT_ROUTER, SOUP_REACT_DOM, SOUP_RECHARTS, SOUP_ZOD | BACK_SER     |
 
-The component displays the contents of the results DB for a selected medical case in detail and in a structured format. This includes individual results from the scoring algorithms, patient header data for the medical case (patient number, medical case number, name, date of birth), contact options, and medical notes about the notification (see, e.g., [[algorithm-aki]]).
+The component displays the contents of the results DB for a selected medical case in detail and in a structured format. This includes individual results from the scoring algorithms, patient header data for the medical case (patient number, medical case number, name, date of birth), contact options, and medical notes about the notification (see, e.g., [algorithm-aki](algorithm-aki)).
 
 The initial view is the overview page:
 
-![[LAMPE-case-dashboard-overview-en.drawio.svg]]
+![](assets/LAMPE-case-dashboard-overview-en.drawio.svg)
 
 
 Clicking a status tile in "critical states" or "warning states" opens the detail page for the selected scoring algorithm with the following structure:
 
-![[LAMPE-case-dashboard-detail-en.drawio.svg]]
+![](assets/LAMPE-case-dashboard-detail-en.drawio.svg)
 
 
 The alarm history (including measurement time, laboratory analyte, measurement value, and calculated CDSS status) is displayed as a table (or as a chart after clicking).
@@ -394,7 +394,7 @@ If CDSS data and/or patient master data are missing, the corresponding error pag
 | Document name           | Reference (local ID) |
 | ----------------------- | -------------------- |
 | *local data mapping*    | *local ID*           |
-| [[algorithm-aki]]       | *local ID*           |
-| [[soup-list]]           | *local ID*           |
-| [[system-requirements]] | *local ID*           |
-| [[risk-table]]          | *local ID*           |
+| [algorithm-aki](algorithm-aki)       | *local ID*           |
+| [soup-list](soup-list)           | *local ID*           |
+| [system-requirements](system-requirements) | *local ID*           |
+| [risk-table](risk-table)          | *local ID*           |

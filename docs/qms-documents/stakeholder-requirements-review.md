@@ -49,4 +49,4 @@ The stakeholder requirements are fulfilled.
 
 | Document name | Reference (local ID) |
 |---|---|
-| [[stakeholder-requirements]] | *local ID* |
+| [stakeholder-requirements](stakeholder-requirements) | *local ID* |
