@@ -6,7 +6,7 @@
 | **Template Version** | *Version*       |
 | **Approval**         | *Approver name* |
 
-> [!note] Template  
+> [!NOTE] Template  
 > This is an almost empty example protocol for a risk management review.
 
 # 1. Meeting details
