@@ -1,3 +1,7 @@
+<script setup>
+import bpmnUrl from './assets/230302_AKI_V1.6.bpmn?url'
+</script>
+
 # AKI algorithm - *Product Name*
 
 |                      |                 |
@@ -10,4 +14,4 @@
 
 
 ![](assets/230302_AKI_V1.6.svg)
-There is a also a [BPMN-Version](assets/230302_AKI_V1.6.bpmn) stored.
+There is a also a <a href="assets/230302_AKI_V1.6.bpmn" v-bind="{ href: bpmnUrl }">BPMN-Version</a> stored.
