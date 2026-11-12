@@ -1,6 +1,6 @@
-# Overview: The Regulatory Implementation Guide
+# Regulatory manual
 
-Welcome! This regulatory implementation guide helps you to build your own MDR-compliant in-house Clinical Decision Support System. It starts with some basic knowledge you need. By the end, you'll know how to handle most of the pitfalls and how to use your new in-house medical device software in studies to generate more evidence.
+Welcome! This regulatory manual helps you to build your own MDR-compliant in-house Clinical Decision Support System. It starts with some basic knowledge you need. By the end, you'll know how to handle most of the pitfalls and how to use your new in-house medical device software in studies to generate more evidence.
 ![509](assets/Overview_AMPEL_Wiki_RF.png)
 
 **Table of Contents:**
@@ -24,7 +24,7 @@ Clinical Decision Support Systems are [medical device software](mdr-medical-devi
 Not in routine care, but there are other pathways in [studies](studies.md). However, there are significant limitations conducting a study avoiding the use of a medical device software. These alternatives generally result in lower "evidence levels" because they cannot collect patient outcomes.
 
 ## Let's go! Where can I start?
-Just read the wiki. If it helps you, feel free to take a look at the QMS documents, the technical implementation guide, and the source code as well. You might also find it helpful to take a look at our evidence collection. We try to avoid any redundancies, so the best way is to read all documents(!) here once. Your question is still open? Create an *issue* in our repository (maybe you have to create an GitHub account first) and write us your open question -  we will answer!
+Just read the wiki. If it helps you, feel free to take a look at the QMS documents, the technical manual, and the source code as well. You might also find it helpful to take a look at our evidence repository. We try to avoid any redundancies, so the best way is to read all documents(!) here once. Your question is still open? Create an *issue* in our repository (maybe you have to create an GitHub account first) and write us your open question -  we will answer!
 
 
 *The content of this website is provided for general information purposes only and does not constitute legal advice. We assume no liability for the accuracy or completeness of the information.*
