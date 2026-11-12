@@ -35,7 +35,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "Technical implementation guide",
+        text: "Technical manual",
         collapsed: true,
         items: [
           {
@@ -46,7 +46,7 @@ export default defineConfig({
         ],
       },
       {
-        text: "Regulatory implementation guide",
+        text: "Regulatory manual",
         collapsed: true,
         items: [
             { text: "Overview", link: "/regulatory-manual/overview.md",},
@@ -61,7 +61,7 @@ export default defineConfig({
             { text: "More resources", link: "/regulatory-manual/resources.md" },
 
             {
-              text: "QMS documentation",
+              text: "QMS documents",
               base: "/qms-documents/",
               collapsed: true,
               items: [
@@ -98,7 +98,7 @@ export default defineConfig({
         ],
       },
       {
-        text: "Evidence",
+        text: "Evidence repository",
         collapsed: true,
         items: [
           { text: "Overview", link : "/evidence-repository/overview.md"},

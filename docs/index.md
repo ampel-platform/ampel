@@ -13,13 +13,13 @@ features:
   - title: "Technical manual"
     details: "Architecture, modules, interfaces, and installation for technical implementation."
     link: /technical-manual/overview.md
-    linkText: Technical section
+    linkText: Open technical manual
   - title: "Regulatory manual"
     details: "In-house medical devices, interventional studies, and open-source publication."
     link: /regulatory-manual/overview.md
-    linkText: Regulatory section
-  - title: "Evidence Repository"
+    linkText: Open regulatory manual
+  - title: "Evidence repository"
     details: "Medical and scientific documentation, algorithms, and study results."
     link: /evidence-repository/overview.md
-    linkText: Evidence section
+    linkText: Open evidence repository
 ---
