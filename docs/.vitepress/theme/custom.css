@@ -617,6 +617,7 @@ html .home-background .ampel-footer__ampel-logo--light {
   display: flex;
   align-items: center;
   gap: 24px;
+  background-color: var(--vp-c-bg);
 }
 
 .ampel-footer a {

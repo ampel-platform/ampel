@@ -28,6 +28,10 @@ const { hasSidebar } = useSidebar();
           />
         </a>
       </div>
+      <nav class="ampel-footer__legal" aria-label="Legal information">
+        <a :href="withBase('/legal-notice.html')">Legal notice</a>
+        <a :href="withBase('/privacy-policy.html')">Privacy policy</a>
+      </nav>
     </div>
   </footer>
 </template>
