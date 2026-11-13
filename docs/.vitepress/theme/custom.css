@@ -617,6 +617,7 @@ html .home-background .ampel-footer__ampel-logo--light {
   display: flex;
   align-items: center;
   gap: 24px;
+  background-color: var(--vp-c-bg);
 }
 
 .ampel-footer a {
@@ -626,9 +627,17 @@ html .home-background .ampel-footer__ampel-logo--light {
   text-decoration: none;
 }
 
+.home-background .ampel-footer__legal {
+  background-color: transparent;
+}
+
+.home-background .ampel-footer__projects {
+  background-color: transparent;
+}
+
 .home-background .ampel-footer__legal a,
-  .home-background .ampel-footer__legal a:hover,
-  .home-background .ampel-footer__legal a:focus-visible {
+.home-background .ampel-footer__legal a:hover,
+.home-background .ampel-footer__legal a:focus-visible {
   color: #faf8f8;
 }
 
