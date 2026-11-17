@@ -7,7 +7,7 @@ In this article we will sum up the most important key facts you should know abou
 A 'medical device' means any (...) software (...) intended by the manufacturer to be used, alone or in combination, for human beings for one or more of the following specific medical purposes: diagnosis, prevention, monitoring, prediction, prognosis, treatment or alleviation of disease. For full definition see MDR Article 2 (1).
 In plain language: Your software tries to improve the health of patients? Odds are, that your software is regulated by the MDR as medical device software.
 
-[Does my CDSS fulfill the definition as a medical device?](overview.md#does-my-cdss-fulfill-the-definition-as-a-medical-device)
+[Does my CDSS fulfill the definition as a medical device?](overview.md#does-my-cdss-fulfill-the-definition-of-a-medical-device)
 
 ## Is the MDR the only regulation that matters?
 
