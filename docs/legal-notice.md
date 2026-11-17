@@ -25,6 +25,13 @@ Wigardstraße 17
 
 [www.smwk.sachsen.de](https://www.smwk.sachsen.de/)
 
+## Funding
+
+<div style="display: flex; align-items: center; gap: 24px;">
+  <img src="/EN_Funded_by_the_European_Union_RGB_POS.png" alt="Funded by the European Union" width="240" style="max-width: calc(50% - 12px); height: auto;" />
+  <img src="/sachsen%20logo.png" alt="Free State of Saxony" width="240" style="max-width: calc(50% - 12px); height: auto; background-color: #fff;" />
+</div>
+
 ## Responsible for the content
 
 **Dr. Daniel Steinbach**  
