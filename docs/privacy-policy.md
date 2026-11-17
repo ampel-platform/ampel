@@ -18,7 +18,7 @@ Website: [www.uniklinikum-leipzig.de](https://www.uniklinikum-leipzig.de/)
 
 ## 2. Data protection officer
 
-**Andreas F. Scholtz**  
+ **Katrin Kämmerer**  
 Data Protection Officer of University Hospital Leipzig  
 Liebigstraße 18, Building B  
 04103 Leipzig, Germany
