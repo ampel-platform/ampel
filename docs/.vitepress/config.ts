@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress";
 
-const coveredVersion = process.env.VITE_LATEST_RELEASE | "dev";
+const coveredVersion = process.env.VITE_LATEST_RELEASE || "dev";
 const base = process.env.DOCS_BASE || "";
 
 export default defineConfig({
