@@ -5,30 +5,25 @@ In this article we will sum up the most important key facts you should know abou
 ## What is a medical device software?
 
 A 'medical device' means any (...) software (...) intended by the manufacturer to be used, alone or in combination, for human beings for one or more of the following specific medical purposes: diagnosis, prevention, monitoring, prediction, prognosis, treatment or alleviation of disease. For full definition see MDR Article 2 (1).
-In plain language: Your software tries to improve the health of patient? Odds are, that your software is regulated by the MDR as medical device software.
+In plain language: Your software tries to improve the health of patients? Odds are, that your software is regulated by the MDR as medical device software.
 
+[Does my CDSS fulfill the definition as a medical device?](overview.md#does-my-cdss-fulfill-the-definition-as-a-medical-device)
 
-![Does my CDSS fulfill the definition as a medical device?](overview.md#Does%20my%20CDSS%20fulfill%20the%20definition%20as%20a%20medical%20device?)
-
-im github repo wie folgt angepasst da die Verlinkung nicht Vor gerendert wäre:
-#### [Does my CDSS fulfill the definition as a medical device?](overview.md#does-my-cdss-fulfill-the-definition-as-a-medical-device)
-
-> “Clinical Decision Support Systems are medical device software, as long as they don't just display raw data (e.g. laboratory value is displayed without changes, calculations or recommendations). The last clause is very theoretical - we've never seen a CDSS that isn't medical device software. However, the situation is different in other legislation (e.g. FDA) outside the EU. “
-### Is the MDR the only regulation that matters?
+## Is the MDR the only regulation that matters?
 
 No. You will need to follow: MDR > [AI Act](ai-act.md) > [GDPR](data-protection.md) (in order of workload)
 
-### What is the aim of the MDR?
+## What is the aim of the MDR?
 
 - Fair competition among medical device manufacturers
 - Protecting citizens from products that, relative to their benefits, may pose excessive health risks
 
-### What is NOT the aim of the MDR?
+## What is NOT the aim of the MDR?
 
 - A quality mark, which guarantees that the product genuinely helps the patient.
 - Increasing evidence and assessing effectiveness
 
-There is no equivalent to an EMA-like organization in the market of medical devices. Benefits are needed only to justify risk. Your product comes with low risks? Then the MDR CE mark is virtually independent of evidence that somebody will benefit. Your product comes with high risks? Then the MDR CE mark means that you were able to demonstrate to a 'notified body' that patients could benefit. At least some evidence here, but scientist be aware: these are rarely published, industry-funded studies and endpoints often differ significantly from marketing claims.
+There is no equivalent to the [EMA](https://www.ema.europa.eu/) (European Medicines Agency) when it comes to medical devices. Benefits are needed only to justify risk. Your product comes with low risks? Then the MDR CE marking is virtually independent of evidence that somebody will benefit. Your product comes with high risks? Then the MDR CE mark means that you were able to demonstrate to a 'notified body' that patients could benefit. At least some evidence here, but scientist be aware: these are rarely published, industry-funded studies and endpoints often differ significantly from marketing claims.
 
 ## How can I obtain MDR compliance?
 
