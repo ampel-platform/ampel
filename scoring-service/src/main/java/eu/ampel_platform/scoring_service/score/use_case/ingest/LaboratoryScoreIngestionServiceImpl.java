@@ -81,6 +81,7 @@ public class LaboratoryScoreIngestionServiceImpl implements LaboratoryScoreInges
                 .medicalCaseId(laboratoryScore.getMedicalCaseId())
                 .score(convertToInternalModel(laboratoryScore.getScore()))
                 .scoringSystemSeverityCode(laboratoryScore.getScoringSystemSeverityCode())
+                .scoringSystemSeverityComment(laboratoryScore.getScoringSystemComment())
                 .analyteName(laboratoryScore.getAnalyteName())
                 .analyteValue(laboratoryScore.getAnalyteValue())
                 .analyteUnit(laboratoryScore.getAnalyteUnit())

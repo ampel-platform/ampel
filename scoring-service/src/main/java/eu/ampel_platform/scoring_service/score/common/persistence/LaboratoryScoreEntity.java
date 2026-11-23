@@ -38,6 +38,9 @@ public class LaboratoryScoreEntity {
     @Column(name = "scoring_system_severity_code")
     private String scoringSystemSeverityCode;
 
+    @Column(name = "scoring_system_severity_comment")
+    private String scoringSystemSeverityComment;
+
     @Column(name = "analyte_name")
     private String analyteName;
 

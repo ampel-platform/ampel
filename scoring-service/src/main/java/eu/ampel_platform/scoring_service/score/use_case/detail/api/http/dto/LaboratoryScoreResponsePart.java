@@ -19,6 +19,7 @@ import java.time.Instant;
 public record LaboratoryScoreResponsePart(
         AmpelScoreResponsePart score,
         String severity,
+        String severityComment,
         String analyteName,
         double analyteValue,
         String analyteValueUnit,
