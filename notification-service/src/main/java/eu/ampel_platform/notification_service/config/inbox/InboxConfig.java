@@ -119,14 +119,14 @@ public class InboxConfig {
     }
 
     @Bean
-    public InboxPayloadSerializer inboxSerializer() {
-        var typeRegistry = JsonFormat.TypeRegistry.newBuilder()
-                .add(AmpelPatientCreatedEvent.getDescriptor())
-                .add(AmpelPatientAssignedMedicalCase.getDescriptor())
-                .add(AmpelLaboratoryScoreCalculatedEvent.getDescriptor())
-                .build();
+    public InboxPayloadSerializer inboxSerializer(
+            @Qualifier("APP_RECOGNIZED_EVENTS") List<Descriptors.Descriptor> recognizedEventDescriptors) {
+        var typeRegistryBuilder = JsonFormat.TypeRegistry.newBuilder();
+        for (Descriptors.Descriptor recognizedEventDescriptor : recognizedEventDescriptors) {
+            typeRegistryBuilder.add(recognizedEventDescriptor);
+        }
 
-        return new ProtoBufByteSerializer(typeRegistry);
+        return new ProtoBufByteSerializer(typeRegistryBuilder.build());
     }
 
     @Bean
