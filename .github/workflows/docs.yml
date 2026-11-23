@@ -1,0 +1,74 @@
+on:
+  push:
+# Keeping this for later adjustments (right now we just need to publish without having a tag yet).
+#    paths:
+#      - 'docs/**'
+    branches:
+      - main
+      - develop
+  pull_request:
+    # Keeping this for later adjustments (right now we just need to publish without having a tag yet).
+#    paths:
+#      - 'docs/**'
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: 'docs'
+          lfs: 'true'
+
+      - name: Configure Variables
+        id: variables
+        run: echo "commit_sha_short=$(printf '%s' "${{ github.sha }}" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+
+      - name: Install dependencies
+        working-directory: docs
+        run: npm ci
+
+      - name: Build VitePress
+        working-directory: docs
+        env:
+          VITE_LATEST_RELEASE: ${{ steps.variables.outputs.commit_sha_short }}
+        run: npm run docs:build
+
+      - name: Upload GitHub Pages artifact
+        # Keeping this for later configuration changes which are necessary.
+        # if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    # Keeping this for later configuration changes which are necessary.
+    # if: github.event_name != 'pull_request'
+    needs: build-docs
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+
+
+
+
