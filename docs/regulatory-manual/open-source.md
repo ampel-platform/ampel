@@ -30,6 +30,8 @@ Placing an in-house medical device on the market revokes its in-house status. Re
 2. Without the capability to process medical input data, the platform objectively falls outside the definition of "software" under the MDR. 
 3. Furthermore, the release is not carried out "in the course of a commercial activity" as specified in the MDR's definition of "placing on the market".
 
+More information on this topic can be derived from our [formal legal opinion (German)](/Legal_Opinion_Gassner_2026-02-05.pdf).
+
 ## What are the alternatives to the AMPEL regulatory framework?
 An open-source alternative would be releasing a CE-marked device (similar to [OSS Tidepool](https://doi.org/10.1111/dme.15246)). This approach would allow for publishing of complete and fully functional software, making implementation easier for clinics that lack the resources for dedicated in-house development. However, when evaluating the overall "time-to-evidence," the advantages of the in-house pathway clearly win out. We have outlined the reasons for this decision in the section [studies](studies.md) and [in-house medical device software](in-house-mdsw.md).
 
