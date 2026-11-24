@@ -42,6 +42,9 @@ For additional information, please refer to _[the official documentation](https:
 >
 > Please read the _[NOTICE](NOTICE)_ file for complete disclaimers. Integrating the software as a _software of unknown provenance (SOUP)_ into an (in-house) medical device software places all liability on the manufacturer of that medical device.
 
+## Maintenance
+This repository is actively maintained by _University of Leipzig Medical Center, Department for Clinical AI and Translational Medicine_.
+
 ## Publications
 
 1. Twrdik, A., Steinbach, D., Federbusch, M., Malkawi, C., Schmidt, M., & Kirsten, T. (2026). _The AMPEL platform: An open-source project for developing hospital-wide clinical decision support systems under EU-regulation_. _ArXiV_. [https://doi.org/10.48550/arXiv.2611.30990](https://doi.org/10.48550/arXiv.2611.30990)
