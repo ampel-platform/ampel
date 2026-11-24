@@ -1,18 +1,22 @@
 on:
   push:
-# Keeping this for later adjustments (right now we just need to publish without having a tag yet).
-#    paths:
-#      - 'docs/**'
+    paths:
+      - 'docs/**'
     branches:
       - main
-      - develop
+      - 'releases/**'
+    tags:
+      - 'v*.*.*'
   pull_request:
-    # Keeping this for later adjustments (right now we just need to publish without having a tag yet).
-#    paths:
-#      - 'docs/**'
+    paths:
+      - 'docs/**'
     branches:
       - main
       - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   build-docs:
@@ -26,7 +30,12 @@ jobs:
 
       - name: Configure Variables
         id: variables
-        run: echo "commit_sha_short=$(printf '%s' "${{ github.sha }}" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "docs_version=${{ github.ref }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "docs_version=$(printf '%s' "${{ github.sha }}" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -42,19 +51,17 @@ jobs:
       - name: Build VitePress
         working-directory: docs
         env:
-          VITE_LATEST_RELEASE: ${{ steps.variables.outputs.commit_sha_short }}
+          VITE_LATEST_RELEASE: ${{ steps.variables.outputs.docs_version }}
         run: npm run docs:build
 
       - name: Upload GitHub Pages artifact
-        # Keeping this for later configuration changes which are necessary.
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref_type == 'tag'
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs/.vitepress/dist
 
   deploy:
-    # Keeping this for later configuration changes which are necessary.
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref_type == 'tag'
     needs: build-docs
     runs-on: ubuntu-latest
     permissions:
