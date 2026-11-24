@@ -1,15 +1,14 @@
 on:
   push:
-# Keeping this for later adjustments (right now we just need to publish without having a tag yet).
-#    paths:
-#      - 'docs/**'
+    paths:
+      - 'docs/**'
     branches:
       - main
-      - develop
+    tags:
+      - 'v*.*.*'
   pull_request:
-    # Keeping this for later adjustments (right now we just need to publish without having a tag yet).
-#    paths:
-#      - 'docs/**'
+    paths:
+      - 'docs/**'
     branches:
       - main
       - develop
@@ -46,15 +45,13 @@ jobs:
         run: npm run docs:build
 
       - name: Upload GitHub Pages artifact
-        # Keeping this for later configuration changes which are necessary.
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref_type == 'tag'
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs/.vitepress/dist
 
   deploy:
-    # Keeping this for later configuration changes which are necessary.
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref_type == 'tag'
     needs: build-docs
     runs-on: ubuntu-latest
     permissions:
