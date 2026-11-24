@@ -18,7 +18,7 @@ Website: [www.uniklinikum-leipzig.de](https://www.uniklinikum-leipzig.de/)
 
 ## 2. Data protection officer
 
- **Katrin Kämmerer**  
+**Katrin Kämmerer**  
 Data Protection Officer of University Hospital Leipzig  
 Liebigstraße 18, Building B  
 04103 Leipzig, Germany
@@ -84,6 +84,4 @@ Website: [www.datenschutz.sachsen.de](https://www.datenschutz.sachsen.de/)
 
 This policy is updated when the wiki, the services used, or the legal requirements change. The current version is always available on this page.
 
-Last updated: 17 August 2026
-
-This policy was prepared for the AMPEL Wiki on the basis of the [CDS Network privacy policy](https://cds-network.eu/datenschutzerklaerung/) and the services actually used.
+Last updated: 24 November 2026

@@ -2,8 +2,7 @@
 
 ## Information pursuant to Section 18 (2) MStV
 
-**University Hospital Leipzig**  
-Public-law institution  
+**University of Leipzig Medical Center**  
 Liebigstraße 18, Building B  
 04103 Leipzig, Germany
 
@@ -35,11 +34,11 @@ Wigardstraße 17
 ## Responsible for the content
 
 **Dr. Daniel Steinbach**  
-Head of AI Development in the Department of Medical AI and Translation (MedKIT)  
+Head of AMPEL Platform  
+Department for Clinical AI and Translational Medicine  
 Deutscher Platz 5a  
-04103 Leipzig, Germany
-
-Phone: [+49 341 97 11343](tel:+493419711343)
+04103 Leipzig, Germany  
+Mail: [ampel@medizin.uni-leipzig.de](mailto:ampel@medizin.uni-leipzig.de)  
 
 ## Content disclaimer
 
@@ -59,7 +58,5 @@ All trademarks and trade names mentioned are subject to the rights of their resp
 
 ## Notices and corrections
 
-Please send content-related and technical notices to [ampel@uniklinik-leipzig.de](mailto:ampel@uniklinik-leipzig.de).
-
-This legal notice was prepared for the AMPEL Wiki on the basis of the [CDS Network legal notice](https://cds-network.eu/impressum/).
+Please send content-related and technical notices and corrections to [ampel@medizin.uni-leipzig.de](mailto:ampel@medizin.uni-leipzig.de).
 
