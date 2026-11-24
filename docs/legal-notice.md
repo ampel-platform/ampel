@@ -33,7 +33,7 @@ Wigardstraße 17
 
 ## Responsible for the content
 
-**Dr. Daniel Steinbach**  
+**Dr. Daniel Steinbach**
 Head of AMPEL Platform
 Department for Clinical AI and Translational Medicine
 Deutscher Platz 5a  
