@@ -33,12 +33,12 @@ Wigardstraße 17
 
 ## Responsible for the content
 
-**Dr. Daniel Steinbach**
-Head of AMPEL Platform
-Department for Clinical AI and Translational Medicine
+**Dr. Daniel Steinbach**  
+Head of AMPEL Platform  
+Department for Clinical AI and Translational Medicine  
 Deutscher Platz 5a  
-04103 Leipzig, Germany
-Mail: [ampel@medizin.uni-leipzig.de](mailto:ampel@medizin.uni-leipzig.de)
+04103 Leipzig, Germany  
+Mail: [ampel@medizin.uni-leipzig.de](mailto:ampel@medizin.uni-leipzig.de)  
 
 ## Content disclaimer
 
