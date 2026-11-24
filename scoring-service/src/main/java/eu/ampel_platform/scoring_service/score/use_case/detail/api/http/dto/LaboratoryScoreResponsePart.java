@@ -14,7 +14,7 @@ import java.time.Instant;
  * @param analyteValueUnit     unit of the analyte
  * @param analyteMeasuringTime when the analyte was measured
  * @param resultCreationTime   when the score was calculated
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record LaboratoryScoreResponsePart(
         AmpelScoreResponsePart score,

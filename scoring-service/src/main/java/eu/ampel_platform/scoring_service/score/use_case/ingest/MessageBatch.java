@@ -13,7 +13,7 @@ import static java.util.Objects.requireNonNull;
  * @param messages               Messages that were read successfully.
  * @param unserializableMessages Messages that could not be read.
  * @param latestOffsetIndex      Offset to be committed to Kafka to clear all messages within this batch.
- * @since 1.0.0
+ * @since 2.0.0
  */
 record MessageBatch(
         List<AmpelLaboratoryScoreCalculatedEvent> messages,

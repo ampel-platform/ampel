@@ -9,7 +9,7 @@ import java.util.UUID;
  * failure time etc.)
  * A dead message is a message that could not be read / processed.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record DeadMessage(
         //@JsonProperty("id")

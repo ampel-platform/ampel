@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * API-level representation of a laboratory score.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public enum AmpelScoreResponsePart {
     @JsonProperty("green")

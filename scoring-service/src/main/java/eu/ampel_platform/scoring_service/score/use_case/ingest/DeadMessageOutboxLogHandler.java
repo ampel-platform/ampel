@@ -16,7 +16,7 @@ import static java.util.Objects.requireNonNull;
  * This is simply going to log any {@link DeadMessage}s that are published to the outbox table. Messages are getting
  * logged in their serialized format (JSON).
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Component
 public final class DeadMessageOutboxLogHandler implements OutboxTypedHandler<DeadMessage> {

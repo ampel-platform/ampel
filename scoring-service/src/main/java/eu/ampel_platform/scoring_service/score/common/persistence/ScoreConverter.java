@@ -6,7 +6,7 @@ import jakarta.persistence.Converter;
 /**
  * Converter for translating a {@link Score} between the application and the storage solution.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Converter(autoApply = true)
 public final class ScoreConverter implements AttributeConverter<Score, String> {

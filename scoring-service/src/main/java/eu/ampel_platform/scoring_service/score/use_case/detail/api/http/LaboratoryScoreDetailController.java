@@ -14,7 +14,7 @@ import static java.util.Objects.requireNonNull;
  * HTTP controller for accessing laboratory scores in a detailed way. This includes all historical scores as well as the
  * current ones.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @RestController
 @RequestMapping("/medicalcases/{medicalCaseId}/scores")

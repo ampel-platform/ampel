@@ -9,7 +9,7 @@ import java.time.Instant;
  * Simple internal entity for interacting with storage solutions.
  * It resembles a laboratory related score.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Entity
 @Table(name = "laboratory_scores")
