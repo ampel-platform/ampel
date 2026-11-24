@@ -23,7 +23,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A storage solution for {@link InboxRecord}s backed by a PostgreSQL database, using JDBI as an abstraction layer.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class JdbiPostgresInboxRecordRepository implements InboxRecordRepository {
 

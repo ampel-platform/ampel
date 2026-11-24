@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
  * reason why it's dealing with JSON as a format instead of simply making use of ProtoBuf's default serialization
  * capabilities.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class ProtoBufByteSerializer implements InboxPayloadSerializer {
 

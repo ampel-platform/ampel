@@ -5,7 +5,7 @@ import eu.ampel_platform.messaging_sdk.inbox.model.InboxRecord;
 /**
  * Describes an entity to handle a {@link InboxRecord} during processing.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @FunctionalInterface
 public interface InboxRecordHandler {

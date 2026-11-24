@@ -13,7 +13,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A {@link TransactionManager} capable of managing transactions backed by <code>JDBI</code>.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class JdbiTransactionManager implements TransactionManager {
 

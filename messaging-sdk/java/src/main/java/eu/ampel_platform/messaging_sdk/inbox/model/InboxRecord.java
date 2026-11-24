@@ -14,7 +14,7 @@ import static java.util.Objects.requireNonNull;
  * Describes a single inbox record. An inbox record is a message that is getting ingested into a system and awaits
  * further processing.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class InboxRecord {
 

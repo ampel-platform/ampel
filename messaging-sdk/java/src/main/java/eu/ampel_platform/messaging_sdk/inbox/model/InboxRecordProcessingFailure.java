@@ -11,7 +11,7 @@ import java.time.Instant;
  *
  * @param failureCount how often processing the record failed already
  * @param nextRetryAt  earliest instant of when an {@link InboxRecord} can be tried to be processed again
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record InboxRecordProcessingFailure(
         @Range(from = 0, to = Integer.MAX_VALUE) int failureCount,
