@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Repository for dealing with persistent storage of patient information.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Repository
 public interface PatientInformationRepository extends JpaRepository<PatientInformationDto, String> {

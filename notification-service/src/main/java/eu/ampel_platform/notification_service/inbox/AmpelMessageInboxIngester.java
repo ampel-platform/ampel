@@ -25,7 +25,7 @@ import static java.util.Objects.requireNonNull;
  * processing.
  * Messages are both, read from and acknowledged to Kafka in batches.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public class AmpelMessageInboxIngester implements BatchAcknowledgingMessageListener<String, byte[]> {
 

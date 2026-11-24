@@ -15,7 +15,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * Default {@link PatientInformationService} implementation backed by a Spring datasource.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Service
 public final class PatientInformationServiceImpl implements PatientInformationService {

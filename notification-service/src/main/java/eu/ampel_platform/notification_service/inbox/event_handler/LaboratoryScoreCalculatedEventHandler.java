@@ -32,7 +32,7 @@ import static java.util.Objects.requireNonNull;
  * TODO: reference / mention the outbox handler being responsible for this!
  * TODO: introduce a dedicated outbox handler
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Component
 public final class LaboratoryScoreCalculatedEventHandler

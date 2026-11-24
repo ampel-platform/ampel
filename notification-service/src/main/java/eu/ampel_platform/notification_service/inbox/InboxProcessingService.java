@@ -10,7 +10,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A wrapper around {@link InboxRecordProcessor} for claiming and processing inbox records.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Service
 public class InboxProcessingService {

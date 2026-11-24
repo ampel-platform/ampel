@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
  * @param dateOfBirth   (optional) a patient's date of birth. It is ignored that patient's may have been born in other time zones.
  *                      The date of birth will always be referencing the time zone that the application runs in.
  * @param medicalCaseId (optional) a patient's medical case identifier
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record PatientInformation(
         PatientId patientId,
