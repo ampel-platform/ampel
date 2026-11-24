@@ -19,7 +19,7 @@ import static java.util.Objects.requireNonNull;
  * do not need to deserialize the whole message but just its metadata. You can refer to an {@link AmpelMessage} also in
  * the sense of an envelope.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class AmpelMessageSerde {
 

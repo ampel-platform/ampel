@@ -12,7 +12,7 @@ import static java.util.Objects.requireNonNull;
  * A {@link LaboratoryScoreDetailService} that deals with laboratory scores.
  * It deals with them directly via a repository without a dedicated domain layer in between.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Service
 public final class LaboratoryScoreDetailServiceImpl implements LaboratoryScoreDetailService {

@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
  * Tune the invocation of this task in a way so that it does not run too frequently which may compromise the
  * de-duplication feature of the inbox.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class InboxRecordCleaner {
 

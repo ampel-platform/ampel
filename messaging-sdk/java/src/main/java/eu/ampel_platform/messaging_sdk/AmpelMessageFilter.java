@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 /**
  * Describes a simple filter for {@link AmpelMessage}s.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface AmpelMessageFilter extends Predicate<AmpelMessage> {
 }

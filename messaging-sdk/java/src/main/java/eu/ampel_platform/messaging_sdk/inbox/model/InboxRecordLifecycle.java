@@ -12,7 +12,7 @@ import java.time.Instant;
  * @param createdAt       when the record was created
  * @param processedAt     when the record was processed
  * @param processingError potential, error related information from processing the record
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record InboxRecordLifecycle(
         @NotNull InboxRecordLifecycleState state,

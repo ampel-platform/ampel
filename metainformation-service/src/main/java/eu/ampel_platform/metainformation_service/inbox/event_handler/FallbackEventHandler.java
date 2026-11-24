@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * A {@link Consumer} that is used whenever an event couldn't get handled due to a missing handler.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class FallbackEventHandler implements Consumer<Message> {
     private static final Logger LOGGER = LoggerFactory.getLogger(FallbackEventHandler.class);

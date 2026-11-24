@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Describes a component for handling patient information.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface PatientInformationService {
 

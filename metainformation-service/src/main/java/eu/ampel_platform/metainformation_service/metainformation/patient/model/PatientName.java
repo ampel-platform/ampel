@@ -5,7 +5,7 @@ package eu.ampel_platform.metainformation_service.metainformation.patient.model;
  *
  * @param firstname patient's firstname
  * @param lastname  patient's lastname
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record PatientName(String firstname, String lastname) {
 }

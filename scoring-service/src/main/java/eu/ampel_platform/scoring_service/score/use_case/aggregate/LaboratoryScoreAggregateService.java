@@ -3,7 +3,7 @@ package eu.ampel_platform.scoring_service.score.use_case.aggregate;
 /**
  * Describes a service for dealing with aggregated laboratory scores.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface LaboratoryScoreAggregateService {
 

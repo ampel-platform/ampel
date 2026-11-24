@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Repository to store and retrieve {@link LaboratoryScoreEntity} information.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Repository
 public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScoreEntity, String> {

@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
  * Describes the identifier of an {@link InboxRecord}.
  *
  * @param id value of the identifier
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record InboxRecordId(
         @NotNull String id

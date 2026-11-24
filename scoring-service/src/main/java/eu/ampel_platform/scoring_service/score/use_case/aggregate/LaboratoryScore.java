@@ -4,7 +4,7 @@ package eu.ampel_platform.scoring_service.score.use_case.aggregate;
  * A dedicated model for aggregation purposes. It maps a score to a severity making it possible to compare two scores
  * against each other.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public enum LaboratoryScore {
     NONE(0),

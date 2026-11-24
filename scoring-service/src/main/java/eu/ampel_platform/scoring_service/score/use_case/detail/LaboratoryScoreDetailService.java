@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Describes a service for dealing with detailed laboratory scores.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface LaboratoryScoreDetailService {
 

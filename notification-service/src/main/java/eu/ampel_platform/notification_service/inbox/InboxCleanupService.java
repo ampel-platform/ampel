@@ -10,7 +10,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A wrapper around {@link InboxRecordCleaner} for cleaning up inbox records.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Service
 public class InboxCleanupService {

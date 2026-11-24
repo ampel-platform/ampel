@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Bundler for utility functions required for handling incoming events.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class TypeMapper {
     private TypeMapper() {

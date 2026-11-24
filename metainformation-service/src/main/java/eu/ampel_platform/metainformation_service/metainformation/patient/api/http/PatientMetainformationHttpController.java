@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * HTTP controller for handling patient related metainformation within a medical case.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @RestController
 @RequestMapping("/medicalcases/{medicalCaseId}/metainformation/patient")

@@ -6,7 +6,7 @@ import java.util.Optional;
  * Describes a strategy for retrying to process an {@link eu.ampel_platform.messaging_sdk.inbox.model.InboxRecord} after
  * a previous attempt has failed.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface InboxRecordRetryStrategy {
 

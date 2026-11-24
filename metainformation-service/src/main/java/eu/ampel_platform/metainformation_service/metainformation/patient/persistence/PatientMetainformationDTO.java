@@ -11,7 +11,7 @@ import java.time.LocalDate;
 /**
  * Describes a patient's metainformation on a level regarding the persistence layer.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Entity
 @Table(name = "patient_metainformation")

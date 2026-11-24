@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * uppercase when using them as environment variables compatible with this processor.</i>
  * </p>
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public final class MailEnvironmentVariableEnvironmentPostProcessor implements EnvironmentPostProcessor {

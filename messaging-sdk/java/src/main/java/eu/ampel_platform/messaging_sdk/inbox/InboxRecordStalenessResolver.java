@@ -19,7 +19,7 @@ import static java.util.Objects.requireNonNull;
  * {@link eu.ampel_platform.messaging_sdk.inbox.model.InboxRecordLifecycleState#PROCESSING} for an extended period of
  * time. This duration is adjustable.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class InboxRecordStalenessResolver {
 

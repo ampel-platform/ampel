@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Utility for converting between API-level DTOs and internal models.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 final class DtoMapper {
 

@@ -13,7 +13,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * HTTP controller for accessing aggregated laboratory scores.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @RestController
 @RequestMapping("/medicalcases/{medicalCaseId}/scores")

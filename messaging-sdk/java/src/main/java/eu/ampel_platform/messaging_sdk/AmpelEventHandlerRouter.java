@@ -14,7 +14,7 @@ import static java.util.Objects.requireNonNull;
  * It allows for routing events to certain handlers at runtime without the needs for a consumer to rely on costly
  * reflection based techniques (e.g. instanceof checks).
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class AmpelEventHandlerRouter {
 
@@ -59,7 +59,7 @@ public final class AmpelEventHandlerRouter {
     /**
      * Builder for {@link AmpelEventHandlerRouter}.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static class AmpelEventHandlerRouterBuilder {
         private final Consumer<Message> defaultEventHandler;

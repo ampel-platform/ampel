@@ -10,7 +10,7 @@ import java.util.List;
  * @param scoringSystemName    name of the associated scoring system
  * @param scoringSystemVersion version of the associated scoring system
  * @param scores               actual laboratory scores
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record ScoringSystemLaboratoryScores(
         String scoringSystemName,

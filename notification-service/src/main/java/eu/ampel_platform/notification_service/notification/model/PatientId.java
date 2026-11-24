@@ -6,7 +6,7 @@ import static java.util.Objects.requireNonNull;
  * Describes the identifier of a patient.
  *
  * @param id value of the identifier
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record PatientId(String id) {
     public PatientId {
