@@ -75,6 +75,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
+  release:
+    if: github.event_name != 'pull_request' && github.ref_type == 'tag'
+    needs: build-docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v3
+
 
 
 
