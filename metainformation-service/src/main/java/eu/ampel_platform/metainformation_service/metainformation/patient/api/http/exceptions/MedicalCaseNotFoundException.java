@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * Indicates that no record was found based on a medical case ID.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class MedicalCaseNotFoundException extends RuntimeException {

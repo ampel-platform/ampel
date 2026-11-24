@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * @param lastname      the patient's lastname (optional).
  * @param dateOfBirth   the patient's date of birth (optional).
  * @param sex           the patient's sex.
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record PatientMetainformationResource(
         String id,

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Describes possible values of a patient's sex.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public enum PatientMetainformationSexResource {
     @JsonProperty("male")
