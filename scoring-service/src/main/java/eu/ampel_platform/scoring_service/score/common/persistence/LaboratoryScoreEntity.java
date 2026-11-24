@@ -9,7 +9,7 @@ import java.time.Instant;
  * Simple internal entity for interacting with storage solutions.
  * It resembles a laboratory related score.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Entity
 @Table(name = "laboratory_scores")
@@ -37,6 +37,9 @@ public class LaboratoryScoreEntity {
 
     @Column(name = "scoring_system_severity_code")
     private String scoringSystemSeverityCode;
+
+    @Column(name = "scoring_system_severity_comment")
+    private String scoringSystemSeverityComment;
 
     @Column(name = "analyte_name")
     private String analyteName;

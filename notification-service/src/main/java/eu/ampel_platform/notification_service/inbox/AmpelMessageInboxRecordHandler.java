@@ -17,7 +17,7 @@ import static java.util.Objects.requireNonNull;
  * This handler takes {@link InboxRecord}s containing {@link com.google.protobuf.Message}s resembling AMPEL events
  * and hands them off to a {@link AmpelEventHandlerRouter} instance to take care of it.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class AmpelMessageInboxRecordHandler implements InboxRecordHandler {
 

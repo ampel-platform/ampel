@@ -11,7 +11,7 @@ import static java.util.Objects.requireNonNull;
  * Factory for creating common filters on {@link eu.ampel_platform.messaging_sdk.generated.AmpelMessage}s within the
  * platform.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class AmpelMessageFilterFactory {
 

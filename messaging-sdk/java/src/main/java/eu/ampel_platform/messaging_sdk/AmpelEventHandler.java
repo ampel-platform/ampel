@@ -6,6 +6,8 @@ import com.google.protobuf.Message;
  * A handler for events within the Ampel platform.
  * </p>
  * <b>Note:</b> <i>Events within the platform are defined via ProtoBuf messages.</i>
+ *
+ * @since 2.0.0
  */
 public interface AmpelEventHandler<M extends Message> {
 

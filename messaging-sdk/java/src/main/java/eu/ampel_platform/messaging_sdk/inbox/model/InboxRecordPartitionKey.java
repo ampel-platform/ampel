@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
  * Describes a value that can be used to partition multiple {@link InboxRecord}s when being processed in parallel.
  *
  * @param key value of the partition key
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record InboxRecordPartitionKey(
         @NotNull String key

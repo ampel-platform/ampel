@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @param medicalCaseId  identifies the medical case.
  * @param scoringSystems laboratory scores within the medical case grouped by scoring system.
- * @since 1.0.0
+ * @since 2.0.0
  */
 public record LaboratoryScoreDetailResponse(
         String medicalCaseId,

@@ -22,7 +22,7 @@ import static java.util.Objects.requireNonNull;
  * A service for reliably ingesting messages carrying laboratory related scores, as well as dead messages into the
  * system.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Qualifier("ingestion")
 @Service
@@ -81,6 +81,7 @@ public class LaboratoryScoreIngestionServiceImpl implements LaboratoryScoreInges
                 .medicalCaseId(laboratoryScore.getMedicalCaseId())
                 .score(convertToInternalModel(laboratoryScore.getScore()))
                 .scoringSystemSeverityCode(laboratoryScore.getScoringSystemSeverityCode())
+                .scoringSystemSeverityComment(laboratoryScore.getScoringSystemComment())
                 .analyteName(laboratoryScore.getAnalyteName())
                 .analyteValue(laboratoryScore.getAnalyteValue())
                 .analyteUnit(laboratoryScore.getAnalyteUnit())

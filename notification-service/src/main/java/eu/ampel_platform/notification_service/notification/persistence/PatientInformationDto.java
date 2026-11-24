@@ -11,7 +11,7 @@ import java.time.LocalDate;
 /**
  * Describes a patient's information necessary for notifications on a level required for persistently storing it.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Entity
 @Table(name = "patient_information")

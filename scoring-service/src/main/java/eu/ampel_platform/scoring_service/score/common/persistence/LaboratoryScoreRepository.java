@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Repository to store and retrieve {@link LaboratoryScoreEntity} information.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Repository
 public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScoreEntity, String> {
@@ -27,6 +27,7 @@ public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScore
                 medical_case_id,
                 score,
                 scoring_system_severity_code,
+                scoring_system_severity_comment,
                 analyte_name,
                 analyte_value,
                 analyte_unit,
@@ -39,6 +40,7 @@ public interface LaboratoryScoreRepository extends JpaRepository<LaboratoryScore
                 :#{#laboratoryScore.getMedicalCaseId()},
                 :#{#laboratoryScore.getScore().name().toUpperCase()},
                 :#{#laboratoryScore.getScoringSystemSeverityCode()},
+                :#{#laboratoryScore.getScoringSystemSeverityComment()},
                 :#{#laboratoryScore.getAnalyteName()},
                 :#{#laboratoryScore.getAnalyteValue()},
                 :#{#laboratoryScore.getAnalyteUnit()},

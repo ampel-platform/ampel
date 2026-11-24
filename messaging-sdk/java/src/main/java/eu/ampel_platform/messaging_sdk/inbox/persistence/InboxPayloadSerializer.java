@@ -5,7 +5,7 @@ import com.google.protobuf.Message;
 /**
  * Describes a serializer for {@link eu.ampel_platform.messaging_sdk.inbox.model.InboxRecord} message payloads.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface InboxPayloadSerializer {
 

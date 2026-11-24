@@ -15,7 +15,7 @@ import static java.util.Objects.requireNonNull;
  * </p>
  * <b>Do NOT use multiple instances of this class. Instead, stick to one and share it.</b>
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class Inbox {
 

@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * Describes an entity for managing the persistence of {@link InboxRecord}s.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface InboxRecordRepository {
 

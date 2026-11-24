@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
  * </i>
  * </p>
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Builder
 public final class PatientMetainformation {

@@ -23,7 +23,7 @@ import static java.util.Objects.requireNonNull;
  * Listener for serialized {@link com.google.protobuf.Message}s. Messages are processed in batches and also acknowledged
  * as such. This listener only handles {@link AmpelLaboratoryScoreCalculatedEvent}s and drops all other messages.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 final class AmpelLaboratoryScoreCalculatedEventListener implements BatchAcknowledgingMessageListener<String, byte[]> {
 

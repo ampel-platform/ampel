@@ -17,7 +17,7 @@ import static java.util.Objects.requireNonNull;
  * transaction manager and hands management over to Spring.
  * </p>
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class SpringTransactionManagerAdapter implements TransactionManager {
 

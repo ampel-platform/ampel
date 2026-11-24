@@ -3,6 +3,8 @@ prev: false
 next: false
 ---
 
-# Overview: The Technical Implementation guide
+# Technical manual
 
-Placeholder...
+### Coming Soon
+
+We're working on this section. In the meantime, explore our technical documentation directly on GitHub.

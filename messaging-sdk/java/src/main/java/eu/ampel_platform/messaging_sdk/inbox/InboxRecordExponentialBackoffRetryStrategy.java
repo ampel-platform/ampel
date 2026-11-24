@@ -12,7 +12,7 @@ import java.util.Random;
  * The implementation is making use of an equal jitter, i.e. no fully randomized jitter but one that operates within
  * upper and lower bounds.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class InboxRecordExponentialBackoffRetryStrategy implements InboxRecordRetryStrategy {
 

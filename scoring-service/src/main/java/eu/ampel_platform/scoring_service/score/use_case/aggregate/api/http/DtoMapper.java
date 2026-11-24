@@ -7,7 +7,7 @@ import eu.ampel_platform.scoring_service.score.use_case.aggregate.api.http.dto.L
 /**
  * Utility for converting between API-level DTOs and internal models.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 final class DtoMapper {
 

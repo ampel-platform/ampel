@@ -1,6 +1,8 @@
 # AMPEL Wiki
 
-The AMPEL wiki powered by [VitePress](https://vitepress.dev) using an extended default theme.
+The generated AMPEL wiki can be visited here: [ampel-wiki.eu](https://ampel-wiki.eu)
+
+It is powered by [VitePress](https://vitepress.dev) using an extended default theme. 
 
 ## Local development
 

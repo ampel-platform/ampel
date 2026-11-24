@@ -14,7 +14,7 @@ import java.util.function.Supplier;
  * Use this when dealing with coherent database operations or application functionality that must behave transactional
  * in conjunction with database operations.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public interface TransactionManager {
 

@@ -1,9 +1,9 @@
 package eu.ampel_platform.scoring_service.score.use_case.detail.api.http;
 
+import eu.ampel_platform.scoring_service.score.common.api.http.dto.AmpelScoreResponsePart;
 import eu.ampel_platform.scoring_service.score.common.persistence.LaboratoryScoreEntity;
 import eu.ampel_platform.scoring_service.score.common.persistence.Score;
 import eu.ampel_platform.scoring_service.score.use_case.detail.ScoringSystemLaboratoryScores;
-import eu.ampel_platform.scoring_service.score.common.api.http.dto.AmpelScoreResponsePart;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.LaboratoryScoreDetailResponse;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.LaboratoryScoreResponsePart;
 import eu.ampel_platform.scoring_service.score.use_case.detail.api.http.dto.ScoringSystemLaboratoryScoresResponsePart;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Utility for converting between API-level DTOs and internal models.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 final class DtoMapper {
 
@@ -50,6 +50,7 @@ final class DtoMapper {
                 .map(s -> new LaboratoryScoreResponsePart(
                         mapScoreToDto(s.getScore()),
                         s.getScoringSystemSeverityCode(),
+                        s.getScoringSystemSeverityComment(),
                         s.getAnalyteName(),
                         s.getAnalyteValue(),
                         s.getAnalyteUnit(),

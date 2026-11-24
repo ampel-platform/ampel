@@ -21,7 +21,7 @@ import static java.util.Objects.requireNonNull;
  * {@link com.google.protobuf.Any} type which acts as a general type. In order to deserialize anything wrapped in it,
  * certain type information needs to be looked up which is exactly what this registry is for.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class AmpelEventTypeRegistry {
 

@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Repository for dealing with persistent storage of patient's metainformation.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Repository
 public interface PatientMetainformationRepository extends JpaRepository<PatientMetainformationDTO, String> {

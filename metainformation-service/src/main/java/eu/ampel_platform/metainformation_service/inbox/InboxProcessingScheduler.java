@@ -11,7 +11,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * A Spring-specific scheduler for running {@link InboxProcessingService} jobs using a fixed invocation delay.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 public final class InboxProcessingScheduler {
 

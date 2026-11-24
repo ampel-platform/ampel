@@ -24,7 +24,7 @@ import java.util.Objects;
  * {@link org.springframework.transaction.annotation.Transactional} or which manages transactional lifecycles.</i>
  * </p>
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 @Component
 public final class PatientAssignedMedicalCaseEventHandler implements AmpelEventHandler<AmpelPatientAssignedMedicalCase> {
