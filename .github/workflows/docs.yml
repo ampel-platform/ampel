@@ -29,7 +29,12 @@ jobs:
 
       - name: Configure Variables
         id: variables
-        run: echo "commit_sha_short=$(printf '%s' "${{ github.sha }}" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "docs_version=${{ github.ref }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "docs_version=$(printf '%s' "${{ github.sha }}" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -45,7 +50,7 @@ jobs:
       - name: Build VitePress
         working-directory: docs
         env:
-          VITE_LATEST_RELEASE: ${{ steps.variables.outputs.commit_sha_short }}
+          VITE_LATEST_RELEASE: ${{ steps.variables.outputs.docs_version }}
         run: npm run docs:build
 
       - name: Upload GitHub Pages artifact
