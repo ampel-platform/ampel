@@ -4,6 +4,7 @@ on:
       - 'docs/**'
     branches:
       - main
+      - 'releases/**'
     tags:
       - 'v*.*.*'
   pull_request:
