@@ -1,17 +1,9 @@
 import React from 'react';
 
-import { errorHeadingStyle } from './errorStyles';
+import { ErrorHeadingLevel, ErrorLayout } from './ErrorLayout';
 
-export const Unauthorized = (): React.ReactNode => (
-  <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-    <title>AMPEL-CDSS</title>
-    <meta charSet='utf-8' />
-    <div style={{ textAlign: 'center', paddingTop: '4rem' }}>
-      <h1 style={errorHeadingStyle}>Fehlende Berechtigungen</h1>
-      <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
-        Sie haben keine Berechtigung, diese Seite zu sehen.
-      </p>
-      <br />
-    </div>
-  </div>
+export const Unauthorized = ({ level = 1 }: { level?: ErrorHeadingLevel }): React.ReactNode => (
+  <ErrorLayout title='Fehlende Berechtigungen' level={level}>
+    <p>Sie haben keine Berechtigung, diese Seite zu sehen.</p>
+  </ErrorLayout>
 );

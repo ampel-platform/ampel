@@ -1,34 +1,31 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 import { Countdown } from './Countdown';
-import { ErrorLayout } from './ErrorLayout';
-import { errorHeadingStyle } from './errorStyles';
+import { ErrorHeadingLevel, ErrorLayout } from './ErrorLayout';
 
 interface CountdownProps {
   retryAfterMs?: number | null;
   id?: string;
   updateMs?: number;
   log?: boolean;
+  level?: ErrorHeadingLevel;
 }
 
-/** Zeigt verbleibende Sekunden in ein <span> und aktualisiert per client-side timer. */
+/** Zeigt die verbleibenden Sekunden bis zum automatischen Neuladen. */
 export function TooManyRequests({
   retryAfterMs = 30000,
   id = 'reload-countdown',
   updateMs = 250,
   log = false,
-}: CountdownProps): React.ReactNode {
+  level = 1,
+}: CountdownProps): ReactNode {
   return (
-    <ErrorLayout>
-      <title>AMPEL-CDSS</title>
-      <meta charSet='utf-8' />
-      <h1 style={errorHeadingStyle}>Zu viele Anfragen in kurzer Zeit</h1>
-      <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
+    <ErrorLayout title='Zu viele Anfragen in kurzer Zeit' level={level}>
+      <p>
         Bitte warten sie{' '}
         <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden bis
         sie weitere anfragen stellen.
       </p>
-      <br />
     </ErrorLayout>
   );
 }
