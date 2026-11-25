@@ -1,30 +1,42 @@
+import { KolBadge } from '@public-ui/react-v19';
 import type { ReactElement } from 'react';
 
 import { AlertType } from '../../types/types';
-import { AlertPing } from './AlertPing';
+import { badgeForAlertType } from '../utils/status';
+import { formatDeBerlin } from './formatDate';
 
 interface AlertHeaderProps {
-  name: string;
   type: AlertType;
   severity?: string | null | undefined;
+  resultTime?: Date;
 }
 
-/**
- * A header component that displays an alert name with an associated visual indicator.
- *
- * @param {{ name: string; type: AlertType }} props
- * @prop {string} name - The name of the alert to be displayed.
- * @prop {AlertType} type - The type of the alert, used to determine the visual indicator.
- * @returns {React.ReactNode } The rendered alert header component.
- */
-export function AlertHeader({ name, type, severity }: AlertHeaderProps): ReactElement {
+export function AlertHeader({ type, severity, resultTime }: AlertHeaderProps): ReactElement {
+  const badge = badgeForAlertType(type);
+  const hasTime = resultTime instanceof Date && !Number.isNaN(resultTime.getTime());
+
   return (
-    <div className='flex flex-row items-center gap-x-4'>
-      <AlertPing type={type} />
-      <span className='text-xl font-medium text-violet-800'>
-        {name}
-        {severity && ' - ' + severity}
-      </span>
-    </div>
+    <dl className='flex flex-row flex-wrap items-center gap-x-8 gap-y-2'>
+      <div className='flex items-center gap-2'>
+        <dt>Status</dt>
+        <dd>
+          <KolBadge _label={badge.label} _color={badge.color} />
+        </dd>
+      </div>
+      {severity && (
+        <div className='flex items-center gap-2'>
+          <dt>Schweregrad</dt>
+          <dd className='font-bold'>{severity}</dd>
+        </div>
+      )}
+      {hasTime && (
+        <div className='flex items-center gap-2'>
+          <dt>Berechnet am</dt>
+          <dd className='font-bold'>
+            <time dateTime={resultTime.toISOString()}>{formatDeBerlin(resultTime)}</time>
+          </dd>
+        </div>
+      )}
+    </dl>
   );
 }

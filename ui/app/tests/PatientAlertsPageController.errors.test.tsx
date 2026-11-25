@@ -117,7 +117,7 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(
       await screen.findByText(/Keine Patientendaten zur Fallnummer vorhanden/i),
     ).toBeInTheDocument();
-    expect(await screen.findByText(/Unbekannt Unbekannt/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Name unbekannt/i)).toBeInTheDocument();
     expect(await screen.findByText(/kein Geburtsdatum/i)).toBeInTheDocument();
     expect(await screen.findByText('CASE-123')).toBeInTheDocument();
     expect(screen.queryByTestId('alerts-error')).toBeNull();
@@ -149,7 +149,7 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(await screen.findByTestId('metadata-error')).toBeInTheDocument();
     expect(
       await screen.findByRole('heading', {
-        level: 1,
+        level: 2,
         name: /Keine Patientendaten zur Fallnummer vorhanden/i,
       }),
     ).toBeInTheDocument();
@@ -183,13 +183,13 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(await screen.findByTestId('alerts-error')).toBeInTheDocument();
     expect(
       await screen.findByRole('heading', {
-        level: 1,
+        level: 2,
         name: /Keine CDSS-Daten zur Fallnummer vorhanden/i,
       }),
     ).toBeInTheDocument();
     expect(await screen.findByText(/Max Mustermann/i)).toBeInTheDocument();
     expect(await screen.findByText(/P-1/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Unbekannt Unbekannt/i)).toBeNull();
+    expect(screen.queryByText(/Name unbekannt/i)).toBeNull();
     expect(screen.queryByTestId('metadata-error')).toBeNull();
   });
 
@@ -212,16 +212,35 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(await screen.findByTestId('metadata-error')).toBeInTheDocument();
     expect(
       await screen.findByRole('heading', {
-        level: 1,
+        level: 2,
         name: /Keine Patientendaten zur Fallnummer vorhanden/i,
       }),
     ).toBeInTheDocument();
     expect(screen.queryByTestId('alerts-error')).toBeNull();
     expect(
       screen.queryByRole('heading', {
-        level: 1,
+        level: 2,
         name: /Keine CDSS-Daten zur Fallnummer vorhanden/i,
       }),
     ).toBeNull();
+  });
+});
+
+describe('PatientAlertsPageController heading structure', () => {
+  beforeEach(() => {
+    useLoaderDataMock.mockReset();
+    setLoaderData();
+  });
+
+  afterEach(() => {
+    cleanup();
+  });
+
+  it('uses the page purpose as the only level-1 heading', async () => {
+    await renderController();
+
+    const h1 = await screen.findAllByRole('heading', { level: 1 });
+    expect(h1).toHaveLength(1);
+    expect(h1[0]).toHaveTextContent('AMPEL-Ergebnisse');
   });
 });
