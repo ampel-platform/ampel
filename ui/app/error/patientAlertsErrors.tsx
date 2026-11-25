@@ -3,7 +3,9 @@ import { isRouteErrorResponse, useRouteError } from 'react-router';
 
 import { BadRequest } from './BadRequest';
 import { DefaultError } from './DefaultError';
+import type { ErrorHeadingLevel } from './ErrorLayout';
 import { Forbidden } from './Forbidden';
+import { LoadingStatus } from './LoadingStatus';
 import { MaintenanceError } from './MaintenanceError';
 import { DEFAULT_NO_DATA_VARIANT, type NoDataVariant } from './noDataVariant';
 import { NotFound } from './NotFound';
@@ -102,29 +104,36 @@ function parseHttpStatus(err: unknown): { status: number; retryAfterMs: number |
 }
 
 const sectionByStatus: Partial<
-  Record<number, (ctx: { retryAfterMs: number | null; variant: NoDataVariant }) => ReactNode>
+  Record<
+    number,
+    (ctx: {
+      retryAfterMs: number | null;
+      variant: NoDataVariant;
+      level: ErrorHeadingLevel;
+    }) => ReactNode
+  >
 > = {
-  400: ({ variant }) => <BadRequest variant={variant} />,
-  401: () => <Unauthorized />,
-  403: () => <Forbidden />,
-  404: ({ variant }) => <NotFound variant={variant} />,
-  408: () => <Timeout />,
-  410: ({ variant }) => <NotFound variant={variant} />,
-  422: ({ variant }) => <BadRequest variant={variant} />,
-  429: ({ retryAfterMs }) => (
-    <TooManyRequests retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
+  400: ({ variant, level }) => <BadRequest variant={variant} level={level} />,
+  401: ({ level }) => <Unauthorized level={level} />,
+  403: ({ level }) => <Forbidden level={level} />,
+  404: ({ variant, level }) => <NotFound variant={variant} level={level} />,
+  408: ({ level }) => <Timeout level={level} />,
+  410: ({ variant, level }) => <NotFound variant={variant} level={level} />,
+  422: ({ variant, level }) => <BadRequest variant={variant} level={level} />,
+  429: ({ retryAfterMs, level }) => (
+    <TooManyRequests retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} level={level} />
   ),
-  500: ({ retryAfterMs }) => (
-    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
+  500: ({ retryAfterMs, level }) => (
+    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} level={level} />
   ),
-  502: ({ retryAfterMs }) => (
-    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
+  502: ({ retryAfterMs, level }) => (
+    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} level={level} />
   ),
-  503: ({ retryAfterMs }) => (
-    <MaintenanceError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
+  503: ({ retryAfterMs, level }) => (
+    <MaintenanceError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} level={level} />
   ),
-  504: ({ retryAfterMs }) => (
-    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} />
+  504: ({ retryAfterMs, level }) => (
+    <ServerError retryAfterMs={retryAfterMs ?? SECTION_DEFAULT_RETRY_AFTER_MS} level={level} />
   ),
 };
 
@@ -132,21 +141,24 @@ function renderHttpError(
   error: unknown,
   defaultRetryAfterMs: number,
   variant: NoDataVariant = DEFAULT_NO_DATA_VARIANT,
+  level: ErrorHeadingLevel = 1,
 ): React.ReactNode {
   const ctx = parseHttpStatus(error);
   if (ctx) {
     const view = sectionByStatus[ctx.status];
-    if (view) return view({ retryAfterMs: ctx.retryAfterMs ?? defaultRetryAfterMs, variant });
+    if (view) {
+      return view({ retryAfterMs: ctx.retryAfterMs ?? defaultRetryAfterMs, variant, level });
+    }
   }
 
-  return <DefaultError />;
+  return <DefaultError level={level} />;
 }
 
 export function renderSectionError(
   error: unknown,
   variant: NoDataVariant = DEFAULT_NO_DATA_VARIANT,
 ): React.ReactNode {
-  return renderHttpError(error, SECTION_DEFAULT_RETRY_AFTER_MS, variant);
+  return renderHttpError(error, SECTION_DEFAULT_RETRY_AFTER_MS, variant, 2);
 }
 
 export function ErrorBoundary(): React.ReactNode {
@@ -198,20 +210,5 @@ export function SectionErrorPanel({
 }
 
 export function PageSkeleton(): React.ReactNode {
-  return (
-    <>
-      <div
-        data-testid='metadata-skeleton'
-        className='h-12 w-full animate-pulse rounded-md bg-gray-100'
-        aria-busy='true'
-      />
-      <div className='mt-6 space-y-4' aria-busy='true' data-testid='alerts-skeleton'>
-        <div className='h-10 w-1/2 animate-pulse rounded-md bg-gray-100' />
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-          <div className='h-40 animate-pulse rounded-xl bg-rose-100' />
-          <div className='h-40 animate-pulse rounded-xl bg-amber-100' />
-        </div>
-      </div>
-    </>
-  );
+  return <LoadingStatus label='AMPEL-Ergebnisse werden geladen' testId='alerts-skeleton' />;
 }
