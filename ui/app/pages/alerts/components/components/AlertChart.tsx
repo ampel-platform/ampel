@@ -96,7 +96,7 @@ export function AlertChart({
     <div
       ref={scrollerRef}
       style={{ height: height ?? 475 }}
-      className={`w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'} overflow-y-hidden`}
+      className={`ampel-chart w-full ${scroll ? 'overflow-x-auto' : 'overflow-x-hidden'} overflow-y-hidden`}
     >
       <div style={{ width: chartWidth }}>
         <div

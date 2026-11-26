@@ -1,5 +1,5 @@
 import { KolTableStateless } from '@public-ui/react-v19';
-import type { ReactElement } from 'react';
+import type { CSSProperties, ReactElement } from 'react';
 
 import { AmpelStatus } from '../../types/types';
 import { badgeForAmpelStatus } from '../utils/status';
@@ -38,7 +38,12 @@ export function AlertTable({ transformedData, height }: AlertTableProps): ReactE
   });
 
   return (
-    <div style={{ maxHeight: height }} className='w-full overflow-y-auto'>
+    // Die Höhe geht als Variable an KoliBris eigenen Scroll-Container. Ein eigener
+    // overflow-Wrapper würde dessen außen liegenden Fokusrahmen abschneiden.
+    <div
+      className='w-full'
+      style={height ? ({ '--kol-table-max-height': `${height}px` } as CSSProperties) : undefined}
+    >
       <KolTableStateless
         _label='Messwerte im Verlauf'
         _headers={{

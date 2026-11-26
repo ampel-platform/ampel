@@ -2381,8 +2381,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     </label>
                   </div>
                   <div
-                    class="w-full overflow-y-auto"
-                    style="max-height: 475px;"
+                    class="w-full"
+                    style="--kol-table-max-height: 475px;"
                   >
                     <table>
                       <caption>
@@ -4136,7 +4136,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       class="lg:col-span-3"
                     >
                       <div
-                        class="w-full overflow-x-auto overflow-y-hidden"
+                        class="ampel-chart w-full overflow-x-auto overflow-y-hidden"
                         style="height: 475px;"
                       >
                         <div
@@ -7914,8 +7914,8 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     </label>
                   </div>
                   <div
-                    class="w-full overflow-y-auto"
-                    style="max-height: 475px;"
+                    class="w-full"
+                    style="--kol-table-max-height: 475px;"
                   >
                     <table>
                       <caption>
@@ -10413,7 +10413,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       class="lg:col-span-3"
                     >
                       <div
-                        class="w-full overflow-x-auto overflow-y-hidden"
+                        class="ampel-chart w-full overflow-x-auto overflow-y-hidden"
                         style="height: 475px;"
                       >
                         <div

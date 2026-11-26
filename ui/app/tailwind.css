@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fokusrahmen des Diagramms wie bei KoliBri (vgl. kol-table): 3px, 2px Abstand.
+   Er sitzt am Scroll-Container, weil der Rahmen am SVG dort abgeschnitten würde. */
+@layer components {
+  .ampel-chart .recharts-surface:focus {
+    outline: none;
+  }
+  .ampel-chart:has(.recharts-surface:focus-visible) {
+    outline: 3px solid var(--kolibri-color-primary-variant, light-dark(#005a8f, #b6dff6));
+    outline-offset: 2px;
+  }
+}
