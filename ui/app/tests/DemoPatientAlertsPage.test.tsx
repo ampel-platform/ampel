@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Suspense } from 'react';
 
@@ -53,21 +53,21 @@ describe('PatientAlertsPage Demo Mode', () => {
   });
 
   it('shows the default product logo without a clinic logo', async () => {
-    expect((await screen.findAllByAltText('Header Logo')).length).toBeGreaterThan(0);
-    expect(screen.queryByAltText('Clinical Logo')).toBeNull();
+    expect((await screen.findAllByAltText('AMPEL')).length).toBeGreaterThan(0);
+    expect(screen.queryByAltText('Logo der Klinik')).toBeNull();
   });
 
   it('keeps yellow/green cards non-clickable in demo while red stays clickable', async () => {
+    const detailsButton = /Details zu .* anzeigen/;
+
     const warning = (await screen.findAllByTestId('warning-alert-card'))[0];
-    await warning.click();
-    expect(screen.queryByTestId('overlay-back-navigation')).not.toBeInTheDocument();
+    expect(within(warning).queryByRole('button', { name: detailsButton })).toBeNull();
 
     const green = (await screen.findAllByTestId('inconspicuous-state-card'))[0];
-    await green.click();
-    expect(screen.queryByTestId('overlay-back-navigation')).not.toBeInTheDocument();
+    expect(within(green).queryByRole('button', { name: detailsButton })).toBeNull();
 
     const red = (await screen.findAllByTestId('critical-alert-card'))[0];
-    await red.click();
-    expect(await screen.findByTestId('overlay-back-navigation')).toBeInTheDocument();
+    fireEvent.click(within(red).getByRole('button', { name: detailsButton }));
+    expect(await screen.findByRole('dialog')).toBeInTheDocument();
   });
 });

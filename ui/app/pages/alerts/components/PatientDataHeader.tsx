@@ -1,4 +1,4 @@
-import { BookOpenText, Mail, Phone, Signature } from 'lucide-react';
+import { KolHeading, KolIcon, KolImage, KolLink } from '@public-ui/react-v19';
 import React from 'react';
 import { preload } from 'react-dom';
 
@@ -38,6 +38,18 @@ function formatDob(d: Date | string | null | undefined): string {
   return date.toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' });
 }
 
+function toIsoDate(d: Date | string | null | undefined): string | null {
+  if (!d) return null;
+  const date = d instanceof Date ? d : new Date(d);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().slice(0, 10);
+}
+
+function toTelHref(value: string): string | null {
+  const digits = value.replace(/[^\d+]/g, '');
+  return digits.length >= 3 ? `tel:${digits}` : null;
+}
+
 function formatHeaderValue(value: string): string {
   return value.trim() ? value : '-';
 }
@@ -62,7 +74,6 @@ function HeaderLogoImage({
   className,
   onHidden,
 }: HeaderLogoImageProps): React.ReactNode {
-  const imgRef = React.useRef<HTMLImageElement | null>(null);
   const [resolvedSrc, setResolvedSrc] = React.useState(src || fallbackSrc || '');
   const [isHidden, setIsHidden] = React.useState(!resolvedSrc);
 
@@ -83,19 +94,39 @@ function HeaderLogoImage({
     onHidden?.();
   }, [fallbackSrc, onHidden, resolvedSrc]);
 
-  React.useEffect(() => {
-    const image = imgRef.current;
-    if (!image || isHidden) return;
-
-    if (image.complete && image.naturalWidth === 0) {
-      handleLoadError();
-    }
-  }, [handleLoadError, isHidden]);
-
   if (isHidden || !resolvedSrc) return null;
 
   return (
-    <img ref={imgRef} src={resolvedSrc} alt={alt} className={className} onError={handleLoadError} />
+    <div className={className}>
+      <KolImage _src={resolvedSrc} _alt={alt} _on={{ onError: handleLoadError }} />
+    </div>
+  );
+}
+
+interface LabeledIcon {
+  icon: string;
+  label: string;
+}
+
+const ICONS = {
+  mail: { icon: 'fa-solid fa-envelope', label: 'E-Mail' },
+  manual: { icon: 'fa-solid fa-book-open', label: 'Dokument' },
+  phone: { icon: 'fa-solid fa-phone', label: 'Telefon' },
+  deviceId: { icon: 'fa-solid fa-signature', label: 'Gerätekennung' },
+} satisfies Record<string, LabeledIcon>;
+
+function IconText({
+  icon,
+  children,
+}: {
+  icon: LabeledIcon;
+  children: React.ReactNode;
+}): React.ReactNode {
+  return (
+    <span className='inline-flex items-center gap-2'>
+      <KolIcon _icons={icon.icon} _label={icon.label} />
+      {children}
+    </span>
   );
 }
 
@@ -115,12 +146,13 @@ export function PatientMetaDataHeader({
   headerConfig,
 }: PatientMetaDataHeaderProps): React.ReactNode {
   const resolvedHeaderConfig = headerConfig ?? getPatientHeaderConfig();
-  const safeFirstname = firstname || 'Unbekannt';
-  const safeLastname = lastname || 'Unbekannt';
+  const patientName =
+    [firstname, lastname].filter((part) => part?.trim()).join(' ') || 'Name unbekannt';
   const safePatientId = patientId || 'Unbekannt';
   const safeMedicalCaseId = medicalCaseId || 'Unbekannt';
   const dobText = formatDob(dateOfBirth);
-  const sexLetter = ((sex ?? 'unbekannt') as string).charAt(0).toUpperCase();
+  const dobIso = toIsoDate(dateOfBirth);
+  const sexText = sex ?? 'unbekannt';
   const { productLogoUrl, clinicLogoUrl, ticketLink, contactPhone, mtNumber, instructionsLink } =
     resolvedHeaderConfig;
   const contactPhoneText = formatHeaderValue(contactPhone);
@@ -136,77 +168,93 @@ export function PatientMetaDataHeader({
     setIsClinicLogoVisible(Boolean(resolvedClinicLogoUrl));
   }, [resolvedClinicLogoUrl]);
 
-  const renderExternalLink = (href: string, label: string): React.ReactNode => {
+  const renderExternalLink = (href: string, label: string, icon: LabeledIcon): React.ReactNode => {
     if (!href) {
-      return <span className='whitespace-nowrap text-gray-500'>{label}</span>;
+      return <IconText icon={icon}>{label}</IconText>;
     }
 
     return (
-      <a
-        href={href}
-        target='_blank'
-        rel='noreferrer noopener'
-        className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
-      >
-        {label}
-      </a>
+      <KolLink
+        _href={href}
+        _label={label}
+        _target='_blank'
+        _icons={{ left: { icon: icon.icon, label: icon.label } }}
+      />
     );
   };
 
-  return (
-    <div className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6'>
-      <div className='min-w-0'>
-        <span className='break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl'>
-          {safeFirstname} {safeLastname} (*{dobText} | {sexLetter})
-        </span>
+  const phoneHref = toTelHref(contactPhone);
 
-        <div className='mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1'>
-          <span className='whitespace-nowrap'>
-            <span className='mr-2 text-gray-600'>Patientennummer</span>
-            <span className='text-violet-800'>{safePatientId}</span>
-          </span>
-          <span>
-            <span className='mr-2 text-gray-600'>Fallnummer</span>
-            <span className='text-violet-800'>{safeMedicalCaseId}</span>
-          </span>
-        </div>
+  return (
+    <header className='grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end'>
+      <div className='min-w-0'>
+        <KolHeading _label={patientName} _level={2} />
+
+        <dl className='mt-1 flex flex-wrap items-baseline gap-x-8 gap-y-1'>
+          <div className='flex gap-x-2'>
+            <dt>Geburtsdatum</dt>
+            <dd className='font-bold'>
+              {dobIso ? <time dateTime={dobIso}>{dobText}</time> : dobText}
+            </dd>
+          </div>
+          <div className='flex gap-x-2'>
+            <dt>Geschlecht</dt>
+            <dd className='font-bold'>{sexText}</dd>
+          </div>
+          <div className='flex gap-x-2'>
+            <dt>Patientennummer</dt>
+            <dd className='font-bold'>{safePatientId}</dd>
+          </div>
+          <div className='flex gap-x-2'>
+            <dt>Fallnummer</dt>
+            <dd className='font-bold'>{safeMedicalCaseId}</dd>
+          </div>
+        </dl>
       </div>
 
-      <div className='grid grid-cols-2 grid-rows-[auto_auto] items-start justify-start gap-x-6 gap-y-1 md:grid-cols-[auto_auto] md:justify-end'>
-        <div className={`col-span-2 row-[1] flex items-start ${logoRowJustifyClass} gap-x-6 pl-4`}>
+      <div className='flex flex-col items-start gap-y-2 md:items-end'>
+        <div
+          data-testid='logo-row'
+          className={`flex w-full items-start ${logoRowJustifyClass} gap-x-6`}
+        >
           <HeaderLogoImage
             src={resolvedProductLogoUrl}
             fallbackSrc={BrandLogo}
-            alt='Header Logo'
+            alt='AMPEL'
             className='h-8 sm:h-9 md:h-12 lg:h-14'
           />
           {resolvedClinicLogoUrl ? (
             <HeaderLogoImage
               src={resolvedClinicLogoUrl}
-              alt='Clinical Logo'
+              alt='Logo der Klinik'
               className='h-8 sm:h-9 md:h-12 lg:h-14'
               onHidden={() => setIsClinicLogoVisible(false)}
             />
           ) : null}
         </div>
 
-        <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
-          <Mail className='h-4 w-4 text-gray-600' />
-          {renderExternalLink(ticketLink, 'Störmeldung Medizintechnik')}
-        </span>
-        <span className='col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
-          <Phone className='h-4 w-4' />
-          <span className='whitespace-nowrap'>allg. Fragen : {contactPhoneText}</span>
-        </span>
-        <span className='col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
-          <BookOpenText className='h-4 w-4 text-gray-600' />
-          {renderExternalLink(instructionsLink, 'Gebrauchsanweisung')}
-        </span>
-        <span className='col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
-          <Signature className='h-4 w-4' />
-          <span className='whitespace-nowrap'> MT-Nummer: {mtNumberText}</span>
-        </span>
+        <ul
+          aria-label='Hilfe und Kontakt'
+          className='grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-2 sm:text-base'
+        >
+          <li>{renderExternalLink(ticketLink, 'Störmeldung Medizintechnik', ICONS.mail)}</li>
+          <li>{renderExternalLink(instructionsLink, 'Gebrauchsanweisung', ICONS.manual)}</li>
+          <li>
+            {phoneHref ? (
+              <KolLink
+                _href={phoneHref}
+                _label={`Allgemeine Fragen: ${contactPhoneText}`}
+                _icons={{ left: { icon: ICONS.phone.icon, label: ICONS.phone.label } }}
+              />
+            ) : (
+              <IconText icon={ICONS.phone}>Allgemeine Fragen: {contactPhoneText}</IconText>
+            )}
+          </li>
+          <li>
+            <IconText icon={ICONS.deviceId}>MT-Nummer: {mtNumberText}</IconText>
+          </li>
+        </ul>
       </div>
-    </div>
+    </header>
   );
 }
